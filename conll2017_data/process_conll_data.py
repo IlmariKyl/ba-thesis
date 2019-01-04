@@ -4,13 +4,13 @@ import os, re, sys
 def main(argv):
 
     if len(argv) != 1:
-        print("Usage: python process_data.py <data_folder>")
+        print("Usage: python process_conll_data.py <data_folder>")
         sys.exit(2)
 
     data_root_dir = os.getcwd()
 
     # Create 'processed_data' directory if doesn't already exist
-    res_dir_name = 'processed_training_data'
+    res_dir_name = 'processed_conll2017_data'
 
     if not os.path.exists(res_dir_name):
         os.mkdir(res_dir_name)
