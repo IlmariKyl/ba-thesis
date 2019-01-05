@@ -1,15 +1,30 @@
 import os, sys, getopt
+from statistics import mode
 
+
+n_draws = 0
 
 def most_common(lst):
-    return max(set(lst), key=lst.count)
+    # In case of draw, raises a StatisticsError
+    try:
+      return mode(lst)
+
+    # Adds one to draw count and randomly picks from the most common elements
+    except:
+      global n_draws
+      n_draws += 1
+
+      print("\nDraw", str(n_draws)+":\n"+str(lst))
+
+      return max(set(lst), key=lst.count)
+
 
 def main(argv):
 
     if len(argv) != 4:
         print("Usage: python majorityvote.py -i <inputfolder> -o <outputfile>")
         sys.exit(2)
-        
+    
     inputfolder = ''
     outputfile = ''
     try:
@@ -27,13 +42,14 @@ def main(argv):
          outputfile = arg
          
     os.chdir(inputfolder)
+    inputfoldername = inputfolder.split("/")[0]
     directory = os.fsencode(os.getcwd()) 
     outputs = []
     outfile = open(outputfile, "w")
 
-    print('Input folder is:', inputfolder.split("/")[0])
+    print('Input folder is:', inputfoldername)
     print('Output file is:', outputfile)
-    print("\nOutput file '{}' was created in the directory '{}'.".format(outputfile, inputfolder.split("/")[0]))
+    print("\nOutput file '{}' was created in the directory '{}'.".format(outputfile, inputfoldername))
     print("\nMajority voting is done with following files:")
 
     for file in os.listdir(directory):
@@ -49,6 +65,7 @@ def main(argv):
 
     outfile.close()
 
+    print("\nAmount of draws:", str(n_draws))
     print("\nDone.")
 
 if __name__ == "__main__":

@@ -17,22 +17,22 @@ def main(argv):
 	basemodel_acc_sum = 0
 	n_basemodels = 0
 
-	# Create 'results' directory if doesn't already exist
-	res_dir_name = 'results'
+	# Create 'accuracies' directory if doesn't already exist
+	output_dir = 'accuracies'
 
-	if not os.path.exists(res_dir_name):
-		os.mkdir(res_dir_name)
-		print("Directory '" + res_dir_name + "' was created.\n")
+	if not os.path.exists(output_dir):
+		os.mkdir(output_dir)
+		print("Directory '" + output_dir + "' was created.\n")
 	else:
-		print("Directory '" + res_dir_name + "' already exists.\n")
+		print("Directory '" + output_dir + "' already exists.\n")
 		
 
-	with open('results/all_accuracies.txt', 'w') as all_accuracies:
+	with open(output_dir+'/all_accuracies.txt', 'w') as all_accuracies:
 		print("All accuracies:\n\n{:<40}{:<40}\n".format("File", "Accuracy"), file=all_accuracies)
 		for file in os.listdir(directory):
 			linecount = 0
 			filename = os.fsdecode(file)
-			outfilename = "results/"+filename+"_-_VS_-_"+goldfile
+			outfilename = output_dir+"/"+filename+"_-_VS_-_"+goldfile
 
 			if not filename.endswith("gold.txt") and not os.path.isdir(filename):
 				try:
