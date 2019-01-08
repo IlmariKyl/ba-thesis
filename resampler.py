@@ -18,7 +18,7 @@ def main(argv):
     tgt_filename = tgt_filepath.split('/')[-1]
 
     # Create a directory for the new files
-    output_dir = 'resampled_'+src_filename+'->'+str(n_samples)
+    output_dir = src_filename.split('src-')[1]+'->'+str(n_samples)
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
