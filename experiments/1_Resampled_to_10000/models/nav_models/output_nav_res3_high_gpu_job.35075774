@@ -1,0 +1,177 @@
+Loading application Intel Distribution for Python 2018 update 3 
+[2019-01-09 00:19:35,003 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:19:35,024 INFO]  * vocabulary size. source = 59; target = 41
+[2019-01-09 00:19:35,024 INFO] Building model...
+/homeappl/home/ilmariky/.local/lib/python3.6/site-packages/torch/nn/modules/rnn.py:38: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+[2019-01-09 00:19:38,365 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(59, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(41, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=41, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-09 00:19:38,368 INFO] encoder: 308300
+[2019-01-09 00:19:38,368 INFO] decoder: 1128841
+[2019-01-09 00:19:38,368 INFO] * number of parameters: 1437141
+[2019-01-09 00:19:38,369 INFO] Starting training on GPU: [0, 1]
+[2019-01-09 00:19:38,370 INFO] Start training...
+[2019-01-09 00:19:38,426 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:19:44,500 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:19:50,188 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:19:55,843 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:01,507 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:07,155 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:12,802 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:14,831 INFO] Step 1000/12500; acc:  92.00; ppl:  1.30; xent: 0.26; lr: 0.00100; 16314/20392 tok/s;     36 sec
+[2019-01-09 00:20:14,942 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:20:15,505 INFO] Validation perplexity: 1.30302
+[2019-01-09 00:20:15,505 INFO] Validation accuracy: 92.3377
+[2019-01-09 00:20:19,120 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:24,777 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:30,426 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:36,111 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:41,753 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:47,392 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:51,506 INFO] Step 2000/12500; acc:  98.72; ppl:  1.05; xent: 0.05; lr: 0.00100; 9659/13413 tok/s;     73 sec
+[2019-01-09 00:20:51,512 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:20:52,076 INFO] Validation perplexity: 1.22018
+[2019-01-09 00:20:52,076 INFO] Validation accuracy: 94.9451
+[2019-01-09 00:20:53,610 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:20:59,249 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:04,894 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:10,536 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:16,184 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:21,820 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:27,467 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:28,072 INFO] Step 3000/12500; acc:  97.84; ppl:  1.09; xent: 0.08; lr: 0.00100; 18797/21013 tok/s;    110 sec
+[2019-01-09 00:21:28,077 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:21:28,640 INFO] Validation perplexity: 1.20105
+[2019-01-09 00:21:28,640 INFO] Validation accuracy: 95.5345
+[2019-01-09 00:21:33,714 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:39,354 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:44,997 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:50,662 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:21:56,297 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:01,943 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:04,579 INFO] Step 4000/12500; acc:  99.33; ppl:  1.02; xent: 0.02; lr: 0.00100; 27649/17595 tok/s;    146 sec
+[2019-01-09 00:22:04,585 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:22:05,149 INFO] Validation perplexity: 1.18038
+[2019-01-09 00:22:05,150 INFO] Validation accuracy: 96.2737
+[2019-01-09 00:22:08,155 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:13,788 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:19,428 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:25,065 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:31,306 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:36,977 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:41,734 INFO] Step 5000/12500; acc:  99.37; ppl:  1.03; xent: 0.03; lr: 0.00100; 23351/19338 tok/s;    183 sec
+[2019-01-09 00:22:41,758 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:22:42,321 INFO] Validation perplexity: 1.18506
+[2019-01-09 00:22:42,322 INFO] Validation accuracy: 96.5534
+[2019-01-09 00:22:43,203 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:48,847 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:22:54,481 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:00,115 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:05,749 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:11,393 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:17,034 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:18,193 INFO] Step 6000/12500; acc:  99.13; ppl:  1.02; xent: 0.02; lr: 0.00100; 23290/19056 tok/s;    220 sec
+[2019-01-09 00:23:18,198 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:23:18,764 INFO] Validation perplexity: 1.19058
+[2019-01-09 00:23:18,764 INFO] Validation accuracy: 96.7832
+[2019-01-09 00:23:23,242 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:28,884 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:34,568 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:40,208 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:45,844 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:51,482 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:23:54,690 INFO] Step 7000/12500; acc:  99.41; ppl:  1.01; xent: 0.01; lr: 0.00100; 18383/20393 tok/s;    256 sec
+[2019-01-09 00:23:54,695 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:23:55,259 INFO] Validation perplexity: 1.18018
+[2019-01-09 00:23:55,259 INFO] Validation accuracy: 97.023
+[2019-01-09 00:23:57,698 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:03,339 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:08,982 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:14,624 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:20,269 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:25,911 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:31,261 INFO] Step 8000/12500; acc:  99.34; ppl:  1.01; xent: 0.01; lr: 0.00100; 24997/18117 tok/s;    293 sec
+[2019-01-09 00:24:31,268 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:24:31,836 INFO] Validation perplexity: 1.20232
+[2019-01-09 00:24:31,837 INFO] Validation accuracy: 96.6434
+[2019-01-09 00:24:32,139 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:37,820 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:43,462 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:49,103 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:24:54,744 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:00,385 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:06,039 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:07,818 INFO] Step 9000/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 8336/14475 tok/s;    329 sec
+[2019-01-09 00:25:07,823 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:25:08,389 INFO] Validation perplexity: 1.18051
+[2019-01-09 00:25:08,389 INFO] Validation accuracy: 96.973
+[2019-01-09 00:25:12,251 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:17,893 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:23,533 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:29,182 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:34,829 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:40,513 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:44,385 INFO] Step 10000/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 15453/13437 tok/s;    366 sec
+[2019-01-09 00:25:44,390 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:25:44,953 INFO] Validation perplexity: 1.20567
+[2019-01-09 00:25:44,953 INFO] Validation accuracy: 96.8531
+[2019-01-09 00:25:46,723 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:52,364 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:25:58,002 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:03,646 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:09,285 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:14,930 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:20,569 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:20,931 INFO] Step 11000/12500; acc:  99.15; ppl:  1.02; xent: 0.02; lr: 0.00100; 24611/19337 tok/s;    403 sec
+[2019-01-09 00:26:21,015 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:26:21,582 INFO] Validation perplexity: 1.18091
+[2019-01-09 00:26:21,582 INFO] Validation accuracy: 97.0929
+[2019-01-09 00:26:26,863 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:32,503 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:38,198 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:43,833 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:49,473 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:55,114 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:26:57,511 INFO] Step 12000/12500; acc:  99.47; ppl:  1.01; xent: 0.01; lr: 0.00100; 19902/19385 tok/s;    439 sec
+[2019-01-09 00:26:57,516 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.valid.0.pt, number of examples: 1000
+[2019-01-09 00:26:58,080 INFO] Validation perplexity: 1.19
+[2019-01-09 00:26:58,080 INFO] Validation accuracy: 97.0929
+[2019-01-09 00:27:01,336 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:27:06,982 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:27:12,649 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000
+[2019-01-09 00:27:16,100 INFO] Saving checkpoint ../models/nav_models/model-nav-res3-high_step_12500.pt
+[2019-01-09 00:27:16,226 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_nav_resample1000_s3.train.0.pt, number of examples: 10000

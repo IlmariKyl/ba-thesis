@@ -1,0 +1,70 @@
+Loading application Intel Distribution for Python 2018 update 3 
+[2019-01-09 12:39:54,526 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:39:54,540 INFO]  * vocabulary size. source = 44; target = 32
+[2019-01-09 12:39:54,540 INFO] Building model...
+/homeappl/home/ilmariky/.local/lib/python3.6/site-packages/torch/nn/modules/rnn.py:38: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+[2019-01-09 12:39:58,022 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(44, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(32, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=32, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-09 12:39:58,025 INFO] encoder: 306800
+[2019-01-09 12:39:58,025 INFO] decoder: 1125232
+[2019-01-09 12:39:58,025 INFO] * number of parameters: 1432032
+[2019-01-09 12:39:58,026 INFO] Starting training on GPU: [0, 1]
+[2019-01-09 12:39:58,027 INFO] Start training...
+[2019-01-09 12:39:58,081 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:05,493 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:12,449 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:19,403 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:26,351 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:33,291 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:40,229 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:42,649 INFO] Step 1000/12500; acc:  97.92; ppl:  1.06; xent: 0.06; lr: 0.00100; 20691/19100 tok/s;     45 sec
+[2019-01-09 12:40:42,682 INFO] Loading valid dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.valid.0.pt, number of examples: 1000
+[2019-01-09 12:40:43,454 INFO] Validation perplexity: 1.05694
+[2019-01-09 12:40:43,455 INFO] Validation accuracy: 98.9602
+[2019-01-09 12:40:48,013 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:40:54,957 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:01,890 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:08,826 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:15,760 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:22,700 INFO] Loading train dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:27,804 INFO] Step 2000/12500; acc:  99.12; ppl:  1.03; xent: 0.03; lr: 0.00100; 14980/13931 tok/s;     90 sec
+[2019-01-09 12:41:27,809 INFO] Loading valid dataset from ../italian-train-high-10000to10000/data_ita_resample1000_s7.valid.0.pt, number of examples: 1000
+[2019-01-09 12:41:28,581 INFO] Validation perplexity: 1.04171
+[2019-01-09 12:41:28,581 INFO] Validation accuracy: 99.2347
+slurmstepd: error: *** JOB 35266833 ON g94 CANCELLED AT 2019-01-09T12:41:30 ***
+slurmstepd: error: *** STEP 35266833.0 ON g94 CANCELLED AT 2019-01-09T12:41:30 ***

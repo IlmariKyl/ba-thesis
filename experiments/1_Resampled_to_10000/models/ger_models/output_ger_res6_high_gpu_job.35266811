@@ -1,0 +1,66 @@
+Loading application Intel Distribution for Python 2018 update 3 
+[2019-01-09 12:37:08,040 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:08,054 INFO]  * vocabulary size. source = 85; target = 70
+[2019-01-09 12:37:08,054 INFO] Building model...
+/homeappl/home/ilmariky/.local/lib/python3.6/site-packages/torch/nn/modules/rnn.py:38: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+[2019-01-09 12:37:11,733 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(85, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(70, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=70, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-09 12:37:11,736 INFO] encoder: 310900
+[2019-01-09 12:37:11,736 INFO] decoder: 1140470
+[2019-01-09 12:37:11,736 INFO] * number of parameters: 1451370
+[2019-01-09 12:37:11,738 INFO] Starting training on GPU: [0, 1]
+[2019-01-09 12:37:11,738 INFO] Start training...
+[2019-01-09 12:37:11,790 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:18,178 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:24,114 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:30,056 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:35,993 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:41,922 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:47,851 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:49,927 INFO] Step 1000/12500; acc:  98.44; ppl:  1.06; xent: 0.06; lr: 0.00100; 27650/17596 tok/s;     38 sec
+[2019-01-09 12:37:49,949 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.valid.0.pt, number of examples: 1000
+[2019-01-09 12:37:50,648 INFO] Validation perplexity: 1.19745
+[2019-01-09 12:37:50,648 INFO] Validation accuracy: 96.0548
+[2019-01-09 12:37:54,555 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:38:00,489 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:38:06,424 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:38:12,352 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+[2019-01-09 12:38:18,291 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s6.train.0.pt, number of examples: 10000
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 35266811.0 ON g93 CANCELLED AT 2019-01-09T12:38:20 ***
+slurmstepd: error: *** JOB 35266811 ON g93 CANCELLED AT 2019-01-09T12:38:20 ***

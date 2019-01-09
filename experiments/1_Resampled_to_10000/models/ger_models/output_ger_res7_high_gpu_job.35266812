@@ -1,0 +1,65 @@
+Loading application Intel Distribution for Python 2018 update 3 
+[2019-01-09 12:37:08,110 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:08,127 INFO]  * vocabulary size. source = 85; target = 69
+[2019-01-09 12:37:08,127 INFO] Building model...
+/homeappl/home/ilmariky/.local/lib/python3.6/site-packages/torch/nn/modules/rnn.py:38: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+[2019-01-09 12:37:11,795 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(85, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(69, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=69, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-09 12:37:11,798 INFO] encoder: 310900
+[2019-01-09 12:37:11,798 INFO] decoder: 1140069
+[2019-01-09 12:37:11,798 INFO] * number of parameters: 1450969
+[2019-01-09 12:37:11,800 INFO] Starting training on GPU: [0, 1]
+[2019-01-09 12:37:11,800 INFO] Start training...
+[2019-01-09 12:37:11,854 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:18,883 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:25,303 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:31,719 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:38,127 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:44,535 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:50,949 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:37:53,163 INFO] Step 1000/12500; acc:  97.54; ppl:  1.08; xent: 0.07; lr: 0.00100; 25881/16469 tok/s;     41 sec
+[2019-01-09 12:37:53,405 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.valid.0.pt, number of examples: 1000
+[2019-01-09 12:37:54,217 INFO] Validation perplexity: 1.28169
+[2019-01-09 12:37:54,217 INFO] Validation accuracy: 95.0176
+[2019-01-09 12:37:58,413 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:38:04,820 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:38:11,222 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+[2019-01-09 12:38:17,625 INFO] Loading train dataset from ../german-train-high-10000to10000/data_ger_resample1000_s7.train.0.pt, number of examples: 10000
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 35266812.0 ON g93 CANCELLED AT 2019-01-09T12:38:20 ***
+slurmstepd: error: *** JOB 35266812 ON g93 CANCELLED AT 2019-01-09T12:38:20 ***

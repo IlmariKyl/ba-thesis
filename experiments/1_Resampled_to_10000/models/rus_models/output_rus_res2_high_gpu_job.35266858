@@ -1,0 +1,61 @@
+Loading application Intel Distribution for Python 2018 update 3 
+[2019-01-09 12:41:36,488 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:36,503 INFO]  * vocabulary size. source = 82; target = 55
+[2019-01-09 12:41:36,503 INFO] Building model...
+/homeappl/home/ilmariky/.local/lib/python3.6/site-packages/torch/nn/modules/rnn.py:38: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+[2019-01-09 12:41:40,283 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(82, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(55, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=55, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-09 12:41:40,286 INFO] encoder: 310600
+[2019-01-09 12:41:40,286 INFO] decoder: 1134455
+[2019-01-09 12:41:40,286 INFO] * number of parameters: 1445055
+[2019-01-09 12:41:40,287 INFO] Starting training on GPU: [0, 1]
+[2019-01-09 12:41:40,288 INFO] Start training...
+[2019-01-09 12:41:40,391 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:46,971 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:53,117 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:41:59,262 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:42:05,406 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:42:11,544 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:42:17,683 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+[2019-01-09 12:42:19,817 INFO] Step 1000/12500; acc:  97.26; ppl:  1.12; xent: 0.11; lr: 0.00100; 16337/17715 tok/s;     39 sec
+[2019-01-09 12:42:19,934 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.valid.0.pt, number of examples: 1000
+[2019-01-09 12:42:20,660 INFO] Validation perplexity: 1.34429
+[2019-01-09 12:42:20,661 INFO] Validation accuracy: 94.1296
+[2019-01-09 12:42:24,669 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_rus_resample1000_s2.train.0.pt, number of examples: 10000
+slurmstepd: error: *** JOB 35266858 ON g91 CANCELLED AT 2019-01-09T12:42:25 ***
+slurmstepd: error: *** STEP 35266858.0 ON g91 CANCELLED AT 2019-01-09T12:42:25 ***
