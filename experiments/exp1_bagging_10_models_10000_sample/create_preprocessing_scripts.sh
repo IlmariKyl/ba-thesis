@@ -15,7 +15,7 @@ rm -f preprocessing_scripts/all_preprocess.sh
 touch preprocessing_scripts/all_preprocess.sh
 
 for lang in arabic finnish georgian german hindi italian khaling navajo russian turkish; do
-	cat ../batch_skeleton > preprocessing_scripts/preprocess_"$lang".sh
+	cat ../../batch_template > preprocessing_scripts/preprocess_"$lang".sh
 	for i in $(seq 1 $1); do
 		echo srun python ../../../../preprocess.py \
 		 -train_src ../"$lang"-train-high-10000to10000/src-"$lang"-train-high-10000-resampled-s"$i" \

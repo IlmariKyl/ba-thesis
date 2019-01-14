@@ -1,0 +1,10 @@
+sbatch preprocess_arabic.sh
+sbatch preprocess_finnish.sh
+sbatch preprocess_georgian.sh
+sbatch preprocess_german.sh
+sbatch preprocess_hindi.sh
+sbatch preprocess_italian.sh
+sbatch preprocess_khaling.sh
+sbatch preprocess_navajo.sh
+sbatch preprocess_russian.sh
+sbatch preprocess_turkish.sh

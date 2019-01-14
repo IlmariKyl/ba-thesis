@@ -12,5 +12,5 @@ then
 fi
 
 for lang in arabic finnish georgian german hindi italian khaling navajo russian turkish; do
-	python ../resampler.py ../../language_data/"$lang"/src-"$lang"-train-high-10000 ../../language_data/"$lang"/tgt-"$lang"-train-high-10000 $1 $2
+	python ../../python_scripts/resampler.py ../../language_data/"$lang"/src-"$lang"-train-high-10000 ../../language_data/"$lang"/tgt-"$lang"-train-high-10000 $1 $2
 done

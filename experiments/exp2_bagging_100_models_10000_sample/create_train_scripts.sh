@@ -18,7 +18,7 @@ touch train_scripts/all_train.sh
 for lang in arabic finnish georgian german hindi italian khaling navajo russian turkish; do
 	mkdir -p models/"$lang"_models
 	for i in $(seq 1 $1); do
-		cat ../batch_skeleton > train_scripts/train_"$lang"_res"$i".sh
+		cat ../../batch_template > train_scripts/train_"$lang"_res"$i".sh
 		echo srun python ../../../../train.py \
 		-data ../"$lang"-train-high-10000to10000/data_"$lang"_resample1000_s"$i" \
 		-save_model ../models/"$lang"_models/model-"$lang"-high-res"$i" \
