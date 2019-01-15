@@ -19,8 +19,8 @@ for lang in arabic finnish georgian german hindi italian khaling navajo russian 
 	mkdir -p models/"$lang"_models
 	for i in $(seq 1 $1); do
 		cat ../../batch_template > train_scripts/train_"$lang"_s"$i".sh
-		echo srun python ../../../python_scripts/train.py \
-		-data preprocessed_data/data_"$lang"_high_10000 \
+		echo srun python ../../../../train.py \
+		-data ../preprocessed_data/data_"$lang"_high_10000 \
 		-save_model ../models/"$lang"_models/model-"$lang"-high-s"$i" \
 		-world_size 1 \
 		-gpu_ranks 0 1 \

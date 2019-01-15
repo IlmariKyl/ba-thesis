@@ -10,5 +10,5 @@
 module purge
 module load python-env/intelpython3.6-2018.3 gcc/5.4.0 cuda/9.0 cudnn/7.1-cuda9
 
-srun python ../../../python_scripts/preprocess.py -train_src ../../../language_data/navajo/src-navajo-train-low-100 -train_tgt ../../../language_data/navajo/tgt-navajo-train-low-100 -valid_src ../../../language_data/navajo/src-navajo-dev-1000 -valid_tgt ../../../language_data/navajo/tgt-navajo-dev-1000 -save_data ../preprocessed_data/data_navajo_low_100
+srun python ../../../../preprocess.py -train_src ../../../language_data/navajo/src-navajo-train-low-100 -train_tgt ../../../language_data/navajo/tgt-navajo-train-low-100 -valid_src ../../../language_data/navajo/src-navajo-dev-1000 -valid_tgt ../../../language_data/navajo/tgt-navajo-dev-1000 -save_data ../preprocessed_data/data_navajo_low_100
 rm -f slurm*

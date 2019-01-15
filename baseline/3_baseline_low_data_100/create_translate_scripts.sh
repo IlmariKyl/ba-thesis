@@ -18,10 +18,10 @@ for lang in arabic finnish georgian german hindi italian khaling navajo russian 
 	for i in $(seq 1 $1); do
 		cat ../../batch_template > translate_scripts/translate_"$lang"_s"$i".sh
 
-		echo srun python ../../../translate.py \
-		-model ../models/"$lang"_models/model-"$lang"-low-s"$i"_step_12500.pt \
+		echo srun python ../../../../translate.py \
+		-model ../models/"$lang"_models/model-"$lang"-low-s"$i"_step_8000.pt \
 		-src ../../../language_data/"$lang"/src-"$lang"-dev-1000 \
-		-output ../accuracies_and_translate_results/"$lang"_accuracies_and_translate_results/pred_"$lang"_12500_base_low_s"$i".txt \
+		-output ../accuracies_and_translate_results/"$lang"_accuracies_and_translate_results/pred_"$lang"_8000_base_low_s"$i".txt \
 		-replace_unk \
 		-verbose >> translate_scripts/translate_"$lang"_s"$i".sh
 

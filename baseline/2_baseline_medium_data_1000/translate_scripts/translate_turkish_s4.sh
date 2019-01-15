@@ -10,5 +10,5 @@
 module purge
 module load python-env/intelpython3.6-2018.3 gcc/5.4.0 cuda/9.0 cudnn/7.1-cuda9
 
-srun python ../../../translate.py -model ../models/turkish_models/model-turkish-medium-s4_step_12500.pt -src ../../../language_data/turkish/src-turkish-dev-1000 -output ../accuracies_and_translate_results/turkish_accuracies_and_translate_results/pred_turkish_12500_base_medium_s4.txt -replace_unk -verbose
+srun python ../../../../translate.py -model ../models/turkish_models/model-turkish-medium-s4_step_12500.pt -src ../../../language_data/turkish/src-turkish-dev-1000 -output ../accuracies_and_translate_results/turkish_accuracies_and_translate_results/pred_turkish_12500_base_medium_s4.txt -replace_unk -verbose
 rm -f slurm*

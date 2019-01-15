@@ -10,5 +10,5 @@
 module purge
 module load python-env/intelpython3.6-2018.3 gcc/5.4.0 cuda/9.0 cudnn/7.1-cuda9
 
-srun python ../../../python_scripts/preprocess.py -train_src ../../../language_data/russian/src-russian-train-medium-1000 -train_tgt ../../../language_data/russian/tgt-russian-train-medium-1000 -valid_src ../../../language_data/russian/src-russian-dev-1000 -valid_tgt ../../../language_data/russian/tgt-russian-dev-1000 -save_data ../preprocessed_data/data_russian_medium_1000
+srun python ../../../../preprocess.py -train_src ../../../language_data/russian/src-russian-train-medium-1000 -train_tgt ../../../language_data/russian/tgt-russian-train-medium-1000 -valid_src ../../../language_data/russian/src-russian-dev-1000 -valid_tgt ../../../language_data/russian/tgt-russian-dev-1000 -save_data ../preprocessed_data/data_russian_medium_1000
 rm -f slurm*

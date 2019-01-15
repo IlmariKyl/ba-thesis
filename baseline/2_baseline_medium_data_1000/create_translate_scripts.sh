@@ -18,7 +18,7 @@ for lang in arabic finnish georgian german hindi italian khaling navajo russian 
 	for i in $(seq 1 $1); do
 		cat ../../batch_template > translate_scripts/translate_"$lang"_s"$i".sh
 
-		echo srun python ../../../translate.py \
+		echo srun python ../../../../translate.py \
 		-model ../models/"$lang"_models/model-"$lang"-medium-s"$i"_step_12500.pt \
 		-src ../../../language_data/"$lang"/src-"$lang"-dev-1000 \
 		-output ../accuracies_and_translate_results/"$lang"_accuracies_and_translate_results/pred_"$lang"_12500_base_medium_s"$i".txt \

@@ -17,7 +17,7 @@ touch preprocessing_scripts/all_preprocess.sh
 for lang in arabic finnish georgian german hindi italian khaling navajo russian turkish; do
 	cat ../../batch_template > preprocessing_scripts/preprocess_"$lang".sh
 	
-	echo srun python ../../../python_scripts/preprocess.py \
+	echo srun python ../../../../preprocess.py \
 	 -train_src ../../../language_data/"$lang"/src-"$lang"-train-low-100 \
 	 -train_tgt ../../../language_data/"$lang"/tgt-"$lang"-train-low-100 \
 	 -valid_src ../../../language_data/"$lang"/src-"$lang"-dev-1000 \

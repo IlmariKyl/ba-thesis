@@ -10,5 +10,5 @@
 module purge
 module load python-env/intelpython3.6-2018.3 gcc/5.4.0 cuda/9.0 cudnn/7.1-cuda9
 
-srun python ../../../translate.py -model ../models/arabic_models/model-arabic-medium-s6_step_12500.pt -src ../../../language_data/arabic/src-arabic-dev-1000 -output ../accuracies_and_translate_results/arabic_accuracies_and_translate_results/pred_arabic_12500_base_medium_s6.txt -replace_unk -verbose
+srun python ../../../../translate.py -model ../models/arabic_models/model-arabic-medium-s6_step_12500.pt -src ../../../language_data/arabic/src-arabic-dev-1000 -output ../accuracies_and_translate_results/arabic_accuracies_and_translate_results/pred_arabic_12500_base_medium_s6.txt -replace_unk -verbose
 rm -f slurm*

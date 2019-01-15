@@ -10,5 +10,5 @@
 module purge
 module load python-env/intelpython3.6-2018.3 gcc/5.4.0 cuda/9.0 cudnn/7.1-cuda9
 
-srun python ../../../translate.py -model ../models/german_models/model-german-medium-s10_step_12500.pt -src ../../../language_data/german/src-german-dev-1000 -output ../accuracies_and_translate_results/german_accuracies_and_translate_results/pred_german_12500_base_medium_s10.txt -replace_unk -verbose
+srun python ../../../../translate.py -model ../models/german_models/model-german-medium-s10_step_12500.pt -src ../../../language_data/german/src-german-dev-1000 -output ../accuracies_and_translate_results/german_accuracies_and_translate_results/pred_german_12500_base_medium_s10.txt -replace_unk -verbose
 rm -f slurm*

@@ -10,5 +10,5 @@
 module purge
 module load python-env/intelpython3.6-2018.3 gcc/5.4.0 cuda/9.0 cudnn/7.1-cuda9
 
-srun python ../../../translate.py -model ../models/khaling_models/model-khaling-low-s9_step_12500.pt -src ../../../language_data/khaling/src-khaling-dev-1000 -output ../accuracies_and_translate_results/khaling_accuracies_and_translate_results/pred_khaling_12500_base_low_s9.txt -replace_unk -verbose
+srun python ../../../../translate.py -model ../models/khaling_models/model-khaling-low-s9_step_8000.pt -src ../../../language_data/khaling/src-khaling-dev-1000 -output ../accuracies_and_translate_results/khaling_accuracies_and_translate_results/pred_khaling_8000_base_low_s9.txt -replace_unk -verbose
 rm -f slurm*
