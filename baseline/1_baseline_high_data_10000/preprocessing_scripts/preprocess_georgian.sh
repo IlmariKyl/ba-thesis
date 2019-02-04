@@ -10,5 +10,5 @@
 module purge
 module load python-env/intelpython3.6-2018.3 gcc/5.4.0 cuda/9.0 cudnn/7.1-cuda9
 
-srun python ../../../python_scripts/preprocess.py -train_src ../../../language_data/georgian/src-georgian-train-high-10000 -train_tgt ../../../language_data/georgian/tgt-georgian-train-high-10000 -valid_src ../../../language_data/georgian/src-georgian-dev-1000 -valid_tgt ../../../language_data/georgian/tgt-georgian-dev-1000 -save_data ../preprocessed_data/data_georgian_high_10000
+srun python ../../../../preprocess.py -train_src ../../../language_data/georgian/src-georgian-train-high-10000 -train_tgt ../../../language_data/georgian/tgt-georgian-train-high-10000 -valid_src ../../../language_data/georgian/src-georgian-dev-1000 -valid_tgt ../../../language_data/georgian/tgt-georgian-dev-1000 -save_data ../preprocessed_data/data_georgian_high_10000
 rm -f slurm*

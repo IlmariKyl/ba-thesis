@@ -1,0 +1,626 @@
+[2019-01-22 01:34:40,034 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:34:40,055 INFO]  * vocabulary size. source = 85; target = 70
+[2019-01-22 01:34:40,055 INFO] Building model...
+[2019-01-22 01:34:43,407 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(85, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(70, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=70, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 01:34:43,411 INFO] encoder: 310900
+[2019-01-22 01:34:43,411 INFO] decoder: 1140470
+[2019-01-22 01:34:43,412 INFO] * number of parameters: 1451370
+[2019-01-22 01:34:43,413 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 01:34:43,413 INFO] Start training...
+[2019-01-22 01:34:43,464 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:34:47,610 INFO] Step 100/12500; acc:  13.73; ppl: 25.00; xent: 3.22; lr: 0.00100; 21514/19796 tok/s;      4 sec
+[2019-01-22 01:34:47,679 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:34:48,367 INFO] Validation perplexity: 17.7296
+[2019-01-22 01:34:48,368 INFO] Validation accuracy: 21.7448
+[2019-01-22 01:34:50,599 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:34:52,190 INFO] Step 200/12500; acc:  51.70; ppl:  5.82; xent: 1.76; lr: 0.00100; 22483/20687 tok/s;      9 sec
+[2019-01-22 01:34:52,196 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:34:52,882 INFO] Validation perplexity: 3.46124
+[2019-01-22 01:34:52,883 INFO] Validation accuracy: 66.7716
+[2019-01-22 01:34:56,600 INFO] Step 300/12500; acc:  85.23; ppl:  1.87; xent: 0.63; lr: 0.00100; 23127/19569 tok/s;     13 sec
+[2019-01-22 01:34:56,605 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:34:57,287 INFO] Validation perplexity: 1.9901
+[2019-01-22 01:34:57,288 INFO] Validation accuracy: 81.9041
+[2019-01-22 01:34:57,939 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:01,170 INFO] Step 400/12500; acc:  88.45; ppl:  1.67; xent: 0.51; lr: 0.00100; 23480/21066 tok/s;     18 sec
+[2019-01-22 01:35:01,175 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:01,865 INFO] Validation perplexity: 1.62556
+[2019-01-22 01:35:01,865 INFO] Validation accuracy: 88.1737
+[2019-01-22 01:35:04,591 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:05,639 INFO] Step 500/12500; acc:  92.26; ppl:  1.32; xent: 0.28; lr: 0.00100; 19594/18583 tok/s;     22 sec
+[2019-01-22 01:35:05,644 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:06,330 INFO] Validation perplexity: 1.54153
+[2019-01-22 01:35:06,331 INFO] Validation accuracy: 89.0813
+[2019-01-22 01:35:10,115 INFO] Step 600/12500; acc:  94.42; ppl:  1.34; xent: 0.29; lr: 0.00100; 22199/16828 tok/s;     27 sec
+[2019-01-22 01:35:10,120 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:10,802 INFO] Validation perplexity: 1.36615
+[2019-01-22 01:35:10,803 INFO] Validation accuracy: 92.7579
+[2019-01-22 01:35:11,925 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:14,642 INFO] Step 700/12500; acc:  95.81; ppl:  1.20; xent: 0.19; lr: 0.00100; 21472/18836 tok/s;     31 sec
+[2019-01-22 01:35:14,648 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:15,337 INFO] Validation perplexity: 1.26373
+[2019-01-22 01:35:15,338 INFO] Validation accuracy: 94.5175
+[2019-01-22 01:35:18,568 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:19,123 INFO] Step 800/12500; acc:  95.58; ppl:  1.22; xent: 0.20; lr: 0.00100; 22002/15098 tok/s;     36 sec
+[2019-01-22 01:35:19,128 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:19,814 INFO] Validation perplexity: 1.2569
+[2019-01-22 01:35:19,815 INFO] Validation accuracy: 95.1009
+[2019-01-22 01:35:23,579 INFO] Step 900/12500; acc:  97.67; ppl:  1.11; xent: 0.10; lr: 0.00100; 23200/18186 tok/s;     40 sec
+[2019-01-22 01:35:23,583 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:24,266 INFO] Validation perplexity: 1.19674
+[2019-01-22 01:35:24,267 INFO] Validation accuracy: 95.9159
+[2019-01-22 01:35:25,896 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:28,093 INFO] Step 1000/12500; acc:  93.11; ppl:  1.44; xent: 0.36; lr: 0.00100; 21359/15528 tok/s;     45 sec
+[2019-01-22 01:35:28,098 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:28,787 INFO] Validation perplexity: 1.17783
+[2019-01-22 01:35:28,788 INFO] Validation accuracy: 96.1752
+[2019-01-22 01:35:32,535 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:32,608 INFO] Step 1100/12500; acc:  95.45; ppl:  1.27; xent: 0.24; lr: 0.00100; 9077/7958 tok/s;     49 sec
+[2019-01-22 01:35:32,613 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:33,300 INFO] Validation perplexity: 1.16968
+[2019-01-22 01:35:33,301 INFO] Validation accuracy: 96.6383
+[2019-01-22 01:35:36,992 INFO] Step 1200/12500; acc:  97.29; ppl:  1.09; xent: 0.08; lr: 0.00100; 16799/14516 tok/s;     54 sec
+[2019-01-22 01:35:36,997 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:37,680 INFO] Validation perplexity: 1.19883
+[2019-01-22 01:35:37,680 INFO] Validation accuracy: 96.2586
+[2019-01-22 01:35:39,868 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:41,481 INFO] Step 1300/12500; acc:  98.66; ppl:  1.06; xent: 0.06; lr: 0.00100; 20495/17933 tok/s;     58 sec
+[2019-01-22 01:35:41,487 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:42,176 INFO] Validation perplexity: 1.1714
+[2019-01-22 01:35:42,177 INFO] Validation accuracy: 96.7031
+[2019-01-22 01:35:45,899 INFO] Step 1400/12500; acc:  98.18; ppl:  1.08; xent: 0.08; lr: 0.00100; 23198/19884 tok/s;     62 sec
+[2019-01-22 01:35:45,904 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:46,587 INFO] Validation perplexity: 1.15393
+[2019-01-22 01:35:46,587 INFO] Validation accuracy: 96.8513
+[2019-01-22 01:35:47,195 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:50,449 INFO] Step 1500/12500; acc:  97.81; ppl:  1.10; xent: 0.10; lr: 0.00100; 22802/16282 tok/s;     67 sec
+[2019-01-22 01:35:50,454 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:51,140 INFO] Validation perplexity: 1.15495
+[2019-01-22 01:35:51,140 INFO] Validation accuracy: 96.8235
+[2019-01-22 01:35:53,834 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:35:54,909 INFO] Step 1600/12500; acc:  96.88; ppl:  1.09; xent: 0.09; lr: 0.00100; 21137/19023 tok/s;     71 sec
+[2019-01-22 01:35:54,914 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:35:55,604 INFO] Validation perplexity: 1.14212
+[2019-01-22 01:35:55,604 INFO] Validation accuracy: 96.7679
+[2019-01-22 01:35:59,390 INFO] Step 1700/12500; acc:  98.29; ppl:  1.05; xent: 0.04; lr: 0.00100; 21690/19787 tok/s;     76 sec
+[2019-01-22 01:35:59,395 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:00,078 INFO] Validation perplexity: 1.12695
+[2019-01-22 01:36:00,078 INFO] Validation accuracy: 97.2865
+[2019-01-22 01:36:01,160 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:03,921 INFO] Step 1800/12500; acc:  98.17; ppl:  1.07; xent: 0.07; lr: 0.00100; 23465/21244 tok/s;     80 sec
+[2019-01-22 01:36:03,926 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:04,615 INFO] Validation perplexity: 1.13014
+[2019-01-22 01:36:04,616 INFO] Validation accuracy: 97.4254
+[2019-01-22 01:36:07,796 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:08,389 INFO] Step 1900/12500; acc:  99.22; ppl:  1.04; xent: 0.04; lr: 0.00100; 21670/20003 tok/s;     85 sec
+[2019-01-22 01:36:08,394 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:09,083 INFO] Validation perplexity: 1.12441
+[2019-01-22 01:36:09,084 INFO] Validation accuracy: 97.6385
+[2019-01-22 01:36:12,834 INFO] Step 2000/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 25060/17158 tok/s;     89 sec
+[2019-01-22 01:36:12,839 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:13,524 INFO] Validation perplexity: 1.11553
+[2019-01-22 01:36:13,525 INFO] Validation accuracy: 97.7959
+[2019-01-22 01:36:15,124 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:17,350 INFO] Step 2100/12500; acc:  99.59; ppl:  1.02; xent: 0.02; lr: 0.00100; 27173/17266 tok/s;     94 sec
+[2019-01-22 01:36:17,355 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:18,044 INFO] Validation perplexity: 1.12361
+[2019-01-22 01:36:18,045 INFO] Validation accuracy: 97.7403
+[2019-01-22 01:36:21,757 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:21,866 INFO] Step 2200/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 21698/18647 tok/s;     98 sec
+[2019-01-22 01:36:21,871 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:22,559 INFO] Validation perplexity: 1.1212
+[2019-01-22 01:36:22,560 INFO] Validation accuracy: 97.8515
+[2019-01-22 01:36:26,247 INFO] Step 2300/12500; acc:  98.94; ppl:  1.03; xent: 0.03; lr: 0.00100; 21592/18499 tok/s;    103 sec
+[2019-01-22 01:36:26,253 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:26,937 INFO] Validation perplexity: 1.13117
+[2019-01-22 01:36:26,938 INFO] Validation accuracy: 97.5366
+[2019-01-22 01:36:29,086 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:30,735 INFO] Step 2400/12500; acc: 100.00; ppl:  1.02; xent: 0.02; lr: 0.00100; 26291/17635 tok/s;    107 sec
+[2019-01-22 01:36:30,740 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:31,427 INFO] Validation perplexity: 1.11757
+[2019-01-22 01:36:31,427 INFO] Validation accuracy: 97.8978
+[2019-01-22 01:36:35,182 INFO] Step 2500/12500; acc:  99.02; ppl:  1.06; xent: 0.06; lr: 0.00100; 20732/19514 tok/s;    112 sec
+[2019-01-22 01:36:35,187 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:35,869 INFO] Validation perplexity: 1.11324
+[2019-01-22 01:36:35,869 INFO] Validation accuracy: 97.8422
+[2019-01-22 01:36:36,412 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:39,705 INFO] Step 2600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23150/19843 tok/s;    116 sec
+[2019-01-22 01:36:39,712 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:40,398 INFO] Validation perplexity: 1.12192
+[2019-01-22 01:36:40,399 INFO] Validation accuracy: 97.8515
+[2019-01-22 01:36:43,052 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:44,167 INFO] Step 2700/12500; acc:  99.04; ppl:  1.04; xent: 0.04; lr: 0.00100; 24891/21572 tok/s;    121 sec
+[2019-01-22 01:36:44,172 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:44,859 INFO] Validation perplexity: 1.16488
+[2019-01-22 01:36:44,859 INFO] Validation accuracy: 97.1569
+[2019-01-22 01:36:48,637 INFO] Step 2800/12500; acc:  99.08; ppl:  1.03; xent: 0.03; lr: 0.00100; 24968/17751 tok/s;    125 sec
+[2019-01-22 01:36:48,642 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:49,324 INFO] Validation perplexity: 1.12971
+[2019-01-22 01:36:49,325 INFO] Validation accuracy: 97.8515
+[2019-01-22 01:36:50,378 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:53,174 INFO] Step 2900/12500; acc:  99.09; ppl:  1.03; xent: 0.03; lr: 0.00100; 23022/18318 tok/s;    130 sec
+[2019-01-22 01:36:53,179 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:53,866 INFO] Validation perplexity: 1.14288
+[2019-01-22 01:36:53,866 INFO] Validation accuracy: 97.5551
+[2019-01-22 01:36:57,012 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:36:57,632 INFO] Step 3000/12500; acc:  98.63; ppl:  1.04; xent: 0.04; lr: 0.00100; 22989/18392 tok/s;    134 sec
+[2019-01-22 01:36:57,637 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:36:58,324 INFO] Validation perplexity: 1.15089
+[2019-01-22 01:36:58,325 INFO] Validation accuracy: 97.5736
+[2019-01-22 01:37:02,072 INFO] Step 3100/12500; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 20524/16716 tok/s;    139 sec
+[2019-01-22 01:37:02,078 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:02,761 INFO] Validation perplexity: 1.12859
+[2019-01-22 01:37:02,762 INFO] Validation accuracy: 97.7681
+[2019-01-22 01:37:04,339 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:06,616 INFO] Step 3200/12500; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00100; 23112/18877 tok/s;    143 sec
+[2019-01-22 01:37:06,622 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:07,308 INFO] Validation perplexity: 1.11575
+[2019-01-22 01:37:07,308 INFO] Validation accuracy: 97.9348
+[2019-01-22 01:37:10,979 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:11,127 INFO] Step 3300/12500; acc:  98.92; ppl:  1.03; xent: 0.03; lr: 0.00100; 20153/19219 tok/s;    148 sec
+[2019-01-22 01:37:11,132 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:11,818 INFO] Validation perplexity: 1.13062
+[2019-01-22 01:37:11,819 INFO] Validation accuracy: 97.8237
+[2019-01-22 01:37:15,507 INFO] Step 3400/12500; acc:  99.48; ppl:  1.04; xent: 0.04; lr: 0.00100; 21847/14158 tok/s;    152 sec
+[2019-01-22 01:37:15,512 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:16,194 INFO] Validation perplexity: 1.14944
+[2019-01-22 01:37:16,195 INFO] Validation accuracy: 97.7588
+[2019-01-22 01:37:18,305 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:19,991 INFO] Step 3500/12500; acc:  97.38; ppl:  1.11; xent: 0.10; lr: 0.00100; 24743/20273 tok/s;    157 sec
+[2019-01-22 01:37:19,996 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:20,683 INFO] Validation perplexity: 1.14072
+[2019-01-22 01:37:20,683 INFO] Validation accuracy: 97.8885
+[2019-01-22 01:37:24,433 INFO] Step 3600/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 26480/18914 tok/s;    161 sec
+[2019-01-22 01:37:24,440 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:25,122 INFO] Validation perplexity: 1.13407
+[2019-01-22 01:37:25,123 INFO] Validation accuracy: 97.8422
+[2019-01-22 01:37:25,630 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:28,957 INFO] Step 3700/12500; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00100; 24669/19383 tok/s;    165 sec
+[2019-01-22 01:37:28,963 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:29,649 INFO] Validation perplexity: 1.14659
+[2019-01-22 01:37:29,650 INFO] Validation accuracy: 97.7866
+[2019-01-22 01:37:32,266 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:33,445 INFO] Step 3800/12500; acc:  99.15; ppl:  1.06; xent: 0.06; lr: 0.00100; 21536/20219 tok/s;    170 sec
+[2019-01-22 01:37:33,450 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:34,138 INFO] Validation perplexity: 1.12394
+[2019-01-22 01:37:34,138 INFO] Validation accuracy: 97.9811
+[2019-01-22 01:37:37,893 INFO] Step 3900/12500; acc:  99.54; ppl:  1.02; xent: 0.02; lr: 0.00100; 23174/17993 tok/s;    174 sec
+[2019-01-22 01:37:37,898 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:38,582 INFO] Validation perplexity: 1.1334
+[2019-01-22 01:37:38,583 INFO] Validation accuracy: 97.8422
+[2019-01-22 01:37:39,598 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:42,436 INFO] Step 4000/12500; acc:  99.55; ppl:  1.01; xent: 0.01; lr: 0.00100; 24920/21805 tok/s;    179 sec
+[2019-01-22 01:37:42,442 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:43,129 INFO] Validation perplexity: 1.14805
+[2019-01-22 01:37:43,130 INFO] Validation accuracy: 97.9255
+[2019-01-22 01:37:46,237 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:46,898 INFO] Step 4100/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 24895/21783 tok/s;    183 sec
+[2019-01-22 01:37:46,903 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:47,589 INFO] Validation perplexity: 1.15348
+[2019-01-22 01:37:47,590 INFO] Validation accuracy: 97.8329
+[2019-01-22 01:37:51,329 INFO] Step 4200/12500; acc:  96.84; ppl:  1.16; xent: 0.15; lr: 0.00100; 19529/18369 tok/s;    188 sec
+[2019-01-22 01:37:51,335 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:52,017 INFO] Validation perplexity: 1.13773
+[2019-01-22 01:37:52,018 INFO] Validation accuracy: 98.0089
+[2019-01-22 01:37:53,562 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:37:55,873 INFO] Step 4300/12500; acc:  98.86; ppl:  1.02; xent: 0.02; lr: 0.00100; 21577/19779 tok/s;    192 sec
+[2019-01-22 01:37:55,878 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:37:56,564 INFO] Validation perplexity: 1.14909
+[2019-01-22 01:37:56,565 INFO] Validation accuracy: 97.8422
+[2019-01-22 01:38:00,193 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:00,365 INFO] Step 4400/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 22701/17656 tok/s;    197 sec
+[2019-01-22 01:38:00,370 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:01,057 INFO] Validation perplexity: 1.15547
+[2019-01-22 01:38:01,058 INFO] Validation accuracy: 97.9811
+[2019-01-22 01:38:04,759 INFO] Step 4500/12500; acc:  99.42; ppl:  1.02; xent: 0.02; lr: 0.00100; 24569/18784 tok/s;    201 sec
+[2019-01-22 01:38:04,764 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:05,446 INFO] Validation perplexity: 1.14462
+[2019-01-22 01:38:05,447 INFO] Validation accuracy: 98.0182
+[2019-01-22 01:38:07,521 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:09,245 INFO] Step 4600/12500; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 26328/19280 tok/s;    206 sec
+[2019-01-22 01:38:09,251 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:09,943 INFO] Validation perplexity: 1.14137
+[2019-01-22 01:38:09,944 INFO] Validation accuracy: 97.9718
+[2019-01-22 01:38:13,697 INFO] Step 4700/12500; acc:  99.88; ppl:  1.01; xent: 0.01; lr: 0.00100; 24873/21556 tok/s;    210 sec
+[2019-01-22 01:38:13,702 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:14,386 INFO] Validation perplexity: 1.14709
+[2019-01-22 01:38:14,387 INFO] Validation accuracy: 97.9718
+[2019-01-22 01:38:14,855 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:18,220 INFO] Step 4800/12500; acc:  99.49; ppl:  1.06; xent: 0.06; lr: 0.00100; 26313/19966 tok/s;    215 sec
+[2019-01-22 01:38:18,225 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:18,913 INFO] Validation perplexity: 1.14819
+[2019-01-22 01:38:18,914 INFO] Validation accuracy: 98.0182
+[2019-01-22 01:38:21,489 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:22,692 INFO] Step 4900/12500; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 20340/16447 tok/s;    219 sec
+[2019-01-22 01:38:22,698 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:23,388 INFO] Validation perplexity: 1.17647
+[2019-01-22 01:38:23,389 INFO] Validation accuracy: 97.8885
+[2019-01-22 01:38:27,152 INFO] Step 5000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24651/18540 tok/s;    224 sec
+[2019-01-22 01:38:27,157 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:27,842 INFO] Validation perplexity: 1.1613
+[2019-01-22 01:38:27,843 INFO] Validation accuracy: 97.8792
+[2019-01-22 01:38:28,819 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:31,686 INFO] Step 5100/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 23067/17398 tok/s;    228 sec
+[2019-01-22 01:38:31,691 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:32,383 INFO] Validation perplexity: 1.15375
+[2019-01-22 01:38:32,384 INFO] Validation accuracy: 97.9441
+[2019-01-22 01:38:35,459 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:36,147 INFO] Step 5200/12500; acc:  99.74; ppl:  1.02; xent: 0.02; lr: 0.00100; 27352/15230 tok/s;    233 sec
+[2019-01-22 01:38:36,152 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:36,840 INFO] Validation perplexity: 1.16042
+[2019-01-22 01:38:36,840 INFO] Validation accuracy: 97.9811
+[2019-01-22 01:38:40,599 INFO] Step 5300/12500; acc:  99.39; ppl:  1.03; xent: 0.03; lr: 0.00100; 20675/20501 tok/s;    237 sec
+[2019-01-22 01:38:40,603 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:41,286 INFO] Validation perplexity: 1.1546
+[2019-01-22 01:38:41,287 INFO] Validation accuracy: 98.0274
+[2019-01-22 01:38:42,791 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:45,142 INFO] Step 5400/12500; acc:  99.37; ppl:  1.01; xent: 0.01; lr: 0.00100; 23352/20745 tok/s;    242 sec
+[2019-01-22 01:38:45,148 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:45,837 INFO] Validation perplexity: 1.15926
+[2019-01-22 01:38:45,838 INFO] Validation accuracy: 98.0089
+[2019-01-22 01:38:49,430 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:49,631 INFO] Step 5500/12500; acc:  99.61; ppl:  1.02; xent: 0.02; lr: 0.00100; 28963/17823 tok/s;    246 sec
+[2019-01-22 01:38:49,636 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:50,322 INFO] Validation perplexity: 1.13427
+[2019-01-22 01:38:50,323 INFO] Validation accuracy: 98.1293
+[2019-01-22 01:38:54,035 INFO] Step 5600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26341/20450 tok/s;    251 sec
+[2019-01-22 01:38:54,041 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:54,723 INFO] Validation perplexity: 1.14493
+[2019-01-22 01:38:54,724 INFO] Validation accuracy: 98.1663
+[2019-01-22 01:38:56,755 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:38:58,592 INFO] Step 5700/12500; acc:  94.11; ppl:  1.55; xent: 0.44; lr: 0.00100; 14977/14035 tok/s;    255 sec
+[2019-01-22 01:38:58,600 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:38:59,289 INFO] Validation perplexity: 1.15502
+[2019-01-22 01:38:59,290 INFO] Validation accuracy: 97.9811
+[2019-01-22 01:39:02,958 INFO] Step 5800/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 22999/18817 tok/s;    259 sec
+[2019-01-22 01:39:02,963 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:03,646 INFO] Validation perplexity: 1.16199
+[2019-01-22 01:39:03,647 INFO] Validation accuracy: 98.1015
+[2019-01-22 01:39:04,456 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:07,868 INFO] Step 5900/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 25890/20429 tok/s;    264 sec
+[2019-01-22 01:39:07,874 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:08,561 INFO] Validation perplexity: 1.15557
+[2019-01-22 01:39:08,561 INFO] Validation accuracy: 98.0922
+[2019-01-22 01:39:11,095 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:12,349 INFO] Step 6000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21868/17384 tok/s;    269 sec
+[2019-01-22 01:39:12,354 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:13,041 INFO] Validation perplexity: 1.15369
+[2019-01-22 01:39:13,042 INFO] Validation accuracy: 97.9441
+[2019-01-22 01:39:16,794 INFO] Step 6100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26186/18931 tok/s;    273 sec
+[2019-01-22 01:39:16,799 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:17,482 INFO] Validation perplexity: 1.15354
+[2019-01-22 01:39:17,482 INFO] Validation accuracy: 98.0182
+[2019-01-22 01:39:18,421 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:21,319 INFO] Step 6200/12500; acc:  99.80; ppl:  1.00; xent: 0.00; lr: 0.00100; 27180/18120 tok/s;    278 sec
+[2019-01-22 01:39:21,325 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:22,011 INFO] Validation perplexity: 1.14838
+[2019-01-22 01:39:22,012 INFO] Validation accuracy: 98.0922
+[2019-01-22 01:39:25,059 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:25,782 INFO] Step 6300/12500; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00100; 24850/19115 tok/s;    282 sec
+[2019-01-22 01:39:25,787 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:26,475 INFO] Validation perplexity: 1.16046
+[2019-01-22 01:39:26,476 INFO] Validation accuracy: 98.1108
+[2019-01-22 01:39:30,230 INFO] Step 6400/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 19049/13718 tok/s;    287 sec
+[2019-01-22 01:39:30,235 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:30,918 INFO] Validation perplexity: 1.15048
+[2019-01-22 01:39:30,919 INFO] Validation accuracy: 98.2404
+[2019-01-22 01:39:32,387 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:34,778 INFO] Step 6500/12500; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 24792/20221 tok/s;    291 sec
+[2019-01-22 01:39:34,784 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:35,472 INFO] Validation perplexity: 1.16179
+[2019-01-22 01:39:35,473 INFO] Validation accuracy: 98.1478
+[2019-01-22 01:39:39,028 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:39,277 INFO] Step 6600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21760/17248 tok/s;    296 sec
+[2019-01-22 01:39:39,283 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:39,970 INFO] Validation perplexity: 1.15991
+[2019-01-22 01:39:39,971 INFO] Validation accuracy: 98.2775
+[2019-01-22 01:39:43,679 INFO] Step 6700/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 22262/20267 tok/s;    300 sec
+[2019-01-22 01:39:43,687 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:44,369 INFO] Validation perplexity: 1.15041
+[2019-01-22 01:39:44,370 INFO] Validation accuracy: 98.3052
+[2019-01-22 01:39:46,361 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:48,222 INFO] Step 6800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27051/17215 tok/s;    305 sec
+[2019-01-22 01:39:48,228 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:48,915 INFO] Validation perplexity: 1.14932
+[2019-01-22 01:39:48,916 INFO] Validation accuracy: 98.2034
+[2019-01-22 01:39:52,607 INFO] Step 6900/12500; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 20824/18148 tok/s;    309 sec
+[2019-01-22 01:39:52,612 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:53,298 INFO] Validation perplexity: 1.1544
+[2019-01-22 01:39:53,299 INFO] Validation accuracy: 98.1293
+[2019-01-22 01:39:53,700 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:39:57,148 INFO] Step 7000/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 24855/21541 tok/s;    314 sec
+[2019-01-22 01:39:57,153 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:39:57,841 INFO] Validation perplexity: 1.15619
+[2019-01-22 01:39:57,841 INFO] Validation accuracy: 98.1108
+[2019-01-22 01:40:00,337 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:01,622 INFO] Step 7100/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 21450/19500 tok/s;    318 sec
+[2019-01-22 01:40:01,627 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:02,316 INFO] Validation perplexity: 1.14604
+[2019-01-22 01:40:02,317 INFO] Validation accuracy: 98.2682
+[2019-01-22 01:40:06,060 INFO] Step 7200/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 18281/14007 tok/s;    323 sec
+[2019-01-22 01:40:06,065 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:06,755 INFO] Validation perplexity: 1.17521
+[2019-01-22 01:40:06,755 INFO] Validation accuracy: 98.1015
+[2019-01-22 01:40:07,672 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:10,597 INFO] Step 7300/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 20792/18409 tok/s;    327 sec
+[2019-01-22 01:40:10,603 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:11,291 INFO] Validation perplexity: 1.15802
+[2019-01-22 01:40:11,292 INFO] Validation accuracy: 98.1293
+[2019-01-22 01:40:14,312 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:15,067 INFO] Step 7400/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 24903/17450 tok/s;    332 sec
+[2019-01-22 01:40:15,072 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:15,761 INFO] Validation perplexity: 1.17222
+[2019-01-22 01:40:15,761 INFO] Validation accuracy: 97.9811
+[2019-01-22 01:40:19,517 INFO] Step 7500/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 24624/17166 tok/s;    336 sec
+[2019-01-22 01:40:19,522 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:20,215 INFO] Validation perplexity: 1.18028
+[2019-01-22 01:40:20,216 INFO] Validation accuracy: 98.1571
+[2019-01-22 01:40:21,651 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:24,079 INFO] Step 7600/12500; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 26129/19161 tok/s;    341 sec
+[2019-01-22 01:40:24,084 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:24,771 INFO] Validation perplexity: 1.16569
+[2019-01-22 01:40:24,772 INFO] Validation accuracy: 98.1478
+[2019-01-22 01:40:28,291 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:28,572 INFO] Step 7700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23304/19420 tok/s;    345 sec
+[2019-01-22 01:40:28,577 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:29,264 INFO] Validation perplexity: 1.15664
+[2019-01-22 01:40:29,264 INFO] Validation accuracy: 98.2867
+[2019-01-22 01:40:32,967 INFO] Step 7800/12500; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 23149/17921 tok/s;    350 sec
+[2019-01-22 01:40:32,972 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:33,659 INFO] Validation perplexity: 1.1729
+[2019-01-22 01:40:33,660 INFO] Validation accuracy: 98.1848
+[2019-01-22 01:40:35,621 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:37,528 INFO] Step 7900/12500; acc:  99.45; ppl:  1.02; xent: 0.02; lr: 0.00100; 20895/21058 tok/s;    354 sec
+[2019-01-22 01:40:37,534 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:38,224 INFO] Validation perplexity: 1.1671
+[2019-01-22 01:40:38,225 INFO] Validation accuracy: 98.1941
+[2019-01-22 01:40:41,918 INFO] Step 8000/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 18962/17646 tok/s;    358 sec
+[2019-01-22 01:40:41,923 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:42,606 INFO] Validation perplexity: 1.15798
+[2019-01-22 01:40:42,606 INFO] Validation accuracy: 98.1571
+[2019-01-22 01:40:42,971 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:46,453 INFO] Step 8100/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 23156/19297 tok/s;    363 sec
+[2019-01-22 01:40:46,460 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:47,155 INFO] Validation perplexity: 1.17409
+[2019-01-22 01:40:47,155 INFO] Validation accuracy: 98.12
+[2019-01-22 01:40:49,616 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:50,961 INFO] Step 8200/12500; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 22152/19190 tok/s;    367 sec
+[2019-01-22 01:40:50,967 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:51,653 INFO] Validation perplexity: 1.17477
+[2019-01-22 01:40:51,654 INFO] Validation accuracy: 98.12
+[2019-01-22 01:40:55,376 INFO] Step 8300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26631/16964 tok/s;    372 sec
+[2019-01-22 01:40:55,381 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:40:56,064 INFO] Validation perplexity: 1.15761
+[2019-01-22 01:40:56,064 INFO] Validation accuracy: 98.2034
+[2019-01-22 01:40:56,949 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:40:59,899 INFO] Step 8400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22865/17784 tok/s;    376 sec
+[2019-01-22 01:40:59,907 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:00,593 INFO] Validation perplexity: 1.16811
+[2019-01-22 01:41:00,594 INFO] Validation accuracy: 98.0922
+[2019-01-22 01:41:03,589 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:04,381 INFO] Step 8500/12500; acc:  99.35; ppl:  1.02; xent: 0.02; lr: 0.00100; 20223/20223 tok/s;    381 sec
+[2019-01-22 01:41:04,386 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:05,074 INFO] Validation perplexity: 1.16518
+[2019-01-22 01:41:05,075 INFO] Validation accuracy: 98.2497
+[2019-01-22 01:41:08,829 INFO] Step 8600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23308/19424 tok/s;    385 sec
+[2019-01-22 01:41:08,834 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:09,517 INFO] Validation perplexity: 1.16345
+[2019-01-22 01:41:09,518 INFO] Validation accuracy: 98.2497
+[2019-01-22 01:41:10,918 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:13,378 INFO] Step 8700/12500; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00100; 17909/15221 tok/s;    390 sec
+[2019-01-22 01:41:13,384 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:14,071 INFO] Validation perplexity: 1.15327
+[2019-01-22 01:41:14,072 INFO] Validation accuracy: 98.3979
+[2019-01-22 01:41:17,560 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:17,879 INFO] Step 8800/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 23204/19242 tok/s;    394 sec
+[2019-01-22 01:41:17,884 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:18,571 INFO] Validation perplexity: 1.17233
+[2019-01-22 01:41:18,571 INFO] Validation accuracy: 98.2219
+[2019-01-22 01:41:22,266 INFO] Step 8900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22899/17810 tok/s;    399 sec
+[2019-01-22 01:41:22,271 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:22,954 INFO] Validation perplexity: 1.15869
+[2019-01-22 01:41:22,955 INFO] Validation accuracy: 98.1756
+[2019-01-22 01:41:24,891 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:26,828 INFO] Step 9000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23003/18821 tok/s;    403 sec
+[2019-01-22 01:41:26,833 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:27,519 INFO] Validation perplexity: 1.16416
+[2019-01-22 01:41:27,520 INFO] Validation accuracy: 98.12
+[2019-01-22 01:41:31,191 INFO] Step 9100/12500; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 18974/15485 tok/s;    408 sec
+[2019-01-22 01:41:31,196 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:31,879 INFO] Validation perplexity: 1.15094
+[2019-01-22 01:41:31,880 INFO] Validation accuracy: 98.3608
+[2019-01-22 01:41:32,218 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:35,734 INFO] Step 9200/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 23270/19362 tok/s;    412 sec
+[2019-01-22 01:41:35,739 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:36,428 INFO] Validation perplexity: 1.166
+[2019-01-22 01:41:36,429 INFO] Validation accuracy: 98.12
+[2019-01-22 01:41:38,862 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:40,235 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21002/17753 tok/s;    417 sec
+[2019-01-22 01:41:40,243 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:40,929 INFO] Validation perplexity: 1.15464
+[2019-01-22 01:41:40,930 INFO] Validation accuracy: 98.2867
+[2019-01-22 01:41:44,651 INFO] Step 9400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19105/12334 tok/s;    421 sec
+[2019-01-22 01:41:44,656 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:45,337 INFO] Validation perplexity: 1.16874
+[2019-01-22 01:41:45,337 INFO] Validation accuracy: 98.1108
+[2019-01-22 01:41:46,195 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:49,176 INFO] Step 9500/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 25294/18971 tok/s;    426 sec
+[2019-01-22 01:41:49,182 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:49,866 INFO] Validation perplexity: 1.16321
+[2019-01-22 01:41:49,866 INFO] Validation accuracy: 98.1663
+[2019-01-22 01:41:52,825 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:41:53,653 INFO] Step 9600/12500; acc:  99.72; ppl:  1.02; xent: 0.02; lr: 0.00100; 19915/19915 tok/s;    430 sec
+[2019-01-22 01:41:53,658 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:54,343 INFO] Validation perplexity: 1.15306
+[2019-01-22 01:41:54,344 INFO] Validation accuracy: 98.2775
+[2019-01-22 01:41:58,090 INFO] Step 9700/12500; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 24828/20276 tok/s;    435 sec
+[2019-01-22 01:41:58,095 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:41:58,774 INFO] Validation perplexity: 1.14647
+[2019-01-22 01:41:58,775 INFO] Validation accuracy: 98.3793
+[2019-01-22 01:42:00,133 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:02,620 INFO] Step 9800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23318/19731 tok/s;    439 sec
+[2019-01-22 01:42:02,625 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:03,310 INFO] Validation perplexity: 1.14793
+[2019-01-22 01:42:03,311 INFO] Validation accuracy: 98.3238
+[2019-01-22 01:42:06,754 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:07,096 INFO] Step 9900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27921/15618 tok/s;    444 sec
+[2019-01-22 01:42:07,101 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:07,785 INFO] Validation perplexity: 1.15879
+[2019-01-22 01:42:07,786 INFO] Validation accuracy: 98.2867
+[2019-01-22 01:42:11,503 INFO] Step 10000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22397/19129 tok/s;    448 sec
+[2019-01-22 01:42:11,508 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:12,188 INFO] Validation perplexity: 1.16695
+[2019-01-22 01:42:12,189 INFO] Validation accuracy: 98.1478
+[2019-01-22 01:42:14,065 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:16,040 INFO] Step 10100/12500; acc:  99.68; ppl:  1.02; xent: 0.02; lr: 0.00100; 22248/21529 tok/s;    453 sec
+[2019-01-22 01:42:16,045 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:16,729 INFO] Validation perplexity: 1.14849
+[2019-01-22 01:42:16,730 INFO] Validation accuracy: 98.3238
+[2019-01-22 01:42:20,378 INFO] Step 10200/12500; acc:  99.61; ppl:  1.03; xent: 0.03; lr: 0.00100; 23078/18318 tok/s;    457 sec
+[2019-01-22 01:42:20,384 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:21,064 INFO] Validation perplexity: 1.17019
+[2019-01-22 01:42:21,065 INFO] Validation accuracy: 98.2682
+[2019-01-22 01:42:21,374 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:24,924 INFO] Step 10300/12500; acc:  99.86; ppl:  1.02; xent: 0.02; lr: 0.00100; 23248/19672 tok/s;    461 sec
+[2019-01-22 01:42:24,930 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:25,614 INFO] Validation perplexity: 1.15405
+[2019-01-22 01:42:25,615 INFO] Validation accuracy: 98.2312
+[2019-01-22 01:42:28,000 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:29,404 INFO] Step 10400/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 17337/17068 tok/s;    466 sec
+[2019-01-22 01:42:29,411 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:30,095 INFO] Validation perplexity: 1.14408
+[2019-01-22 01:42:30,095 INFO] Validation accuracy: 98.3793
+[2019-01-22 01:42:33,812 INFO] Step 10500/12500; acc:  99.23; ppl:  1.02; xent: 0.02; lr: 0.00100; 19925/18283 tok/s;    470 sec
+[2019-01-22 01:42:33,816 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:34,497 INFO] Validation perplexity: 1.15405
+[2019-01-22 01:42:34,498 INFO] Validation accuracy: 98.3145
+[2019-01-22 01:42:35,309 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:38,329 INFO] Step 10600/12500; acc:  99.79; ppl:  1.00; xent: 0.00; lr: 0.00100; 22363/21009 tok/s;    475 sec
+[2019-01-22 01:42:38,334 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:39,020 INFO] Validation perplexity: 1.17704
+[2019-01-22 01:42:39,021 INFO] Validation accuracy: 98.1756
+[2019-01-22 01:42:41,961 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:42,821 INFO] Step 10700/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 25156/18117 tok/s;    479 sec
+[2019-01-22 01:42:42,826 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:43,521 INFO] Validation perplexity: 1.17308
+[2019-01-22 01:42:43,522 INFO] Validation accuracy: 98.1848
+[2019-01-22 01:42:47,289 INFO] Step 10800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23157/19594 tok/s;    484 sec
+[2019-01-22 01:42:47,293 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:47,975 INFO] Validation perplexity: 1.17698
+[2019-01-22 01:42:47,976 INFO] Validation accuracy: 98.1571
+[2019-01-22 01:42:49,303 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:51,835 INFO] Step 10900/12500; acc:  99.48; ppl:  1.01; xent: 0.01; lr: 0.00100; 22889/19619 tok/s;    488 sec
+[2019-01-22 01:42:51,840 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:52,528 INFO] Validation perplexity: 1.16777
+[2019-01-22 01:42:52,529 INFO] Validation accuracy: 98.1293
+[2019-01-22 01:42:55,942 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:42:56,323 INFO] Step 11000/12500; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 21916/20889 tok/s;    493 sec
+[2019-01-22 01:42:56,328 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:42:57,014 INFO] Validation perplexity: 1.14836
+[2019-01-22 01:42:57,015 INFO] Validation accuracy: 98.296
+[2019-01-22 01:43:00,739 INFO] Step 11100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23047/19472 tok/s;    497 sec
+[2019-01-22 01:43:00,743 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:01,426 INFO] Validation perplexity: 1.15631
+[2019-01-22 01:43:01,427 INFO] Validation accuracy: 98.3793
+[2019-01-22 01:43:03,267 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:05,283 INFO] Step 11200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21376/19038 tok/s;    502 sec
+[2019-01-22 01:43:05,303 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:05,990 INFO] Validation perplexity: 1.15622
+[2019-01-22 01:43:05,991 INFO] Validation accuracy: 98.3145
+[2019-01-22 01:43:09,660 INFO] Step 11300/12500; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00100; 23500/21102 tok/s;    506 sec
+[2019-01-22 01:43:09,665 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:10,348 INFO] Validation perplexity: 1.17235
+[2019-01-22 01:43:10,349 INFO] Validation accuracy: 98.1941
+[2019-01-22 01:43:10,612 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:14,194 INFO] Step 11400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23069/18874 tok/s;    511 sec
+[2019-01-22 01:43:14,201 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:14,890 INFO] Validation perplexity: 1.18146
+[2019-01-22 01:43:14,891 INFO] Validation accuracy: 98.2219
+[2019-01-22 01:43:17,250 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:18,679 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20075/16221 tok/s;    515 sec
+[2019-01-22 01:43:18,685 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:19,372 INFO] Validation perplexity: 1.15728
+[2019-01-22 01:43:19,373 INFO] Validation accuracy: 98.296
+[2019-01-22 01:43:23,103 INFO] Step 11600/12500; acc:  99.79; ppl:  1.00; xent: 0.00; lr: 0.00100; 20780/17316 tok/s;    520 sec
+[2019-01-22 01:43:23,108 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:23,793 INFO] Validation perplexity: 1.17375
+[2019-01-22 01:43:23,794 INFO] Validation accuracy: 98.2312
+[2019-01-22 01:43:24,582 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:27,644 INFO] Step 11700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20283/18936 tok/s;    524 sec
+[2019-01-22 01:43:27,649 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:28,337 INFO] Validation perplexity: 1.1805
+[2019-01-22 01:43:28,338 INFO] Validation accuracy: 98.2126
+[2019-01-22 01:43:31,219 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:32,116 INFO] Step 11800/12500; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 23511/21943 tok/s;    529 sec
+[2019-01-22 01:43:32,121 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:32,818 INFO] Validation perplexity: 1.17158
+[2019-01-22 01:43:32,819 INFO] Validation accuracy: 98.2775
+[2019-01-22 01:43:36,577 INFO] Step 11900/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 19972/19687 tok/s;    533 sec
+[2019-01-22 01:43:36,582 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:37,267 INFO] Validation perplexity: 1.18721
+[2019-01-22 01:43:37,268 INFO] Validation accuracy: 98.2219
+[2019-01-22 01:43:38,559 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:41,118 INFO] Step 12000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23207/18565 tok/s;    538 sec
+[2019-01-22 01:43:41,123 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:41,810 INFO] Validation perplexity: 1.15913
+[2019-01-22 01:43:41,811 INFO] Validation accuracy: 98.2589
+[2019-01-22 01:43:45,196 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:45,607 INFO] Step 12100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24906/17902 tok/s;    542 sec
+[2019-01-22 01:43:45,612 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:46,299 INFO] Validation perplexity: 1.17731
+[2019-01-22 01:43:46,300 INFO] Validation accuracy: 98.2589
+[2019-01-22 01:43:50,037 INFO] Step 12200/12500; acc:  99.88; ppl:  1.01; xent: 0.01; lr: 0.00100; 21789/17535 tok/s;    547 sec
+[2019-01-22 01:43:50,042 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:50,724 INFO] Validation perplexity: 1.1639
+[2019-01-22 01:43:50,725 INFO] Validation accuracy: 98.2497
+[2019-01-22 01:43:52,549 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:43:54,609 INFO] Step 12300/12500; acc:  99.47; ppl:  1.01; xent: 0.01; lr: 0.00100; 17715/13584 tok/s;    551 sec
+[2019-01-22 01:43:54,615 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:55,365 INFO] Validation perplexity: 1.17992
+[2019-01-22 01:43:55,366 INFO] Validation accuracy: 98.2497
+[2019-01-22 01:43:59,036 INFO] Step 12400/12500; acc:  99.26; ppl:  1.07; xent: 0.07; lr: 0.00100; 23220/20966 tok/s;    556 sec
+[2019-01-22 01:43:59,041 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:43:59,724 INFO] Validation perplexity: 1.18076
+[2019-01-22 01:43:59,724 INFO] Validation accuracy: 98.1108
+[2019-01-22 01:43:59,953 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000
+[2019-01-22 01:44:03,564 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19186/17621 tok/s;    560 sec
+[2019-01-22 01:44:03,569 INFO] Loading valid dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.valid.0.pt, number of examples: 1000
+[2019-01-22 01:44:04,255 INFO] Validation perplexity: 1.16117
+[2019-01-22 01:44:04,256 INFO] Validation accuracy: 98.2775
+[2019-01-22 01:44:04,257 INFO] Saving checkpoint ../models/german_models/model-german-high-res6_step_12500.pt
+[2019-01-22 01:44:04,351 INFO] Loading train dataset from ../german-train-high-10000to10000/data_german_resample10000_s6.train.0.pt, number of examples: 10000

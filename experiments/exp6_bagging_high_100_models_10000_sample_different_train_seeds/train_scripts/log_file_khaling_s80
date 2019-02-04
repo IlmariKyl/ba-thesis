@@ -1,0 +1,626 @@
+[2019-01-22 04:43:41,079 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:43:41,105 INFO]  * vocabulary size. source = 54; target = 36
+[2019-01-22 04:43:41,105 INFO] Building model...
+[2019-01-22 04:43:44,468 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(54, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(36, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=36, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 04:43:44,471 INFO] encoder: 307800
+[2019-01-22 04:43:44,472 INFO] decoder: 1126836
+[2019-01-22 04:43:44,472 INFO] * number of parameters: 1434636
+[2019-01-22 04:43:44,473 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 04:43:44,474 INFO] Start training...
+[2019-01-22 04:43:44,542 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:43:48,193 INFO] Step 100/12500; acc:  33.88; ppl: 10.77; xent: 2.38; lr: 0.00100; 32529/15629 tok/s;      4 sec
+[2019-01-22 04:43:48,225 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:43:48,700 INFO] Validation perplexity: 6.20342
+[2019-01-22 04:43:48,701 INFO] Validation accuracy: 42.5953
+[2019-01-22 04:43:50,621 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:43:51,976 INFO] Step 200/12500; acc:  83.01; ppl:  1.83; xent: 0.60; lr: 0.00100; 27026/18017 tok/s;      7 sec
+[2019-01-22 04:43:51,983 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:43:52,456 INFO] Validation perplexity: 1.92733
+[2019-01-22 04:43:52,457 INFO] Validation accuracy: 77.5554
+[2019-01-22 04:43:55,656 INFO] Step 300/12500; acc:  86.28; ppl:  1.42; xent: 0.35; lr: 0.00100; 22995/18814 tok/s;     11 sec
+[2019-01-22 04:43:55,662 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:43:56,131 INFO] Validation perplexity: 1.43752
+[2019-01-22 04:43:56,132 INFO] Validation accuracy: 88.2042
+[2019-01-22 04:43:56,670 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:43:59,399 INFO] Step 400/12500; acc:  86.91; ppl:  1.45; xent: 0.37; lr: 0.00100; 24950/18145 tok/s;     15 sec
+[2019-01-22 04:43:59,406 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:43:59,879 INFO] Validation perplexity: 1.21614
+[2019-01-22 04:43:59,880 INFO] Validation accuracy: 93.7479
+[2019-01-22 04:44:02,234 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:03,163 INFO] Step 500/12500; acc:  98.44; ppl:  1.06; xent: 0.06; lr: 0.00100; 29575/17252 tok/s;     19 sec
+[2019-01-22 04:44:03,170 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:03,644 INFO] Validation perplexity: 1.15634
+[2019-01-22 04:44:03,644 INFO] Validation accuracy: 95.7944
+[2019-01-22 04:44:06,836 INFO] Step 600/12500; acc:  95.18; ppl:  1.21; xent: 0.19; lr: 0.00100; 22826/17476 tok/s;     22 sec
+[2019-01-22 04:44:06,842 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:07,311 INFO] Validation perplexity: 1.09391
+[2019-01-22 04:44:07,312 INFO] Validation accuracy: 97.4474
+[2019-01-22 04:44:08,273 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:10,548 INFO] Step 700/12500; acc:  97.47; ppl:  1.08; xent: 0.07; lr: 0.00100; 20045/19575 tok/s;     26 sec
+[2019-01-22 04:44:10,555 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:11,028 INFO] Validation perplexity: 1.0736
+[2019-01-22 04:44:11,029 INFO] Validation accuracy: 97.9647
+[2019-01-22 04:44:13,831 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:14,327 INFO] Step 800/12500; acc:  99.15; ppl:  1.04; xent: 0.04; lr: 0.00100; 21595/19795 tok/s;     30 sec
+[2019-01-22 04:44:14,333 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:14,809 INFO] Validation perplexity: 1.05955
+[2019-01-22 04:44:14,809 INFO] Validation accuracy: 98.4032
+[2019-01-22 04:44:17,984 INFO] Step 900/12500; acc:  98.51; ppl:  1.06; xent: 0.06; lr: 0.00100; 25104/16760 tok/s;     33 sec
+[2019-01-22 04:44:17,990 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:18,462 INFO] Validation perplexity: 1.05127
+[2019-01-22 04:44:18,463 INFO] Validation accuracy: 98.6731
+[2019-01-22 04:44:19,866 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:21,704 INFO] Step 1000/12500; acc:  99.05; ppl:  1.02; xent: 0.02; lr: 0.00100; 19037/18127 tok/s;     37 sec
+[2019-01-22 04:44:21,710 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:22,184 INFO] Validation perplexity: 1.03205
+[2019-01-22 04:44:22,185 INFO] Validation accuracy: 99.0329
+[2019-01-22 04:44:25,422 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:25,480 INFO] Step 1100/12500; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00100; 6293/4605 tok/s;     41 sec
+[2019-01-22 04:44:25,486 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:25,961 INFO] Validation perplexity: 1.03329
+[2019-01-22 04:44:25,961 INFO] Validation accuracy: 99.3253
+[2019-01-22 04:44:29,119 INFO] Step 1200/12500; acc:  99.84; ppl:  1.02; xent: 0.02; lr: 0.00100; 20176/15520 tok/s;     45 sec
+[2019-01-22 04:44:29,125 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:29,594 INFO] Validation perplexity: 1.02216
+[2019-01-22 04:44:29,595 INFO] Validation accuracy: 99.4153
+[2019-01-22 04:44:31,460 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:32,846 INFO] Step 1300/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 26389/18269 tok/s;     48 sec
+[2019-01-22 04:44:32,852 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:33,327 INFO] Validation perplexity: 1.02965
+[2019-01-22 04:44:33,328 INFO] Validation accuracy: 99.1904
+[2019-01-22 04:44:36,519 INFO] Step 1400/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 23202/19335 tok/s;     52 sec
+[2019-01-22 04:44:36,525 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:36,994 INFO] Validation perplexity: 1.01234
+[2019-01-22 04:44:36,995 INFO] Validation accuracy: 99.6627
+[2019-01-22 04:44:37,496 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:40,254 INFO] Step 1500/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 23166/19305 tok/s;     56 sec
+[2019-01-22 04:44:40,260 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:40,734 INFO] Validation perplexity: 1.01456
+[2019-01-22 04:44:40,734 INFO] Validation accuracy: 99.5727
+[2019-01-22 04:44:43,051 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:44,016 INFO] Step 1600/12500; acc:  97.85; ppl:  1.17; xent: 0.16; lr: 0.00100; 15475/15869 tok/s;     59 sec
+[2019-01-22 04:44:44,022 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:44,496 INFO] Validation perplexity: 1.01505
+[2019-01-22 04:44:44,497 INFO] Validation accuracy: 99.5615
+[2019-01-22 04:44:47,678 INFO] Step 1700/12500; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 27309/18206 tok/s;     63 sec
+[2019-01-22 04:44:47,684 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:48,154 INFO] Validation perplexity: 1.01289
+[2019-01-22 04:44:48,155 INFO] Validation accuracy: 99.5615
+[2019-01-22 04:44:49,085 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:51,394 INFO] Step 1800/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 21641/19838 tok/s;     67 sec
+[2019-01-22 04:44:51,400 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:51,874 INFO] Validation perplexity: 1.01033
+[2019-01-22 04:44:51,875 INFO] Validation accuracy: 99.7076
+[2019-01-22 04:44:54,641 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:44:55,177 INFO] Step 1900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18658/19056 tok/s;     71 sec
+[2019-01-22 04:44:55,183 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:55,657 INFO] Validation perplexity: 1.00825
+[2019-01-22 04:44:55,658 INFO] Validation accuracy: 99.7751
+[2019-01-22 04:44:58,834 INFO] Step 2000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21533/19738 tok/s;     74 sec
+[2019-01-22 04:44:58,840 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:44:59,310 INFO] Validation perplexity: 1.00701
+[2019-01-22 04:44:59,310 INFO] Validation accuracy: 99.7751
+[2019-01-22 04:45:00,677 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:02,539 INFO] Step 2100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 31768/17106 tok/s;     78 sec
+[2019-01-22 04:45:02,545 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:03,021 INFO] Validation perplexity: 1.00657
+[2019-01-22 04:45:03,021 INFO] Validation accuracy: 99.8201
+[2019-01-22 04:45:06,232 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:06,327 INFO] Step 2200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23060/18321 tok/s;     82 sec
+[2019-01-22 04:45:06,333 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:06,817 INFO] Validation perplexity: 1.01314
+[2019-01-22 04:45:06,818 INFO] Validation accuracy: 99.6851
+[2019-01-22 04:45:09,975 INFO] Step 2300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23103/18385 tok/s;     85 sec
+[2019-01-22 04:45:09,981 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:10,451 INFO] Validation perplexity: 1.00931
+[2019-01-22 04:45:10,452 INFO] Validation accuracy: 99.7751
+[2019-01-22 04:45:12,280 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:13,701 INFO] Step 2400/12500; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 21959/20983 tok/s;     89 sec
+[2019-01-22 04:45:13,707 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:14,181 INFO] Validation perplexity: 1.02673
+[2019-01-22 04:45:14,182 INFO] Validation accuracy: 99.4715
+[2019-01-22 04:45:17,377 INFO] Step 2500/12500; acc:  99.83; ppl:  1.02; xent: 0.02; lr: 0.00100; 19213/15124 tok/s;     93 sec
+[2019-01-22 04:45:17,383 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:17,853 INFO] Validation perplexity: 1.01304
+[2019-01-22 04:45:17,853 INFO] Validation accuracy: 99.5727
+[2019-01-22 04:45:18,318 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:21,112 INFO] Step 2600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26875/18606 tok/s;     97 sec
+[2019-01-22 04:45:21,118 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:21,592 INFO] Validation perplexity: 1.00675
+[2019-01-22 04:45:21,592 INFO] Validation accuracy: 99.8088
+[2019-01-22 04:45:23,881 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:24,876 INFO] Step 2700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28846/17751 tok/s;    100 sec
+[2019-01-22 04:45:24,882 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:25,356 INFO] Validation perplexity: 1.00461
+[2019-01-22 04:45:25,357 INFO] Validation accuracy: 99.8538
+[2019-01-22 04:45:28,543 INFO] Step 2800/12500; acc:  99.84; ppl:  1.02; xent: 0.02; lr: 0.00100; 18387/17668 tok/s;    104 sec
+[2019-01-22 04:45:28,549 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:29,017 INFO] Validation perplexity: 1.00759
+[2019-01-22 04:45:29,018 INFO] Validation accuracy: 99.8201
+[2019-01-22 04:45:29,915 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:32,257 INFO] Step 2900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23183/19319 tok/s;    108 sec
+[2019-01-22 04:45:32,263 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:32,736 INFO] Validation perplexity: 1.00618
+[2019-01-22 04:45:32,737 INFO] Validation accuracy: 99.8201
+[2019-01-22 04:45:35,470 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:36,029 INFO] Step 3000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29630/16860 tok/s;    111 sec
+[2019-01-22 04:45:36,035 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:36,510 INFO] Validation perplexity: 1.00749
+[2019-01-22 04:45:36,511 INFO] Validation accuracy: 99.7751
+[2019-01-22 04:45:39,687 INFO] Step 3100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29872/17426 tok/s;    115 sec
+[2019-01-22 04:45:39,693 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:40,160 INFO] Validation perplexity: 1.01299
+[2019-01-22 04:45:40,161 INFO] Validation accuracy: 99.7751
+[2019-01-22 04:45:41,503 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:43,397 INFO] Step 3200/12500; acc:  99.02; ppl:  1.05; xent: 0.04; lr: 0.00100; 27218/18145 tok/s;    119 sec
+[2019-01-22 04:45:43,404 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:43,878 INFO] Validation perplexity: 1.03272
+[2019-01-22 04:45:43,878 INFO] Validation accuracy: 98.988
+[2019-01-22 04:45:47,066 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:47,194 INFO] Step 3300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24669/18976 tok/s;    123 sec
+[2019-01-22 04:45:47,200 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:47,674 INFO] Validation perplexity: 1.01131
+[2019-01-22 04:45:47,674 INFO] Validation accuracy: 99.6627
+[2019-01-22 04:45:50,834 INFO] Step 3400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23241/19065 tok/s;    126 sec
+[2019-01-22 04:45:50,840 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:51,311 INFO] Validation perplexity: 1.00562
+[2019-01-22 04:45:51,312 INFO] Validation accuracy: 99.8201
+[2019-01-22 04:45:53,104 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:45:54,555 INFO] Step 3500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26719/18498 tok/s;    130 sec
+[2019-01-22 04:45:54,562 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:55,036 INFO] Validation perplexity: 1.00704
+[2019-01-22 04:45:55,037 INFO] Validation accuracy: 99.8201
+[2019-01-22 04:45:58,226 INFO] Step 3600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24922/18691 tok/s;    134 sec
+[2019-01-22 04:45:58,232 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:45:58,701 INFO] Validation perplexity: 1.00505
+[2019-01-22 04:45:58,702 INFO] Validation accuracy: 99.8763
+[2019-01-22 04:45:59,138 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:01,957 INFO] Step 3700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26957/17971 tok/s;    137 sec
+[2019-01-22 04:46:01,963 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:02,438 INFO] Validation perplexity: 1.00511
+[2019-01-22 04:46:02,439 INFO] Validation accuracy: 99.8651
+[2019-01-22 04:46:04,697 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:05,726 INFO] Step 3800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23209/19639 tok/s;    141 sec
+[2019-01-22 04:46:05,732 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:06,205 INFO] Validation perplexity: 1.00425
+[2019-01-22 04:46:06,206 INFO] Validation accuracy: 99.8763
+[2019-01-22 04:46:09,390 INFO] Step 3900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25164/18873 tok/s;    145 sec
+[2019-01-22 04:46:09,396 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:09,865 INFO] Validation perplexity: 1.00436
+[2019-01-22 04:46:09,866 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:46:10,731 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:13,106 INFO] Step 4000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25103/18827 tok/s;    149 sec
+[2019-01-22 04:46:13,112 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:13,586 INFO] Validation perplexity: 1.0051
+[2019-01-22 04:46:13,587 INFO] Validation accuracy: 99.8538
+[2019-01-22 04:46:16,292 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:16,880 INFO] Step 4100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29056/16728 tok/s;    152 sec
+[2019-01-22 04:46:16,886 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:17,360 INFO] Validation perplexity: 1.00515
+[2019-01-22 04:46:17,360 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:46:20,540 INFO] Step 4200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21260/18029 tok/s;    156 sec
+[2019-01-22 04:46:20,546 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:21,016 INFO] Validation perplexity: 1.0047
+[2019-01-22 04:46:21,016 INFO] Validation accuracy: 99.8538
+[2019-01-22 04:46:22,325 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:24,248 INFO] Step 4300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26518/18942 tok/s;    160 sec
+[2019-01-22 04:46:24,255 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:24,729 INFO] Validation perplexity: 1.00364
+[2019-01-22 04:46:24,729 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:46:27,883 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:28,043 INFO] Step 4400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21247/19316 tok/s;    164 sec
+[2019-01-22 04:46:28,049 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:28,523 INFO] Validation perplexity: 1.00582
+[2019-01-22 04:46:28,524 INFO] Validation accuracy: 99.8763
+[2019-01-22 04:46:31,680 INFO] Step 4500/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 23172/18959 tok/s;    167 sec
+[2019-01-22 04:46:31,686 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:32,159 INFO] Validation perplexity: 1.00584
+[2019-01-22 04:46:32,159 INFO] Validation accuracy: 99.8538
+[2019-01-22 04:46:33,924 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:35,410 INFO] Step 4600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24832/19101 tok/s;    171 sec
+[2019-01-22 04:46:35,417 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:35,891 INFO] Validation perplexity: 1.00387
+[2019-01-22 04:46:35,891 INFO] Validation accuracy: 99.8651
+[2019-01-22 04:46:39,080 INFO] Step 4700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21519/19563 tok/s;    175 sec
+[2019-01-22 04:46:39,086 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:39,559 INFO] Validation perplexity: 1.00536
+[2019-01-22 04:46:39,560 INFO] Validation accuracy: 99.8426
+[2019-01-22 04:46:39,961 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:42,814 INFO] Step 4800/12500; acc:  99.15; ppl:  1.03; xent: 0.03; lr: 0.00100; 23142/19582 tok/s;    178 sec
+[2019-01-22 04:46:42,821 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:43,296 INFO] Validation perplexity: 1.02939
+[2019-01-22 04:46:43,297 INFO] Validation accuracy: 99.2354
+[2019-01-22 04:46:45,520 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:46,578 INFO] Step 4900/12500; acc:  99.80; ppl:  1.00; xent: 0.00; lr: 0.00100; 28937/17807 tok/s;    182 sec
+[2019-01-22 04:46:46,584 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:47,058 INFO] Validation perplexity: 1.02395
+[2019-01-22 04:46:47,059 INFO] Validation accuracy: 99.5839
+[2019-01-22 04:46:50,242 INFO] Step 5000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26785/18543 tok/s;    186 sec
+[2019-01-22 04:46:50,248 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:50,717 INFO] Validation perplexity: 1.00998
+[2019-01-22 04:46:50,718 INFO] Validation accuracy: 99.6851
+[2019-01-22 04:46:51,553 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:53,967 INFO] Step 5100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22854/15559 tok/s;    189 sec
+[2019-01-22 04:46:53,973 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:54,447 INFO] Validation perplexity: 1.00523
+[2019-01-22 04:46:54,448 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:46:57,110 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:46:57,729 INFO] Step 5200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21184/18370 tok/s;    193 sec
+[2019-01-22 04:46:57,735 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:46:58,210 INFO] Validation perplexity: 1.0034
+[2019-01-22 04:46:58,211 INFO] Validation accuracy: 99.91
+[2019-01-22 04:47:01,391 INFO] Step 5300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26695/18481 tok/s;    197 sec
+[2019-01-22 04:47:01,397 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:01,865 INFO] Validation perplexity: 1.00306
+[2019-01-22 04:47:01,866 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:47:03,147 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:05,103 INFO] Step 5400/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 25049/18217 tok/s;    201 sec
+[2019-01-22 04:47:05,109 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:05,583 INFO] Validation perplexity: 1.01253
+[2019-01-22 04:47:05,583 INFO] Validation accuracy: 99.6739
+[2019-01-22 04:47:08,708 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:08,894 INFO] Step 5500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29681/17314 tok/s;    204 sec
+[2019-01-22 04:47:08,900 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:09,374 INFO] Validation perplexity: 1.00624
+[2019-01-22 04:47:09,375 INFO] Validation accuracy: 99.8313
+[2019-01-22 04:47:12,541 INFO] Step 5600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24792/19071 tok/s;    208 sec
+[2019-01-22 04:47:12,547 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:13,017 INFO] Validation perplexity: 1.00557
+[2019-01-22 04:47:13,018 INFO] Validation accuracy: 99.8426
+[2019-01-22 04:47:14,746 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:16,260 INFO] Step 5700/12500; acc:  99.61; ppl:  1.02; xent: 0.02; lr: 0.00100; 27003/18002 tok/s;    212 sec
+[2019-01-22 04:47:16,266 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:16,740 INFO] Validation perplexity: 1.00601
+[2019-01-22 04:47:16,741 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:47:19,929 INFO] Step 5800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28902/17786 tok/s;    215 sec
+[2019-01-22 04:47:19,935 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:20,405 INFO] Validation perplexity: 1.00518
+[2019-01-22 04:47:20,405 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:47:20,778 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:23,660 INFO] Step 5900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24468/18351 tok/s;    219 sec
+[2019-01-22 04:47:23,667 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:24,142 INFO] Validation perplexity: 1.00568
+[2019-01-22 04:47:24,142 INFO] Validation accuracy: 99.8651
+[2019-01-22 04:47:26,330 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:27,414 INFO] Step 6000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27594/17560 tok/s;    223 sec
+[2019-01-22 04:47:27,420 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:27,896 INFO] Validation perplexity: 1.00374
+[2019-01-22 04:47:27,896 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:47:31,085 INFO] Step 6100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25170/18305 tok/s;    227 sec
+[2019-01-22 04:47:31,091 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:31,571 INFO] Validation perplexity: 1.00323
+[2019-01-22 04:47:31,572 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:47:32,378 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:34,826 INFO] Step 6200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28395/18254 tok/s;    230 sec
+[2019-01-22 04:47:34,833 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:35,306 INFO] Validation perplexity: 1.00323
+[2019-01-22 04:47:35,307 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:47:37,938 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:38,584 INFO] Step 6300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 31773/16841 tok/s;    234 sec
+[2019-01-22 04:47:38,589 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:39,065 INFO] Validation perplexity: 1.00293
+[2019-01-22 04:47:39,065 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:47:42,249 INFO] Step 6400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26562/17240 tok/s;    238 sec
+[2019-01-22 04:47:42,255 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:42,725 INFO] Validation perplexity: 1.00301
+[2019-01-22 04:47:42,726 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:47:43,975 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:45,962 INFO] Step 6500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19849/19510 tok/s;    241 sec
+[2019-01-22 04:47:45,969 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:46,443 INFO] Validation perplexity: 1.0031
+[2019-01-22 04:47:46,443 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:47:49,534 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:49,753 INFO] Step 6600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23295/19413 tok/s;    245 sec
+[2019-01-22 04:47:49,759 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:50,233 INFO] Validation perplexity: 1.00316
+[2019-01-22 04:47:50,233 INFO] Validation accuracy: 99.91
+[2019-01-22 04:47:53,394 INFO] Step 6700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27067/16917 tok/s;    249 sec
+[2019-01-22 04:47:53,400 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:53,869 INFO] Validation perplexity: 1.00339
+[2019-01-22 04:47:53,869 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:47:55,572 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:47:57,118 INFO] Step 6800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25119/16698 tok/s;    253 sec
+[2019-01-22 04:47:57,124 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:47:57,599 INFO] Validation perplexity: 1.00335
+[2019-01-22 04:47:57,599 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:48:00,794 INFO] Step 6900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23179/19316 tok/s;    256 sec
+[2019-01-22 04:48:00,800 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:01,275 INFO] Validation perplexity: 1.00313
+[2019-01-22 04:48:01,276 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:48:01,617 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:04,532 INFO] Step 7000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24976/18732 tok/s;    260 sec
+[2019-01-22 04:48:04,539 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:05,013 INFO] Validation perplexity: 1.00318
+[2019-01-22 04:48:05,013 INFO] Validation accuracy: 99.91
+[2019-01-22 04:48:07,172 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:08,290 INFO] Step 7100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23198/19332 tok/s;    264 sec
+[2019-01-22 04:48:08,297 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:08,771 INFO] Validation perplexity: 1.00361
+[2019-01-22 04:48:08,772 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:48:11,958 INFO] Step 7200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28782/17712 tok/s;    267 sec
+[2019-01-22 04:48:11,964 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:12,434 INFO] Validation perplexity: 1.00361
+[2019-01-22 04:48:12,435 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:48:13,211 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:15,678 INFO] Step 7300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 31651/17043 tok/s;    271 sec
+[2019-01-22 04:48:15,684 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:16,156 INFO] Validation perplexity: 1.00335
+[2019-01-22 04:48:16,156 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:48:18,753 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:19,431 INFO] Step 7400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23240/18943 tok/s;    275 sec
+[2019-01-22 04:48:19,437 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:19,909 INFO] Validation perplexity: 1.00332
+[2019-01-22 04:48:19,910 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:48:23,086 INFO] Step 7500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27401/17437 tok/s;    279 sec
+[2019-01-22 04:48:23,092 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:23,564 INFO] Validation perplexity: 1.00341
+[2019-01-22 04:48:23,564 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:48:24,804 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:26,821 INFO] Step 7600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29270/17074 tok/s;    282 sec
+[2019-01-22 04:48:26,828 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:27,307 INFO] Validation perplexity: 1.00358
+[2019-01-22 04:48:27,307 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:48:30,372 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:30,628 INFO] Step 7700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24689/19398 tok/s;    286 sec
+[2019-01-22 04:48:30,634 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:31,107 INFO] Validation perplexity: 1.00591
+[2019-01-22 04:48:31,108 INFO] Validation accuracy: 99.8201
+[2019-01-22 04:48:34,267 INFO] Step 7800/12500; acc:  99.39; ppl:  1.04; xent: 0.04; lr: 0.00100; 21542/18401 tok/s;    290 sec
+[2019-01-22 04:48:34,273 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:34,743 INFO] Validation perplexity: 1.03485
+[2019-01-22 04:48:34,744 INFO] Validation accuracy: 99.1229
+[2019-01-22 04:48:36,410 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:37,987 INFO] Step 7900/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 23091/18893 tok/s;    293 sec
+[2019-01-22 04:48:37,993 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:38,468 INFO] Validation perplexity: 1.01372
+[2019-01-22 04:48:38,468 INFO] Validation accuracy: 99.6402
+[2019-01-22 04:48:41,681 INFO] Step 8000/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 27055/18037 tok/s;    297 sec
+[2019-01-22 04:48:41,687 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:42,155 INFO] Validation perplexity: 1.01062
+[2019-01-22 04:48:42,156 INFO] Validation accuracy: 99.7301
+[2019-01-22 04:48:42,466 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:45,409 INFO] Step 8100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27603/17565 tok/s;    301 sec
+[2019-01-22 04:48:45,415 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:45,888 INFO] Validation perplexity: 1.01153
+[2019-01-22 04:48:45,889 INFO] Validation accuracy: 99.7076
+[2019-01-22 04:48:48,024 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:49,171 INFO] Step 8200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23163/18952 tok/s;    305 sec
+[2019-01-22 04:48:49,177 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:49,653 INFO] Validation perplexity: 1.00652
+[2019-01-22 04:48:49,654 INFO] Validation accuracy: 99.8763
+[2019-01-22 04:48:52,836 INFO] Step 8300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25053/18626 tok/s;    308 sec
+[2019-01-22 04:48:52,842 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:53,312 INFO] Validation perplexity: 1.00539
+[2019-01-22 04:48:53,312 INFO] Validation accuracy: 99.8313
+[2019-01-22 04:48:54,060 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:48:56,559 INFO] Step 8400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29673/17309 tok/s;    312 sec
+[2019-01-22 04:48:56,565 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:48:57,039 INFO] Validation perplexity: 1.00467
+[2019-01-22 04:48:57,040 INFO] Validation accuracy: 99.8651
+[2019-01-22 04:48:59,619 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:00,324 INFO] Step 8500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27107/18072 tok/s;    316 sec
+[2019-01-22 04:49:00,330 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:00,804 INFO] Validation perplexity: 1.00499
+[2019-01-22 04:49:00,804 INFO] Validation accuracy: 99.8763
+[2019-01-22 04:49:03,996 INFO] Step 8600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21625/19260 tok/s;    319 sec
+[2019-01-22 04:49:04,002 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:04,471 INFO] Validation perplexity: 1.00471
+[2019-01-22 04:49:04,472 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:49:05,655 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:07,699 INFO] Step 8700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 31009/17719 tok/s;    323 sec
+[2019-01-22 04:49:07,706 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:08,182 INFO] Validation perplexity: 1.00434
+[2019-01-22 04:49:08,183 INFO] Validation accuracy: 99.91
+[2019-01-22 04:49:11,218 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:11,502 INFO] Step 8800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27166/18111 tok/s;    327 sec
+[2019-01-22 04:49:11,508 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:11,982 INFO] Validation perplexity: 1.00501
+[2019-01-22 04:49:11,983 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:49:15,153 INFO] Step 8900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23039/19439 tok/s;    331 sec
+[2019-01-22 04:49:15,159 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:15,629 INFO] Validation perplexity: 1.00559
+[2019-01-22 04:49:15,629 INFO] Validation accuracy: 99.8538
+[2019-01-22 04:49:17,259 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:18,871 INFO] Step 9000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21705/19200 tok/s;    334 sec
+[2019-01-22 04:49:18,877 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:19,353 INFO] Validation perplexity: 1.00504
+[2019-01-22 04:49:19,353 INFO] Validation accuracy: 99.8763
+[2019-01-22 04:49:22,546 INFO] Step 9100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26453/17035 tok/s;    338 sec
+[2019-01-22 04:49:22,552 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:23,021 INFO] Validation perplexity: 1.00492
+[2019-01-22 04:49:23,022 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:49:23,301 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:26,265 INFO] Step 9200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 32764/16382 tok/s;    342 sec
+[2019-01-22 04:49:26,271 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:26,745 INFO] Validation perplexity: 1.00608
+[2019-01-22 04:49:26,746 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:49:28,858 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:30,037 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26678/18470 tok/s;    345 sec
+[2019-01-22 04:49:30,043 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:30,517 INFO] Validation perplexity: 1.00979
+[2019-01-22 04:49:30,517 INFO] Validation accuracy: 99.7076
+[2019-01-22 04:49:33,698 INFO] Step 9400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28929/16933 tok/s;    349 sec
+[2019-01-22 04:49:33,704 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:34,174 INFO] Validation perplexity: 1.00868
+[2019-01-22 04:49:34,174 INFO] Validation accuracy: 99.8426
+[2019-01-22 04:49:34,898 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:37,438 INFO] Step 9500/12500; acc:  98.94; ppl:  1.13; xent: 0.12; lr: 0.00100; 23381/19649 tok/s;    353 sec
+[2019-01-22 04:49:37,444 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:37,918 INFO] Validation perplexity: 1.00952
+[2019-01-22 04:49:37,919 INFO] Validation accuracy: 99.6514
+[2019-01-22 04:49:40,462 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:41,206 INFO] Step 9600/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 21378/19597 tok/s;    357 sec
+[2019-01-22 04:49:41,212 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:41,686 INFO] Validation perplexity: 1.01322
+[2019-01-22 04:49:41,687 INFO] Validation accuracy: 99.8651
+[2019-01-22 04:49:44,877 INFO] Step 9700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19956/19956 tok/s;    360 sec
+[2019-01-22 04:49:44,883 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:45,353 INFO] Validation perplexity: 1.01289
+[2019-01-22 04:49:45,354 INFO] Validation accuracy: 99.8088
+[2019-01-22 04:49:46,501 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:48,570 INFO] Step 9800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22949/17172 tok/s;    364 sec
+[2019-01-22 04:49:48,576 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:49,051 INFO] Validation perplexity: 1.00669
+[2019-01-22 04:49:49,052 INFO] Validation accuracy: 99.8651
+[2019-01-22 04:49:52,057 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:52,372 INFO] Step 9900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25067/18800 tok/s;    368 sec
+[2019-01-22 04:49:52,378 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:52,860 INFO] Validation perplexity: 1.00353
+[2019-01-22 04:49:52,861 INFO] Validation accuracy: 99.91
+[2019-01-22 04:49:56,027 INFO] Step 10000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24992/18744 tok/s;    371 sec
+[2019-01-22 04:49:56,033 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:49:56,501 INFO] Validation perplexity: 1.00431
+[2019-01-22 04:49:56,502 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:49:58,101 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:49:59,742 INFO] Step 10100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28477/17830 tok/s;    375 sec
+[2019-01-22 04:49:59,748 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:00,222 INFO] Validation perplexity: 1.00461
+[2019-01-22 04:50:00,222 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:50:03,411 INFO] Step 10200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27090/18060 tok/s;    379 sec
+[2019-01-22 04:50:03,417 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:03,886 INFO] Validation perplexity: 1.00477
+[2019-01-22 04:50:03,886 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:50:04,134 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:07,136 INFO] Step 10300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24895/17684 tok/s;    383 sec
+[2019-01-22 04:50:07,142 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:07,618 INFO] Validation perplexity: 1.00376
+[2019-01-22 04:50:07,618 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:50:09,697 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:10,908 INFO] Step 10400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26809/18560 tok/s;    386 sec
+[2019-01-22 04:50:10,914 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:11,387 INFO] Validation perplexity: 1.00465
+[2019-01-22 04:50:11,388 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:50:14,567 INFO] Step 10500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27160/18107 tok/s;    390 sec
+[2019-01-22 04:50:14,573 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:15,041 INFO] Validation perplexity: 1.01517
+[2019-01-22 04:50:15,042 INFO] Validation accuracy: 99.8313
+[2019-01-22 04:50:15,729 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:18,296 INFO] Step 10600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24948/18711 tok/s;    394 sec
+[2019-01-22 04:50:18,303 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:18,776 INFO] Validation perplexity: 1.00289
+[2019-01-22 04:50:18,777 INFO] Validation accuracy: 99.8988
+[2019-01-22 04:50:21,286 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:22,063 INFO] Step 10700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22903/19085 tok/s;    398 sec
+[2019-01-22 04:50:22,069 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:22,544 INFO] Validation perplexity: 1.0037
+[2019-01-22 04:50:22,545 INFO] Validation accuracy: 99.91
+[2019-01-22 04:50:25,750 INFO] Step 10800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19970/19147 tok/s;    401 sec
+[2019-01-22 04:50:25,756 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:26,228 INFO] Validation perplexity: 1.00288
+[2019-01-22 04:50:26,229 INFO] Validation accuracy: 99.91
+[2019-01-22 04:50:27,345 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:29,451 INFO] Step 10900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17086/17506 tok/s;    405 sec
+[2019-01-22 04:50:29,457 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:29,931 INFO] Validation perplexity: 1.003
+[2019-01-22 04:50:29,932 INFO] Validation accuracy: 99.91
+[2019-01-22 04:50:32,903 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:33,248 INFO] Step 11000/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 19036/17813 tok/s;    409 sec
+[2019-01-22 04:50:33,254 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:33,731 INFO] Validation perplexity: 1.0041
+[2019-01-22 04:50:33,732 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:50:36,903 INFO] Step 11100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24791/18921 tok/s;    412 sec
+[2019-01-22 04:50:36,909 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:37,378 INFO] Validation perplexity: 1.00182
+[2019-01-22 04:50:37,378 INFO] Validation accuracy: 99.91
+[2019-01-22 04:50:38,943 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:40,615 INFO] Step 11200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27118/18079 tok/s;    416 sec
+[2019-01-22 04:50:40,621 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:41,096 INFO] Validation perplexity: 1.00222
+[2019-01-22 04:50:41,097 INFO] Validation accuracy: 99.91
+[2019-01-22 04:50:44,287 INFO] Step 11300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28456/16991 tok/s;    420 sec
+[2019-01-22 04:50:44,293 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:44,762 INFO] Validation perplexity: 1.00154
+[2019-01-22 04:50:44,763 INFO] Validation accuracy: 99.9438
+[2019-01-22 04:50:44,980 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:48,021 INFO] Step 11400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21632/12424 tok/s;    423 sec
+[2019-01-22 04:50:48,028 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:48,502 INFO] Validation perplexity: 1.0015
+[2019-01-22 04:50:48,503 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:50:50,538 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:51,774 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 34905/15397 tok/s;    427 sec
+[2019-01-22 04:50:51,780 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:52,254 INFO] Validation perplexity: 1.00216
+[2019-01-22 04:50:52,255 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:50:55,443 INFO] Step 11600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 7293/5500 tok/s;    431 sec
+[2019-01-22 04:50:55,449 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:55,919 INFO] Validation perplexity: 1.00169
+[2019-01-22 04:50:55,920 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:50:56,577 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:50:59,175 INFO] Step 11700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25030/18772 tok/s;    435 sec
+[2019-01-22 04:50:59,182 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:50:59,657 INFO] Validation perplexity: 1.00198
+[2019-01-22 04:50:59,658 INFO] Validation accuracy: 99.9325
+[2019-01-22 04:51:02,137 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:51:02,938 INFO] Step 11800/12500; acc:  99.78; ppl:  1.00; xent: 0.00; lr: 0.00100; 29723/17338 tok/s;    438 sec
+[2019-01-22 04:51:02,944 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:03,418 INFO] Validation perplexity: 1.00427
+[2019-01-22 04:51:03,419 INFO] Validation accuracy: 99.9213
+[2019-01-22 04:51:06,612 INFO] Step 11900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 31562/16995 tok/s;    442 sec
+[2019-01-22 04:51:06,618 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:07,087 INFO] Validation perplexity: 1.00246
+[2019-01-22 04:51:07,088 INFO] Validation accuracy: 99.9438
+[2019-01-22 04:51:08,175 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:51:10,308 INFO] Step 12000/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 22868/17472 tok/s;    446 sec
+[2019-01-22 04:51:10,315 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:10,787 INFO] Validation perplexity: 1.1612
+[2019-01-22 04:51:10,788 INFO] Validation accuracy: 98.5607
+[2019-01-22 04:51:13,734 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:51:14,106 INFO] Step 12100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29011/17853 tok/s;    450 sec
+[2019-01-22 04:51:14,112 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:14,586 INFO] Validation perplexity: 1.00919
+[2019-01-22 04:51:14,586 INFO] Validation accuracy: 99.6964
+[2019-01-22 04:51:17,760 INFO] Step 12200/12500; acc:  99.59; ppl:  1.06; xent: 0.06; lr: 0.00100; 21140/15921 tok/s;    453 sec
+[2019-01-22 04:51:17,766 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:18,235 INFO] Validation perplexity: 1.01278
+[2019-01-22 04:51:18,235 INFO] Validation accuracy: 99.6964
+[2019-01-22 04:51:19,772 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:51:21,480 INFO] Step 12300/12500; acc:  99.51; ppl:  1.02; xent: 0.02; lr: 0.00100; 26471/18051 tok/s;    457 sec
+[2019-01-22 04:51:21,486 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:21,960 INFO] Validation perplexity: 1.00982
+[2019-01-22 04:51:21,961 INFO] Validation accuracy: 99.7751
+[2019-01-22 04:51:25,157 INFO] Step 12400/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 20182/19341 tok/s;    461 sec
+[2019-01-22 04:51:25,163 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:25,634 INFO] Validation perplexity: 1.00414
+[2019-01-22 04:51:25,635 INFO] Validation accuracy: 99.91
+[2019-01-22 04:51:25,814 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000
+[2019-01-22 04:51:28,886 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25000/18750 tok/s;    464 sec
+[2019-01-22 04:51:28,892 INFO] Loading valid dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.valid.0.pt, number of examples: 1000
+[2019-01-22 04:51:29,367 INFO] Validation perplexity: 1.00395
+[2019-01-22 04:51:29,367 INFO] Validation accuracy: 99.8876
+[2019-01-22 04:51:29,368 INFO] Saving checkpoint ../models/khaling_models/model-khaling-high-res80_step_12500.pt
+[2019-01-22 04:51:29,475 INFO] Loading train dataset from ../khaling-train-high-10000to10000/data_khaling_resample10000_s80.train.0.pt, number of examples: 10000

@@ -1,0 +1,626 @@
+[2019-01-22 07:48:41,249 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:48:41,267 INFO]  * vocabulary size. source = 91; target = 58
+[2019-01-22 07:48:41,268 INFO] Building model...
+[2019-01-22 07:48:44,643 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(91, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(58, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=58, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 07:48:44,646 INFO] encoder: 311500
+[2019-01-22 07:48:44,646 INFO] decoder: 1135658
+[2019-01-22 07:48:44,647 INFO] * number of parameters: 1447158
+[2019-01-22 07:48:44,648 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 07:48:44,648 INFO] Start training...
+[2019-01-22 07:48:44,709 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:48:50,001 INFO] Step 100/12500; acc:  34.17; ppl: 10.05; xent: 2.31; lr: 0.00100; 17132/18096 tok/s;      5 sec
+[2019-01-22 07:48:50,045 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:48:51,012 INFO] Validation perplexity: 11.1103
+[2019-01-22 07:48:51,013 INFO] Validation accuracy: 28.6086
+[2019-01-22 07:48:53,981 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:48:56,001 INFO] Step 200/12500; acc:  54.89; ppl:  4.66; xent: 1.54; lr: 0.00100; 22699/18608 tok/s;     11 sec
+[2019-01-22 07:48:56,008 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:48:56,976 INFO] Validation perplexity: 3.81301
+[2019-01-22 07:48:56,977 INFO] Validation accuracy: 61.3878
+[2019-01-22 07:49:01,913 INFO] Step 300/12500; acc:  83.43; ppl:  1.74; xent: 0.55; lr: 0.00100; 17566/17317 tok/s;     17 sec
+[2019-01-22 07:49:01,918 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:02,884 INFO] Validation perplexity: 2.07796
+[2019-01-22 07:49:02,884 INFO] Validation accuracy: 80.2458
+[2019-01-22 07:49:03,713 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:49:07,888 INFO] Step 400/12500; acc:  87.24; ppl:  1.50; xent: 0.41; lr: 0.00100; 16018/19222 tok/s;     23 sec
+[2019-01-22 07:49:07,900 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:08,874 INFO] Validation perplexity: 1.69338
+[2019-01-22 07:49:08,875 INFO] Validation accuracy: 85.2548
+[2019-01-22 07:49:12,488 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:49:13,811 INFO] Step 500/12500; acc:  86.97; ppl:  1.60; xent: 0.47; lr: 0.00100; 19206/15830 tok/s;     29 sec
+[2019-01-22 07:49:13,817 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:14,785 INFO] Validation perplexity: 1.34762
+[2019-01-22 07:49:14,786 INFO] Validation accuracy: 91.6372
+[2019-01-22 07:49:19,750 INFO] Step 600/12500; acc:  97.51; ppl:  1.11; xent: 0.10; lr: 0.00100; 13034/18380 tok/s;     35 sec
+[2019-01-22 07:49:19,756 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:20,721 INFO] Validation perplexity: 1.22327
+[2019-01-22 07:49:20,722 INFO] Validation accuracy: 94.4344
+[2019-01-22 07:49:22,212 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:49:25,720 INFO] Step 700/12500; acc:  95.41; ppl:  1.14; xent: 0.13; lr: 0.00100; 10659/11957 tok/s;     41 sec
+[2019-01-22 07:49:25,727 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:26,697 INFO] Validation perplexity: 1.15872
+[2019-01-22 07:49:26,698 INFO] Validation accuracy: 96.4872
+[2019-01-22 07:49:30,966 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:49:31,639 INFO] Step 800/12500; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00100; 14016/18314 tok/s;     47 sec
+[2019-01-22 07:49:31,645 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:32,614 INFO] Validation perplexity: 1.1151
+[2019-01-22 07:49:32,614 INFO] Validation accuracy: 97.5858
+[2019-01-22 07:49:37,507 INFO] Step 900/12500; acc:  97.71; ppl:  1.06; xent: 0.06; lr: 0.00100; 16946/18005 tok/s;     53 sec
+[2019-01-22 07:49:37,513 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:38,477 INFO] Validation perplexity: 1.12162
+[2019-01-22 07:49:38,478 INFO] Validation accuracy: 97.6147
+[2019-01-22 07:49:40,684 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:49:43,409 INFO] Step 1000/12500; acc:  98.34; ppl:  1.07; xent: 0.07; lr: 0.00100; 16718/19722 tok/s;     59 sec
+[2019-01-22 07:49:43,415 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:44,386 INFO] Validation perplexity: 1.09417
+[2019-01-22 07:49:44,387 INFO] Validation accuracy: 98.099
+[2019-01-22 07:49:49,422 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:49:49,494 INFO] Step 1100/12500; acc:  98.94; ppl:  1.07; xent: 0.07; lr: 0.00100; 6269/6412 tok/s;     65 sec
+[2019-01-22 07:49:49,500 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:50,472 INFO] Validation perplexity: 1.08983
+[2019-01-22 07:49:50,480 INFO] Validation accuracy: 98.3086
+[2019-01-22 07:49:55,266 INFO] Step 1200/12500; acc:  99.83; ppl:  1.02; xent: 0.02; lr: 0.00100; 10784/13817 tok/s;     71 sec
+[2019-01-22 07:49:55,271 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:49:56,238 INFO] Validation perplexity: 1.13523
+[2019-01-22 07:49:56,239 INFO] Validation accuracy: 97.8966
+[2019-01-22 07:49:59,146 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:50:01,208 INFO] Step 1300/12500; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 14106/19925 tok/s;     76 sec
+[2019-01-22 07:50:01,214 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:02,186 INFO] Validation perplexity: 1.08212
+[2019-01-22 07:50:02,187 INFO] Validation accuracy: 98.3954
+[2019-01-22 07:50:07,102 INFO] Step 1400/12500; acc: 100.00; ppl:  1.01; xent: 0.00; lr: 0.00100; 14218/20217 tok/s;     82 sec
+[2019-01-22 07:50:07,108 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:08,072 INFO] Validation perplexity: 1.17119
+[2019-01-22 07:50:08,073 INFO] Validation accuracy: 97.7015
+[2019-01-22 07:50:08,855 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:50:13,059 INFO] Step 1500/12500; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00100; 16134/19185 tok/s;     88 sec
+[2019-01-22 07:50:13,065 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:14,033 INFO] Validation perplexity: 1.05322
+[2019-01-22 07:50:14,034 INFO] Validation accuracy: 99.0387
+[2019-01-22 07:50:17,591 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:50:18,950 INFO] Step 1600/12500; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 11506/17850 tok/s;     94 sec
+[2019-01-22 07:50:18,956 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:19,925 INFO] Validation perplexity: 1.06965
+[2019-01-22 07:50:19,926 INFO] Validation accuracy: 98.8869
+[2019-01-22 07:50:24,891 INFO] Step 1700/12500; acc:  99.16; ppl:  1.03; xent: 0.03; lr: 0.00100; 15857/19656 tok/s;    100 sec
+[2019-01-22 07:50:24,897 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:25,861 INFO] Validation perplexity: 1.04947
+[2019-01-22 07:50:25,862 INFO] Validation accuracy: 98.9013
+[2019-01-22 07:50:27,302 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:50:30,843 INFO] Step 1800/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 21443/18858 tok/s;    106 sec
+[2019-01-22 07:50:30,849 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:31,817 INFO] Validation perplexity: 1.04625
+[2019-01-22 07:50:31,818 INFO] Validation accuracy: 98.9881
+[2019-01-22 07:50:36,040 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:50:36,791 INFO] Step 1900/12500; acc:  97.84; ppl:  1.15; xent: 0.14; lr: 0.00100; 17712/17958 tok/s;    112 sec
+[2019-01-22 07:50:36,797 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:37,765 INFO] Validation perplexity: 1.04789
+[2019-01-22 07:50:37,766 INFO] Validation accuracy: 99.111
+[2019-01-22 07:50:42,611 INFO] Step 2000/12500; acc:  99.78; ppl:  1.02; xent: 0.02; lr: 0.00100; 11220/12160 tok/s;    118 sec
+[2019-01-22 07:50:42,617 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:43,583 INFO] Validation perplexity: 1.03897
+[2019-01-22 07:50:43,584 INFO] Validation accuracy: 99.2194
+[2019-01-22 07:50:45,747 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:50:48,545 INFO] Step 2100/12500; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 11782/16212 tok/s;    124 sec
+[2019-01-22 07:50:48,551 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:49,520 INFO] Validation perplexity: 1.03702
+[2019-01-22 07:50:49,521 INFO] Validation accuracy: 99.3133
+[2019-01-22 07:50:54,481 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:50:54,587 INFO] Step 2200/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 16775/18639 tok/s;    130 sec
+[2019-01-22 07:50:54,593 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:50:55,564 INFO] Validation perplexity: 1.05179
+[2019-01-22 07:50:55,565 INFO] Validation accuracy: 99.1254
+[2019-01-22 07:51:00,350 INFO] Step 2300/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 14648/19352 tok/s;    136 sec
+[2019-01-22 07:51:00,356 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:01,326 INFO] Validation perplexity: 1.04129
+[2019-01-22 07:51:01,326 INFO] Validation accuracy: 99.27
+[2019-01-22 07:51:04,190 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:51:06,297 INFO] Step 2400/12500; acc:  99.90; ppl:  1.01; xent: 0.01; lr: 0.00100; 15350/20866 tok/s;    142 sec
+[2019-01-22 07:51:06,303 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:07,274 INFO] Validation perplexity: 1.04777
+[2019-01-22 07:51:07,275 INFO] Validation accuracy: 99.1615
+[2019-01-22 07:51:12,221 INFO] Step 2500/12500; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00100; 16325/16530 tok/s;    148 sec
+[2019-01-22 07:51:12,227 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:13,193 INFO] Validation perplexity: 1.02365
+[2019-01-22 07:51:13,194 INFO] Validation accuracy: 99.5229
+[2019-01-22 07:51:13,902 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:51:18,142 INFO] Step 2600/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 14435/18194 tok/s;    153 sec
+[2019-01-22 07:51:18,148 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:19,118 INFO] Validation perplexity: 1.03735
+[2019-01-22 07:51:19,119 INFO] Validation accuracy: 99.2121
+[2019-01-22 07:51:22,635 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:51:24,041 INFO] Step 2700/12500; acc:  98.96; ppl:  1.06; xent: 0.06; lr: 0.00100; 21655/18314 tok/s;    159 sec
+[2019-01-22 07:51:24,047 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:25,015 INFO] Validation perplexity: 1.03237
+[2019-01-22 07:51:25,016 INFO] Validation accuracy: 99.3856
+[2019-01-22 07:51:29,971 INFO] Step 2800/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 15475/18913 tok/s;    165 sec
+[2019-01-22 07:51:29,977 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:30,941 INFO] Validation perplexity: 1.02927
+[2019-01-22 07:51:30,942 INFO] Validation accuracy: 99.4434
+[2019-01-22 07:51:32,342 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:51:35,924 INFO] Step 2900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16283/19845 tok/s;    171 sec
+[2019-01-22 07:51:35,931 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:36,900 INFO] Validation perplexity: 1.02073
+[2019-01-22 07:51:36,901 INFO] Validation accuracy: 99.5302
+[2019-01-22 07:51:41,076 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:51:41,861 INFO] Step 3000/12500; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00100; 23488/15838 tok/s;    177 sec
+[2019-01-22 07:51:41,867 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:42,835 INFO] Validation perplexity: 1.0261
+[2019-01-22 07:51:42,836 INFO] Validation accuracy: 99.4868
+[2019-01-22 07:51:47,702 INFO] Step 3100/12500; acc:  99.82; ppl:  1.02; xent: 0.02; lr: 0.00100; 18725/20188 tok/s;    183 sec
+[2019-01-22 07:51:47,707 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:48,672 INFO] Validation perplexity: 1.02364
+[2019-01-22 07:51:48,673 INFO] Validation accuracy: 99.4796
+[2019-01-22 07:51:50,781 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:51:53,630 INFO] Step 3200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19487/19893 tok/s;    189 sec
+[2019-01-22 07:51:53,636 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:51:54,605 INFO] Validation perplexity: 1.03352
+[2019-01-22 07:51:54,606 INFO] Validation accuracy: 99.4362
+[2019-01-22 07:51:59,512 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:51:59,664 INFO] Step 3300/12500; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 18046/19673 tok/s;    195 sec
+[2019-01-22 07:51:59,670 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:00,641 INFO] Validation perplexity: 1.02217
+[2019-01-22 07:52:00,642 INFO] Validation accuracy: 99.5302
+[2019-01-22 07:52:05,426 INFO] Step 3400/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 11942/10842 tok/s;    201 sec
+[2019-01-22 07:52:05,432 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:06,400 INFO] Validation perplexity: 1.04039
+[2019-01-22 07:52:06,400 INFO] Validation accuracy: 99.4073
+[2019-01-22 07:52:09,227 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:52:11,402 INFO] Step 3500/12500; acc:  99.51; ppl:  1.03; xent: 0.03; lr: 0.00100; 12400/14755 tok/s;    207 sec
+[2019-01-22 07:52:11,408 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:12,380 INFO] Validation perplexity: 1.05302
+[2019-01-22 07:52:12,380 INFO] Validation accuracy: 99.1543
+[2019-01-22 07:52:17,307 INFO] Step 3600/12500; acc:  99.91; ppl:  1.01; xent: 0.01; lr: 0.00100; 14442/19933 tok/s;    213 sec
+[2019-01-22 07:52:17,313 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:18,280 INFO] Validation perplexity: 1.03479
+[2019-01-22 07:52:18,281 INFO] Validation accuracy: 99.2917
+[2019-01-22 07:52:18,936 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:52:23,228 INFO] Step 3700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13265/19319 tok/s;    219 sec
+[2019-01-22 07:52:23,234 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:24,203 INFO] Validation perplexity: 1.0287
+[2019-01-22 07:52:24,204 INFO] Validation accuracy: 99.3856
+[2019-01-22 07:52:27,668 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:52:29,143 INFO] Step 3800/12500; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00100; 18425/18137 tok/s;    224 sec
+[2019-01-22 07:52:29,149 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:30,118 INFO] Validation perplexity: 1.0475
+[2019-01-22 07:52:30,119 INFO] Validation accuracy: 99.27
+[2019-01-22 07:52:35,050 INFO] Step 3900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 12020/19845 tok/s;    230 sec
+[2019-01-22 07:52:35,056 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:36,021 INFO] Validation perplexity: 1.01914
+[2019-01-22 07:52:36,022 INFO] Validation accuracy: 99.5952
+[2019-01-22 07:52:37,375 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:52:41,010 INFO] Step 4000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16297/19960 tok/s;    236 sec
+[2019-01-22 07:52:41,016 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:41,985 INFO] Validation perplexity: 1.02424
+[2019-01-22 07:52:41,986 INFO] Validation accuracy: 99.5157
+[2019-01-22 07:52:46,111 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:52:46,935 INFO] Step 4100/12500; acc:  99.74; ppl:  1.04; xent: 0.04; lr: 0.00100; 17641/19245 tok/s;    242 sec
+[2019-01-22 07:52:46,941 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:47,909 INFO] Validation perplexity: 1.06296
+[2019-01-22 07:52:47,910 INFO] Validation accuracy: 99.0748
+[2019-01-22 07:52:52,812 INFO] Step 4200/12500; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 16376/17264 tok/s;    248 sec
+[2019-01-22 07:52:52,818 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:53,782 INFO] Validation perplexity: 1.02419
+[2019-01-22 07:52:53,783 INFO] Validation accuracy: 99.5591
+[2019-01-22 07:52:55,815 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:52:58,788 INFO] Step 4300/12500; acc:  95.92; ppl:  1.42; xent: 0.35; lr: 0.00100; 13110/13602 tok/s;    254 sec
+[2019-01-22 07:52:58,794 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:52:59,763 INFO] Validation perplexity: 1.02422
+[2019-01-22 07:52:59,764 INFO] Validation accuracy: 99.6025
+[2019-01-22 07:53:04,546 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:53:04,732 INFO] Step 4400/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 15047/17810 tok/s;    260 sec
+[2019-01-22 07:53:04,738 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:05,709 INFO] Validation perplexity: 1.02052
+[2019-01-22 07:53:05,709 INFO] Validation accuracy: 99.6025
+[2019-01-22 07:53:10,529 INFO] Step 4500/12500; acc:  99.73; ppl:  1.02; xent: 0.02; lr: 0.00100; 12768/11586 tok/s;    266 sec
+[2019-01-22 07:53:10,534 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:11,499 INFO] Validation perplexity: 1.03919
+[2019-01-22 07:53:11,500 INFO] Validation accuracy: 99.4434
+[2019-01-22 07:53:14,260 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:53:16,480 INFO] Step 4600/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 17733/19372 tok/s;    272 sec
+[2019-01-22 07:53:16,486 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:17,458 INFO] Validation perplexity: 1.02353
+[2019-01-22 07:53:17,458 INFO] Validation accuracy: 99.588
+[2019-01-22 07:53:22,399 INFO] Step 4700/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 13155/19305 tok/s;    278 sec
+[2019-01-22 07:53:22,405 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:23,370 INFO] Validation perplexity: 1.03173
+[2019-01-22 07:53:23,370 INFO] Validation accuracy: 99.4796
+[2019-01-22 07:53:23,970 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:53:28,302 INFO] Step 4800/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 15671/17902 tok/s;    284 sec
+[2019-01-22 07:53:28,308 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:29,277 INFO] Validation perplexity: 1.03252
+[2019-01-22 07:53:29,278 INFO] Validation accuracy: 99.3422
+[2019-01-22 07:53:32,702 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:53:34,247 INFO] Step 4900/12500; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00100; 15604/19160 tok/s;    290 sec
+[2019-01-22 07:53:34,253 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:35,226 INFO] Validation perplexity: 1.02184
+[2019-01-22 07:53:35,227 INFO] Validation accuracy: 99.5591
+[2019-01-22 07:53:40,128 INFO] Step 5000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18919/19420 tok/s;    295 sec
+[2019-01-22 07:53:40,134 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:41,099 INFO] Validation perplexity: 1.0212
+[2019-01-22 07:53:41,100 INFO] Validation accuracy: 99.6097
+[2019-01-22 07:53:42,409 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:53:46,100 INFO] Step 5100/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 14489/20432 tok/s;    301 sec
+[2019-01-22 07:53:46,106 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:47,075 INFO] Validation perplexity: 1.01865
+[2019-01-22 07:53:47,076 INFO] Validation accuracy: 99.6531
+[2019-01-22 07:53:51,149 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:53:52,007 INFO] Step 5200/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 11875/14314 tok/s;    307 sec
+[2019-01-22 07:53:52,013 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:52,983 INFO] Validation perplexity: 1.05973
+[2019-01-22 07:53:52,984 INFO] Validation accuracy: 99.2627
+[2019-01-22 07:53:57,953 INFO] Step 5300/12500; acc:  97.46; ppl:  1.19; xent: 0.18; lr: 0.00100; 4752/4876 tok/s;    313 sec
+[2019-01-22 07:53:57,959 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:53:58,924 INFO] Validation perplexity: 1.03077
+[2019-01-22 07:53:58,925 INFO] Validation accuracy: 99.5085
+[2019-01-22 07:54:00,869 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:54:03,875 INFO] Step 5400/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 14154/15765 tok/s;    319 sec
+[2019-01-22 07:54:03,881 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:04,851 INFO] Validation perplexity: 1.02421
+[2019-01-22 07:54:04,852 INFO] Validation accuracy: 99.6458
+[2019-01-22 07:54:09,603 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:54:09,847 INFO] Step 5500/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 18772/19807 tok/s;    325 sec
+[2019-01-22 07:54:09,852 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:10,823 INFO] Validation perplexity: 1.02711
+[2019-01-22 07:54:10,824 INFO] Validation accuracy: 99.5374
+[2019-01-22 07:54:15,645 INFO] Step 5600/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 12947/9994 tok/s;    331 sec
+[2019-01-22 07:54:15,651 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:16,617 INFO] Validation perplexity: 1.02525
+[2019-01-22 07:54:16,618 INFO] Validation accuracy: 99.588
+[2019-01-22 07:54:19,310 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:54:21,577 INFO] Step 5700/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 18625/20603 tok/s;    337 sec
+[2019-01-22 07:54:21,583 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:22,555 INFO] Validation perplexity: 1.02138
+[2019-01-22 07:54:22,555 INFO] Validation accuracy: 99.5446
+[2019-01-22 07:54:27,501 INFO] Step 5800/12500; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 14296/19090 tok/s;    343 sec
+[2019-01-22 07:54:27,506 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:28,474 INFO] Validation perplexity: 1.02378
+[2019-01-22 07:54:28,474 INFO] Validation accuracy: 99.5808
+[2019-01-22 07:54:29,017 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:54:33,385 INFO] Step 5900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15741/19238 tok/s;    349 sec
+[2019-01-22 07:54:33,391 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:34,361 INFO] Validation perplexity: 1.02888
+[2019-01-22 07:54:34,362 INFO] Validation accuracy: 99.5519
+[2019-01-22 07:54:37,754 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:54:39,375 INFO] Step 6000/12500; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 12916/16325 tok/s;    355 sec
+[2019-01-22 07:54:39,382 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:40,353 INFO] Validation perplexity: 1.02022
+[2019-01-22 07:54:40,354 INFO] Validation accuracy: 99.5519
+[2019-01-22 07:54:45,267 INFO] Step 6100/12500; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 18292/19404 tok/s;    361 sec
+[2019-01-22 07:54:45,272 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:46,237 INFO] Validation perplexity: 1.0225
+[2019-01-22 07:54:46,238 INFO] Validation accuracy: 99.6314
+[2019-01-22 07:54:47,485 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:54:51,214 INFO] Step 6200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15782/19975 tok/s;    367 sec
+[2019-01-22 07:54:51,220 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:52,193 INFO] Validation perplexity: 1.04635
+[2019-01-22 07:54:52,194 INFO] Validation accuracy: 99.4579
+[2019-01-22 07:54:56,223 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:54:57,153 INFO] Step 6300/12500; acc:  99.39; ppl:  1.05; xent: 0.05; lr: 0.00100; 15555/13228 tok/s;    372 sec
+[2019-01-22 07:54:57,159 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:54:58,129 INFO] Validation perplexity: 1.07053
+[2019-01-22 07:54:58,130 INFO] Validation accuracy: 99.2844
+[2019-01-22 07:55:03,057 INFO] Step 6400/12500; acc:  99.69; ppl:  1.03; xent: 0.03; lr: 0.00100; 13913/17419 tok/s;    378 sec
+[2019-01-22 07:55:03,063 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:04,027 INFO] Validation perplexity: 1.0266
+[2019-01-22 07:55:04,028 INFO] Validation accuracy: 99.6097
+[2019-01-22 07:55:05,926 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:55:09,008 INFO] Step 6500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15851/16784 tok/s;    384 sec
+[2019-01-22 07:55:09,014 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:09,986 INFO] Validation perplexity: 1.02449
+[2019-01-22 07:55:09,987 INFO] Validation accuracy: 99.6386
+[2019-01-22 07:55:14,664 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:55:14,938 INFO] Step 6600/12500; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00100; 19504/16355 tok/s;    390 sec
+[2019-01-22 07:55:14,943 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:15,914 INFO] Validation perplexity: 1.05119
+[2019-01-22 07:55:15,914 INFO] Validation accuracy: 99.4001
+[2019-01-22 07:55:20,758 INFO] Step 6700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13096/12950 tok/s;    396 sec
+[2019-01-22 07:55:20,764 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:21,728 INFO] Validation perplexity: 1.02829
+[2019-01-22 07:55:21,729 INFO] Validation accuracy: 99.5013
+[2019-01-22 07:55:24,373 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:55:26,692 INFO] Step 6800/12500; acc:  99.89; ppl:  1.01; xent: 0.01; lr: 0.00100; 19169/19083 tok/s;    402 sec
+[2019-01-22 07:55:26,698 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:27,668 INFO] Validation perplexity: 1.05079
+[2019-01-22 07:55:27,669 INFO] Validation accuracy: 99.3712
+[2019-01-22 07:55:32,638 INFO] Step 6900/12500; acc:  99.45; ppl:  1.01; xent: 0.01; lr: 0.00100; 14515/14234 tok/s;    408 sec
+[2019-01-22 07:55:32,643 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:33,611 INFO] Validation perplexity: 1.03336
+[2019-01-22 07:55:33,612 INFO] Validation accuracy: 99.5157
+[2019-01-22 07:55:34,091 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:55:38,534 INFO] Step 7000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13895/15517 tok/s;    414 sec
+[2019-01-22 07:55:38,540 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:39,513 INFO] Validation perplexity: 1.02836
+[2019-01-22 07:55:39,514 INFO] Validation accuracy: 99.6025
+[2019-01-22 07:55:42,827 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:55:44,483 INFO] Step 7100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18286/17486 tok/s;    420 sec
+[2019-01-22 07:55:44,489 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:45,460 INFO] Validation perplexity: 1.03067
+[2019-01-22 07:55:45,461 INFO] Validation accuracy: 99.5157
+[2019-01-22 07:55:50,386 INFO] Step 7200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14545/16045 tok/s;    426 sec
+[2019-01-22 07:55:50,392 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:51,357 INFO] Validation perplexity: 1.03289
+[2019-01-22 07:55:51,358 INFO] Validation accuracy: 99.5446
+[2019-01-22 07:55:52,541 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:55:56,309 INFO] Step 7300/12500; acc:  99.72; ppl:  1.00; xent: 0.00; lr: 0.00100; 17629/17929 tok/s;    432 sec
+[2019-01-22 07:55:56,315 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:55:57,285 INFO] Validation perplexity: 1.02642
+[2019-01-22 07:55:57,286 INFO] Validation accuracy: 99.6097
+[2019-01-22 07:56:01,280 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:56:02,258 INFO] Step 7400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15946/21262 tok/s;    438 sec
+[2019-01-22 07:56:02,263 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:03,234 INFO] Validation perplexity: 1.02345
+[2019-01-22 07:56:03,234 INFO] Validation accuracy: 99.6458
+[2019-01-22 07:56:08,158 INFO] Step 7500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16139/18383 tok/s;    443 sec
+[2019-01-22 07:56:08,164 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:09,132 INFO] Validation perplexity: 1.02766
+[2019-01-22 07:56:09,133 INFO] Validation accuracy: 99.5735
+[2019-01-22 07:56:10,995 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:56:14,124 INFO] Step 7600/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 17848/20593 tok/s;    449 sec
+[2019-01-22 07:56:14,130 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:15,101 INFO] Validation perplexity: 1.0202
+[2019-01-22 07:56:15,101 INFO] Validation accuracy: 99.6603
+[2019-01-22 07:56:19,736 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:56:20,052 INFO] Step 7700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13471/20183 tok/s;    455 sec
+[2019-01-22 07:56:20,058 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:21,028 INFO] Validation perplexity: 1.03723
+[2019-01-22 07:56:21,029 INFO] Validation accuracy: 99.5663
+[2019-01-22 07:56:25,872 INFO] Step 7800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 10611/18073 tok/s;    461 sec
+[2019-01-22 07:56:25,877 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:26,843 INFO] Validation perplexity: 1.02105
+[2019-01-22 07:56:26,843 INFO] Validation accuracy: 99.6747
+[2019-01-22 07:56:29,445 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:56:31,799 INFO] Step 7900/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 24877/16559 tok/s;    467 sec
+[2019-01-22 07:56:31,805 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:32,776 INFO] Validation perplexity: 1.02935
+[2019-01-22 07:56:32,776 INFO] Validation accuracy: 99.5229
+[2019-01-22 07:56:37,758 INFO] Step 8000/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 13189/16353 tok/s;    473 sec
+[2019-01-22 07:56:37,764 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:38,732 INFO] Validation perplexity: 1.02989
+[2019-01-22 07:56:38,733 INFO] Validation accuracy: 99.6025
+[2019-01-22 07:56:39,162 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:56:43,669 INFO] Step 8100/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 14279/20625 tok/s;    479 sec
+[2019-01-22 07:56:43,676 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:44,647 INFO] Validation perplexity: 1.05446
+[2019-01-22 07:56:44,648 INFO] Validation accuracy: 99.4073
+[2019-01-22 07:56:47,923 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:56:49,621 INFO] Step 8200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 12785/19933 tok/s;    485 sec
+[2019-01-22 07:56:49,627 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:50,597 INFO] Validation perplexity: 1.03456
+[2019-01-22 07:56:50,598 INFO] Validation accuracy: 99.5302
+[2019-01-22 07:56:55,536 INFO] Step 8300/12500; acc:  99.82; ppl:  1.00; xent: 0.00; lr: 0.00100; 17768/20526 tok/s;    491 sec
+[2019-01-22 07:56:55,542 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:56:56,508 INFO] Validation perplexity: 1.03347
+[2019-01-22 07:56:56,509 INFO] Validation accuracy: 99.5735
+[2019-01-22 07:56:57,635 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:57:01,445 INFO] Step 8400/12500; acc:  99.56; ppl:  1.05; xent: 0.05; lr: 0.00100; 21826/16467 tok/s;    497 sec
+[2019-01-22 07:57:01,451 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:02,421 INFO] Validation perplexity: 1.03079
+[2019-01-22 07:57:02,422 INFO] Validation accuracy: 99.5591
+[2019-01-22 07:57:06,375 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:57:07,387 INFO] Step 8500/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 16815/18684 tok/s;    503 sec
+[2019-01-22 07:57:07,393 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:08,363 INFO] Validation perplexity: 1.04539
+[2019-01-22 07:57:08,363 INFO] Validation accuracy: 99.5013
+[2019-01-22 07:57:13,309 INFO] Step 8600/12500; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00100; 18920/18050 tok/s;    509 sec
+[2019-01-22 07:57:13,314 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:14,280 INFO] Validation perplexity: 1.02364
+[2019-01-22 07:57:14,281 INFO] Validation accuracy: 99.682
+[2019-01-22 07:57:16,083 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:57:19,254 INFO] Step 8700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17243/20329 tok/s;    515 sec
+[2019-01-22 07:57:19,260 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:20,228 INFO] Validation perplexity: 1.02071
+[2019-01-22 07:57:20,229 INFO] Validation accuracy: 99.7037
+[2019-01-22 07:57:24,820 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:57:25,189 INFO] Step 8800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20521/17730 tok/s;    520 sec
+[2019-01-22 07:57:25,195 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:26,167 INFO] Validation perplexity: 1.02503
+[2019-01-22 07:57:26,168 INFO] Validation accuracy: 99.6169
+[2019-01-22 07:57:31,005 INFO] Step 8900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14923/20216 tok/s;    526 sec
+[2019-01-22 07:57:31,010 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:31,975 INFO] Validation perplexity: 1.02633
+[2019-01-22 07:57:31,976 INFO] Validation accuracy: 99.6531
+[2019-01-22 07:57:34,536 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:57:36,954 INFO] Step 9000/12500; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 20808/19063 tok/s;    532 sec
+[2019-01-22 07:57:36,960 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:37,931 INFO] Validation perplexity: 1.02042
+[2019-01-22 07:57:37,932 INFO] Validation accuracy: 99.6531
+[2019-01-22 07:57:42,902 INFO] Step 9100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19277/19920 tok/s;    538 sec
+[2019-01-22 07:57:42,907 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:43,874 INFO] Validation perplexity: 1.02902
+[2019-01-22 07:57:43,875 INFO] Validation accuracy: 99.588
+[2019-01-22 07:57:44,263 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:57:48,786 INFO] Step 9200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 10613/17139 tok/s;    544 sec
+[2019-01-22 07:57:48,792 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:49,763 INFO] Validation perplexity: 1.02539
+[2019-01-22 07:57:49,764 INFO] Validation accuracy: 99.6169
+[2019-01-22 07:57:52,998 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:57:54,744 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14710/20582 tok/s;    550 sec
+[2019-01-22 07:57:54,751 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:57:55,722 INFO] Validation perplexity: 1.02771
+[2019-01-22 07:57:55,723 INFO] Validation accuracy: 99.5952
+[2019-01-22 07:58:00,658 INFO] Step 9400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14070/20467 tok/s;    556 sec
+[2019-01-22 07:58:00,664 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:01,631 INFO] Validation perplexity: 1.02216
+[2019-01-22 07:58:01,632 INFO] Validation accuracy: 99.6603
+[2019-01-22 07:58:02,714 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:58:06,576 INFO] Step 9500/12500; acc:  99.55; ppl:  1.02; xent: 0.02; lr: 0.00100; 20421/18740 tok/s;    562 sec
+[2019-01-22 07:58:06,582 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:07,549 INFO] Validation perplexity: 1.02063
+[2019-01-22 07:58:07,550 INFO] Validation accuracy: 99.682
+[2019-01-22 07:58:11,452 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:58:12,494 INFO] Step 9600/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 18085/18085 tok/s;    568 sec
+[2019-01-22 07:58:12,501 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:13,471 INFO] Validation perplexity: 1.02546
+[2019-01-22 07:58:13,471 INFO] Validation accuracy: 99.6458
+[2019-01-22 07:58:18,413 INFO] Step 9700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20526/16751 tok/s;    574 sec
+[2019-01-22 07:58:18,418 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:19,383 INFO] Validation perplexity: 1.02004
+[2019-01-22 07:58:19,383 INFO] Validation accuracy: 99.6747
+[2019-01-22 07:58:21,141 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:58:24,344 INFO] Step 9800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14642/19522 tok/s;    580 sec
+[2019-01-22 07:58:24,350 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:25,317 INFO] Validation perplexity: 1.02672
+[2019-01-22 07:58:25,318 INFO] Validation accuracy: 99.6531
+[2019-01-22 07:58:29,852 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:58:30,272 INFO] Step 9900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17458/20458 tok/s;    586 sec
+[2019-01-22 07:58:30,278 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:31,247 INFO] Validation perplexity: 1.02208
+[2019-01-22 07:58:31,247 INFO] Validation accuracy: 99.6747
+[2019-01-22 07:58:36,109 INFO] Step 10000/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 16398/17105 tok/s;    591 sec
+[2019-01-22 07:58:36,114 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:37,077 INFO] Validation perplexity: 1.02941
+[2019-01-22 07:58:37,078 INFO] Validation accuracy: 99.6025
+[2019-01-22 07:58:39,541 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:58:41,990 INFO] Step 10100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13012/18553 tok/s;    597 sec
+[2019-01-22 07:58:41,996 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:42,963 INFO] Validation perplexity: 1.02337
+[2019-01-22 07:58:42,964 INFO] Validation accuracy: 99.6458
+[2019-01-22 07:58:47,954 INFO] Step 10200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15800/16493 tok/s;    603 sec
+[2019-01-22 07:58:47,960 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:48,922 INFO] Validation perplexity: 1.02764
+[2019-01-22 07:58:48,923 INFO] Validation accuracy: 99.6675
+[2019-01-22 07:58:49,229 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:58:53,786 INFO] Step 10300/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 14293/20422 tok/s;    609 sec
+[2019-01-22 07:58:53,793 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:58:54,759 INFO] Validation perplexity: 1.02219
+[2019-01-22 07:58:54,760 INFO] Validation accuracy: 99.6892
+[2019-01-22 07:58:57,942 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:58:59,724 INFO] Step 10400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15824/20571 tok/s;    615 sec
+[2019-01-22 07:58:59,730 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:00,697 INFO] Validation perplexity: 1.01927
+[2019-01-22 07:59:00,697 INFO] Validation accuracy: 99.682
+[2019-01-22 07:59:05,624 INFO] Step 10500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17738/19655 tok/s;    621 sec
+[2019-01-22 07:59:05,629 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:06,593 INFO] Validation perplexity: 1.02117
+[2019-01-22 07:59:06,594 INFO] Validation accuracy: 99.7181
+[2019-01-22 07:59:07,628 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:59:11,509 INFO] Step 10600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18022/17115 tok/s;    627 sec
+[2019-01-22 07:59:11,515 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:12,482 INFO] Validation perplexity: 1.03488
+[2019-01-22 07:59:12,483 INFO] Validation accuracy: 99.5735
+[2019-01-22 07:59:16,345 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:59:17,450 INFO] Step 10700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 12481/15057 tok/s;    633 sec
+[2019-01-22 07:59:17,456 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:18,423 INFO] Validation perplexity: 1.02015
+[2019-01-22 07:59:18,424 INFO] Validation accuracy: 99.7253
+[2019-01-22 07:59:23,389 INFO] Step 10800/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 16403/15883 tok/s;    639 sec
+[2019-01-22 07:59:23,395 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:24,357 INFO] Validation perplexity: 1.01917
+[2019-01-22 07:59:24,358 INFO] Validation accuracy: 99.6675
+[2019-01-22 07:59:26,031 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:59:29,276 INFO] Step 10900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18768/18866 tok/s;    645 sec
+[2019-01-22 07:59:29,282 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:30,250 INFO] Validation perplexity: 1.02363
+[2019-01-22 07:59:30,251 INFO] Validation accuracy: 99.6314
+[2019-01-22 07:59:34,750 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:59:35,213 INFO] Step 11000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16055/20433 tok/s;    651 sec
+[2019-01-22 07:59:35,219 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:36,187 INFO] Validation perplexity: 1.0207
+[2019-01-22 07:59:36,188 INFO] Validation accuracy: 99.682
+[2019-01-22 07:59:41,052 INFO] Step 11100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19221/17698 tok/s;    656 sec
+[2019-01-22 07:59:41,057 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:42,019 INFO] Validation perplexity: 1.02092
+[2019-01-22 07:59:42,020 INFO] Validation accuracy: 99.7037
+[2019-01-22 07:59:44,433 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:59:46,933 INFO] Step 11200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18959/21033 tok/s;    662 sec
+[2019-01-22 07:59:46,939 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:47,906 INFO] Validation perplexity: 1.02397
+[2019-01-22 07:59:47,907 INFO] Validation accuracy: 99.6458
+[2019-01-22 07:59:52,895 INFO] Step 11300/12500; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 15951/19761 tok/s;    668 sec
+[2019-01-22 07:59:52,900 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:53,863 INFO] Validation perplexity: 1.03788
+[2019-01-22 07:59:53,864 INFO] Validation accuracy: 99.5519
+[2019-01-22 07:59:54,112 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 07:59:58,719 INFO] Step 11400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 12833/18611 tok/s;    674 sec
+[2019-01-22 07:59:58,725 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 07:59:59,691 INFO] Validation perplexity: 1.03952
+[2019-01-22 07:59:59,692 INFO] Validation accuracy: 99.5374
+[2019-01-22 08:00:02,827 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 08:00:04,659 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13465/20386 tok/s;    680 sec
+[2019-01-22 08:00:04,666 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:05,634 INFO] Validation perplexity: 1.02401
+[2019-01-22 08:00:05,634 INFO] Validation accuracy: 99.6458
+[2019-01-22 08:00:10,563 INFO] Step 11600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18327/20454 tok/s;    686 sec
+[2019-01-22 08:00:10,569 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:11,533 INFO] Validation perplexity: 1.02152
+[2019-01-22 08:00:11,533 INFO] Validation accuracy: 99.6892
+[2019-01-22 08:00:12,518 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 08:00:16,459 INFO] Step 11700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16969/20363 tok/s;    692 sec
+[2019-01-22 08:00:16,465 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:17,433 INFO] Validation perplexity: 1.03003
+[2019-01-22 08:00:17,433 INFO] Validation accuracy: 99.5808
+[2019-01-22 08:00:21,239 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 08:00:22,388 INFO] Step 11800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14905/20518 tok/s;    698 sec
+[2019-01-22 08:00:22,395 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:23,364 INFO] Validation perplexity: 1.02879
+[2019-01-22 08:00:23,365 INFO] Validation accuracy: 99.6169
+[2019-01-22 08:00:28,317 INFO] Step 11900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16181/17919 tok/s;    704 sec
+[2019-01-22 08:00:28,322 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:29,284 INFO] Validation perplexity: 1.02103
+[2019-01-22 08:00:29,285 INFO] Validation accuracy: 99.7181
+[2019-01-22 08:00:30,923 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 08:00:34,200 INFO] Step 12000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13251/17924 tok/s;    709 sec
+[2019-01-22 08:00:34,206 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:35,174 INFO] Validation perplexity: 1.01982
+[2019-01-22 08:00:35,175 INFO] Validation accuracy: 99.7181
+[2019-01-22 08:00:39,640 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 08:00:40,140 INFO] Step 12100/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 18879/17190 tok/s;    715 sec
+[2019-01-22 08:00:40,146 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:41,113 INFO] Validation perplexity: 1.01902
+[2019-01-22 08:00:41,114 INFO] Validation accuracy: 99.7181
+[2019-01-22 08:00:45,983 INFO] Step 12200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19212/17235 tok/s;    721 sec
+[2019-01-22 08:00:45,989 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:46,951 INFO] Validation perplexity: 1.01798
+[2019-01-22 08:00:46,952 INFO] Validation accuracy: 99.7253
+[2019-01-22 08:00:49,323 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 08:00:51,879 INFO] Step 12300/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 16703/21009 tok/s;    727 sec
+[2019-01-22 08:00:51,885 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:52,852 INFO] Validation perplexity: 1.02847
+[2019-01-22 08:00:52,853 INFO] Validation accuracy: 99.6169
+[2019-01-22 08:00:57,836 INFO] Step 12400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17050/19406 tok/s;    733 sec
+[2019-01-22 08:00:57,842 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:00:58,805 INFO] Validation perplexity: 1.02215
+[2019-01-22 08:00:58,806 INFO] Validation accuracy: 99.7037
+[2019-01-22 08:00:59,006 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000
+[2019-01-22 08:01:03,656 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20139/18831 tok/s;    739 sec
+[2019-01-22 08:01:03,662 INFO] Loading valid dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.valid.0.pt, number of examples: 1000
+[2019-01-22 08:01:04,629 INFO] Validation perplexity: 1.02579
+[2019-01-22 08:01:04,630 INFO] Validation accuracy: 99.6458
+[2019-01-22 08:01:04,631 INFO] Saving checkpoint ../models/turkish_models/model-turkish-high-res100_step_12500.pt
+[2019-01-22 08:01:04,733 INFO] Loading train dataset from ../turkish-train-high-10000to10000/data_turkish_resample10000_s100.train.0.pt, number of examples: 10000

@@ -1,0 +1,626 @@
+[2019-01-22 00:11:40,233 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:11:40,234 INFO]  * vocabulary size. source = 87; target = 52
+[2019-01-22 00:11:40,235 INFO] Building model...
+[2019-01-22 00:11:43,699 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(87, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(52, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=52, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 00:11:43,703 INFO] encoder: 311100
+[2019-01-22 00:11:43,703 INFO] decoder: 1133252
+[2019-01-22 00:11:43,703 INFO] * number of parameters: 1444352
+[2019-01-22 00:11:43,704 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 00:11:43,705 INFO] Start training...
+[2019-01-22 00:11:43,763 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:11:49,155 INFO] Step 100/12500; acc:  20.05; ppl: 13.69; xent: 2.62; lr: 0.00100; 25877/18397 tok/s;      5 sec
+[2019-01-22 00:11:49,161 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:11:50,040 INFO] Validation perplexity: 11.3914
+[2019-01-22 00:11:50,040 INFO] Validation accuracy: 23.7367
+[2019-01-22 00:11:52,971 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:11:55,096 INFO] Step 200/12500; acc:  56.16; ppl:  4.67; xent: 1.54; lr: 0.00100; 20501/20797 tok/s;     11 sec
+[2019-01-22 00:11:55,101 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:11:55,967 INFO] Validation perplexity: 4.5611
+[2019-01-22 00:11:55,968 INFO] Validation accuracy: 55.2265
+[2019-01-22 00:12:00,914 INFO] Step 300/12500; acc:  80.07; ppl:  2.05; xent: 0.72; lr: 0.00100; 17661/21399 tok/s;     17 sec
+[2019-01-22 00:12:00,919 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:01,782 INFO] Validation perplexity: 2.21845
+[2019-01-22 00:12:01,783 INFO] Validation accuracy: 77.0086
+[2019-01-22 00:12:02,590 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:12:06,838 INFO] Step 400/12500; acc:  81.04; ppl:  1.98; xent: 0.68; lr: 0.00100; 17445/18177 tok/s;     23 sec
+[2019-01-22 00:12:06,844 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:07,712 INFO] Validation perplexity: 1.69189
+[2019-01-22 00:12:07,713 INFO] Validation accuracy: 84.7356
+[2019-01-22 00:12:11,343 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:12:12,723 INFO] Step 500/12500; acc:  82.44; ppl:  1.73; xent: 0.55; lr: 0.00100; 13956/14898 tok/s;     29 sec
+[2019-01-22 00:12:12,728 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:13,596 INFO] Validation perplexity: 1.49576
+[2019-01-22 00:12:13,597 INFO] Validation accuracy: 87.4158
+[2019-01-22 00:12:18,588 INFO] Step 600/12500; acc:  90.86; ppl:  1.35; xent: 0.30; lr: 0.00100; 15660/19877 tok/s;     35 sec
+[2019-01-22 00:12:18,594 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:19,459 INFO] Validation perplexity: 1.27816
+[2019-01-22 00:12:19,460 INFO] Validation accuracy: 92.5802
+[2019-01-22 00:12:20,966 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:12:24,491 INFO] Step 700/12500; acc:  93.35; ppl:  1.24; xent: 0.21; lr: 0.00100; 17210/21221 tok/s;     41 sec
+[2019-01-22 00:12:24,497 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:25,364 INFO] Validation perplexity: 1.196
+[2019-01-22 00:12:25,365 INFO] Validation accuracy: 94.8094
+[2019-01-22 00:12:29,716 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:12:30,446 INFO] Step 800/12500; acc:  93.92; ppl:  1.24; xent: 0.22; lr: 0.00100; 21570/22173 tok/s;     47 sec
+[2019-01-22 00:12:30,451 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:31,320 INFO] Validation perplexity: 1.19247
+[2019-01-22 00:12:31,321 INFO] Validation accuracy: 95.0186
+[2019-01-22 00:12:36,249 INFO] Step 900/12500; acc:  96.03; ppl:  1.14; xent: 0.13; lr: 0.00100; 23214/20908 tok/s;     52 sec
+[2019-01-22 00:12:36,254 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:37,119 INFO] Validation perplexity: 1.16104
+[2019-01-22 00:12:37,120 INFO] Validation accuracy: 95.9665
+[2019-01-22 00:12:39,338 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:12:42,165 INFO] Step 1000/12500; acc:  97.79; ppl:  1.07; xent: 0.07; lr: 0.00100; 22168/20921 tok/s;     58 sec
+[2019-01-22 00:12:42,170 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:43,040 INFO] Validation perplexity: 1.12231
+[2019-01-22 00:12:43,040 INFO] Validation accuracy: 96.8164
+[2019-01-22 00:12:48,084 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:12:48,149 INFO] Step 1100/12500; acc:  95.55; ppl:  1.15; xent: 0.14; lr: 0.00100; 5705/6743 tok/s;     64 sec
+[2019-01-22 00:12:48,155 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:49,023 INFO] Validation perplexity: 1.09437
+[2019-01-22 00:12:49,024 INFO] Validation accuracy: 97.4047
+[2019-01-22 00:12:53,974 INFO] Step 1200/12500; acc:  95.89; ppl:  1.14; xent: 0.13; lr: 0.00100; 18962/17812 tok/s;     70 sec
+[2019-01-22 00:12:53,979 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:12:54,841 INFO] Validation perplexity: 1.11762
+[2019-01-22 00:12:54,842 INFO] Validation accuracy: 96.8948
+[2019-01-22 00:12:57,702 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:12:59,864 INFO] Step 1300/12500; acc:  98.61; ppl:  1.06; xent: 0.05; lr: 0.00100; 17057/21135 tok/s;     76 sec
+[2019-01-22 00:12:59,869 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:00,736 INFO] Validation perplexity: 1.10017
+[2019-01-22 00:13:00,737 INFO] Validation accuracy: 97.7381
+[2019-01-22 00:13:05,702 INFO] Step 1400/12500; acc:  99.37; ppl:  1.04; xent: 0.04; lr: 0.00100; 18720/21851 tok/s;     82 sec
+[2019-01-22 00:13:05,707 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:06,575 INFO] Validation perplexity: 1.06494
+[2019-01-22 00:13:06,576 INFO] Validation accuracy: 98.4507
+[2019-01-22 00:13:07,321 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:13:11,620 INFO] Step 1500/12500; acc:  98.70; ppl:  1.04; xent: 0.04; lr: 0.00100; 21487/19834 tok/s;     88 sec
+[2019-01-22 00:13:11,626 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:12,492 INFO] Validation perplexity: 1.06245
+[2019-01-22 00:13:12,493 INFO] Validation accuracy: 98.4311
+[2019-01-22 00:13:16,080 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:13:17,516 INFO] Step 1600/12500; acc:  99.27; ppl:  1.03; xent: 0.02; lr: 0.00100; 20513/21919 tok/s;     94 sec
+[2019-01-22 00:13:17,522 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:18,388 INFO] Validation perplexity: 1.07132
+[2019-01-22 00:13:18,389 INFO] Validation accuracy: 98.2807
+[2019-01-22 00:13:23,361 INFO] Step 1700/12500; acc:  98.01; ppl:  1.07; xent: 0.06; lr: 0.00100; 18566/18592 tok/s;    100 sec
+[2019-01-22 00:13:23,366 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:24,231 INFO] Validation perplexity: 1.05411
+[2019-01-22 00:13:24,232 INFO] Validation accuracy: 98.6206
+[2019-01-22 00:13:25,696 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:13:29,253 INFO] Step 1800/12500; acc:  99.85; ppl:  1.02; xent: 0.02; lr: 0.00100; 16042/17093 tok/s;    105 sec
+[2019-01-22 00:13:29,259 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:30,126 INFO] Validation perplexity: 1.05891
+[2019-01-22 00:13:30,127 INFO] Validation accuracy: 98.6599
+[2019-01-22 00:13:34,440 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:13:35,212 INFO] Step 1900/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 23343/21786 tok/s;    111 sec
+[2019-01-22 00:13:35,218 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:36,085 INFO] Validation perplexity: 1.05248
+[2019-01-22 00:13:36,085 INFO] Validation accuracy: 98.7187
+[2019-01-22 00:13:41,043 INFO] Step 2000/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 16711/21611 tok/s;    117 sec
+[2019-01-22 00:13:41,048 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:41,911 INFO] Validation perplexity: 1.05653
+[2019-01-22 00:13:41,911 INFO] Validation accuracy: 98.5945
+[2019-01-22 00:13:44,063 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:13:46,931 INFO] Step 2100/12500; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00100; 21085/21854 tok/s;    123 sec
+[2019-01-22 00:13:46,937 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:47,803 INFO] Validation perplexity: 1.06463
+[2019-01-22 00:13:47,804 INFO] Validation accuracy: 98.6664
+[2019-01-22 00:13:52,805 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:13:52,945 INFO] Step 2200/12500; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00100; 15620/19821 tok/s;    129 sec
+[2019-01-22 00:13:52,950 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:53,817 INFO] Validation perplexity: 1.0585
+[2019-01-22 00:13:53,818 INFO] Validation accuracy: 98.6533
+[2019-01-22 00:13:58,732 INFO] Step 2300/12500; acc:  99.56; ppl:  1.02; xent: 0.02; lr: 0.00100; 15363/18243 tok/s;    135 sec
+[2019-01-22 00:13:58,738 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:13:59,599 INFO] Validation perplexity: 1.05762
+[2019-01-22 00:13:59,600 INFO] Validation accuracy: 98.7383
+[2019-01-22 00:14:02,423 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:14:04,623 INFO] Step 2400/12500; acc:  98.42; ppl:  1.04; xent: 0.04; lr: 0.00100; 19760/19592 tok/s;    141 sec
+[2019-01-22 00:14:04,629 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:05,496 INFO] Validation perplexity: 1.08426
+[2019-01-22 00:14:05,497 INFO] Validation accuracy: 98.4572
+[2019-01-22 00:14:10,484 INFO] Step 2500/12500; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00100; 21230/21620 tok/s;    147 sec
+[2019-01-22 00:14:10,489 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:11,351 INFO] Validation perplexity: 1.06471
+[2019-01-22 00:14:11,352 INFO] Validation accuracy: 98.6403
+[2019-01-22 00:14:12,045 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:14:16,413 INFO] Step 2600/12500; acc:  99.31; ppl:  1.03; xent: 0.03; lr: 0.00100; 15834/16297 tok/s;    153 sec
+[2019-01-22 00:14:16,419 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:17,285 INFO] Validation perplexity: 1.0583
+[2019-01-22 00:14:17,286 INFO] Validation accuracy: 98.7449
+[2019-01-22 00:14:20,798 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:14:22,282 INFO] Step 2700/12500; acc:  99.41; ppl:  1.01; xent: 0.01; lr: 0.00100; 19809/22639 tok/s;    159 sec
+[2019-01-22 00:14:22,288 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:23,154 INFO] Validation perplexity: 1.0404
+[2019-01-22 00:14:23,155 INFO] Validation accuracy: 99.124
+[2019-01-22 00:14:28,115 INFO] Step 2800/12500; acc:  99.65; ppl:  1.02; xent: 0.02; lr: 0.00100; 15843/17513 tok/s;    164 sec
+[2019-01-22 00:14:28,121 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:28,983 INFO] Validation perplexity: 1.04319
+[2019-01-22 00:14:28,984 INFO] Validation accuracy: 98.9475
+[2019-01-22 00:14:30,415 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:14:34,013 INFO] Step 2900/12500; acc:  99.78; ppl:  1.02; xent: 0.02; lr: 0.00100; 19071/22174 tok/s;    170 sec
+[2019-01-22 00:14:34,018 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:34,885 INFO] Validation perplexity: 1.04919
+[2019-01-22 00:14:34,886 INFO] Validation accuracy: 98.941
+[2019-01-22 00:14:39,160 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:14:39,989 INFO] Step 3000/12500; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00100; 18744/22344 tok/s;    176 sec
+[2019-01-22 00:14:39,994 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:40,861 INFO] Validation perplexity: 1.04695
+[2019-01-22 00:14:40,862 INFO] Validation accuracy: 98.9933
+[2019-01-22 00:14:45,802 INFO] Step 3100/12500; acc:  99.90; ppl:  1.01; xent: 0.01; lr: 0.00100; 19812/21758 tok/s;    182 sec
+[2019-01-22 00:14:45,807 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:46,672 INFO] Validation perplexity: 1.04386
+[2019-01-22 00:14:46,672 INFO] Validation accuracy: 98.9475
+[2019-01-22 00:14:48,774 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:14:51,704 INFO] Step 3200/12500; acc:  99.92; ppl:  1.01; xent: 0.01; lr: 0.00100; 19777/22249 tok/s;    188 sec
+[2019-01-22 00:14:51,710 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:52,576 INFO] Validation perplexity: 1.04802
+[2019-01-22 00:14:52,577 INFO] Validation accuracy: 99.0586
+[2019-01-22 00:14:57,520 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:14:57,703 INFO] Step 3300/12500; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00100; 22097/22097 tok/s;    194 sec
+[2019-01-22 00:14:57,708 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:14:58,575 INFO] Validation perplexity: 1.04648
+[2019-01-22 00:14:58,576 INFO] Validation accuracy: 99.039
+[2019-01-22 00:15:03,508 INFO] Step 3400/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 15077/19567 tok/s;    200 sec
+[2019-01-22 00:15:03,514 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:04,380 INFO] Validation perplexity: 1.04737
+[2019-01-22 00:15:04,380 INFO] Validation accuracy: 98.9737
+[2019-01-22 00:15:07,138 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:15:09,399 INFO] Step 3500/12500; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 16171/21730 tok/s;    206 sec
+[2019-01-22 00:15:09,404 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:10,271 INFO] Validation perplexity: 1.04537
+[2019-01-22 00:15:10,272 INFO] Validation accuracy: 99.1305
+[2019-01-22 00:15:15,228 INFO] Step 3600/12500; acc:  99.39; ppl:  1.01; xent: 0.01; lr: 0.00100; 21768/21611 tok/s;    211 sec
+[2019-01-22 00:15:15,233 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:16,096 INFO] Validation perplexity: 1.04936
+[2019-01-22 00:15:16,097 INFO] Validation accuracy: 99.0129
+[2019-01-22 00:15:16,750 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:15:21,149 INFO] Step 3700/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 15223/17971 tok/s;    217 sec
+[2019-01-22 00:15:21,155 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:22,024 INFO] Validation perplexity: 1.04957
+[2019-01-22 00:15:22,025 INFO] Validation accuracy: 98.9933
+[2019-01-22 00:15:25,496 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:15:27,012 INFO] Step 3800/12500; acc:  99.69; ppl:  1.03; xent: 0.03; lr: 0.00100; 18285/18628 tok/s;    223 sec
+[2019-01-22 00:15:27,018 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:27,884 INFO] Validation perplexity: 1.04662
+[2019-01-22 00:15:27,885 INFO] Validation accuracy: 99.0325
+[2019-01-22 00:15:32,853 INFO] Step 3900/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 22318/21882 tok/s;    229 sec
+[2019-01-22 00:15:32,858 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:33,720 INFO] Validation perplexity: 1.04952
+[2019-01-22 00:15:33,720 INFO] Validation accuracy: 98.9671
+[2019-01-22 00:15:35,105 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:15:38,757 INFO] Step 4000/12500; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 13166/16055 tok/s;    235 sec
+[2019-01-22 00:15:38,763 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:39,632 INFO] Validation perplexity: 1.07044
+[2019-01-22 00:15:39,633 INFO] Validation accuracy: 98.8168
+[2019-01-22 00:15:43,852 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:15:44,726 INFO] Step 4100/12500; acc:  99.89; ppl:  1.01; xent: 0.01; lr: 0.00100; 24583/20403 tok/s;    241 sec
+[2019-01-22 00:15:44,731 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:45,599 INFO] Validation perplexity: 1.04401
+[2019-01-22 00:15:45,600 INFO] Validation accuracy: 99.1175
+[2019-01-22 00:15:50,535 INFO] Step 4200/12500; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00100; 20596/21932 tok/s;    247 sec
+[2019-01-22 00:15:50,540 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:51,403 INFO] Validation perplexity: 1.04243
+[2019-01-22 00:15:51,403 INFO] Validation accuracy: 99.1371
+[2019-01-22 00:15:53,465 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:15:56,458 INFO] Step 4300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15890/21911 tok/s;    253 sec
+[2019-01-22 00:15:56,464 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:15:57,330 INFO] Validation perplexity: 1.04258
+[2019-01-22 00:15:57,331 INFO] Validation accuracy: 99.124
+[2019-01-22 00:16:02,202 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:16:02,423 INFO] Step 4400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21633/18331 tok/s;    259 sec
+[2019-01-22 00:16:02,428 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:03,296 INFO] Validation perplexity: 1.0334
+[2019-01-22 00:16:03,297 INFO] Validation accuracy: 99.2613
+[2019-01-22 00:16:08,241 INFO] Step 4500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18400/22291 tok/s;    264 sec
+[2019-01-22 00:16:08,246 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:09,112 INFO] Validation perplexity: 1.04205
+[2019-01-22 00:16:09,112 INFO] Validation accuracy: 99.124
+[2019-01-22 00:16:11,820 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:16:14,113 INFO] Step 4600/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 21744/21456 tok/s;    270 sec
+[2019-01-22 00:16:14,119 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:14,985 INFO] Validation perplexity: 1.05354
+[2019-01-22 00:16:14,986 INFO] Validation accuracy: 99.0586
+[2019-01-22 00:16:19,948 INFO] Step 4700/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 22122/21777 tok/s;    276 sec
+[2019-01-22 00:16:19,953 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:20,816 INFO] Validation perplexity: 1.042
+[2019-01-22 00:16:20,817 INFO] Validation accuracy: 99.1828
+[2019-01-22 00:16:21,428 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:16:25,869 INFO] Step 4800/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 20558/22139 tok/s;    282 sec
+[2019-01-22 00:16:25,874 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:26,742 INFO] Validation perplexity: 1.04138
+[2019-01-22 00:16:26,743 INFO] Validation accuracy: 99.1959
+[2019-01-22 00:16:30,172 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:16:31,798 INFO] Step 4900/12500; acc:  96.94; ppl:  1.22; xent: 0.20; lr: 0.00100; 15174/14985 tok/s;    288 sec
+[2019-01-22 00:16:31,804 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:32,671 INFO] Validation perplexity: 1.04958
+[2019-01-22 00:16:32,672 INFO] Validation accuracy: 99.1567
+[2019-01-22 00:16:37,596 INFO] Step 5000/12500; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 14729/18490 tok/s;    294 sec
+[2019-01-22 00:16:37,601 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:38,472 INFO] Validation perplexity: 1.04069
+[2019-01-22 00:16:38,473 INFO] Validation accuracy: 99.1894
+[2019-01-22 00:16:39,790 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:16:43,481 INFO] Step 5100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19502/22409 tok/s;    300 sec
+[2019-01-22 00:16:43,487 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:44,356 INFO] Validation perplexity: 1.03915
+[2019-01-22 00:16:44,357 INFO] Validation accuracy: 99.2874
+[2019-01-22 00:16:48,534 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:16:49,468 INFO] Step 5200/12500; acc:  99.55; ppl:  1.03; xent: 0.03; lr: 0.00100; 20731/21671 tok/s;    306 sec
+[2019-01-22 00:16:49,474 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:50,342 INFO] Validation perplexity: 1.05316
+[2019-01-22 00:16:50,343 INFO] Validation accuracy: 99.0129
+[2019-01-22 00:16:55,254 INFO] Step 5300/12500; acc:  99.43; ppl:  1.03; xent: 0.03; lr: 0.00100; 23096/17941 tok/s;    311 sec
+[2019-01-22 00:16:55,259 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:16:56,121 INFO] Validation perplexity: 1.04088
+[2019-01-22 00:16:56,122 INFO] Validation accuracy: 99.2155
+[2019-01-22 00:16:58,146 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:17:01,167 INFO] Step 5400/12500; acc:  98.92; ppl:  1.04; xent: 0.04; lr: 0.00100; 16374/15099 tok/s;    317 sec
+[2019-01-22 00:17:01,173 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:02,043 INFO] Validation perplexity: 1.06358
+[2019-01-22 00:17:02,044 INFO] Validation accuracy: 98.9933
+[2019-01-22 00:17:06,888 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:17:07,147 INFO] Step 5500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18732/20488 tok/s;    323 sec
+[2019-01-22 00:17:07,153 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:08,021 INFO] Validation perplexity: 1.03686
+[2019-01-22 00:17:08,022 INFO] Validation accuracy: 99.3071
+[2019-01-22 00:17:12,964 INFO] Step 5600/12500; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 20362/21873 tok/s;    329 sec
+[2019-01-22 00:17:12,969 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:13,831 INFO] Validation perplexity: 1.04025
+[2019-01-22 00:17:13,832 INFO] Validation accuracy: 99.2351
+[2019-01-22 00:17:16,500 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:17:18,837 INFO] Step 5700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18499/21411 tok/s;    335 sec
+[2019-01-22 00:17:18,843 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:19,710 INFO] Validation perplexity: 1.03896
+[2019-01-22 00:17:19,710 INFO] Validation accuracy: 99.3136
+[2019-01-22 00:17:24,672 INFO] Step 5800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19457/22147 tok/s;    341 sec
+[2019-01-22 00:17:24,677 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:25,540 INFO] Validation perplexity: 1.03903
+[2019-01-22 00:17:25,540 INFO] Validation accuracy: 99.3332
+[2019-01-22 00:17:26,112 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:17:30,589 INFO] Step 5900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23238/21578 tok/s;    347 sec
+[2019-01-22 00:17:30,595 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:31,462 INFO] Validation perplexity: 1.03741
+[2019-01-22 00:17:31,463 INFO] Validation accuracy: 99.3463
+[2019-01-22 00:17:34,853 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:17:36,545 INFO] Step 6000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14758/16432 tok/s;    353 sec
+[2019-01-22 00:17:36,551 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:37,418 INFO] Validation perplexity: 1.04121
+[2019-01-22 00:17:37,419 INFO] Validation accuracy: 99.3397
+[2019-01-22 00:17:42,350 INFO] Step 6100/12500; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 15395/17278 tok/s;    359 sec
+[2019-01-22 00:17:42,355 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:43,219 INFO] Validation perplexity: 1.04382
+[2019-01-22 00:17:43,220 INFO] Validation accuracy: 99.2025
+[2019-01-22 00:17:44,462 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:17:48,195 INFO] Step 6200/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 24666/20735 tok/s;    364 sec
+[2019-01-22 00:17:48,201 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:49,068 INFO] Validation perplexity: 1.04198
+[2019-01-22 00:17:49,069 INFO] Validation accuracy: 99.2417
+[2019-01-22 00:17:53,205 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:17:54,179 INFO] Step 6300/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 22003/21217 tok/s;    370 sec
+[2019-01-22 00:17:54,185 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:17:55,053 INFO] Validation perplexity: 1.04348
+[2019-01-22 00:17:55,054 INFO] Validation accuracy: 99.2548
+[2019-01-22 00:17:59,957 INFO] Step 6400/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 20248/19773 tok/s;    376 sec
+[2019-01-22 00:17:59,962 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:00,826 INFO] Validation perplexity: 1.04303
+[2019-01-22 00:18:00,827 INFO] Validation accuracy: 99.2025
+[2019-01-22 00:18:02,812 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:18:05,881 INFO] Step 6500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22963/20747 tok/s;    382 sec
+[2019-01-22 00:18:05,887 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:06,757 INFO] Validation perplexity: 1.03936
+[2019-01-22 00:18:06,757 INFO] Validation accuracy: 99.3463
+[2019-01-22 00:18:11,557 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:18:11,862 INFO] Step 6600/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 14934/13462 tok/s;    388 sec
+[2019-01-22 00:18:11,867 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:12,737 INFO] Validation perplexity: 1.0364
+[2019-01-22 00:18:12,738 INFO] Validation accuracy: 99.3463
+[2019-01-22 00:18:17,704 INFO] Step 6700/12500; acc:  99.70; ppl:  1.02; xent: 0.02; lr: 0.00100; 16709/17972 tok/s;    394 sec
+[2019-01-22 00:18:17,709 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:18,574 INFO] Validation perplexity: 1.04344
+[2019-01-22 00:18:18,575 INFO] Validation accuracy: 99.2025
+[2019-01-22 00:18:21,169 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:18:23,576 INFO] Step 6800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17229/19992 tok/s;    400 sec
+[2019-01-22 00:18:23,581 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:24,453 INFO] Validation perplexity: 1.04175
+[2019-01-22 00:18:24,454 INFO] Validation accuracy: 99.3528
+[2019-01-22 00:18:29,397 INFO] Step 6900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14015/14700 tok/s;    406 sec
+[2019-01-22 00:18:29,403 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:30,267 INFO] Validation perplexity: 1.03697
+[2019-01-22 00:18:30,268 INFO] Validation accuracy: 99.3528
+[2019-01-22 00:18:30,780 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:18:35,309 INFO] Step 7000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20489/22712 tok/s;    412 sec
+[2019-01-22 00:18:35,315 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:36,184 INFO] Validation perplexity: 1.03386
+[2019-01-22 00:18:36,185 INFO] Validation accuracy: 99.3528
+[2019-01-22 00:18:39,522 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:18:41,242 INFO] Step 7100/12500; acc:  99.09; ppl:  1.02; xent: 0.02; lr: 0.00100; 15899/15827 tok/s;    417 sec
+[2019-01-22 00:18:41,248 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:42,128 INFO] Validation perplexity: 1.04426
+[2019-01-22 00:18:42,128 INFO] Validation accuracy: 99.3397
+[2019-01-22 00:18:47,116 INFO] Step 7200/12500; acc:  99.54; ppl:  1.04; xent: 0.04; lr: 0.00100; 16822/17607 tok/s;    423 sec
+[2019-01-22 00:18:47,122 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:47,986 INFO] Validation perplexity: 1.03492
+[2019-01-22 00:18:47,987 INFO] Validation accuracy: 99.392
+[2019-01-22 00:18:49,142 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:18:52,939 INFO] Step 7300/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 20784/20908 tok/s;    429 sec
+[2019-01-22 00:18:52,945 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:53,813 INFO] Validation perplexity: 1.04205
+[2019-01-22 00:18:53,813 INFO] Validation accuracy: 99.3267
+[2019-01-22 00:18:57,880 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:18:58,901 INFO] Step 7400/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 19778/22030 tok/s;    435 sec
+[2019-01-22 00:18:58,907 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:18:59,774 INFO] Validation perplexity: 1.03419
+[2019-01-22 00:18:59,775 INFO] Validation accuracy: 99.379
+[2019-01-22 00:19:04,677 INFO] Step 7500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23338/21223 tok/s;    441 sec
+[2019-01-22 00:19:04,682 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:05,546 INFO] Validation perplexity: 1.03694
+[2019-01-22 00:19:05,547 INFO] Validation accuracy: 99.3659
+[2019-01-22 00:19:07,489 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:19:10,613 INFO] Step 7600/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 21457/21662 tok/s;    447 sec
+[2019-01-22 00:19:10,619 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:11,491 INFO] Validation perplexity: 1.03626
+[2019-01-22 00:19:11,492 INFO] Validation accuracy: 99.3855
+[2019-01-22 00:19:16,233 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:19:16,589 INFO] Step 7700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21386/21622 tok/s;    453 sec
+[2019-01-22 00:19:16,595 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:17,462 INFO] Validation perplexity: 1.04386
+[2019-01-22 00:19:17,463 INFO] Validation accuracy: 99.3136
+[2019-01-22 00:19:22,415 INFO] Step 7800/12500; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 17631/18707 tok/s;    459 sec
+[2019-01-22 00:19:22,420 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:23,283 INFO] Validation perplexity: 1.03671
+[2019-01-22 00:19:23,283 INFO] Validation accuracy: 99.392
+[2019-01-22 00:19:25,837 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:19:28,284 INFO] Step 7900/12500; acc:  99.72; ppl:  1.02; xent: 0.02; lr: 0.00100; 17010/18764 tok/s;    465 sec
+[2019-01-22 00:19:28,289 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:29,157 INFO] Validation perplexity: 1.03552
+[2019-01-22 00:19:29,157 INFO] Validation accuracy: 99.4247
+[2019-01-22 00:19:34,119 INFO] Step 8000/12500; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00100; 21465/20440 tok/s;    470 sec
+[2019-01-22 00:19:34,124 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:34,987 INFO] Validation perplexity: 1.03682
+[2019-01-22 00:19:34,988 INFO] Validation accuracy: 99.3724
+[2019-01-22 00:19:35,446 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:19:40,030 INFO] Step 8100/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 21296/22549 tok/s;    476 sec
+[2019-01-22 00:19:40,036 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:40,903 INFO] Validation perplexity: 1.04001
+[2019-01-22 00:19:40,904 INFO] Validation accuracy: 99.392
+[2019-01-22 00:19:44,187 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:19:45,948 INFO] Step 8200/12500; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 20203/20151 tok/s;    482 sec
+[2019-01-22 00:19:45,954 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:46,822 INFO] Validation perplexity: 1.03662
+[2019-01-22 00:19:46,823 INFO] Validation accuracy: 99.3267
+[2019-01-22 00:19:51,815 INFO] Step 8300/12500; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00100; 21986/21544 tok/s;    488 sec
+[2019-01-22 00:19:51,820 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:52,683 INFO] Validation perplexity: 1.04131
+[2019-01-22 00:19:52,683 INFO] Validation accuracy: 99.3332
+[2019-01-22 00:19:53,799 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:19:57,646 INFO] Step 8400/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 20293/21918 tok/s;    494 sec
+[2019-01-22 00:19:57,652 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:19:58,520 INFO] Validation perplexity: 1.0446
+[2019-01-22 00:19:58,521 INFO] Validation accuracy: 99.2809
+[2019-01-22 00:20:02,539 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:20:03,596 INFO] Step 8500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20322/21486 tok/s;    500 sec
+[2019-01-22 00:20:03,602 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:04,472 INFO] Validation perplexity: 1.03702
+[2019-01-22 00:20:04,473 INFO] Validation accuracy: 99.4182
+[2019-01-22 00:20:09,393 INFO] Step 8600/12500; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 18660/22250 tok/s;    506 sec
+[2019-01-22 00:20:09,398 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:10,261 INFO] Validation perplexity: 1.03691
+[2019-01-22 00:20:10,262 INFO] Validation accuracy: 99.3855
+[2019-01-22 00:20:12,155 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:20:15,326 INFO] Step 8700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21084/22490 tok/s;    512 sec
+[2019-01-22 00:20:15,332 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:16,200 INFO] Validation perplexity: 1.04594
+[2019-01-22 00:20:16,201 INFO] Validation accuracy: 99.3267
+[2019-01-22 00:20:20,893 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:20:21,299 INFO] Step 8800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23431/21641 tok/s;    518 sec
+[2019-01-22 00:20:21,304 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:22,175 INFO] Validation perplexity: 1.05242
+[2019-01-22 00:20:22,176 INFO] Validation accuracy: 99.3136
+[2019-01-22 00:20:27,127 INFO] Step 8900/12500; acc:  99.35; ppl:  1.06; xent: 0.06; lr: 0.00100; 20057/22523 tok/s;    523 sec
+[2019-01-22 00:20:27,133 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:27,995 INFO] Validation perplexity: 1.04021
+[2019-01-22 00:20:27,996 INFO] Validation accuracy: 99.4051
+[2019-01-22 00:20:30,505 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:20:33,001 INFO] Step 9000/12500; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00100; 21371/21433 tok/s;    529 sec
+[2019-01-22 00:20:33,007 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:33,874 INFO] Validation perplexity: 1.03789
+[2019-01-22 00:20:33,875 INFO] Validation accuracy: 99.392
+[2019-01-22 00:20:38,851 INFO] Step 9100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19359/20448 tok/s;    535 sec
+[2019-01-22 00:20:38,857 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:39,719 INFO] Validation perplexity: 1.03759
+[2019-01-22 00:20:39,720 INFO] Validation accuracy: 99.3986
+[2019-01-22 00:20:40,115 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:20:44,752 INFO] Step 9200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17889/22641 tok/s;    541 sec
+[2019-01-22 00:20:44,758 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:45,624 INFO] Validation perplexity: 1.04928
+[2019-01-22 00:20:45,625 INFO] Validation accuracy: 99.2548
+[2019-01-22 00:20:48,850 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:20:50,644 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14817/18695 tok/s;    547 sec
+[2019-01-22 00:20:50,650 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:51,517 INFO] Validation perplexity: 1.03928
+[2019-01-22 00:20:51,517 INFO] Validation accuracy: 99.379
+[2019-01-22 00:20:56,519 INFO] Step 9400/12500; acc:  99.56; ppl:  1.04; xent: 0.03; lr: 0.00100; 23503/21093 tok/s;    553 sec
+[2019-01-22 00:20:56,524 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:20:57,386 INFO] Validation perplexity: 1.03526
+[2019-01-22 00:20:57,387 INFO] Validation accuracy: 99.4509
+[2019-01-22 00:20:58,461 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:21:02,354 INFO] Step 9500/12500; acc:  99.82; ppl:  1.00; xent: 0.00; lr: 0.00100; 21309/22641 tok/s;    559 sec
+[2019-01-22 00:21:02,359 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:03,227 INFO] Validation perplexity: 1.0454
+[2019-01-22 00:21:03,228 INFO] Validation accuracy: 99.3659
+[2019-01-22 00:21:07,199 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:21:08,296 INFO] Step 9600/12500; acc:  99.34; ppl:  1.08; xent: 0.08; lr: 0.00100; 18584/19957 tok/s;    565 sec
+[2019-01-22 00:21:08,302 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:09,172 INFO] Validation perplexity: 1.05387
+[2019-01-22 00:21:09,172 INFO] Validation accuracy: 99.3005
+[2019-01-22 00:21:14,120 INFO] Step 9700/12500; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 14428/18944 tok/s;    570 sec
+[2019-01-22 00:21:14,126 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:14,988 INFO] Validation perplexity: 1.04097
+[2019-01-22 00:21:14,989 INFO] Validation accuracy: 99.4116
+[2019-01-22 00:21:16,813 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:21:20,044 INFO] Step 9800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15001/10539 tok/s;    576 sec
+[2019-01-22 00:21:20,050 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:20,917 INFO] Validation perplexity: 1.03705
+[2019-01-22 00:21:20,918 INFO] Validation accuracy: 99.4051
+[2019-01-22 00:21:25,551 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:21:25,999 INFO] Step 9900/12500; acc:  99.90; ppl:  1.01; xent: 0.01; lr: 0.00100; 20870/22361 tok/s;    582 sec
+[2019-01-22 00:21:26,005 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:26,872 INFO] Validation perplexity: 1.03742
+[2019-01-22 00:21:26,873 INFO] Validation accuracy: 99.392
+[2019-01-22 00:21:31,818 INFO] Step 10000/12500; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 18607/20298 tok/s;    588 sec
+[2019-01-22 00:21:31,823 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:32,685 INFO] Validation perplexity: 1.04139
+[2019-01-22 00:21:32,686 INFO] Validation accuracy: 99.3528
+[2019-01-22 00:21:35,159 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:21:37,715 INFO] Step 10100/12500; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00100; 18574/22251 tok/s;    594 sec
+[2019-01-22 00:21:37,721 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:38,591 INFO] Validation perplexity: 1.0339
+[2019-01-22 00:21:38,592 INFO] Validation accuracy: 99.392
+[2019-01-22 00:21:43,599 INFO] Step 10200/12500; acc:  98.91; ppl:  1.08; xent: 0.08; lr: 0.00100; 4921/5145 tok/s;    600 sec
+[2019-01-22 00:21:43,604 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:44,468 INFO] Validation perplexity: 1.04288
+[2019-01-22 00:21:44,468 INFO] Validation accuracy: 99.3332
+[2019-01-22 00:21:44,771 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:21:49,455 INFO] Step 10300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22894/17784 tok/s;    606 sec
+[2019-01-22 00:21:49,462 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:50,330 INFO] Validation perplexity: 1.03543
+[2019-01-22 00:21:50,331 INFO] Validation accuracy: 99.4836
+[2019-01-22 00:21:53,520 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:21:55,370 INFO] Step 10400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17950/22263 tok/s;    612 sec
+[2019-01-22 00:21:55,375 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:21:56,242 INFO] Validation perplexity: 1.04895
+[2019-01-22 00:21:56,243 INFO] Validation accuracy: 99.3267
+[2019-01-22 00:22:01,228 INFO] Step 10500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20871/21756 tok/s;    617 sec
+[2019-01-22 00:22:01,233 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:02,098 INFO] Validation perplexity: 1.03479
+[2019-01-22 00:22:02,099 INFO] Validation accuracy: 99.4378
+[2019-01-22 00:22:03,127 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:22:07,062 INFO] Step 10600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20795/21770 tok/s;    623 sec
+[2019-01-22 00:22:07,068 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:07,935 INFO] Validation perplexity: 1.03831
+[2019-01-22 00:22:07,936 INFO] Validation accuracy: 99.3986
+[2019-01-22 00:22:11,868 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:22:13,033 INFO] Step 10700/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 15400/13135 tok/s;    629 sec
+[2019-01-22 00:22:13,038 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:13,906 INFO] Validation perplexity: 1.04185
+[2019-01-22 00:22:13,907 INFO] Validation accuracy: 99.4182
+[2019-01-22 00:22:18,840 INFO] Step 10800/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 21579/20478 tok/s;    635 sec
+[2019-01-22 00:22:18,846 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:19,711 INFO] Validation perplexity: 1.05229
+[2019-01-22 00:22:19,712 INFO] Validation accuracy: 99.2678
+[2019-01-22 00:22:21,478 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:22:24,764 INFO] Step 10900/12500; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00100; 19582/22030 tok/s;    641 sec
+[2019-01-22 00:22:24,769 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:25,636 INFO] Validation perplexity: 1.04531
+[2019-01-22 00:22:25,637 INFO] Validation accuracy: 99.3332
+[2019-01-22 00:22:30,213 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:22:30,712 INFO] Step 11000/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 19180/21937 tok/s;    647 sec
+[2019-01-22 00:22:30,717 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:31,584 INFO] Validation perplexity: 1.04303
+[2019-01-22 00:22:31,585 INFO] Validation accuracy: 99.3594
+[2019-01-22 00:22:36,523 INFO] Step 11100/12500; acc:  99.89; ppl:  1.01; xent: 0.01; lr: 0.00100; 18154/20967 tok/s;    653 sec
+[2019-01-22 00:22:36,528 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:37,390 INFO] Validation perplexity: 1.03257
+[2019-01-22 00:22:37,391 INFO] Validation accuracy: 99.477
+[2019-01-22 00:22:39,823 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:22:42,442 INFO] Step 11200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16833/21143 tok/s;    659 sec
+[2019-01-22 00:22:42,448 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:43,314 INFO] Validation perplexity: 1.0345
+[2019-01-22 00:22:43,315 INFO] Validation accuracy: 99.4705
+[2019-01-22 00:22:48,308 INFO] Step 11300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16564/16119 tok/s;    665 sec
+[2019-01-22 00:22:48,313 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:49,176 INFO] Validation perplexity: 1.03977
+[2019-01-22 00:22:49,176 INFO] Validation accuracy: 99.4378
+[2019-01-22 00:22:49,441 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:22:54,182 INFO] Step 11400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14603/21464 tok/s;    670 sec
+[2019-01-22 00:22:54,188 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:22:55,055 INFO] Validation perplexity: 1.03613
+[2019-01-22 00:22:55,056 INFO] Validation accuracy: 99.4574
+[2019-01-22 00:22:58,182 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:23:00,105 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15772/13430 tok/s;    676 sec
+[2019-01-22 00:23:00,111 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:00,978 INFO] Validation perplexity: 1.0427
+[2019-01-22 00:23:00,978 INFO] Validation accuracy: 99.4182
+[2019-01-22 00:23:05,934 INFO] Step 11600/12500; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 26186/19026 tok/s;    682 sec
+[2019-01-22 00:23:05,939 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:06,802 INFO] Validation perplexity: 1.04519
+[2019-01-22 00:23:06,803 INFO] Validation accuracy: 99.3267
+[2019-01-22 00:23:07,795 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:23:11,815 INFO] Step 11700/12500; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 16298/18953 tok/s;    688 sec
+[2019-01-22 00:23:11,821 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:12,688 INFO] Validation perplexity: 1.03261
+[2019-01-22 00:23:12,689 INFO] Validation accuracy: 99.4182
+[2019-01-22 00:23:16,542 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:23:17,740 INFO] Step 11800/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 15786/17143 tok/s;    694 sec
+[2019-01-22 00:23:17,746 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:18,613 INFO] Validation perplexity: 1.05195
+[2019-01-22 00:23:18,614 INFO] Validation accuracy: 99.2221
+[2019-01-22 00:23:23,563 INFO] Step 11900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21306/22305 tok/s;    700 sec
+[2019-01-22 00:23:23,568 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:24,431 INFO] Validation perplexity: 1.0399
+[2019-01-22 00:23:24,432 INFO] Validation accuracy: 99.3724
+[2019-01-22 00:23:26,150 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:23:29,468 INFO] Step 12000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21512/19719 tok/s;    706 sec
+[2019-01-22 00:23:29,474 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:30,342 INFO] Validation perplexity: 1.03839
+[2019-01-22 00:23:30,343 INFO] Validation accuracy: 99.4901
+[2019-01-22 00:23:34,883 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:23:35,422 INFO] Step 12100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21991/21991 tok/s;    712 sec
+[2019-01-22 00:23:35,428 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:36,297 INFO] Validation perplexity: 1.04089
+[2019-01-22 00:23:36,298 INFO] Validation accuracy: 99.4116
+[2019-01-22 00:23:41,241 INFO] Step 12200/12500; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00100; 21094/22302 tok/s;    717 sec
+[2019-01-22 00:23:41,248 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:42,114 INFO] Validation perplexity: 1.04002
+[2019-01-22 00:23:42,115 INFO] Validation accuracy: 99.4247
+[2019-01-22 00:23:44,496 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:23:47,140 INFO] Step 12300/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 20614/22200 tok/s;    723 sec
+[2019-01-22 00:23:47,146 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:48,018 INFO] Validation perplexity: 1.0414
+[2019-01-22 00:23:48,019 INFO] Validation accuracy: 99.4313
+[2019-01-22 00:23:53,006 INFO] Step 12400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21636/19503 tok/s;    729 sec
+[2019-01-22 00:23:53,011 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:53,871 INFO] Validation perplexity: 1.04092
+[2019-01-22 00:23:53,872 INFO] Validation accuracy: 99.4247
+[2019-01-22 00:23:54,097 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000
+[2019-01-22 00:23:58,867 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21499/17468 tok/s;    735 sec
+[2019-01-22 00:23:58,873 INFO] Loading valid dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.valid.0.pt, number of examples: 1000
+[2019-01-22 00:23:59,738 INFO] Validation perplexity: 1.04996
+[2019-01-22 00:23:59,739 INFO] Validation accuracy: 99.3659
+[2019-01-22 00:23:59,739 INFO] Saving checkpoint ../models/finnish_models/model-finnish-high-res50_step_12500.pt
+[2019-01-22 00:23:59,836 INFO] Loading train dataset from ../finnish-train-high-10000to10000/data_finnish_resample10000_s50.train.0.pt, number of examples: 10000

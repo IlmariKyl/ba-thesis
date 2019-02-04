@@ -1,0 +1,626 @@
+[2019-01-22 02:24:40,146 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:24:40,148 INFO]  * vocabulary size. source = 78; target = 59
+[2019-01-22 02:24:40,148 INFO] Building model...
+[2019-01-22 02:24:43,817 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(78, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(59, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=59, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 02:24:43,820 INFO] encoder: 310200
+[2019-01-22 02:24:43,821 INFO] decoder: 1136059
+[2019-01-22 02:24:43,821 INFO] * number of parameters: 1446259
+[2019-01-22 02:24:43,822 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 02:24:43,822 INFO] Start training...
+[2019-01-22 02:24:43,926 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:24:48,784 INFO] Step 100/12500; acc:  44.92; ppl:  6.88; xent: 1.93; lr: 0.00100; 18718/18718 tok/s;      5 sec
+[2019-01-22 02:24:48,794 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:24:49,629 INFO] Validation perplexity: 8.01607
+[2019-01-22 02:24:49,630 INFO] Validation accuracy: 40.7283
+[2019-01-22 02:24:52,246 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:24:54,141 INFO] Step 200/12500; acc:  39.88; ppl: 14.09; xent: 2.65; lr: 0.00100; 17143/17300 tok/s;     10 sec
+[2019-01-22 02:24:54,151 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:24:54,984 INFO] Validation perplexity: 3.11664
+[2019-01-22 02:24:54,985 INFO] Validation accuracy: 70.0691
+[2019-01-22 02:24:59,264 INFO] Step 300/12500; acc:  95.11; ppl:  1.27; xent: 0.24; lr: 0.00100; 18527/17211 tok/s;     15 sec
+[2019-01-22 02:24:59,272 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:00,101 INFO] Validation perplexity: 1.78144
+[2019-01-22 02:25:00,102 INFO] Validation accuracy: 86.1682
+[2019-01-22 02:25:00,819 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:25:04,497 INFO] Step 400/12500; acc:  94.22; ppl:  1.21; xent: 0.19; lr: 0.00100; 18297/18297 tok/s;     21 sec
+[2019-01-22 02:25:04,506 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:05,339 INFO] Validation perplexity: 1.24112
+[2019-01-22 02:25:05,339 INFO] Validation accuracy: 94.7572
+[2019-01-22 02:25:08,542 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:25:09,793 INFO] Step 500/12500; acc:  99.66; ppl:  1.03; xent: 0.03; lr: 0.00100; 17528/20358 tok/s;     26 sec
+[2019-01-22 02:25:09,802 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:10,637 INFO] Validation perplexity: 1.11795
+[2019-01-22 02:25:10,637 INFO] Validation accuracy: 97.3112
+[2019-01-22 02:25:14,937 INFO] Step 600/12500; acc:  98.44; ppl:  1.04; xent: 0.04; lr: 0.00100; 23364/16992 tok/s;     31 sec
+[2019-01-22 02:25:14,945 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:15,773 INFO] Validation perplexity: 1.05343
+[2019-01-22 02:25:15,774 INFO] Validation accuracy: 98.7104
+[2019-01-22 02:25:17,098 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:25:20,189 INFO] Step 700/12500; acc:  98.63; ppl:  1.06; xent: 0.06; lr: 0.00100; 19832/20174 tok/s;     36 sec
+[2019-01-22 02:25:20,199 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:21,032 INFO] Validation perplexity: 1.04667
+[2019-01-22 02:25:21,033 INFO] Validation accuracy: 99.1571
+[2019-01-22 02:25:24,803 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:25:25,442 INFO] Step 800/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 20350/20350 tok/s;     42 sec
+[2019-01-22 02:25:25,452 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:26,288 INFO] Validation perplexity: 1.02233
+[2019-01-22 02:25:26,288 INFO] Validation accuracy: 99.5786
+[2019-01-22 02:25:30,612 INFO] Step 900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21563/19562 tok/s;     47 sec
+[2019-01-22 02:25:30,620 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:31,450 INFO] Validation perplexity: 1.0221
+[2019-01-22 02:25:31,451 INFO] Validation accuracy: 99.4858
+[2019-01-22 02:25:33,345 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:25:35,826 INFO] Step 1000/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 21736/17784 tok/s;     52 sec
+[2019-01-22 02:25:35,835 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:36,668 INFO] Validation perplexity: 1.07742
+[2019-01-22 02:25:36,669 INFO] Validation accuracy: 98.8705
+[2019-01-22 02:25:41,053 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:25:41,127 INFO] Step 1100/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 5521/4865 tok/s;     57 sec
+[2019-01-22 02:25:41,136 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:41,968 INFO] Validation perplexity: 1.02319
+[2019-01-22 02:25:41,969 INFO] Validation accuracy: 99.5533
+[2019-01-22 02:25:46,224 INFO] Step 1200/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 14687/14566 tok/s;     62 sec
+[2019-01-22 02:25:46,232 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:47,060 INFO] Validation perplexity: 1.01036
+[2019-01-22 02:25:47,060 INFO] Validation accuracy: 99.7893
+[2019-01-22 02:25:49,592 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:25:51,522 INFO] Step 1300/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 20108/17595 tok/s;     68 sec
+[2019-01-22 02:25:51,531 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:52,366 INFO] Validation perplexity: 1.00626
+[2019-01-22 02:25:52,367 INFO] Validation accuracy: 99.8314
+[2019-01-22 02:25:56,648 INFO] Step 1400/12500; acc:  99.92; ppl:  1.01; xent: 0.01; lr: 0.00100; 18851/19800 tok/s;     73 sec
+[2019-01-22 02:25:56,656 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:25:57,487 INFO] Validation perplexity: 1.02096
+[2019-01-22 02:25:57,488 INFO] Validation accuracy: 99.6628
+[2019-01-22 02:25:58,134 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:01,841 INFO] Step 1500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18534/19596 tok/s;     78 sec
+[2019-01-22 02:26:01,851 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:02,686 INFO] Validation perplexity: 1.00989
+[2019-01-22 02:26:02,687 INFO] Validation accuracy: 99.8061
+[2019-01-22 02:26:05,835 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:07,125 INFO] Step 1600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18869/18869 tok/s;     83 sec
+[2019-01-22 02:26:07,135 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:07,966 INFO] Validation perplexity: 1.0039
+[2019-01-22 02:26:07,967 INFO] Validation accuracy: 99.882
+[2019-01-22 02:26:12,264 INFO] Step 1700/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 17252/13041 tok/s;     88 sec
+[2019-01-22 02:26:12,272 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:13,100 INFO] Validation perplexity: 1.00308
+[2019-01-22 02:26:13,101 INFO] Validation accuracy: 99.941
+[2019-01-22 02:26:14,370 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:17,510 INFO] Step 1800/12500; acc:  99.20; ppl:  1.06; xent: 0.06; lr: 0.00100; 19262/20064 tok/s;     94 sec
+[2019-01-22 02:26:17,520 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:18,352 INFO] Validation perplexity: 1.02403
+[2019-01-22 02:26:18,352 INFO] Validation accuracy: 99.7808
+[2019-01-22 02:26:22,070 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:22,748 INFO] Step 1900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18526/18526 tok/s;     99 sec
+[2019-01-22 02:26:22,757 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:23,589 INFO] Validation perplexity: 1.00924
+[2019-01-22 02:26:23,590 INFO] Validation accuracy: 99.8736
+[2019-01-22 02:26:27,922 INFO] Step 2000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17047/20147 tok/s;    104 sec
+[2019-01-22 02:26:27,930 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:28,757 INFO] Validation perplexity: 1.02139
+[2019-01-22 02:26:28,758 INFO] Validation accuracy: 99.764
+[2019-01-22 02:26:30,606 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:33,145 INFO] Step 2100/12500; acc:  99.37; ppl:  1.03; xent: 0.03; lr: 0.00100; 18407/16106 tok/s;    109 sec
+[2019-01-22 02:26:33,155 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:33,989 INFO] Validation perplexity: 1.02164
+[2019-01-22 02:26:33,990 INFO] Validation accuracy: 99.6966
+[2019-01-22 02:26:38,310 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:38,419 INFO] Step 2200/12500; acc:  98.59; ppl:  1.12; xent: 0.11; lr: 0.00100; 19951/18137 tok/s;    114 sec
+[2019-01-22 02:26:38,428 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:39,261 INFO] Validation perplexity: 1.00494
+[2019-01-22 02:26:39,262 INFO] Validation accuracy: 99.8904
+[2019-01-22 02:26:43,543 INFO] Step 2300/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 18117/18134 tok/s;    120 sec
+[2019-01-22 02:26:43,550 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:44,378 INFO] Validation perplexity: 1.00431
+[2019-01-22 02:26:44,378 INFO] Validation accuracy: 99.8989
+[2019-01-22 02:26:46,842 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:48,804 INFO] Step 2400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17732/13853 tok/s;    125 sec
+[2019-01-22 02:26:48,813 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:49,647 INFO] Validation perplexity: 1.00291
+[2019-01-22 02:26:49,648 INFO] Validation accuracy: 99.9494
+[2019-01-22 02:26:53,954 INFO] Step 2500/12500; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 20433/19582 tok/s;    130 sec
+[2019-01-22 02:26:53,962 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:54,788 INFO] Validation perplexity: 1.01839
+[2019-01-22 02:26:54,789 INFO] Validation accuracy: 99.7724
+[2019-01-22 02:26:55,374 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:26:59,138 INFO] Step 2600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17149/17959 tok/s;    135 sec
+[2019-01-22 02:26:59,147 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:26:59,981 INFO] Validation perplexity: 1.02247
+[2019-01-22 02:26:59,982 INFO] Validation accuracy: 99.705
+[2019-01-22 02:27:03,076 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:27:04,404 INFO] Step 2700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17172/20295 tok/s;    140 sec
+[2019-01-22 02:27:04,413 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:05,247 INFO] Validation perplexity: 1.00097
+[2019-01-22 02:27:05,248 INFO] Validation accuracy: 99.9831
+[2019-01-22 02:27:09,539 INFO] Step 2800/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 17444/19030 tok/s;    146 sec
+[2019-01-22 02:27:09,547 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:10,373 INFO] Validation perplexity: 1.01681
+[2019-01-22 02:27:10,373 INFO] Validation accuracy: 99.5533
+[2019-01-22 02:27:11,594 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:27:14,763 INFO] Step 2900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20005/17334 tok/s;    151 sec
+[2019-01-22 02:27:14,772 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:15,602 INFO] Validation perplexity: 1.00602
+[2019-01-22 02:27:15,603 INFO] Validation accuracy: 99.9326
+[2019-01-22 02:27:19,270 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:27:19,985 INFO] Step 3000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15558/16693 tok/s;    156 sec
+[2019-01-22 02:27:19,995 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:20,825 INFO] Validation perplexity: 1.00746
+[2019-01-22 02:27:20,826 INFO] Validation accuracy: 99.823
+[2019-01-22 02:27:25,182 INFO] Step 3100/12500; acc:  97.79; ppl:  1.05; xent: 0.04; lr: 0.00100; 5859/5802 tok/s;    161 sec
+[2019-01-22 02:27:25,190 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:26,015 INFO] Validation perplexity: 1.00129
+[2019-01-22 02:27:26,016 INFO] Validation accuracy: 99.9747
+[2019-01-22 02:27:27,782 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:27:30,343 INFO] Step 3200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23369/16995 tok/s;    166 sec
+[2019-01-22 02:27:30,353 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:31,183 INFO] Validation perplexity: 1.02889
+[2019-01-22 02:27:31,184 INFO] Validation accuracy: 99.6713
+[2019-01-22 02:27:35,488 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:27:35,629 INFO] Step 3300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21658/17720 tok/s;    172 sec
+[2019-01-22 02:27:35,639 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:36,480 INFO] Validation perplexity: 1.00176
+[2019-01-22 02:27:36,481 INFO] Validation accuracy: 99.9579
+[2019-01-22 02:27:40,781 INFO] Step 3400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16103/12197 tok/s;    177 sec
+[2019-01-22 02:27:40,789 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:41,618 INFO] Validation perplexity: 1.0027
+[2019-01-22 02:27:41,618 INFO] Validation accuracy: 99.9579
+[2019-01-22 02:27:44,048 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:27:46,034 INFO] Step 3500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23273/15091 tok/s;    182 sec
+[2019-01-22 02:27:46,044 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:46,882 INFO] Validation perplexity: 1.00093
+[2019-01-22 02:27:46,882 INFO] Validation accuracy: 99.9747
+[2019-01-22 02:27:51,205 INFO] Step 3600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17039/19338 tok/s;    187 sec
+[2019-01-22 02:27:51,213 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:52,040 INFO] Validation perplexity: 1.00579
+[2019-01-22 02:27:52,041 INFO] Validation accuracy: 99.9157
+[2019-01-22 02:27:52,584 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:27:56,376 INFO] Step 3700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19672/17213 tok/s;    192 sec
+[2019-01-22 02:27:56,385 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:27:57,218 INFO] Validation perplexity: 1.001
+[2019-01-22 02:27:57,219 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:28:00,279 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:01,675 INFO] Step 3800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18677/17620 tok/s;    198 sec
+[2019-01-22 02:28:01,684 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:02,518 INFO] Validation perplexity: 1.00114
+[2019-01-22 02:28:02,519 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:28:06,808 INFO] Step 3900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19624/19480 tok/s;    203 sec
+[2019-01-22 02:28:06,816 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:07,646 INFO] Validation perplexity: 1.00028
+[2019-01-22 02:28:07,647 INFO] Validation accuracy: 100
+[2019-01-22 02:28:08,819 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:12,024 INFO] Step 4000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21572/17650 tok/s;    208 sec
+[2019-01-22 02:28:12,033 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:12,869 INFO] Validation perplexity: 1.00012
+[2019-01-22 02:28:12,870 INFO] Validation accuracy: 100
+[2019-01-22 02:28:16,512 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:17,277 INFO] Step 4100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18144/19440 tok/s;    213 sec
+[2019-01-22 02:28:17,287 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:18,120 INFO] Validation perplexity: 1.00009
+[2019-01-22 02:28:18,121 INFO] Validation accuracy: 100
+[2019-01-22 02:28:22,476 INFO] Step 4200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15734/16794 tok/s;    219 sec
+[2019-01-22 02:28:22,484 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:23,312 INFO] Validation perplexity: 1.00007
+[2019-01-22 02:28:23,313 INFO] Validation accuracy: 100
+[2019-01-22 02:28:25,043 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:27,650 INFO] Step 4300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21186/18348 tok/s;    224 sec
+[2019-01-22 02:28:27,660 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:28,490 INFO] Validation perplexity: 1.00006
+[2019-01-22 02:28:28,491 INFO] Validation accuracy: 100
+[2019-01-22 02:28:32,731 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:32,903 INFO] Step 4400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21369/17095 tok/s;    229 sec
+[2019-01-22 02:28:32,911 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:33,746 INFO] Validation perplexity: 1.00005
+[2019-01-22 02:28:33,747 INFO] Validation accuracy: 100
+[2019-01-22 02:28:38,041 INFO] Step 4500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16201/19883 tok/s;    234 sec
+[2019-01-22 02:28:38,049 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:38,882 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:28:38,883 INFO] Validation accuracy: 100
+[2019-01-22 02:28:41,266 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:43,287 INFO] Step 4600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18291/18291 tok/s;    239 sec
+[2019-01-22 02:28:43,296 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:44,130 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:28:44,131 INFO] Validation accuracy: 100
+[2019-01-22 02:28:48,453 INFO] Step 4700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19984/18167 tok/s;    245 sec
+[2019-01-22 02:28:48,461 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:49,289 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:28:49,290 INFO] Validation accuracy: 100
+[2019-01-22 02:28:49,797 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:53,627 INFO] Step 4800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21709/18091 tok/s;    250 sec
+[2019-01-22 02:28:53,635 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:54,468 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:28:54,468 INFO] Validation accuracy: 100
+[2019-01-22 02:28:57,491 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:28:58,927 INFO] Step 4900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16173/20055 tok/s;    255 sec
+[2019-01-22 02:28:58,936 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:28:59,771 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:28:59,772 INFO] Validation accuracy: 100
+[2019-01-22 02:29:04,052 INFO] Step 5000/12500; acc:  99.53; ppl:  1.04; xent: 0.04; lr: 0.00100; 18258/18258 tok/s;    260 sec
+[2019-01-22 02:29:04,060 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:04,891 INFO] Validation perplexity: 1.00088
+[2019-01-22 02:29:04,891 INFO] Validation accuracy: 99.9831
+[2019-01-22 02:29:06,024 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:29:09,268 INFO] Step 5100/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 19902/18093 tok/s;    265 sec
+[2019-01-22 02:29:09,277 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:10,112 INFO] Validation perplexity: 1.01924
+[2019-01-22 02:29:10,113 INFO] Validation accuracy: 99.4437
+[2019-01-22 02:29:13,719 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:29:14,528 INFO] Step 5200/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 19866/18959 tok/s;    271 sec
+[2019-01-22 02:29:14,537 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:15,370 INFO] Validation perplexity: 1.0209
+[2019-01-22 02:29:15,370 INFO] Validation accuracy: 99.7218
+[2019-01-22 02:29:19,731 INFO] Step 5300/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 19037/18244 tok/s;    276 sec
+[2019-01-22 02:29:19,739 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:20,565 INFO] Validation perplexity: 1.01599
+[2019-01-22 02:29:20,566 INFO] Validation accuracy: 99.6797
+[2019-01-22 02:29:22,254 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:29:24,924 INFO] Step 5400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20564/20564 tok/s;    281 sec
+[2019-01-22 02:29:24,933 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:25,764 INFO] Validation perplexity: 1.0041
+[2019-01-22 02:29:25,765 INFO] Validation accuracy: 99.941
+[2019-01-22 02:29:29,948 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:29:30,164 INFO] Step 5500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20074/20074 tok/s;    286 sec
+[2019-01-22 02:29:30,173 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:31,009 INFO] Validation perplexity: 1.0051
+[2019-01-22 02:29:31,010 INFO] Validation accuracy: 99.941
+[2019-01-22 02:29:35,327 INFO] Step 5600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18892/17724 tok/s;    291 sec
+[2019-01-22 02:29:35,335 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:36,163 INFO] Validation perplexity: 1.00427
+[2019-01-22 02:29:36,164 INFO] Validation accuracy: 99.941
+[2019-01-22 02:29:38,484 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:29:40,545 INFO] Step 5700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18952/18433 tok/s;    297 sec
+[2019-01-22 02:29:40,554 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:41,386 INFO] Validation perplexity: 1.00172
+[2019-01-22 02:29:41,386 INFO] Validation accuracy: 99.9747
+[2019-01-22 02:29:45,713 INFO] Step 5800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18931/18909 tok/s;    302 sec
+[2019-01-22 02:29:45,721 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:46,549 INFO] Validation perplexity: 1.00708
+[2019-01-22 02:29:46,550 INFO] Validation accuracy: 99.941
+[2019-01-22 02:29:47,009 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:29:50,882 INFO] Step 5900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20170/19382 tok/s;    307 sec
+[2019-01-22 02:29:50,890 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:51,723 INFO] Validation perplexity: 1.00219
+[2019-01-22 02:29:51,723 INFO] Validation accuracy: 99.9831
+[2019-01-22 02:29:54,704 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:29:56,181 INFO] Step 6000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17405/18988 tok/s;    312 sec
+[2019-01-22 02:29:56,190 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:29:57,024 INFO] Validation perplexity: 1.00008
+[2019-01-22 02:29:57,024 INFO] Validation accuracy: 100
+[2019-01-22 02:30:01,323 INFO] Step 6100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18441/16831 tok/s;    317 sec
+[2019-01-22 02:30:01,331 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:02,162 INFO] Validation perplexity: 1.00005
+[2019-01-22 02:30:02,163 INFO] Validation accuracy: 100
+[2019-01-22 02:30:03,238 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:30:06,539 INFO] Step 6200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17671/17905 tok/s;    323 sec
+[2019-01-22 02:30:06,548 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:07,380 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:30:07,381 INFO] Validation accuracy: 100
+[2019-01-22 02:30:10,941 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:30:11,809 INFO] Step 6300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18961/19916 tok/s;    328 sec
+[2019-01-22 02:30:11,817 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:12,650 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:30:12,651 INFO] Validation accuracy: 100
+[2019-01-22 02:30:16,981 INFO] Step 6400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19745/16912 tok/s;    333 sec
+[2019-01-22 02:30:16,989 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:17,816 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:30:17,817 INFO] Validation accuracy: 100
+[2019-01-22 02:30:19,470 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:30:22,170 INFO] Step 6500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21704/18087 tok/s;    338 sec
+[2019-01-22 02:30:22,179 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:23,015 INFO] Validation perplexity: 1.00002
+[2019-01-22 02:30:23,016 INFO] Validation accuracy: 100
+[2019-01-22 02:30:27,163 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:30:27,429 INFO] Step 6600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20531/20531 tok/s;    344 sec
+[2019-01-22 02:30:27,437 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:28,270 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:30:28,271 INFO] Validation accuracy: 100
+[2019-01-22 02:30:32,586 INFO] Step 6700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16567/19306 tok/s;    349 sec
+[2019-01-22 02:30:32,593 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:33,421 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:30:33,422 INFO] Validation accuracy: 100
+[2019-01-22 02:30:35,697 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:30:37,800 INFO] Step 6800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18568/18568 tok/s;    354 sec
+[2019-01-22 02:30:37,809 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:38,645 INFO] Validation perplexity: 1.00005
+[2019-01-22 02:30:38,645 INFO] Validation accuracy: 100
+[2019-01-22 02:30:42,977 INFO] Step 6900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18589/18589 tok/s;    359 sec
+[2019-01-22 02:30:42,984 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:43,812 INFO] Validation perplexity: 1.02753
+[2019-01-22 02:30:43,813 INFO] Validation accuracy: 99.7218
+[2019-01-22 02:30:44,237 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:30:48,163 INFO] Step 7000/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 19543/20364 tok/s;    364 sec
+[2019-01-22 02:30:48,172 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:49,006 INFO] Validation perplexity: 1.00642
+[2019-01-22 02:30:49,007 INFO] Validation accuracy: 99.9073
+[2019-01-22 02:30:51,930 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:30:53,447 INFO] Step 7100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18695/18695 tok/s;    370 sec
+[2019-01-22 02:30:53,456 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:54,290 INFO] Validation perplexity: 1.01161
+[2019-01-22 02:30:54,291 INFO] Validation accuracy: 99.8483
+[2019-01-22 02:30:58,581 INFO] Step 7200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23001/16042 tok/s;    375 sec
+[2019-01-22 02:30:58,589 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:30:59,417 INFO] Validation perplexity: 1.00224
+[2019-01-22 02:30:59,418 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:31:00,466 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:31:03,823 INFO] Step 7300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20570/19356 tok/s;    380 sec
+[2019-01-22 02:31:03,832 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:04,664 INFO] Validation perplexity: 1.00128
+[2019-01-22 02:31:04,665 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:31:08,163 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:31:09,076 INFO] Step 7400/12500; acc:  97.92; ppl:  1.13; xent: 0.12; lr: 0.00100; 16936/14057 tok/s;    385 sec
+[2019-01-22 02:31:09,084 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:09,917 INFO] Validation perplexity: 1.00014
+[2019-01-22 02:31:09,917 INFO] Validation accuracy: 100
+[2019-01-22 02:31:14,246 INFO] Step 7500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18605/20156 tok/s;    390 sec
+[2019-01-22 02:31:14,254 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:15,085 INFO] Validation perplexity: 1.00048
+[2019-01-22 02:31:15,085 INFO] Validation accuracy: 99.9916
+[2019-01-22 02:31:16,699 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:31:19,439 INFO] Step 7600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20265/18576 tok/s;    396 sec
+[2019-01-22 02:31:19,447 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:20,280 INFO] Validation perplexity: 1.00057
+[2019-01-22 02:31:20,281 INFO] Validation accuracy: 99.9916
+[2019-01-22 02:31:24,394 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:31:24,693 INFO] Step 7700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21541/17227 tok/s;    401 sec
+[2019-01-22 02:31:24,702 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:25,534 INFO] Validation perplexity: 1.0066
+[2019-01-22 02:31:25,534 INFO] Validation accuracy: 99.941
+[2019-01-22 02:31:29,846 INFO] Step 7800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21274/16786 tok/s;    406 sec
+[2019-01-22 02:31:29,854 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:30,682 INFO] Validation perplexity: 1.01155
+[2019-01-22 02:31:30,682 INFO] Validation accuracy: 99.8483
+[2019-01-22 02:31:32,927 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:31:35,080 INFO] Step 7900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20521/20441 tok/s;    411 sec
+[2019-01-22 02:31:35,088 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:35,921 INFO] Validation perplexity: 1.00732
+[2019-01-22 02:31:35,922 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:31:40,240 INFO] Step 8000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17063/17570 tok/s;    416 sec
+[2019-01-22 02:31:40,248 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:41,078 INFO] Validation perplexity: 1.00145
+[2019-01-22 02:31:41,078 INFO] Validation accuracy: 99.9831
+[2019-01-22 02:31:41,463 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:31:45,431 INFO] Step 8100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18569/20116 tok/s;    422 sec
+[2019-01-22 02:31:45,439 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:46,274 INFO] Validation perplexity: 1.0001
+[2019-01-22 02:31:46,275 INFO] Validation accuracy: 100
+[2019-01-22 02:31:49,160 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:31:50,718 INFO] Step 8200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22730/19250 tok/s;    427 sec
+[2019-01-22 02:31:50,727 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:51,559 INFO] Validation perplexity: 1.00094
+[2019-01-22 02:31:51,560 INFO] Validation accuracy: 99.9747
+[2019-01-22 02:31:55,857 INFO] Step 8300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20220/20052 tok/s;    432 sec
+[2019-01-22 02:31:55,865 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:31:56,692 INFO] Validation perplexity: 1.00005
+[2019-01-22 02:31:56,693 INFO] Validation accuracy: 100
+[2019-01-22 02:31:57,689 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:01,095 INFO] Step 8400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17315/15068 tok/s;    437 sec
+[2019-01-22 02:32:01,104 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:01,938 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:32:01,939 INFO] Validation accuracy: 100
+[2019-01-22 02:32:05,386 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:06,347 INFO] Step 8500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17205/16446 tok/s;    442 sec
+[2019-01-22 02:32:06,356 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:07,193 INFO] Validation perplexity: 1.00002
+[2019-01-22 02:32:07,194 INFO] Validation accuracy: 100
+[2019-01-22 02:32:11,502 INFO] Step 8600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21444/17545 tok/s;    448 sec
+[2019-01-22 02:32:11,510 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:12,337 INFO] Validation perplexity: 1.00002
+[2019-01-22 02:32:12,338 INFO] Validation accuracy: 100
+[2019-01-22 02:32:13,919 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:16,700 INFO] Step 8700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16799/10991 tok/s;    453 sec
+[2019-01-22 02:32:16,709 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:17,542 INFO] Validation perplexity: 1.00254
+[2019-01-22 02:32:17,543 INFO] Validation accuracy: 99.9494
+[2019-01-22 02:32:21,614 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:21,951 INFO] Step 8800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20190/17955 tok/s;    458 sec
+[2019-01-22 02:32:21,959 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:22,792 INFO] Validation perplexity: 1.00007
+[2019-01-22 02:32:22,792 INFO] Validation accuracy: 100
+[2019-01-22 02:32:27,101 INFO] Step 8900/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 21673/17638 tok/s;    463 sec
+[2019-01-22 02:32:27,109 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:27,936 INFO] Validation perplexity: 1.00011
+[2019-01-22 02:32:27,937 INFO] Validation accuracy: 100
+[2019-01-22 02:32:30,149 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:32,355 INFO] Step 9000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18407/20095 tok/s;    468 sec
+[2019-01-22 02:32:32,364 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:33,199 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:32:33,200 INFO] Validation accuracy: 100
+[2019-01-22 02:32:37,500 INFO] Step 9100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17476/18171 tok/s;    474 sec
+[2019-01-22 02:32:37,508 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:38,338 INFO] Validation perplexity: 1.00017
+[2019-01-22 02:32:38,339 INFO] Validation accuracy: 99.9916
+[2019-01-22 02:32:38,684 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:42,687 INFO] Step 9200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18612/17079 tok/s;    479 sec
+[2019-01-22 02:32:42,696 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:43,528 INFO] Validation perplexity: 1.00027
+[2019-01-22 02:32:43,529 INFO] Validation accuracy: 99.9916
+[2019-01-22 02:32:46,376 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:47,985 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22622/19912 tok/s;    484 sec
+[2019-01-22 02:32:47,994 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:48,825 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:32:48,826 INFO] Validation accuracy: 100
+[2019-01-22 02:32:53,127 INFO] Step 9400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18716/19941 tok/s;    489 sec
+[2019-01-22 02:32:53,135 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:53,962 INFO] Validation perplexity: 1.01903
+[2019-01-22 02:32:53,962 INFO] Validation accuracy: 99.823
+[2019-01-22 02:32:54,905 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:32:58,338 INFO] Step 9500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21340/15938 tok/s;    494 sec
+[2019-01-22 02:32:58,347 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:32:59,184 INFO] Validation perplexity: 1.0009
+[2019-01-22 02:32:59,184 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:33:02,609 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:33:03,634 INFO] Step 9600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17583/19327 tok/s;    500 sec
+[2019-01-22 02:33:03,643 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:04,476 INFO] Validation perplexity: 1.00175
+[2019-01-22 02:33:04,477 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:33:08,785 INFO] Step 9700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17908/17998 tok/s;    505 sec
+[2019-01-22 02:33:08,793 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:09,621 INFO] Validation perplexity: 1.00492
+[2019-01-22 02:33:09,621 INFO] Validation accuracy: 99.9747
+[2019-01-22 02:33:11,148 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:33:13,966 INFO] Step 9800/12500; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 15339/11843 tok/s;    510 sec
+[2019-01-22 02:33:13,975 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:14,809 INFO] Validation perplexity: 1.00094
+[2019-01-22 02:33:14,810 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:33:18,844 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:33:19,237 INFO] Step 9900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17857/20298 tok/s;    515 sec
+[2019-01-22 02:33:19,245 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:20,079 INFO] Validation perplexity: 1.00005
+[2019-01-22 02:33:20,080 INFO] Validation accuracy: 100
+[2019-01-22 02:33:24,368 INFO] Step 10000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17033/18736 tok/s;    520 sec
+[2019-01-22 02:33:24,376 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:25,206 INFO] Validation perplexity: 1.00007
+[2019-01-22 02:33:25,207 INFO] Validation accuracy: 100
+[2019-01-22 02:33:27,377 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:33:29,625 INFO] Step 10100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17046/20146 tok/s;    526 sec
+[2019-01-22 02:33:29,633 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:30,467 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:33:30,468 INFO] Validation accuracy: 100
+[2019-01-22 02:33:34,769 INFO] Step 10200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18778/18778 tok/s;    531 sec
+[2019-01-22 02:33:34,777 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:35,604 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:33:35,605 INFO] Validation accuracy: 100
+[2019-01-22 02:33:35,908 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:33:39,956 INFO] Step 10300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18984/18984 tok/s;    536 sec
+[2019-01-22 02:33:39,965 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:40,800 INFO] Validation perplexity: 1.00006
+[2019-01-22 02:33:40,801 INFO] Validation accuracy: 100
+[2019-01-22 02:33:43,610 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:33:45,255 INFO] Step 10400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23295/17471 tok/s;    541 sec
+[2019-01-22 02:33:45,264 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:46,097 INFO] Validation perplexity: 1.00115
+[2019-01-22 02:33:46,097 INFO] Validation accuracy: 99.9916
+[2019-01-22 02:33:50,395 INFO] Step 10500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21503/17593 tok/s;    546 sec
+[2019-01-22 02:33:50,403 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:51,234 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:33:51,235 INFO] Validation accuracy: 100
+[2019-01-22 02:33:52,144 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:33:55,612 INFO] Step 10600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17105/18040 tok/s;    552 sec
+[2019-01-22 02:33:55,621 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:33:56,453 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:33:56,453 INFO] Validation accuracy: 100
+[2019-01-22 02:33:59,837 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:00,891 INFO] Step 10700/12500; acc:  99.80; ppl:  1.00; xent: 0.00; lr: 0.00100; 23253/16911 tok/s;    557 sec
+[2019-01-22 02:34:00,899 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:01,731 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:34:01,732 INFO] Validation accuracy: 100
+[2019-01-22 02:34:06,043 INFO] Step 10800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21488/17550 tok/s;    562 sec
+[2019-01-22 02:34:06,051 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:06,878 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:34:06,879 INFO] Validation accuracy: 100
+[2019-01-22 02:34:08,371 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:11,219 INFO] Step 10900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18417/16633 tok/s;    567 sec
+[2019-01-22 02:34:11,227 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:12,061 INFO] Validation perplexity: 1.00002
+[2019-01-22 02:34:12,061 INFO] Validation accuracy: 100
+[2019-01-22 02:34:16,066 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:16,501 INFO] Step 11000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17096/19743 tok/s;    573 sec
+[2019-01-22 02:34:16,509 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:17,344 INFO] Validation perplexity: 1.00049
+[2019-01-22 02:34:17,345 INFO] Validation accuracy: 99.9916
+[2019-01-22 02:34:21,630 INFO] Step 11100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20247/17321 tok/s;    578 sec
+[2019-01-22 02:34:21,639 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:22,469 INFO] Validation perplexity: 1.00004
+[2019-01-22 02:34:22,470 INFO] Validation accuracy: 100
+[2019-01-22 02:34:24,603 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:26,885 INFO] Step 11200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19878/18071 tok/s;    583 sec
+[2019-01-22 02:34:26,893 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:27,726 INFO] Validation perplexity: 1.00003
+[2019-01-22 02:34:27,727 INFO] Validation accuracy: 100
+[2019-01-22 02:34:32,044 INFO] Step 11300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19356/20042 tok/s;    588 sec
+[2019-01-22 02:34:32,052 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:32,879 INFO] Validation perplexity: 1.00001
+[2019-01-22 02:34:32,880 INFO] Validation accuracy: 100
+[2019-01-22 02:34:33,134 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:37,227 INFO] Step 11400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22761/19916 tok/s;    593 sec
+[2019-01-22 02:34:37,235 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:38,070 INFO] Validation perplexity: 1.00001
+[2019-01-22 02:34:38,071 INFO] Validation accuracy: 100
+[2019-01-22 02:34:40,850 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:42,526 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21512/17601 tok/s;    599 sec
+[2019-01-22 02:34:42,535 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:43,372 INFO] Validation perplexity: 1.00001
+[2019-01-22 02:34:43,372 INFO] Validation accuracy: 100
+[2019-01-22 02:34:47,683 INFO] Step 11600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20015/18259 tok/s;    604 sec
+[2019-01-22 02:34:47,691 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:48,518 INFO] Validation perplexity: 1.00001
+[2019-01-22 02:34:48,519 INFO] Validation accuracy: 100
+[2019-01-22 02:34:49,387 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:52,902 INFO] Step 11700/12500; acc:  99.18; ppl:  1.05; xent: 0.05; lr: 0.00100; 15972/18168 tok/s;    609 sec
+[2019-01-22 02:34:52,910 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:53,742 INFO] Validation perplexity: 1.00501
+[2019-01-22 02:34:53,743 INFO] Validation accuracy: 99.882
+[2019-01-22 02:34:57,087 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:34:58,168 INFO] Step 11800/12500; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00100; 25512/13673 tok/s;    614 sec
+[2019-01-22 02:34:58,176 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:34:59,009 INFO] Validation perplexity: 1.00131
+[2019-01-22 02:34:59,010 INFO] Validation accuracy: 99.9494
+[2019-01-22 02:35:03,319 INFO] Step 11900/12500; acc:  99.76; ppl:  1.00; xent: 0.00; lr: 0.00100; 23147/14828 tok/s;    619 sec
+[2019-01-22 02:35:03,327 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:35:04,158 INFO] Validation perplexity: 1.00072
+[2019-01-22 02:35:04,159 INFO] Validation accuracy: 99.9663
+[2019-01-22 02:35:05,629 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:35:08,519 INFO] Step 12000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17425/18663 tok/s;    625 sec
+[2019-01-22 02:35:08,527 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:35:09,362 INFO] Validation perplexity: 1.00011
+[2019-01-22 02:35:09,363 INFO] Validation accuracy: 100
+[2019-01-22 02:35:13,327 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:35:13,802 INFO] Step 12100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17409/18991 tok/s;    630 sec
+[2019-01-22 02:35:13,811 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:35:14,647 INFO] Validation perplexity: 1.00746
+[2019-01-22 02:35:14,647 INFO] Validation accuracy: 99.941
+[2019-01-22 02:35:18,926 INFO] Step 12200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18694/18694 tok/s;    635 sec
+[2019-01-22 02:35:18,935 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:35:19,764 INFO] Validation perplexity: 1.00237
+[2019-01-22 02:35:19,765 INFO] Validation accuracy: 99.9157
+[2019-01-22 02:35:21,862 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:35:24,182 INFO] Step 12300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15653/18980 tok/s;    640 sec
+[2019-01-22 02:35:24,191 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:35:25,024 INFO] Validation perplexity: 1.00044
+[2019-01-22 02:35:25,025 INFO] Validation accuracy: 99.9916
+[2019-01-22 02:35:29,352 INFO] Step 12400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17573/15182 tok/s;    645 sec
+[2019-01-22 02:35:29,360 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:35:30,187 INFO] Validation perplexity: 1.0001
+[2019-01-22 02:35:30,188 INFO] Validation accuracy: 100
+[2019-01-22 02:35:30,408 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000
+[2019-01-22 02:35:34,547 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20246/18918 tok/s;    651 sec
+[2019-01-22 02:35:34,555 INFO] Loading valid dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.valid.0.pt, number of examples: 1000
+[2019-01-22 02:35:35,393 INFO] Validation perplexity: 1.00002
+[2019-01-22 02:35:35,393 INFO] Validation accuracy: 100
+[2019-01-22 02:35:35,394 INFO] Saving checkpoint ../models/hindi_models/model-hindi-high-res3_step_12500.pt
+[2019-01-22 02:35:35,549 INFO] Loading train dataset from ../hindi-train-high-10000to10000/data_hindi_resample10000_s3.train.0.pt, number of examples: 10000

@@ -1,0 +1,626 @@
+[2019-01-22 05:59:41,530 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 05:59:41,551 INFO]  * vocabulary size. source = 77; target = 50
+[2019-01-22 05:59:41,552 INFO] Building model...
+[2019-01-22 05:59:44,928 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(77, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(50, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=50, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 05:59:44,932 INFO] encoder: 310100
+[2019-01-22 05:59:44,932 INFO] decoder: 1132450
+[2019-01-22 05:59:44,932 INFO] * number of parameters: 1442550
+[2019-01-22 05:59:44,934 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 05:59:44,934 INFO] Start training...
+[2019-01-22 05:59:45,033 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 05:59:49,728 INFO] Step 100/12500; acc:  30.40; ppl: 13.55; xent: 2.61; lr: 0.00100; 18698/18698 tok/s;      5 sec
+[2019-01-22 05:59:49,756 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 05:59:50,625 INFO] Validation perplexity: 13.0262
+[2019-01-22 05:59:50,626 INFO] Validation accuracy: 29.6518
+[2019-01-22 05:59:53,171 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 05:59:54,939 INFO] Step 200/12500; acc:  64.25; ppl:  4.14; xent: 1.42; lr: 0.00100; 20625/19437 tok/s;     10 sec
+[2019-01-22 05:59:54,949 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 05:59:55,817 INFO] Validation perplexity: 3.8145
+[2019-01-22 05:59:55,818 INFO] Validation accuracy: 65.6941
+[2019-01-22 06:00:00,052 INFO] Step 300/12500; acc:  85.39; ppl:  1.72; xent: 0.54; lr: 0.00100; 22777/18672 tok/s;     15 sec
+[2019-01-22 06:00:00,060 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:00,925 INFO] Validation perplexity: 2.38708
+[2019-01-22 06:00:00,926 INFO] Validation accuracy: 76.5095
+[2019-01-22 06:00:01,594 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:00:05,078 INFO] Step 400/12500; acc:  87.97; ppl:  1.73; xent: 0.55; lr: 0.00100; 21500/17032 tok/s;     20 sec
+[2019-01-22 06:00:05,088 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:05,956 INFO] Validation perplexity: 2.07508
+[2019-01-22 06:00:05,956 INFO] Validation accuracy: 80.3967
+[2019-01-22 06:00:09,138 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:00:10,292 INFO] Step 500/12500; acc:  92.01; ppl:  1.37; xent: 0.32; lr: 0.00100; 18327/16838 tok/s;     25 sec
+[2019-01-22 06:00:10,302 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:11,171 INFO] Validation perplexity: 1.66497
+[2019-01-22 06:00:11,172 INFO] Validation accuracy: 86.6285
+[2019-01-22 06:00:15,383 INFO] Step 600/12500; acc:  94.97; ppl:  1.25; xent: 0.23; lr: 0.00100; 18507/16685 tok/s;     30 sec
+[2019-01-22 06:00:15,391 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:16,255 INFO] Validation perplexity: 1.51539
+[2019-01-22 06:00:16,256 INFO] Validation accuracy: 89.3521
+[2019-01-22 06:00:17,559 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:00:20,530 INFO] Step 700/12500; acc:  82.30; ppl:  1.93; xent: 0.66; lr: 0.00100; 16957/14275 tok/s;     35 sec
+[2019-01-22 06:00:20,540 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:21,407 INFO] Validation perplexity: 1.33891
+[2019-01-22 06:00:21,408 INFO] Validation accuracy: 92.9132
+[2019-01-22 06:00:25,093 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:00:25,689 INFO] Step 800/12500; acc:  98.09; ppl:  1.12; xent: 0.11; lr: 0.00100; 23561/17671 tok/s;     41 sec
+[2019-01-22 06:00:25,698 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:26,565 INFO] Validation perplexity: 1.26811
+[2019-01-22 06:00:26,566 INFO] Validation accuracy: 94.3323
+[2019-01-22 06:00:30,685 INFO] Step 900/12500; acc:  96.38; ppl:  1.14; xent: 0.13; lr: 0.00100; 14316/13464 tok/s;     46 sec
+[2019-01-22 06:00:30,693 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:31,557 INFO] Validation perplexity: 1.33452
+[2019-01-22 06:00:31,558 INFO] Validation accuracy: 93.8916
+[2019-01-22 06:00:33,502 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:00:35,819 INFO] Step 1000/12500; acc:  97.16; ppl:  1.15; xent: 0.14; lr: 0.00100; 22791/19254 tok/s;     51 sec
+[2019-01-22 06:00:35,829 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:36,696 INFO] Validation perplexity: 1.26589
+[2019-01-22 06:00:36,697 INFO] Validation accuracy: 95.1873
+[2019-01-22 06:00:41,034 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:00:41,126 INFO] Step 1100/12500; acc:  95.86; ppl:  1.23; xent: 0.21; lr: 0.00100; 5898/5270 tok/s;     56 sec
+[2019-01-22 06:00:41,136 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:42,009 INFO] Validation perplexity: 1.21114
+[2019-01-22 06:00:42,010 INFO] Validation accuracy: 95.866
+[2019-01-22 06:00:46,095 INFO] Step 1200/12500; acc:  99.11; ppl:  1.04; xent: 0.04; lr: 0.00100; 20402/16802 tok/s;     61 sec
+[2019-01-22 06:00:46,103 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:46,968 INFO] Validation perplexity: 1.14367
+[2019-01-22 06:00:46,968 INFO] Validation accuracy: 97.0031
+[2019-01-22 06:00:49,481 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:00:51,285 INFO] Step 1300/12500; acc:  99.29; ppl:  1.07; xent: 0.07; lr: 0.00100; 23260/18276 tok/s;     66 sec
+[2019-01-22 06:00:51,295 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:52,165 INFO] Validation perplexity: 1.17959
+[2019-01-22 06:00:52,165 INFO] Validation accuracy: 96.6505
+[2019-01-22 06:00:56,372 INFO] Step 1400/12500; acc:  96.35; ppl:  1.20; xent: 0.18; lr: 0.00100; 15493/12079 tok/s;     71 sec
+[2019-01-22 06:00:56,380 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:00:57,249 INFO] Validation perplexity: 1.11837
+[2019-01-22 06:00:57,250 INFO] Validation accuracy: 97.6025
+[2019-01-22 06:00:57,881 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:01,388 INFO] Step 1500/12500; acc:  98.44; ppl:  1.07; xent: 0.07; lr: 0.00100; 21953/18295 tok/s;     76 sec
+[2019-01-22 06:01:01,398 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:02,266 INFO] Validation perplexity: 1.15304
+[2019-01-22 06:01:02,267 INFO] Validation accuracy: 97.1089
+[2019-01-22 06:01:05,405 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:06,587 INFO] Step 1600/12500; acc:  99.31; ppl:  1.02; xent: 0.02; lr: 0.00100; 23649/17737 tok/s;     82 sec
+[2019-01-22 06:01:06,597 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:07,465 INFO] Validation perplexity: 1.19603
+[2019-01-22 06:01:07,465 INFO] Validation accuracy: 96.818
+[2019-01-22 06:01:11,663 INFO] Step 1700/12500; acc:  98.63; ppl:  1.04; xent: 0.04; lr: 0.00100; 23601/17164 tok/s;     87 sec
+[2019-01-22 06:01:11,675 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:12,539 INFO] Validation perplexity: 1.11535
+[2019-01-22 06:01:12,540 INFO] Validation accuracy: 97.6201
+[2019-01-22 06:01:13,808 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:16,812 INFO] Step 1800/12500; acc:  99.40; ppl:  1.03; xent: 0.03; lr: 0.00100; 21932/17662 tok/s;     92 sec
+[2019-01-22 06:01:16,822 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:17,690 INFO] Validation perplexity: 1.09538
+[2019-01-22 06:01:17,691 INFO] Validation accuracy: 97.8933
+[2019-01-22 06:01:21,331 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:21,957 INFO] Step 1900/12500; acc:  98.63; ppl:  1.05; xent: 0.05; lr: 0.00100; 21662/17329 tok/s;     97 sec
+[2019-01-22 06:01:21,967 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:22,835 INFO] Validation perplexity: 1.12393
+[2019-01-22 06:01:22,836 INFO] Validation accuracy: 97.6025
+[2019-01-22 06:01:26,985 INFO] Step 2000/12500; acc:  99.04; ppl:  1.05; xent: 0.04; lr: 0.00100; 17600/16467 tok/s;    102 sec
+[2019-01-22 06:01:26,993 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:27,857 INFO] Validation perplexity: 1.11411
+[2019-01-22 06:01:27,857 INFO] Validation accuracy: 97.6994
+[2019-01-22 06:01:29,727 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:32,104 INFO] Step 2100/12500; acc:  99.04; ppl:  1.04; xent: 0.04; lr: 0.00100; 18252/15774 tok/s;    107 sec
+[2019-01-22 06:01:32,114 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:32,982 INFO] Validation perplexity: 1.11629
+[2019-01-22 06:01:32,983 INFO] Validation accuracy: 97.7435
+[2019-01-22 06:01:37,247 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:37,381 INFO] Step 2200/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 23187/18549 tok/s;    112 sec
+[2019-01-22 06:01:37,390 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:38,260 INFO] Validation perplexity: 1.10237
+[2019-01-22 06:01:38,261 INFO] Validation accuracy: 98.0608
+[2019-01-22 06:01:42,338 INFO] Step 2300/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 23246/18265 tok/s;    117 sec
+[2019-01-22 06:01:42,346 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:43,211 INFO] Validation perplexity: 1.11099
+[2019-01-22 06:01:43,212 INFO] Validation accuracy: 97.9286
+[2019-01-22 06:01:45,640 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:47,472 INFO] Step 2400/12500; acc:  98.44; ppl:  1.06; xent: 0.06; lr: 0.00100; 23775/16642 tok/s;    122 sec
+[2019-01-22 06:01:47,482 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:48,359 INFO] Validation perplexity: 1.09955
+[2019-01-22 06:01:48,359 INFO] Validation accuracy: 98.0344
+[2019-01-22 06:01:52,583 INFO] Step 2500/12500; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 21913/17706 tok/s;    128 sec
+[2019-01-22 06:01:52,591 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:53,458 INFO] Validation perplexity: 1.17279
+[2019-01-22 06:01:53,458 INFO] Validation accuracy: 97.3821
+[2019-01-22 06:01:54,056 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:01:57,608 INFO] Step 2600/12500; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00100; 23375/17458 tok/s;    133 sec
+[2019-01-22 06:01:57,618 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:01:58,488 INFO] Validation perplexity: 1.10935
+[2019-01-22 06:01:58,489 INFO] Validation accuracy: 97.9022
+[2019-01-22 06:02:01,577 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:02,793 INFO] Step 2700/12500; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00100; 23109/17776 tok/s;    138 sec
+[2019-01-22 06:02:02,803 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:03,675 INFO] Validation perplexity: 1.11293
+[2019-01-22 06:02:03,676 INFO] Validation accuracy: 98.0432
+[2019-01-22 06:02:07,889 INFO] Step 2800/12500; acc:  99.50; ppl:  1.03; xent: 0.03; lr: 0.00100; 17300/14821 tok/s;    143 sec
+[2019-01-22 06:02:07,897 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:08,761 INFO] Validation perplexity: 1.09087
+[2019-01-22 06:02:08,762 INFO] Validation accuracy: 98.3781
+[2019-01-22 06:02:09,968 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:13,003 INFO] Step 2900/12500; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00100; 21935/18279 tok/s;    148 sec
+[2019-01-22 06:02:13,013 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:13,882 INFO] Validation perplexity: 1.10508
+[2019-01-22 06:02:13,882 INFO] Validation accuracy: 98.0961
+[2019-01-22 06:02:17,478 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:18,153 INFO] Step 3000/12500; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00100; 16011/15669 tok/s;    153 sec
+[2019-01-22 06:02:18,164 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:19,031 INFO] Validation perplexity: 1.10233
+[2019-01-22 06:02:19,032 INFO] Validation accuracy: 98.2724
+[2019-01-22 06:02:23,161 INFO] Step 3100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21827/18259 tok/s;    158 sec
+[2019-01-22 06:02:23,169 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:24,033 INFO] Validation perplexity: 1.08943
+[2019-01-22 06:02:24,034 INFO] Validation accuracy: 98.3693
+[2019-01-22 06:02:25,862 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:28,272 INFO] Step 3200/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 19829/16421 tok/s;    163 sec
+[2019-01-22 06:02:28,282 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:29,150 INFO] Validation perplexity: 1.12778
+[2019-01-22 06:02:29,151 INFO] Validation accuracy: 97.7876
+[2019-01-22 06:02:33,381 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:33,551 INFO] Step 3300/12500; acc:  99.38; ppl:  1.01; xent: 0.01; lr: 0.00100; 24849/17749 tok/s;    169 sec
+[2019-01-22 06:02:33,560 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:34,430 INFO] Validation perplexity: 1.10415
+[2019-01-22 06:02:34,431 INFO] Validation accuracy: 98.2283
+[2019-01-22 06:02:38,522 INFO] Step 3400/12500; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00100; 23392/17544 tok/s;    173 sec
+[2019-01-22 06:02:38,530 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:39,395 INFO] Validation perplexity: 1.13207
+[2019-01-22 06:02:39,396 INFO] Validation accuracy: 97.8669
+[2019-01-22 06:02:41,793 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:43,656 INFO] Step 3500/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 20008/18007 tok/s;    179 sec
+[2019-01-22 06:02:43,665 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:44,534 INFO] Validation perplexity: 1.12087
+[2019-01-22 06:02:44,535 INFO] Validation accuracy: 98.0608
+[2019-01-22 06:02:48,761 INFO] Step 3600/12500; acc:  99.48; ppl:  1.04; xent: 0.04; lr: 0.00100; 21599/17672 tok/s;    184 sec
+[2019-01-22 06:02:48,770 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:49,634 INFO] Validation perplexity: 1.10365
+[2019-01-22 06:02:49,635 INFO] Validation accuracy: 98.193
+[2019-01-22 06:02:50,186 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:53,769 INFO] Step 3700/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 20438/18043 tok/s;    189 sec
+[2019-01-22 06:02:53,779 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:54,649 INFO] Validation perplexity: 1.11594
+[2019-01-22 06:02:54,650 INFO] Validation accuracy: 98.0873
+[2019-01-22 06:02:57,701 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:02:58,958 INFO] Step 3800/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 23327/18662 tok/s;    194 sec
+[2019-01-22 06:02:58,967 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:02:59,839 INFO] Validation perplexity: 1.10087
+[2019-01-22 06:02:59,839 INFO] Validation accuracy: 98.2459
+[2019-01-22 06:03:04,046 INFO] Step 3900/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 21546/17102 tok/s;    199 sec
+[2019-01-22 06:03:04,054 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:04,918 INFO] Validation perplexity: 1.10437
+[2019-01-22 06:03:04,919 INFO] Validation accuracy: 98.3605
+[2019-01-22 06:03:06,094 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:03:09,180 INFO] Step 4000/12500; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00100; 17774/18644 tok/s;    204 sec
+[2019-01-22 06:03:09,190 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:10,062 INFO] Validation perplexity: 1.10686
+[2019-01-22 06:03:10,063 INFO] Validation accuracy: 98.2371
+[2019-01-22 06:03:13,606 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:03:14,311 INFO] Step 4100/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 23389/17542 tok/s;    209 sec
+[2019-01-22 06:03:14,321 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:15,189 INFO] Validation perplexity: 1.10378
+[2019-01-22 06:03:15,190 INFO] Validation accuracy: 98.2812
+[2019-01-22 06:03:19,371 INFO] Step 4200/12500; acc:  96.98; ppl:  1.14; xent: 0.13; lr: 0.00100; 17974/16612 tok/s;    214 sec
+[2019-01-22 06:03:19,379 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:20,243 INFO] Validation perplexity: 1.11515
+[2019-01-22 06:03:20,244 INFO] Validation accuracy: 98.2459
+[2019-01-22 06:03:21,994 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:03:24,438 INFO] Step 4300/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 21888/18240 tok/s;    219 sec
+[2019-01-22 06:03:24,447 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:25,319 INFO] Validation perplexity: 1.11849
+[2019-01-22 06:03:25,320 INFO] Validation accuracy: 98.1225
+[2019-01-22 06:03:29,506 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:03:29,715 INFO] Step 4400/12500; acc:  99.21; ppl:  1.02; xent: 0.02; lr: 0.00100; 20535/18734 tok/s;    225 sec
+[2019-01-22 06:03:29,724 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:30,592 INFO] Validation perplexity: 1.10295
+[2019-01-22 06:03:30,593 INFO] Validation accuracy: 98.3076
+[2019-01-22 06:03:34,661 INFO] Step 4500/12500; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00100; 16215/15613 tok/s;    230 sec
+[2019-01-22 06:03:34,669 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:35,532 INFO] Validation perplexity: 1.12638
+[2019-01-22 06:03:35,533 INFO] Validation accuracy: 98.0432
+[2019-01-22 06:03:37,896 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:03:39,786 INFO] Step 4600/12500; acc:  99.33; ppl:  1.02; xent: 0.02; lr: 0.00100; 19209/16808 tok/s;    235 sec
+[2019-01-22 06:03:39,795 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:40,665 INFO] Validation perplexity: 1.1065
+[2019-01-22 06:03:40,666 INFO] Validation accuracy: 98.29
+[2019-01-22 06:03:44,908 INFO] Step 4700/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 19277/15550 tok/s;    240 sec
+[2019-01-22 06:03:44,916 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:45,782 INFO] Validation perplexity: 1.10853
+[2019-01-22 06:03:45,782 INFO] Validation accuracy: 98.2019
+[2019-01-22 06:03:46,305 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:03:49,923 INFO] Step 4800/12500; acc:  98.94; ppl:  1.02; xent: 0.02; lr: 0.00100; 23225/15605 tok/s;    245 sec
+[2019-01-22 06:03:49,932 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:50,800 INFO] Validation perplexity: 1.15539
+[2019-01-22 06:03:50,800 INFO] Validation accuracy: 97.8052
+[2019-01-22 06:03:53,819 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:03:55,118 INFO] Step 4900/12500; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 23250/18600 tok/s;    250 sec
+[2019-01-22 06:03:55,127 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:03:55,998 INFO] Validation perplexity: 1.1064
+[2019-01-22 06:03:55,999 INFO] Validation accuracy: 98.2459
+[2019-01-22 06:04:00,206 INFO] Step 5000/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 15966/15762 tok/s;    255 sec
+[2019-01-22 06:04:00,214 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:01,082 INFO] Validation perplexity: 1.10155
+[2019-01-22 06:04:01,082 INFO] Validation accuracy: 98.3605
+[2019-01-22 06:04:02,212 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:04:05,340 INFO] Step 5100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21871/18506 tok/s;    260 sec
+[2019-01-22 06:04:05,349 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:06,218 INFO] Validation perplexity: 1.13594
+[2019-01-22 06:04:06,219 INFO] Validation accuracy: 98.0961
+[2019-01-22 06:04:09,729 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:04:10,467 INFO] Step 5200/12500; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00100; 16236/14855 tok/s;    265 sec
+[2019-01-22 06:04:10,476 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:11,344 INFO] Validation perplexity: 1.10913
+[2019-01-22 06:04:11,345 INFO] Validation accuracy: 98.2812
+[2019-01-22 06:04:15,527 INFO] Step 5300/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 23468/18052 tok/s;    270 sec
+[2019-01-22 06:04:15,535 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:16,399 INFO] Validation perplexity: 1.09898
+[2019-01-22 06:04:16,400 INFO] Validation accuracy: 98.3164
+[2019-01-22 06:04:18,116 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:04:20,609 INFO] Step 5400/12500; acc:  99.47; ppl:  1.01; xent: 0.01; lr: 0.00100; 17148/19271 tok/s;    276 sec
+[2019-01-22 06:04:20,618 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:21,486 INFO] Validation perplexity: 1.10472
+[2019-01-22 06:04:21,487 INFO] Validation accuracy: 98.3693
+[2019-01-22 06:04:25,627 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:04:25,875 INFO] Step 5500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23355/18350 tok/s;    281 sec
+[2019-01-22 06:04:25,883 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:26,751 INFO] Validation perplexity: 1.09276
+[2019-01-22 06:04:26,752 INFO] Validation accuracy: 98.5104
+[2019-01-22 06:04:30,822 INFO] Step 5600/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 24376/18686 tok/s;    286 sec
+[2019-01-22 06:04:30,830 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:31,691 INFO] Validation perplexity: 1.09912
+[2019-01-22 06:04:31,692 INFO] Validation accuracy: 98.3429
+[2019-01-22 06:04:34,008 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:04:35,964 INFO] Step 5700/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 23651/17201 tok/s;    291 sec
+[2019-01-22 06:04:35,973 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:36,881 INFO] Validation perplexity: 1.09676
+[2019-01-22 06:04:36,882 INFO] Validation accuracy: 98.3076
+[2019-01-22 06:04:41,130 INFO] Step 5800/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 21675/17642 tok/s;    296 sec
+[2019-01-22 06:04:41,140 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:42,005 INFO] Validation perplexity: 1.10087
+[2019-01-22 06:04:42,006 INFO] Validation accuracy: 98.3958
+[2019-01-22 06:04:42,497 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:04:46,145 INFO] Step 5900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21825/17856 tok/s;    301 sec
+[2019-01-22 06:04:46,153 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:47,022 INFO] Validation perplexity: 1.11795
+[2019-01-22 06:04:47,023 INFO] Validation accuracy: 98.2195
+[2019-01-22 06:04:50,011 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:04:51,353 INFO] Step 6000/12500; acc:  99.27; ppl:  1.01; xent: 0.01; lr: 0.00100; 15690/14828 tok/s;    306 sec
+[2019-01-22 06:04:51,362 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:52,231 INFO] Validation perplexity: 1.08485
+[2019-01-22 06:04:52,232 INFO] Validation accuracy: 98.4751
+[2019-01-22 06:04:56,433 INFO] Step 6100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20076/17823 tok/s;    311 sec
+[2019-01-22 06:04:56,442 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:04:57,306 INFO] Validation perplexity: 1.09689
+[2019-01-22 06:04:57,307 INFO] Validation accuracy: 98.431
+[2019-01-22 06:04:58,397 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:01,551 INFO] Step 6200/12500; acc:  99.01; ppl:  1.02; xent: 0.02; lr: 0.00100; 16889/15268 tok/s;    317 sec
+[2019-01-22 06:05:01,559 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:02,431 INFO] Validation perplexity: 1.09719
+[2019-01-22 06:05:02,431 INFO] Validation accuracy: 98.3341
+[2019-01-22 06:05:05,911 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:06,685 INFO] Step 6300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23479/18061 tok/s;    322 sec
+[2019-01-22 06:05:06,693 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:07,561 INFO] Validation perplexity: 1.17274
+[2019-01-22 06:05:07,562 INFO] Validation accuracy: 97.7523
+[2019-01-22 06:05:11,739 INFO] Step 6400/12500; acc:  99.81; ppl:  1.02; xent: 0.02; lr: 0.00100; 20031/16275 tok/s;    327 sec
+[2019-01-22 06:05:11,747 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:12,612 INFO] Validation perplexity: 1.15346
+[2019-01-22 06:05:12,613 INFO] Validation accuracy: 97.9815
+[2019-01-22 06:05:14,295 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:16,823 INFO] Step 6500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23310/18159 tok/s;    332 sec
+[2019-01-22 06:05:16,832 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:17,705 INFO] Validation perplexity: 1.11673
+[2019-01-22 06:05:17,706 INFO] Validation accuracy: 98.2195
+[2019-01-22 06:05:21,806 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:22,085 INFO] Step 6600/12500; acc:  99.41; ppl:  1.04; xent: 0.04; lr: 0.00100; 25666/17111 tok/s;    337 sec
+[2019-01-22 06:05:22,093 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:22,969 INFO] Validation perplexity: 1.10699
+[2019-01-22 06:05:22,970 INFO] Validation accuracy: 98.3781
+[2019-01-22 06:05:27,044 INFO] Step 6700/12500; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00100; 19543/15980 tok/s;    342 sec
+[2019-01-22 06:05:27,052 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:27,918 INFO] Validation perplexity: 1.12118
+[2019-01-22 06:05:27,919 INFO] Validation accuracy: 98.3429
+[2019-01-22 06:05:30,206 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:32,158 INFO] Step 6800/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 21870/16030 tok/s;    347 sec
+[2019-01-22 06:05:32,167 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:33,038 INFO] Validation perplexity: 1.10506
+[2019-01-22 06:05:33,039 INFO] Validation accuracy: 98.431
+[2019-01-22 06:05:37,278 INFO] Step 6900/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 22711/19830 tok/s;    352 sec
+[2019-01-22 06:05:37,286 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:38,152 INFO] Validation perplexity: 1.12529
+[2019-01-22 06:05:38,153 INFO] Validation accuracy: 98.2724
+[2019-01-22 06:05:38,598 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:42,291 INFO] Step 7000/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 14890/15462 tok/s;    357 sec
+[2019-01-22 06:05:42,300 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:43,169 INFO] Validation perplexity: 1.11557
+[2019-01-22 06:05:43,170 INFO] Validation accuracy: 98.4046
+[2019-01-22 06:05:46,109 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:47,483 INFO] Step 7100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16847/13383 tok/s;    362 sec
+[2019-01-22 06:05:47,492 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:48,360 INFO] Validation perplexity: 1.12311
+[2019-01-22 06:05:48,361 INFO] Validation accuracy: 98.2988
+[2019-01-22 06:05:52,563 INFO] Step 7200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23557/17116 tok/s;    368 sec
+[2019-01-22 06:05:52,571 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:53,436 INFO] Validation perplexity: 1.11861
+[2019-01-22 06:05:53,437 INFO] Validation accuracy: 98.29
+[2019-01-22 06:05:54,497 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:05:57,692 INFO] Step 7300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21880/17826 tok/s;    373 sec
+[2019-01-22 06:05:57,701 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:05:58,569 INFO] Validation perplexity: 1.09852
+[2019-01-22 06:05:58,570 INFO] Validation accuracy: 98.5104
+[2019-01-22 06:06:02,011 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:02,824 INFO] Step 7400/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 21834/18475 tok/s;    378 sec
+[2019-01-22 06:06:02,833 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:03,701 INFO] Validation perplexity: 1.11571
+[2019-01-22 06:06:03,702 INFO] Validation accuracy: 98.4487
+[2019-01-22 06:06:07,882 INFO] Step 7500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18763/17724 tok/s;    383 sec
+[2019-01-22 06:06:07,890 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:08,754 INFO] Validation perplexity: 1.10421
+[2019-01-22 06:06:08,755 INFO] Validation accuracy: 98.4663
+[2019-01-22 06:06:10,403 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:12,979 INFO] Step 7600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24249/19702 tok/s;    388 sec
+[2019-01-22 06:06:12,988 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:13,856 INFO] Validation perplexity: 1.13014
+[2019-01-22 06:06:13,857 INFO] Validation accuracy: 98.2283
+[2019-01-22 06:06:17,917 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:18,222 INFO] Step 7700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15660/12029 tok/s;    393 sec
+[2019-01-22 06:06:18,230 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:19,099 INFO] Validation perplexity: 1.13274
+[2019-01-22 06:06:19,100 INFO] Validation accuracy: 98.2459
+[2019-01-22 06:06:23,182 INFO] Step 7800/12500; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00100; 20557/18630 tok/s;    398 sec
+[2019-01-22 06:06:23,190 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:24,059 INFO] Validation perplexity: 1.09479
+[2019-01-22 06:06:24,059 INFO] Validation accuracy: 98.3605
+[2019-01-22 06:06:26,308 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:28,301 INFO] Step 7900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22937/19879 tok/s;    403 sec
+[2019-01-22 06:06:28,309 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:29,178 INFO] Validation perplexity: 1.12606
+[2019-01-22 06:06:29,179 INFO] Validation accuracy: 98.29
+[2019-01-22 06:06:33,433 INFO] Step 8000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17110/13126 tok/s;    408 sec
+[2019-01-22 06:06:33,441 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:34,307 INFO] Validation perplexity: 1.09948
+[2019-01-22 06:06:34,308 INFO] Validation accuracy: 98.5104
+[2019-01-22 06:06:34,700 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:38,433 INFO] Step 8100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24168/19212 tok/s;    413 sec
+[2019-01-22 06:06:38,441 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:39,317 INFO] Validation perplexity: 1.13243
+[2019-01-22 06:06:39,317 INFO] Validation accuracy: 98.2724
+[2019-01-22 06:06:42,218 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:43,628 INFO] Step 8200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20121/16548 tok/s;    419 sec
+[2019-01-22 06:06:43,637 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:44,507 INFO] Validation perplexity: 1.10513
+[2019-01-22 06:06:44,507 INFO] Validation accuracy: 98.5192
+[2019-01-22 06:06:48,719 INFO] Step 8300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22835/19790 tok/s;    424 sec
+[2019-01-22 06:06:48,727 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:49,591 INFO] Validation perplexity: 1.09038
+[2019-01-22 06:06:49,592 INFO] Validation accuracy: 98.6161
+[2019-01-22 06:06:50,608 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:53,841 INFO] Step 8400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23418/18014 tok/s;    429 sec
+[2019-01-22 06:06:53,850 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:54,722 INFO] Validation perplexity: 1.11368
+[2019-01-22 06:06:54,723 INFO] Validation accuracy: 98.3693
+[2019-01-22 06:06:58,124 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:06:58,981 INFO] Step 8500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24049/19606 tok/s;    434 sec
+[2019-01-22 06:06:58,989 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:06:59,858 INFO] Validation perplexity: 1.13382
+[2019-01-22 06:06:59,859 INFO] Validation accuracy: 98.2547
+[2019-01-22 06:07:04,025 INFO] Step 8600/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 22047/18372 tok/s;    439 sec
+[2019-01-22 06:07:04,034 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:04,899 INFO] Validation perplexity: 1.11352
+[2019-01-22 06:07:04,900 INFO] Validation accuracy: 98.4839
+[2019-01-22 06:07:06,512 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:07:09,129 INFO] Step 8700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21817/18461 tok/s;    444 sec
+[2019-01-22 06:07:09,137 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:10,008 INFO] Validation perplexity: 1.10779
+[2019-01-22 06:07:10,009 INFO] Validation accuracy: 98.528
+[2019-01-22 06:07:14,032 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:07:14,367 INFO] Step 8800/12500; acc:  99.79; ppl:  1.00; xent: 0.00; lr: 0.00100; 17616/16584 tok/s;    449 sec
+[2019-01-22 06:07:14,375 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:15,244 INFO] Validation perplexity: 1.10418
+[2019-01-22 06:07:15,245 INFO] Validation accuracy: 98.5456
+[2019-01-22 06:07:19,330 INFO] Step 8900/12500; acc:  99.50; ppl:  1.01; xent: 0.01; lr: 0.00100; 16024/13543 tok/s;    454 sec
+[2019-01-22 06:07:19,338 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:20,201 INFO] Validation perplexity: 1.1222
+[2019-01-22 06:07:20,202 INFO] Validation accuracy: 98.3693
+[2019-01-22 06:07:22,418 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:07:24,446 INFO] Step 9000/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 23485/17155 tok/s;    459 sec
+[2019-01-22 06:07:24,455 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:25,323 INFO] Validation perplexity: 1.09675
+[2019-01-22 06:07:25,324 INFO] Validation accuracy: 98.7043
+[2019-01-22 06:07:29,576 INFO] Step 9100/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 21817/17755 tok/s;    465 sec
+[2019-01-22 06:07:29,584 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:30,449 INFO] Validation perplexity: 1.10267
+[2019-01-22 06:07:30,450 INFO] Validation accuracy: 98.6426
+[2019-01-22 06:07:30,807 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:07:34,685 INFO] Step 9200/12500; acc:  95.17; ppl:  1.38; xent: 0.32; lr: 0.00100; 11876/11089 tok/s;    470 sec
+[2019-01-22 06:07:34,694 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:35,563 INFO] Validation perplexity: 1.10672
+[2019-01-22 06:07:35,564 INFO] Validation accuracy: 98.4839
+[2019-01-22 06:07:38,319 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:07:39,768 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20511/18802 tok/s;    475 sec
+[2019-01-22 06:07:39,776 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:40,652 INFO] Validation perplexity: 1.10114
+[2019-01-22 06:07:40,653 INFO] Validation accuracy: 98.528
+[2019-01-22 06:07:44,882 INFO] Step 9400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16982/18114 tok/s;    480 sec
+[2019-01-22 06:07:44,890 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:45,757 INFO] Validation perplexity: 1.09773
+[2019-01-22 06:07:45,758 INFO] Validation accuracy: 98.6338
+[2019-01-22 06:07:46,720 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:07:49,988 INFO] Step 9500/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 19179/18530 tok/s;    485 sec
+[2019-01-22 06:07:49,996 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:50,865 INFO] Validation perplexity: 1.11667
+[2019-01-22 06:07:50,866 INFO] Validation accuracy: 98.5192
+[2019-01-22 06:07:54,230 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:07:55,132 INFO] Step 9600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21853/18731 tok/s;    490 sec
+[2019-01-22 06:07:55,140 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:07:56,008 INFO] Validation perplexity: 1.11448
+[2019-01-22 06:07:56,009 INFO] Validation accuracy: 98.5544
+[2019-01-22 06:08:00,176 INFO] Step 9700/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 19017/17680 tok/s;    495 sec
+[2019-01-22 06:08:00,184 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:01,052 INFO] Validation perplexity: 1.10025
+[2019-01-22 06:08:01,053 INFO] Validation accuracy: 98.6514
+[2019-01-22 06:08:02,622 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:08:05,301 INFO] Step 9800/12500; acc:  99.91; ppl:  1.01; xent: 0.01; lr: 0.00100; 18513/16898 tok/s;    500 sec
+[2019-01-22 06:08:05,310 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:06,178 INFO] Validation perplexity: 1.11538
+[2019-01-22 06:08:06,179 INFO] Validation accuracy: 98.5897
+[2019-01-22 06:08:10,135 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:08:10,511 INFO] Step 9900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21879/18753 tok/s;    505 sec
+[2019-01-22 06:08:10,519 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:11,387 INFO] Validation perplexity: 1.11668
+[2019-01-22 06:08:11,388 INFO] Validation accuracy: 98.6073
+[2019-01-22 06:08:15,463 INFO] Step 10000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17994/16089 tok/s;    510 sec
+[2019-01-22 06:08:15,471 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:16,339 INFO] Validation perplexity: 1.11529
+[2019-01-22 06:08:16,340 INFO] Validation accuracy: 98.5192
+[2019-01-22 06:08:18,526 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:08:20,608 INFO] Step 10100/12500; acc:  99.43; ppl:  1.01; xent: 0.01; lr: 0.00100; 19799/18012 tok/s;    516 sec
+[2019-01-22 06:08:20,617 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:21,485 INFO] Validation perplexity: 1.09759
+[2019-01-22 06:08:21,486 INFO] Validation accuracy: 98.7131
+[2019-01-22 06:08:25,720 INFO] Step 10200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17240/17482 tok/s;    521 sec
+[2019-01-22 06:08:25,729 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:26,593 INFO] Validation perplexity: 1.12591
+[2019-01-22 06:08:26,593 INFO] Validation accuracy: 98.431
+[2019-01-22 06:08:26,914 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:08:30,849 INFO] Step 10300/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 17048/15425 tok/s;    526 sec
+[2019-01-22 06:08:30,858 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:31,726 INFO] Validation perplexity: 1.10922
+[2019-01-22 06:08:31,727 INFO] Validation accuracy: 98.6073
+[2019-01-22 06:08:34,428 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:08:35,944 INFO] Step 10400/12500; acc:  99.13; ppl:  1.09; xent: 0.08; lr: 0.00100; 19203/17106 tok/s;    531 sec
+[2019-01-22 06:08:35,952 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:36,821 INFO] Validation perplexity: 1.10679
+[2019-01-22 06:08:36,822 INFO] Validation accuracy: 98.528
+[2019-01-22 06:08:41,084 INFO] Step 10500/12500; acc:  95.78; ppl:  1.22; xent: 0.20; lr: 0.00100; 5068/4873 tok/s;    536 sec
+[2019-01-22 06:08:41,093 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:41,960 INFO] Validation perplexity: 1.13232
+[2019-01-22 06:08:41,961 INFO] Validation accuracy: 98.4134
+[2019-01-22 06:08:42,823 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:08:46,137 INFO] Step 10600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21514/19089 tok/s;    541 sec
+[2019-01-22 06:08:46,146 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:47,016 INFO] Validation perplexity: 1.11127
+[2019-01-22 06:08:47,017 INFO] Validation accuracy: 98.5104
+[2019-01-22 06:08:50,336 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:08:51,262 INFO] Step 10700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19211/16342 tok/s;    546 sec
+[2019-01-22 06:08:51,271 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:52,140 INFO] Validation perplexity: 1.10112
+[2019-01-22 06:08:52,141 INFO] Validation accuracy: 98.6514
+[2019-01-22 06:08:56,316 INFO] Step 10800/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 23591/16928 tok/s;    551 sec
+[2019-01-22 06:08:56,324 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:08:57,189 INFO] Validation perplexity: 1.12673
+[2019-01-22 06:08:57,190 INFO] Validation accuracy: 98.387
+[2019-01-22 06:08:58,725 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:01,450 INFO] Step 10900/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 20336/19745 tok/s;    556 sec
+[2019-01-22 06:09:01,459 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:02,328 INFO] Validation perplexity: 1.126
+[2019-01-22 06:09:02,329 INFO] Validation accuracy: 98.4575
+[2019-01-22 06:09:06,240 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:06,649 INFO] Step 11000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18403/18403 tok/s;    562 sec
+[2019-01-22 06:09:06,657 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:07,527 INFO] Validation perplexity: 1.1228
+[2019-01-22 06:09:07,527 INFO] Validation accuracy: 98.431
+[2019-01-22 06:09:11,616 INFO] Step 11100/12500; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 22983/18831 tok/s;    567 sec
+[2019-01-22 06:09:11,624 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:12,487 INFO] Validation perplexity: 1.13027
+[2019-01-22 06:09:12,488 INFO] Validation accuracy: 98.4487
+[2019-01-22 06:09:14,628 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:16,755 INFO] Step 11200/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 14293/15881 tok/s;    572 sec
+[2019-01-22 06:09:16,763 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:17,629 INFO] Validation perplexity: 1.11499
+[2019-01-22 06:09:17,630 INFO] Validation accuracy: 98.6073
+[2019-01-22 06:09:21,874 INFO] Step 11300/12500; acc:  99.70; ppl:  1.03; xent: 0.03; lr: 0.00100; 21643/18787 tok/s;    577 sec
+[2019-01-22 06:09:21,883 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:22,749 INFO] Validation perplexity: 1.12096
+[2019-01-22 06:09:22,750 INFO] Validation accuracy: 98.528
+[2019-01-22 06:09:23,016 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:26,974 INFO] Step 11400/12500; acc:  99.75; ppl:  1.00; xent: 0.00; lr: 0.00100; 19154/14814 tok/s;    582 sec
+[2019-01-22 06:09:26,983 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:27,851 INFO] Validation perplexity: 1.1403
+[2019-01-22 06:09:27,852 INFO] Validation accuracy: 98.3958
+[2019-01-22 06:09:30,530 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:32,088 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22898/19320 tok/s;    587 sec
+[2019-01-22 06:09:32,097 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:32,966 INFO] Validation perplexity: 1.12241
+[2019-01-22 06:09:32,967 INFO] Validation accuracy: 98.5897
+[2019-01-22 06:09:37,229 INFO] Step 11600/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 21576/19132 tok/s;    592 sec
+[2019-01-22 06:09:37,237 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:38,103 INFO] Validation perplexity: 1.12433
+[2019-01-22 06:09:38,103 INFO] Validation accuracy: 98.5544
+[2019-01-22 06:09:38,919 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:42,268 INFO] Step 11700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20056/18233 tok/s;    597 sec
+[2019-01-22 06:09:42,277 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:43,147 INFO] Validation perplexity: 1.12927
+[2019-01-22 06:09:43,148 INFO] Validation accuracy: 98.431
+[2019-01-22 06:09:46,438 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:47,408 INFO] Step 11800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18742/18840 tok/s;    602 sec
+[2019-01-22 06:09:47,416 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:48,288 INFO] Validation perplexity: 1.11767
+[2019-01-22 06:09:48,289 INFO] Validation accuracy: 98.5368
+[2019-01-22 06:09:52,487 INFO] Step 11900/12500; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 18959/17266 tok/s;    607 sec
+[2019-01-22 06:09:52,495 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:53,362 INFO] Validation perplexity: 1.13226
+[2019-01-22 06:09:53,362 INFO] Validation accuracy: 98.4663
+[2019-01-22 06:09:54,831 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:09:57,585 INFO] Step 12000/12500; acc:  99.83; ppl:  1.03; xent: 0.03; lr: 0.00100; 21618/17687 tok/s;    613 sec
+[2019-01-22 06:09:57,594 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:09:58,462 INFO] Validation perplexity: 1.1351
+[2019-01-22 06:09:58,463 INFO] Validation accuracy: 98.3958
+[2019-01-22 06:10:02,341 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:10:02,812 INFO] Step 12100/12500; acc:  99.60; ppl:  1.03; xent: 0.03; lr: 0.00100; 17483/16311 tok/s;    618 sec
+[2019-01-22 06:10:02,820 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:10:03,689 INFO] Validation perplexity: 1.12056
+[2019-01-22 06:10:03,689 INFO] Validation accuracy: 98.528
+[2019-01-22 06:10:07,777 INFO] Step 12200/12500; acc:  99.90; ppl:  1.01; xent: 0.01; lr: 0.00100; 17272/16812 tok/s;    623 sec
+[2019-01-22 06:10:07,785 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:10:08,650 INFO] Validation perplexity: 1.12357
+[2019-01-22 06:10:08,651 INFO] Validation accuracy: 98.528
+[2019-01-22 06:10:10,729 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:10:12,903 INFO] Step 12300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22795/19233 tok/s;    628 sec
+[2019-01-22 06:10:12,912 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:10:13,781 INFO] Validation perplexity: 1.12303
+[2019-01-22 06:10:13,782 INFO] Validation accuracy: 98.528
+[2019-01-22 06:10:18,018 INFO] Step 12400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23164/17812 tok/s;    633 sec
+[2019-01-22 06:10:18,026 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:10:18,890 INFO] Validation perplexity: 1.12278
+[2019-01-22 06:10:18,891 INFO] Validation accuracy: 98.5897
+[2019-01-22 06:10:19,119 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000
+[2019-01-22 06:10:23,113 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17944/17694 tok/s;    638 sec
+[2019-01-22 06:10:23,121 INFO] Loading valid dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.valid.0.pt, number of examples: 1000
+[2019-01-22 06:10:23,989 INFO] Validation perplexity: 1.1376
+[2019-01-22 06:10:23,990 INFO] Validation accuracy: 98.4663
+[2019-01-22 06:10:23,991 INFO] Saving checkpoint ../models/russian_models/model-russian-high-res37_step_12500.pt
+[2019-01-22 06:10:24,126 INFO] Loading train dataset from ../russian-train-high-10000to10000/data_russian_resample10000_s37.train.0.pt, number of examples: 10000

@@ -1,0 +1,626 @@
+[2019-01-30 21:16:40,016 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:16:40,018 INFO]  * vocabulary size. source = 45; target = 34
+[2019-01-30 21:16:40,018 INFO] Building model...
+[2019-01-30 21:16:44,004 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(45, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(34, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=34, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-30 21:16:44,007 INFO] encoder: 306900
+[2019-01-30 21:16:44,008 INFO] decoder: 1126034
+[2019-01-30 21:16:44,008 INFO] * number of parameters: 1432934
+[2019-01-30 21:16:44,009 INFO] Starting training on GPU: [0, 1]
+[2019-01-30 21:16:44,009 INFO] Start training...
+[2019-01-30 21:16:44,070 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:16:48,599 INFO] Step 100/12500; acc:  40.62; ppl:  6.97; xent: 1.94; lr: 0.00100; 26413/19370 tok/s;      5 sec
+[2019-01-30 21:16:48,605 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:16:49,261 INFO] Validation perplexity: 7.29707
+[2019-01-30 21:16:49,262 INFO] Validation accuracy: 38.4628
+[2019-01-30 21:16:51,691 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:16:53,346 INFO] Step 200/12500; acc:  78.31; ppl:  2.08; xent: 0.73; lr: 0.00100; 27718/21145 tok/s;      9 sec
+[2019-01-30 21:16:53,351 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:16:54,006 INFO] Validation perplexity: 2.27386
+[2019-01-30 21:16:54,007 INFO] Validation accuracy: 76.7426
+[2019-01-30 21:16:58,234 INFO] Step 300/12500; acc:  90.48; ppl:  1.48; xent: 0.39; lr: 0.00100; 21338/21716 tok/s;     14 sec
+[2019-01-30 21:16:58,239 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:16:58,889 INFO] Validation perplexity: 1.49155
+[2019-01-30 21:16:58,889 INFO] Validation accuracy: 88.9869
+[2019-01-30 21:16:59,473 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:02,884 INFO] Step 400/12500; acc:  97.00; ppl:  1.14; xent: 0.13; lr: 0.00100; 22005/22005 tok/s;     19 sec
+[2019-01-30 21:17:02,889 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:03,545 INFO] Validation perplexity: 1.2824
+[2019-01-30 21:17:03,546 INFO] Validation accuracy: 93.7947
+[2019-01-30 21:17:06,599 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:07,716 INFO] Step 500/12500; acc:  94.65; ppl:  1.23; xent: 0.20; lr: 0.00100; 22417/21180 tok/s;     24 sec
+[2019-01-30 21:17:07,721 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:08,376 INFO] Validation perplexity: 1.19701
+[2019-01-30 21:17:08,377 INFO] Validation accuracy: 95.8909
+[2019-01-30 21:17:12,534 INFO] Step 600/12500; acc:  98.85; ppl:  1.08; xent: 0.08; lr: 0.00100; 27615/17717 tok/s;     28 sec
+[2019-01-30 21:17:12,538 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:13,188 INFO] Validation perplexity: 1.1256
+[2019-01-30 21:17:13,188 INFO] Validation accuracy: 97.4963
+[2019-01-30 21:17:14,374 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:17,244 INFO] Step 700/12500; acc:  99.10; ppl:  1.04; xent: 0.04; lr: 0.00100; 26370/21474 tok/s;     33 sec
+[2019-01-30 21:17:17,249 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:17,904 INFO] Validation perplexity: 1.10165
+[2019-01-30 21:17:17,905 INFO] Validation accuracy: 98.0619
+[2019-01-30 21:17:21,479 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:22,060 INFO] Step 800/12500; acc:  98.66; ppl:  1.08; xent: 0.07; lr: 0.00100; 31936/17196 tok/s;     38 sec
+[2019-01-30 21:17:22,065 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:22,722 INFO] Validation perplexity: 1.07197
+[2019-01-30 21:17:22,722 INFO] Validation accuracy: 98.744
+[2019-01-30 21:17:26,837 INFO] Step 900/12500; acc:  99.52; ppl:  1.02; xent: 0.02; lr: 0.00100; 26670/21670 tok/s;     43 sec
+[2019-01-30 21:17:26,842 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:27,501 INFO] Validation perplexity: 1.08495
+[2019-01-30 21:17:27,502 INFO] Validation accuracy: 98.6442
+[2019-01-30 21:17:29,259 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:31,512 INFO] Step 1000/12500; acc:  97.92; ppl:  1.09; xent: 0.08; lr: 0.00100; 22001/20308 tok/s;     47 sec
+[2019-01-30 21:17:31,517 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:32,172 INFO] Validation perplexity: 1.05484
+[2019-01-30 21:17:32,173 INFO] Validation accuracy: 99.085
+[2019-01-30 21:17:36,362 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:36,427 INFO] Step 1100/12500; acc:  98.87; ppl:  1.06; xent: 0.06; lr: 0.00100; 6914/5909 tok/s;     52 sec
+[2019-01-30 21:17:36,432 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:37,088 INFO] Validation perplexity: 1.05818
+[2019-01-30 21:17:37,089 INFO] Validation accuracy: 98.927
+[2019-01-30 21:17:41,119 INFO] Step 1200/12500; acc:  97.92; ppl:  1.15; xent: 0.14; lr: 0.00100; 20023/17030 tok/s;     57 sec
+[2019-01-30 21:17:41,124 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:41,776 INFO] Validation perplexity: 1.04941
+[2019-01-30 21:17:41,776 INFO] Validation accuracy: 99.1349
+[2019-01-30 21:17:44,130 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:45,813 INFO] Step 1300/12500; acc:  98.44; ppl:  1.09; xent: 0.08; lr: 0.00100; 30016/18760 tok/s;     62 sec
+[2019-01-30 21:17:45,818 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:46,474 INFO] Validation perplexity: 1.04578
+[2019-01-30 21:17:46,475 INFO] Validation accuracy: 99.1016
+[2019-01-30 21:17:50,732 INFO] Step 1400/12500; acc:  98.29; ppl:  1.06; xent: 0.06; lr: 0.00100; 28965/17004 tok/s;     67 sec
+[2019-01-30 21:17:50,737 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:51,388 INFO] Validation perplexity: 1.05211
+[2019-01-30 21:17:51,389 INFO] Validation accuracy: 99.1183
+[2019-01-30 21:17:51,942 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:17:55,381 INFO] Step 1500/12500; acc:  99.43; ppl:  1.03; xent: 0.03; lr: 0.00100; 26543/19465 tok/s;     71 sec
+[2019-01-30 21:17:55,387 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:17:56,042 INFO] Validation perplexity: 1.04231
+[2019-01-30 21:17:56,043 INFO] Validation accuracy: 99.2264
+[2019-01-30 21:17:59,054 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:00,201 INFO] Step 1600/12500; acc:  99.25; ppl:  1.03; xent: 0.03; lr: 0.00100; 23285/18555 tok/s;     76 sec
+[2019-01-30 21:18:00,206 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:00,861 INFO] Validation perplexity: 1.04638
+[2019-01-30 21:18:00,862 INFO] Validation accuracy: 99.0767
+[2019-01-30 21:18:05,040 INFO] Step 1700/12500; acc:  99.90; ppl:  1.01; xent: 0.01; lr: 0.00100; 19806/15710 tok/s;     81 sec
+[2019-01-30 21:18:05,044 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:05,694 INFO] Validation perplexity: 1.05158
+[2019-01-30 21:18:05,695 INFO] Validation accuracy: 99.1599
+[2019-01-30 21:18:06,818 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:09,719 INFO] Step 1800/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 28425/18950 tok/s;     86 sec
+[2019-01-30 21:18:09,724 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:10,379 INFO] Validation perplexity: 1.03179
+[2019-01-30 21:18:10,380 INFO] Validation accuracy: 99.3179
+[2019-01-30 21:18:13,925 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:14,549 INFO] Step 1900/12500; acc:  99.67; ppl:  1.02; xent: 0.02; lr: 0.00100; 26246/21615 tok/s;     90 sec
+[2019-01-30 21:18:14,554 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:15,222 INFO] Validation perplexity: 1.04257
+[2019-01-30 21:18:15,223 INFO] Validation accuracy: 99.1931
+[2019-01-30 21:18:19,336 INFO] Step 2000/12500; acc:  99.30; ppl:  1.04; xent: 0.04; lr: 0.00100; 15780/14599 tok/s;     95 sec
+[2019-01-30 21:18:19,340 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:19,990 INFO] Validation perplexity: 1.03709
+[2019-01-30 21:18:19,991 INFO] Validation accuracy: 99.3096
+[2019-01-30 21:18:21,703 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:24,018 INFO] Step 2100/12500; acc:  98.67; ppl:  1.11; xent: 0.11; lr: 0.00100; 21078/18625 tok/s;    100 sec
+[2019-01-30 21:18:24,023 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:24,677 INFO] Validation perplexity: 1.03309
+[2019-01-30 21:18:24,678 INFO] Validation accuracy: 99.3845
+[2019-01-30 21:18:28,807 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:28,914 INFO] Step 2200/12500; acc:  99.05; ppl:  1.06; xent: 0.06; lr: 0.00100; 24954/20470 tok/s;    105 sec
+[2019-01-30 21:18:28,919 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:29,582 INFO] Validation perplexity: 1.04514
+[2019-01-30 21:18:29,583 INFO] Validation accuracy: 99.2181
+[2019-01-30 21:18:33,632 INFO] Step 2300/12500; acc:  99.37; ppl:  1.03; xent: 0.03; lr: 0.00100; 5902/5216 tok/s;    110 sec
+[2019-01-30 21:18:33,637 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:34,286 INFO] Validation perplexity: 1.03414
+[2019-01-30 21:18:34,287 INFO] Validation accuracy: 99.2846
+[2019-01-30 21:18:36,578 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:38,304 INFO] Step 2400/12500; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00100; 18237/12404 tok/s;    114 sec
+[2019-01-30 21:18:38,309 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:38,964 INFO] Validation perplexity: 1.04269
+[2019-01-30 21:18:38,965 INFO] Validation accuracy: 99.2763
+[2019-01-30 21:18:43,188 INFO] Step 2500/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 17710/15650 tok/s;    119 sec
+[2019-01-30 21:18:43,193 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:43,845 INFO] Validation perplexity: 1.05217
+[2019-01-30 21:18:43,845 INFO] Validation accuracy: 99.2514
+[2019-01-30 21:18:44,349 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:47,846 INFO] Step 2600/12500; acc:  99.79; ppl:  1.02; xent: 0.02; lr: 0.00100; 21339/17214 tok/s;    124 sec
+[2019-01-30 21:18:47,851 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:48,588 INFO] Validation perplexity: 1.02775
+[2019-01-30 21:18:48,588 INFO] Validation accuracy: 99.4593
+[2019-01-30 21:18:51,541 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:18:52,737 INFO] Step 2700/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 20348/21747 tok/s;    129 sec
+[2019-01-30 21:18:52,742 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:53,398 INFO] Validation perplexity: 1.02925
+[2019-01-30 21:18:53,399 INFO] Validation accuracy: 99.4843
+[2019-01-30 21:18:57,589 INFO] Step 2800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20568/18206 tok/s;    134 sec
+[2019-01-30 21:18:57,593 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:18:58,244 INFO] Validation perplexity: 1.02632
+[2019-01-30 21:18:58,244 INFO] Validation accuracy: 99.4843
+[2019-01-30 21:18:59,310 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:02,253 INFO] Step 2900/12500; acc:  99.13; ppl:  1.03; xent: 0.03; lr: 0.00100; 21789/19576 tok/s;    138 sec
+[2019-01-30 21:19:02,258 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:02,913 INFO] Validation perplexity: 1.05885
+[2019-01-30 21:19:02,914 INFO] Validation accuracy: 99.1682
+[2019-01-30 21:19:06,422 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:07,085 INFO] Step 3000/12500; acc:  99.88; ppl:  1.01; xent: 0.01; lr: 0.00100; 23643/21637 tok/s;    143 sec
+[2019-01-30 21:19:07,089 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:07,746 INFO] Validation perplexity: 1.0369
+[2019-01-30 21:19:07,747 INFO] Validation accuracy: 99.2347
+[2019-01-30 21:19:11,864 INFO] Step 3100/12500; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00100; 27816/20504 tok/s;    148 sec
+[2019-01-30 21:19:11,868 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:12,519 INFO] Validation perplexity: 1.02632
+[2019-01-30 21:19:12,519 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:19:14,193 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:16,541 INFO] Step 3200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 28355/17604 tok/s;    152 sec
+[2019-01-30 21:19:16,546 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:17,201 INFO] Validation perplexity: 1.02381
+[2019-01-30 21:19:17,201 INFO] Validation accuracy: 99.6091
+[2019-01-30 21:19:21,304 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:21,449 INFO] Step 3300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26513/21542 tok/s;    157 sec
+[2019-01-30 21:19:21,454 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:22,110 INFO] Validation perplexity: 1.04542
+[2019-01-30 21:19:22,111 INFO] Validation accuracy: 99.2264
+[2019-01-30 21:19:26,185 INFO] Step 3400/12500; acc:  99.12; ppl:  1.03; xent: 0.03; lr: 0.00100; 18464/18285 tok/s;    162 sec
+[2019-01-30 21:19:26,189 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:26,839 INFO] Validation perplexity: 1.02642
+[2019-01-30 21:19:26,840 INFO] Validation accuracy: 99.5009
+[2019-01-30 21:19:29,077 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:30,837 INFO] Step 3500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24711/21416 tok/s;    167 sec
+[2019-01-30 21:19:30,842 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:31,500 INFO] Validation perplexity: 1.05268
+[2019-01-30 21:19:31,501 INFO] Validation accuracy: 99.2431
+[2019-01-30 21:19:35,730 INFO] Step 3600/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 18552/13412 tok/s;    172 sec
+[2019-01-30 21:19:35,735 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:36,385 INFO] Validation perplexity: 1.0482
+[2019-01-30 21:19:36,386 INFO] Validation accuracy: 99.3096
+[2019-01-30 21:19:36,843 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:40,386 INFO] Step 3700/12500; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00100; 17016/16836 tok/s;    176 sec
+[2019-01-30 21:19:40,391 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:41,047 INFO] Validation perplexity: 1.0305
+[2019-01-30 21:19:41,047 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:19:43,949 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:45,177 INFO] Step 3800/12500; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 28706/17493 tok/s;    181 sec
+[2019-01-30 21:19:45,181 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:45,837 INFO] Validation perplexity: 1.03455
+[2019-01-30 21:19:45,838 INFO] Validation accuracy: 99.4676
+[2019-01-30 21:19:50,081 INFO] Step 3900/12500; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 26539/19904 tok/s;    186 sec
+[2019-01-30 21:19:50,085 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:50,736 INFO] Validation perplexity: 1.03332
+[2019-01-30 21:19:50,737 INFO] Validation accuracy: 99.3928
+[2019-01-30 21:19:51,764 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:54,743 INFO] Step 4000/12500; acc:  99.65; ppl:  1.02; xent: 0.02; lr: 0.00100; 20764/21463 tok/s;    191 sec
+[2019-01-30 21:19:54,749 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:19:55,404 INFO] Validation perplexity: 1.04814
+[2019-01-30 21:19:55,405 INFO] Validation accuracy: 99.2763
+[2019-01-30 21:19:58,875 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:19:59,572 INFO] Step 4100/12500; acc:  98.54; ppl:  1.04; xent: 0.04; lr: 0.00100; 18185/17503 tok/s;    196 sec
+[2019-01-30 21:19:59,577 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:00,232 INFO] Validation perplexity: 1.03358
+[2019-01-30 21:20:00,233 INFO] Validation accuracy: 99.451
+[2019-01-30 21:20:04,355 INFO] Step 4200/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 26439/21773 tok/s;    200 sec
+[2019-01-30 21:20:04,359 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:05,010 INFO] Validation perplexity: 1.0333
+[2019-01-30 21:20:05,011 INFO] Validation accuracy: 99.4593
+[2019-01-30 21:20:06,644 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:20:09,038 INFO] Step 4300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25019/21247 tok/s;    205 sec
+[2019-01-30 21:20:09,043 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:09,698 INFO] Validation perplexity: 1.03606
+[2019-01-30 21:20:09,699 INFO] Validation accuracy: 99.4261
+[2019-01-30 21:20:13,758 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:20:13,946 INFO] Step 4400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21042/21207 tok/s;    210 sec
+[2019-01-30 21:20:13,951 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:14,608 INFO] Validation perplexity: 1.02496
+[2019-01-30 21:20:14,608 INFO] Validation accuracy: 99.5176
+[2019-01-30 21:20:18,677 INFO] Step 4500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23716/21035 tok/s;    215 sec
+[2019-01-30 21:20:18,681 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:19,331 INFO] Validation perplexity: 1.02889
+[2019-01-30 21:20:19,331 INFO] Validation accuracy: 99.5342
+[2019-01-30 21:20:21,522 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:20:23,336 INFO] Step 4600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18113/16026 tok/s;    219 sec
+[2019-01-30 21:20:23,342 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:23,997 INFO] Validation perplexity: 1.03448
+[2019-01-30 21:20:23,998 INFO] Validation accuracy: 99.5425
+[2019-01-30 21:20:28,215 INFO] Step 4700/12500; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00100; 23470/21374 tok/s;    224 sec
+[2019-01-30 21:20:28,219 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:28,869 INFO] Validation perplexity: 1.02392
+[2019-01-30 21:20:28,870 INFO] Validation accuracy: 99.5758
+[2019-01-30 21:20:29,288 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:20:32,882 INFO] Step 4800/12500; acc:  98.96; ppl:  1.04; xent: 0.04; lr: 0.00100; 22207/21439 tok/s;    229 sec
+[2019-01-30 21:20:32,887 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:33,543 INFO] Validation perplexity: 1.05046
+[2019-01-30 21:20:33,543 INFO] Validation accuracy: 99.268
+[2019-01-30 21:20:36,408 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:20:37,664 INFO] Step 4900/12500; acc:  99.80; ppl:  1.00; xent: 0.00; lr: 0.00100; 31297/17884 tok/s;    234 sec
+[2019-01-30 21:20:37,669 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:38,325 INFO] Validation perplexity: 1.03402
+[2019-01-30 21:20:38,326 INFO] Validation accuracy: 99.4261
+[2019-01-30 21:20:42,530 INFO] Step 5000/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 25098/20601 tok/s;    238 sec
+[2019-01-30 21:20:42,535 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:43,189 INFO] Validation perplexity: 1.0384
+[2019-01-30 21:20:43,189 INFO] Validation accuracy: 99.4261
+[2019-01-30 21:20:44,177 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:20:47,193 INFO] Step 5100/12500; acc:  99.72; ppl:  1.02; xent: 0.02; lr: 0.00100; 27451/17863 tok/s;    243 sec
+[2019-01-30 21:20:47,198 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:47,853 INFO] Validation perplexity: 1.02929
+[2019-01-30 21:20:47,854 INFO] Validation accuracy: 99.5425
+[2019-01-30 21:20:51,324 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:20:52,052 INFO] Step 5200/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 26975/18675 tok/s;    248 sec
+[2019-01-30 21:20:52,057 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:52,713 INFO] Validation perplexity: 1.02994
+[2019-01-30 21:20:52,713 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:20:56,834 INFO] Step 5300/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 30478/18160 tok/s;    253 sec
+[2019-01-30 21:20:56,839 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:20:57,489 INFO] Validation perplexity: 1.02563
+[2019-01-30 21:20:57,489 INFO] Validation accuracy: 99.5675
+[2019-01-30 21:20:59,101 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:01,542 INFO] Step 5400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19155/12541 tok/s;    257 sec
+[2019-01-30 21:21:01,547 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:02,203 INFO] Validation perplexity: 1.02826
+[2019-01-30 21:21:02,204 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:21:06,207 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:06,429 INFO] Step 5500/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 26694/19067 tok/s;    262 sec
+[2019-01-30 21:21:06,434 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:07,092 INFO] Validation perplexity: 1.02491
+[2019-01-30 21:21:07,092 INFO] Validation accuracy: 99.5342
+[2019-01-30 21:21:11,167 INFO] Step 5600/12500; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 23313/19463 tok/s;    267 sec
+[2019-01-30 21:21:11,171 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:11,821 INFO] Validation perplexity: 1.02623
+[2019-01-30 21:21:11,822 INFO] Validation accuracy: 99.5924
+[2019-01-30 21:21:13,974 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:15,822 INFO] Step 5700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24960/19612 tok/s;    272 sec
+[2019-01-30 21:21:15,826 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:16,483 INFO] Validation perplexity: 1.0369
+[2019-01-30 21:21:16,483 INFO] Validation accuracy: 99.5009
+[2019-01-30 21:21:20,697 INFO] Step 5800/12500; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00100; 28004/17803 tok/s;    277 sec
+[2019-01-30 21:21:20,702 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:21,364 INFO] Validation perplexity: 1.01977
+[2019-01-30 21:21:21,365 INFO] Validation accuracy: 99.6423
+[2019-01-30 21:21:21,748 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:25,377 INFO] Step 5900/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 23785/22298 tok/s;    281 sec
+[2019-01-30 21:21:25,382 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:26,039 INFO] Validation perplexity: 1.02629
+[2019-01-30 21:21:26,040 INFO] Validation accuracy: 99.6091
+[2019-01-30 21:21:28,858 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:30,148 INFO] Step 6000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26864/19189 tok/s;    286 sec
+[2019-01-30 21:21:30,153 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:30,808 INFO] Validation perplexity: 1.03927
+[2019-01-30 21:21:30,808 INFO] Validation accuracy: 99.4676
+[2019-01-30 21:21:35,021 INFO] Step 6100/12500; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00100; 21760/18360 tok/s;    291 sec
+[2019-01-30 21:21:35,026 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:35,675 INFO] Validation perplexity: 1.02185
+[2019-01-30 21:21:35,675 INFO] Validation accuracy: 99.6756
+[2019-01-30 21:21:36,626 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:39,682 INFO] Step 6200/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 20638/20879 tok/s;    296 sec
+[2019-01-30 21:21:39,686 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:40,342 INFO] Validation perplexity: 1.02118
+[2019-01-30 21:21:40,343 INFO] Validation accuracy: 99.6174
+[2019-01-30 21:21:43,736 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:44,506 INFO] Step 6300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24484/19052 tok/s;    300 sec
+[2019-01-30 21:21:44,511 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:45,173 INFO] Validation perplexity: 1.03858
+[2019-01-30 21:21:45,173 INFO] Validation accuracy: 99.451
+[2019-01-30 21:21:49,295 INFO] Step 6400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22307/21759 tok/s;    305 sec
+[2019-01-30 21:21:49,300 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:49,952 INFO] Validation perplexity: 1.04412
+[2019-01-30 21:21:49,952 INFO] Validation accuracy: 99.4593
+[2019-01-30 21:21:51,556 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:54,041 INFO] Step 6500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26292/21910 tok/s;    310 sec
+[2019-01-30 21:21:54,046 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:54,702 INFO] Validation perplexity: 1.03095
+[2019-01-30 21:21:54,703 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:21:58,664 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:21:58,915 INFO] Step 6600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 31214/17384 tok/s;    315 sec
+[2019-01-30 21:21:58,919 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:21:59,575 INFO] Validation perplexity: 1.02809
+[2019-01-30 21:21:59,576 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:22:03,672 INFO] Step 6700/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 18390/16565 tok/s;    320 sec
+[2019-01-30 21:22:03,676 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:04,326 INFO] Validation perplexity: 1.02043
+[2019-01-30 21:22:04,327 INFO] Validation accuracy: 99.6257
+[2019-01-30 21:22:06,432 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:22:08,347 INFO] Step 6800/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 19016/20065 tok/s;    324 sec
+[2019-01-30 21:22:08,352 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:09,007 INFO] Validation perplexity: 1.03136
+[2019-01-30 21:22:09,008 INFO] Validation accuracy: 99.5176
+[2019-01-30 21:22:13,201 INFO] Step 6900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26778/15835 tok/s;    329 sec
+[2019-01-30 21:22:13,206 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:13,855 INFO] Validation perplexity: 1.02821
+[2019-01-30 21:22:13,856 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:22:14,208 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:22:17,874 INFO] Step 7000/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 28109/18337 tok/s;    334 sec
+[2019-01-30 21:22:17,879 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:18,535 INFO] Validation perplexity: 1.05749
+[2019-01-30 21:22:18,535 INFO] Validation accuracy: 99.3346
+[2019-01-30 21:22:21,314 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:22:22,640 INFO] Step 7100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24950/19960 tok/s;    339 sec
+[2019-01-30 21:22:22,645 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:23,301 INFO] Validation perplexity: 1.02481
+[2019-01-30 21:22:23,302 INFO] Validation accuracy: 99.5841
+[2019-01-30 21:22:27,502 INFO] Step 7200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26992/18686 tok/s;    343 sec
+[2019-01-30 21:22:27,507 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:28,157 INFO] Validation perplexity: 1.02842
+[2019-01-30 21:22:28,157 INFO] Validation accuracy: 99.5924
+[2019-01-30 21:22:29,079 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:22:32,183 INFO] Step 7300/12500; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00100; 23714/21260 tok/s;    348 sec
+[2019-01-30 21:22:32,188 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:32,843 INFO] Validation perplexity: 1.0385
+[2019-01-30 21:22:32,844 INFO] Validation accuracy: 99.4593
+[2019-01-30 21:22:36,196 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:22:37,001 INFO] Step 7400/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 26576/19489 tok/s;    353 sec
+[2019-01-30 21:22:37,005 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:37,661 INFO] Validation perplexity: 1.03378
+[2019-01-30 21:22:37,662 INFO] Validation accuracy: 99.5591
+[2019-01-30 21:22:41,796 INFO] Step 7500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24912/20846 tok/s;    358 sec
+[2019-01-30 21:22:41,801 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:42,451 INFO] Validation perplexity: 1.03809
+[2019-01-30 21:22:42,452 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:22:43,969 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:22:46,496 INFO] Step 7600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26621/21630 tok/s;    362 sec
+[2019-01-30 21:22:46,501 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:47,157 INFO] Validation perplexity: 1.05443
+[2019-01-30 21:22:47,157 INFO] Validation accuracy: 99.3845
+[2019-01-30 21:22:51,083 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:22:51,370 INFO] Step 7700/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 22548/17345 tok/s;    367 sec
+[2019-01-30 21:22:51,376 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:52,109 INFO] Validation perplexity: 1.04496
+[2019-01-30 21:22:52,110 INFO] Validation accuracy: 99.4427
+[2019-01-30 21:22:56,219 INFO] Step 7800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18909/19500 tok/s;    372 sec
+[2019-01-30 21:22:56,224 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:22:56,875 INFO] Validation perplexity: 1.03282
+[2019-01-30 21:22:56,876 INFO] Validation accuracy: 99.5508
+[2019-01-30 21:22:58,943 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:00,891 INFO] Step 7900/12500; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00100; 25114/21975 tok/s;    377 sec
+[2019-01-30 21:23:00,897 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:01,552 INFO] Validation perplexity: 1.0392
+[2019-01-30 21:23:01,553 INFO] Validation accuracy: 99.5675
+[2019-01-30 21:23:05,744 INFO] Step 8000/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 26666/21510 tok/s;    382 sec
+[2019-01-30 21:23:05,748 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:06,399 INFO] Validation perplexity: 1.03736
+[2019-01-30 21:23:06,400 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:23:06,714 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:10,451 INFO] Step 8100/12500; acc:  97.16; ppl:  1.21; xent: 0.19; lr: 0.00100; 19951/16586 tok/s;    386 sec
+[2019-01-30 21:23:10,456 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:11,111 INFO] Validation perplexity: 1.03126
+[2019-01-30 21:23:11,112 INFO] Validation accuracy: 99.5841
+[2019-01-30 21:23:13,827 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:15,198 INFO] Step 8200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22427/20955 tok/s;    391 sec
+[2019-01-30 21:23:15,203 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:15,860 INFO] Validation perplexity: 1.03766
+[2019-01-30 21:23:15,861 INFO] Validation accuracy: 99.476
+[2019-01-30 21:23:20,075 INFO] Step 8300/12500; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00100; 22701/21125 tok/s;    396 sec
+[2019-01-30 21:23:20,080 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:20,729 INFO] Validation perplexity: 1.02941
+[2019-01-30 21:23:20,730 INFO] Validation accuracy: 99.5425
+[2019-01-30 21:23:21,599 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:24,736 INFO] Step 8400/12500; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 24957/19965 tok/s;    401 sec
+[2019-01-30 21:23:24,741 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:25,397 INFO] Validation perplexity: 1.03185
+[2019-01-30 21:23:25,397 INFO] Validation accuracy: 99.5176
+[2019-01-30 21:23:28,708 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:29,540 INFO] Step 8500/12500; acc:  99.80; ppl:  1.00; xent: 0.00; lr: 0.00100; 27274/17899 tok/s;    405 sec
+[2019-01-30 21:23:29,545 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:30,201 INFO] Validation perplexity: 1.0269
+[2019-01-30 21:23:30,202 INFO] Validation accuracy: 99.5425
+[2019-01-30 21:23:34,347 INFO] Step 8600/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 23734/21460 tok/s;    410 sec
+[2019-01-30 21:23:34,351 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:35,002 INFO] Validation perplexity: 1.02484
+[2019-01-30 21:23:35,003 INFO] Validation accuracy: 99.6423
+[2019-01-30 21:23:36,477 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:39,044 INFO] Step 8700/12500; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 23422/20076 tok/s;    415 sec
+[2019-01-30 21:23:39,048 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:39,703 INFO] Validation perplexity: 1.02951
+[2019-01-30 21:23:39,704 INFO] Validation accuracy: 99.5591
+[2019-01-30 21:23:43,594 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:43,914 INFO] Step 8800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24696/19404 tok/s;    420 sec
+[2019-01-30 21:23:43,919 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:44,575 INFO] Validation perplexity: 1.02941
+[2019-01-30 21:23:44,576 INFO] Validation accuracy: 99.5924
+[2019-01-30 21:23:48,672 INFO] Step 8900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25255/18119 tok/s;    425 sec
+[2019-01-30 21:23:48,677 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:49,328 INFO] Validation perplexity: 1.0293
+[2019-01-30 21:23:49,329 INFO] Validation accuracy: 99.5758
+[2019-01-30 21:23:51,365 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:23:53,396 INFO] Step 9000/12500; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 14944/13541 tok/s;    429 sec
+[2019-01-30 21:23:53,401 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:54,058 INFO] Validation perplexity: 1.03125
+[2019-01-30 21:23:54,059 INFO] Validation accuracy: 99.5675
+[2019-01-30 21:23:58,241 INFO] Step 9100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25168/19360 tok/s;    434 sec
+[2019-01-30 21:23:58,246 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:23:58,896 INFO] Validation perplexity: 1.02676
+[2019-01-30 21:23:58,897 INFO] Validation accuracy: 99.6174
+[2019-01-30 21:23:59,175 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:02,949 INFO] Step 9200/12500; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 22113/21076 tok/s;    439 sec
+[2019-01-30 21:24:02,954 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:03,611 INFO] Validation perplexity: 1.03018
+[2019-01-30 21:24:03,611 INFO] Validation accuracy: 99.5259
+[2019-01-30 21:24:06,288 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:07,705 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24939/21432 tok/s;    444 sec
+[2019-01-30 21:24:07,710 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:08,366 INFO] Validation perplexity: 1.03311
+[2019-01-30 21:24:08,367 INFO] Validation accuracy: 99.5841
+[2019-01-30 21:24:12,568 INFO] Step 9400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20431/19899 tok/s;    448 sec
+[2019-01-30 21:24:12,573 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:13,223 INFO] Validation perplexity: 1.02524
+[2019-01-30 21:24:13,223 INFO] Validation accuracy: 99.5841
+[2019-01-30 21:24:14,055 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:17,232 INFO] Step 9500/12500; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00100; 16964/18097 tok/s;    453 sec
+[2019-01-30 21:24:17,237 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:17,893 INFO] Validation perplexity: 1.02488
+[2019-01-30 21:24:17,894 INFO] Validation accuracy: 99.6174
+[2019-01-30 21:24:21,162 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:22,023 INFO] Step 9600/12500; acc:  99.80; ppl:  1.00; xent: 0.00; lr: 0.00100; 26790/16228 tok/s;    458 sec
+[2019-01-30 21:24:22,028 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:22,684 INFO] Validation perplexity: 1.02955
+[2019-01-30 21:24:22,685 INFO] Validation accuracy: 99.5841
+[2019-01-30 21:24:26,843 INFO] Step 9700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26185/20554 tok/s;    463 sec
+[2019-01-30 21:24:26,848 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:27,512 INFO] Validation perplexity: 1.03198
+[2019-01-30 21:24:27,512 INFO] Validation accuracy: 99.5591
+[2019-01-30 21:24:28,947 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:31,556 INFO] Step 9800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17741/15571 tok/s;    467 sec
+[2019-01-30 21:24:31,560 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:32,215 INFO] Validation perplexity: 1.02509
+[2019-01-30 21:24:32,216 INFO] Validation accuracy: 99.6091
+[2019-01-30 21:24:36,054 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:36,418 INFO] Step 9900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26186/20867 tok/s;    472 sec
+[2019-01-30 21:24:36,423 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:37,079 INFO] Validation perplexity: 1.02761
+[2019-01-30 21:24:37,080 INFO] Validation accuracy: 99.6091
+[2019-01-30 21:24:41,176 INFO] Step 10000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19782/20210 tok/s;    477 sec
+[2019-01-30 21:24:41,180 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:41,831 INFO] Validation perplexity: 1.02616
+[2019-01-30 21:24:41,832 INFO] Validation accuracy: 99.5841
+[2019-01-30 21:24:43,827 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:45,852 INFO] Step 10100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24975/18369 tok/s;    482 sec
+[2019-01-30 21:24:45,857 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:46,513 INFO] Validation perplexity: 1.0312
+[2019-01-30 21:24:46,514 INFO] Validation accuracy: 99.5176
+[2019-01-30 21:24:50,697 INFO] Step 10200/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 25041/19675 tok/s;    487 sec
+[2019-01-30 21:24:50,702 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:51,362 INFO] Validation perplexity: 1.03739
+[2019-01-30 21:24:51,363 INFO] Validation accuracy: 99.4593
+[2019-01-30 21:24:51,607 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:24:55,464 INFO] Step 10300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26581/21519 tok/s;    491 sec
+[2019-01-30 21:24:55,492 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:24:56,148 INFO] Validation perplexity: 1.03546
+[2019-01-30 21:24:56,149 INFO] Validation accuracy: 99.5176
+[2019-01-30 21:24:58,783 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:00,230 INFO] Step 10400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25076/18807 tok/s;    496 sec
+[2019-01-30 21:25:00,235 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:00,890 INFO] Validation perplexity: 1.03381
+[2019-01-30 21:25:00,891 INFO] Validation accuracy: 99.4926
+[2019-01-30 21:25:05,097 INFO] Step 10500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24946/19601 tok/s;    501 sec
+[2019-01-30 21:25:05,102 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:05,752 INFO] Validation perplexity: 1.03381
+[2019-01-30 21:25:05,753 INFO] Validation accuracy: 99.4926
+[2019-01-30 21:25:06,550 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:09,761 INFO] Step 10600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21655/18210 tok/s;    506 sec
+[2019-01-30 21:25:09,766 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:10,422 INFO] Validation perplexity: 1.02186
+[2019-01-30 21:25:10,423 INFO] Validation accuracy: 99.634
+[2019-01-30 21:25:13,659 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:14,552 INFO] Step 10700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 29992/15152 tok/s;    510 sec
+[2019-01-30 21:25:14,556 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:15,213 INFO] Validation perplexity: 1.02815
+[2019-01-30 21:25:15,213 INFO] Validation accuracy: 99.5591
+[2019-01-30 21:25:19,379 INFO] Step 10800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26411/18275 tok/s;    515 sec
+[2019-01-30 21:25:19,383 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:20,036 INFO] Validation perplexity: 1.02598
+[2019-01-30 21:25:20,037 INFO] Validation accuracy: 99.5675
+[2019-01-30 21:25:21,437 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:24,078 INFO] Step 10900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 30702/18421 tok/s;    520 sec
+[2019-01-30 21:25:24,083 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:24,739 INFO] Validation perplexity: 1.029
+[2019-01-30 21:25:24,739 INFO] Validation accuracy: 99.6091
+[2019-01-30 21:25:28,557 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:28,967 INFO] Step 11000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23718/21626 tok/s;    525 sec
+[2019-01-30 21:25:28,972 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:29,629 INFO] Validation perplexity: 1.02622
+[2019-01-30 21:25:29,630 INFO] Validation accuracy: 99.6257
+[2019-01-30 21:25:33,718 INFO] Step 11100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21941/18302 tok/s;    530 sec
+[2019-01-30 21:25:33,723 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:34,374 INFO] Validation perplexity: 1.02736
+[2019-01-30 21:25:34,375 INFO] Validation accuracy: 99.6506
+[2019-01-30 21:25:36,334 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:38,410 INFO] Step 11200/12500; acc:  99.49; ppl:  1.03; xent: 0.03; lr: 0.00100; 22648/21631 tok/s;    534 sec
+[2019-01-30 21:25:38,415 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:39,071 INFO] Validation perplexity: 1.03665
+[2019-01-30 21:25:39,072 INFO] Validation accuracy: 99.5176
+[2019-01-30 21:25:43,251 INFO] Step 11300/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 26145/19173 tok/s;    539 sec
+[2019-01-30 21:25:43,256 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:43,906 INFO] Validation perplexity: 1.04666
+[2019-01-30 21:25:43,907 INFO] Validation accuracy: 99.4676
+[2019-01-30 21:25:44,114 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:47,964 INFO] Step 11400/12500; acc:  99.66; ppl:  1.00; xent: 0.00; lr: 0.00100; 25033/17541 tok/s;    544 sec
+[2019-01-30 21:25:47,969 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:48,628 INFO] Validation perplexity: 1.03828
+[2019-01-30 21:25:48,628 INFO] Validation accuracy: 99.451
+[2019-01-30 21:25:51,231 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:25:52,719 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23601/21915 tok/s;    549 sec
+[2019-01-30 21:25:52,724 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:53,382 INFO] Validation perplexity: 1.05168
+[2019-01-30 21:25:53,383 INFO] Validation accuracy: 99.4344
+[2019-01-30 21:25:57,636 INFO] Step 11600/12500; acc:  99.66; ppl:  1.03; xent: 0.03; lr: 0.00100; 26321/20106 tok/s;    554 sec
+[2019-01-30 21:25:57,641 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:25:58,292 INFO] Validation perplexity: 1.05189
+[2019-01-30 21:25:58,293 INFO] Validation accuracy: 99.4011
+[2019-01-30 21:25:59,046 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:26:02,303 INFO] Step 11700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26443/19832 tok/s;    558 sec
+[2019-01-30 21:26:02,308 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:02,965 INFO] Validation perplexity: 1.03823
+[2019-01-30 21:26:02,966 INFO] Validation accuracy: 99.5092
+[2019-01-30 21:26:06,167 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:26:07,113 INFO] Step 11800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19897/13034 tok/s;    563 sec
+[2019-01-30 21:26:07,118 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:07,775 INFO] Validation perplexity: 1.02741
+[2019-01-30 21:26:07,776 INFO] Validation accuracy: 99.5675
+[2019-01-30 21:26:11,939 INFO] Step 11900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21329/15238 tok/s;    568 sec
+[2019-01-30 21:26:11,943 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:12,593 INFO] Validation perplexity: 1.06371
+[2019-01-30 21:26:12,594 INFO] Validation accuracy: 99.2514
+[2019-01-30 21:26:13,941 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:26:16,628 INFO] Step 12000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26144/20898 tok/s;    573 sec
+[2019-01-30 21:26:16,633 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:17,289 INFO] Validation perplexity: 1.04447
+[2019-01-30 21:26:17,290 INFO] Validation accuracy: 99.4843
+[2019-01-30 21:26:21,054 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:26:21,496 INFO] Step 12100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23356/18460 tok/s;    577 sec
+[2019-01-30 21:26:21,501 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:22,158 INFO] Validation perplexity: 1.03606
+[2019-01-30 21:26:22,159 INFO] Validation accuracy: 99.5009
+[2019-01-30 21:26:26,253 INFO] Step 12200/12500; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00100; 28502/18348 tok/s;    582 sec
+[2019-01-30 21:26:26,258 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:26,909 INFO] Validation perplexity: 1.04689
+[2019-01-30 21:26:26,909 INFO] Validation accuracy: 99.4593
+[2019-01-30 21:26:28,833 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:26:30,941 INFO] Step 12300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 24893/19914 tok/s;    587 sec
+[2019-01-30 21:26:30,946 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:31,602 INFO] Validation perplexity: 1.04259
+[2019-01-30 21:26:31,602 INFO] Validation accuracy: 99.476
+[2019-01-30 21:26:35,772 INFO] Step 12400/12500; acc:  99.81; ppl:  1.00; xent: 0.00; lr: 0.00100; 21663/16186 tok/s;    592 sec
+[2019-01-30 21:26:35,776 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:36,427 INFO] Validation perplexity: 1.0281
+[2019-01-30 21:26:36,428 INFO] Validation accuracy: 99.5675
+[2019-01-30 21:26:36,604 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000
+[2019-01-30 21:26:40,511 INFO] Step 12500/12500; acc:  99.82; ppl:  1.00; xent: 0.00; lr: 0.00100; 21048/18385 tok/s;    596 sec
+[2019-01-30 21:26:40,517 INFO] Loading valid dataset from ../preprocessed_data/data_italian_high_10000.valid.0.pt, number of examples: 1000
+[2019-01-30 21:26:41,173 INFO] Validation perplexity: 1.0292
+[2019-01-30 21:26:41,173 INFO] Validation accuracy: 99.5841
+[2019-01-30 21:26:41,174 INFO] Saving checkpoint ../models/italian_models/logplot_model-italian-high-s1_step_12500.pt
+[2019-01-30 21:26:41,277 INFO] Loading train dataset from ../preprocessed_data/data_italian_high_10000.train.0.pt, number of examples: 10000

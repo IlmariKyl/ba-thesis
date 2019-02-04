@@ -1,0 +1,626 @@
+[2019-01-22 05:17:41,422 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:17:41,448 INFO]  * vocabulary size. source = 59; target = 41
+[2019-01-22 05:17:41,448 INFO] Building model...
+[2019-01-22 05:17:44,778 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(59, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(41, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=41, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 05:17:44,782 INFO] encoder: 308300
+[2019-01-22 05:17:44,782 INFO] decoder: 1128841
+[2019-01-22 05:17:44,782 INFO] * number of parameters: 1437141
+[2019-01-22 05:17:44,783 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 05:17:44,784 INFO] Start training...
+[2019-01-22 05:17:44,842 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:17:48,827 INFO] Step 100/12500; acc:  41.64; ppl:  9.84; xent: 2.29; lr: 0.00100; 8672/15876 tok/s;      4 sec
+[2019-01-22 05:17:48,859 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:17:49,424 INFO] Validation perplexity: 10.6856
+[2019-01-22 05:17:49,425 INFO] Validation accuracy: 33.2967
+[2019-01-22 05:17:51,575 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:17:53,083 INFO] Step 200/12500; acc:  53.17; ppl:  4.70; xent: 1.55; lr: 0.00100; 22142/21054 tok/s;      8 sec
+[2019-01-22 05:17:53,089 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:17:53,654 INFO] Validation perplexity: 4.03063
+[2019-01-22 05:17:53,655 INFO] Validation accuracy: 59.5604
+[2019-01-22 05:17:57,266 INFO] Step 300/12500; acc:  77.84; ppl:  2.05; xent: 0.72; lr: 0.00100; 24718/19421 tok/s;     12 sec
+[2019-01-22 05:17:57,272 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:17:57,833 INFO] Validation perplexity: 2.37972
+[2019-01-22 05:17:57,834 INFO] Validation accuracy: 74.9451
+[2019-01-22 05:17:58,410 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:01,455 INFO] Step 400/12500; acc:  89.53; ppl:  1.46; xent: 0.38; lr: 0.00100; 23137/19281 tok/s;     17 sec
+[2019-01-22 05:18:01,461 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:02,027 INFO] Validation perplexity: 1.85741
+[2019-01-22 05:18:02,028 INFO] Validation accuracy: 82.1379
+[2019-01-22 05:18:04,679 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:05,712 INFO] Step 500/12500; acc:  83.88; ppl:  1.61; xent: 0.48; lr: 0.00100; 26144/16558 tok/s;     21 sec
+[2019-01-22 05:18:05,718 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:06,285 INFO] Validation perplexity: 1.62818
+[2019-01-22 05:18:06,286 INFO] Validation accuracy: 85.9441
+[2019-01-22 05:18:09,845 INFO] Step 600/12500; acc:  90.11; ppl:  1.39; xent: 0.33; lr: 0.00100; 26448/18803 tok/s;     25 sec
+[2019-01-22 05:18:09,850 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:10,413 INFO] Validation perplexity: 1.56296
+[2019-01-22 05:18:10,413 INFO] Validation accuracy: 86.9431
+[2019-01-22 05:18:11,515 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:14,068 INFO] Step 700/12500; acc:  88.32; ppl:  1.44; xent: 0.37; lr: 0.00100; 20453/20746 tok/s;     29 sec
+[2019-01-22 05:18:14,074 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:14,640 INFO] Validation perplexity: 1.43759
+[2019-01-22 05:18:14,640 INFO] Validation accuracy: 89.3606
+[2019-01-22 05:18:17,776 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:18,339 INFO] Step 800/12500; acc:  90.87; ppl:  1.33; xent: 0.29; lr: 0.00100; 25001/15945 tok/s;     33 sec
+[2019-01-22 05:18:18,345 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:18,910 INFO] Validation perplexity: 1.37579
+[2019-01-22 05:18:18,911 INFO] Validation accuracy: 90.6094
+[2019-01-22 05:18:22,448 INFO] Step 900/12500; acc:  93.55; ppl:  1.19; xent: 0.17; lr: 0.00100; 21947/21683 tok/s;     38 sec
+[2019-01-22 05:18:22,454 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:23,018 INFO] Validation perplexity: 1.3265
+[2019-01-22 05:18:23,019 INFO] Validation accuracy: 91.6583
+[2019-01-22 05:18:24,604 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:26,650 INFO] Step 1000/12500; acc:  97.61; ppl:  1.10; xent: 0.10; lr: 0.00100; 16432/16909 tok/s;     42 sec
+[2019-01-22 05:18:26,656 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:27,222 INFO] Validation perplexity: 1.3032
+[2019-01-22 05:18:27,223 INFO] Validation accuracy: 92.4176
+[2019-01-22 05:18:30,863 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:30,936 INFO] Step 1100/12500; acc:  93.98; ppl:  1.23; xent: 0.21; lr: 0.00100; 4418/5860 tok/s;     46 sec
+[2019-01-22 05:18:30,941 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:31,508 INFO] Validation perplexity: 1.28885
+[2019-01-22 05:18:31,508 INFO] Validation accuracy: 92.4975
+[2019-01-22 05:18:35,023 INFO] Step 1200/12500; acc:  94.97; ppl:  1.13; xent: 0.12; lr: 0.00100; 20037/15028 tok/s;     50 sec
+[2019-01-22 05:18:35,028 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:35,591 INFO] Validation perplexity: 1.27986
+[2019-01-22 05:18:35,591 INFO] Validation accuracy: 92.8072
+[2019-01-22 05:18:37,693 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:39,235 INFO] Step 1300/12500; acc:  96.06; ppl:  1.14; xent: 0.13; lr: 0.00100; 24615/18818 tok/s;     54 sec
+[2019-01-22 05:18:39,241 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:39,807 INFO] Validation perplexity: 1.25192
+[2019-01-22 05:18:39,808 INFO] Validation accuracy: 93.6663
+[2019-01-22 05:18:43,428 INFO] Step 1400/12500; acc:  93.47; ppl:  1.25; xent: 0.22; lr: 0.00100; 20569/17326 tok/s;     59 sec
+[2019-01-22 05:18:43,433 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:43,995 INFO] Validation perplexity: 1.26333
+[2019-01-22 05:18:43,996 INFO] Validation accuracy: 93.5365
+[2019-01-22 05:18:44,517 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:47,592 INFO] Step 1500/12500; acc:  98.18; ppl:  1.06; xent: 0.06; lr: 0.00100; 21642/19977 tok/s;     63 sec
+[2019-01-22 05:18:47,598 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:48,164 INFO] Validation perplexity: 1.23291
+[2019-01-22 05:18:48,165 INFO] Validation accuracy: 94.1558
+[2019-01-22 05:18:50,771 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:18:51,829 INFO] Step 1600/12500; acc:  93.71; ppl:  1.24; xent: 0.22; lr: 0.00100; 25184/17511 tok/s;     67 sec
+[2019-01-22 05:18:51,835 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:52,400 INFO] Validation perplexity: 1.22109
+[2019-01-22 05:18:52,401 INFO] Validation accuracy: 94.6454
+[2019-01-22 05:18:55,968 INFO] Step 1700/12500; acc:  99.26; ppl:  1.03; xent: 0.03; lr: 0.00100; 12440/13871 tok/s;     71 sec
+[2019-01-22 05:18:55,974 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:18:56,537 INFO] Validation perplexity: 1.23262
+[2019-01-22 05:18:56,537 INFO] Validation accuracy: 94.4456
+[2019-01-22 05:18:57,601 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:00,178 INFO] Step 1800/12500; acc:  96.88; ppl:  1.10; xent: 0.09; lr: 0.00100; 23225/19002 tok/s;     75 sec
+[2019-01-22 05:19:00,184 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:00,750 INFO] Validation perplexity: 1.22915
+[2019-01-22 05:19:00,750 INFO] Validation accuracy: 94.8152
+[2019-01-22 05:19:03,856 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:04,456 INFO] Step 1900/12500; acc:  97.94; ppl:  1.06; xent: 0.06; lr: 0.00100; 21867/21735 tok/s;     80 sec
+[2019-01-22 05:19:04,462 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:05,028 INFO] Validation perplexity: 1.21437
+[2019-01-22 05:19:05,028 INFO] Validation accuracy: 95.1548
+[2019-01-22 05:19:08,554 INFO] Step 2000/12500; acc:  96.88; ppl:  1.09; xent: 0.09; lr: 0.00100; 27496/17498 tok/s;     84 sec
+[2019-01-22 05:19:08,559 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:09,122 INFO] Validation perplexity: 1.21876
+[2019-01-22 05:19:09,122 INFO] Validation accuracy: 94.955
+[2019-01-22 05:19:10,682 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:12,765 INFO] Step 2100/12500; acc:  96.74; ppl:  1.12; xent: 0.11; lr: 0.00100; 23123/19820 tok/s;     88 sec
+[2019-01-22 05:19:12,771 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:13,337 INFO] Validation perplexity: 1.21671
+[2019-01-22 05:19:13,338 INFO] Validation accuracy: 95.3347
+[2019-01-22 05:19:16,936 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:17,045 INFO] Step 2200/12500; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00100; 23150/19588 tok/s;     92 sec
+[2019-01-22 05:19:17,050 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:17,616 INFO] Validation perplexity: 1.19578
+[2019-01-22 05:19:17,617 INFO] Validation accuracy: 95.5145
+[2019-01-22 05:19:21,128 INFO] Step 2300/12500; acc:  97.97; ppl:  1.07; xent: 0.06; lr: 0.00100; 23152/19263 tok/s;     96 sec
+[2019-01-22 05:19:21,133 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:21,698 INFO] Validation perplexity: 1.19565
+[2019-01-22 05:19:21,699 INFO] Validation accuracy: 95.7343
+[2019-01-22 05:19:23,765 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:25,347 INFO] Step 2400/12500; acc:  98.95; ppl:  1.04; xent: 0.04; lr: 0.00100; 23214/19769 tok/s;    101 sec
+[2019-01-22 05:19:25,352 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:25,920 INFO] Validation perplexity: 1.19927
+[2019-01-22 05:19:25,921 INFO] Validation accuracy: 95.7043
+[2019-01-22 05:19:29,529 INFO] Step 2500/12500; acc:  97.85; ppl:  1.08; xent: 0.08; lr: 0.00100; 25032/18205 tok/s;    105 sec
+[2019-01-22 05:19:29,534 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:30,097 INFO] Validation perplexity: 1.20936
+[2019-01-22 05:19:30,098 INFO] Validation accuracy: 95.6444
+[2019-01-22 05:19:30,592 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:33,699 INFO] Step 2600/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 17057/17656 tok/s;    109 sec
+[2019-01-22 05:19:33,705 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:34,275 INFO] Validation perplexity: 1.19969
+[2019-01-22 05:19:34,275 INFO] Validation accuracy: 95.7942
+[2019-01-22 05:19:36,851 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:37,942 INFO] Step 2700/12500; acc:  98.42; ppl:  1.06; xent: 0.05; lr: 0.00100; 19488/19275 tok/s;    113 sec
+[2019-01-22 05:19:37,947 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:38,514 INFO] Validation perplexity: 1.19614
+[2019-01-22 05:19:38,514 INFO] Validation accuracy: 95.8442
+[2019-01-22 05:19:42,117 INFO] Step 2800/12500; acc:  96.93; ppl:  1.11; xent: 0.10; lr: 0.00100; 5793/5178 tok/s;    117 sec
+[2019-01-22 05:19:42,122 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:42,684 INFO] Validation perplexity: 1.20893
+[2019-01-22 05:19:42,685 INFO] Validation accuracy: 95.7542
+[2019-01-22 05:19:43,697 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:46,302 INFO] Step 2900/12500; acc:  98.78; ppl:  1.05; xent: 0.05; lr: 0.00100; 23073/18878 tok/s;    121 sec
+[2019-01-22 05:19:46,307 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:46,874 INFO] Validation perplexity: 1.19913
+[2019-01-22 05:19:46,874 INFO] Validation accuracy: 95.9241
+[2019-01-22 05:19:50,019 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:50,650 INFO] Step 3000/12500; acc:  99.48; ppl:  1.03; xent: 0.02; lr: 0.00100; 24981/18736 tok/s;    126 sec
+[2019-01-22 05:19:50,656 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:51,223 INFO] Validation perplexity: 1.20767
+[2019-01-22 05:19:51,224 INFO] Validation accuracy: 96.0539
+[2019-01-22 05:19:54,750 INFO] Step 3100/12500; acc:  97.81; ppl:  1.05; xent: 0.05; lr: 0.00100; 21363/19421 tok/s;    130 sec
+[2019-01-22 05:19:54,755 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:55,318 INFO] Validation perplexity: 1.21184
+[2019-01-22 05:19:55,318 INFO] Validation accuracy: 96.024
+[2019-01-22 05:19:56,846 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:19:58,963 INFO] Step 3200/12500; acc:  98.58; ppl:  1.06; xent: 0.06; lr: 0.00100; 23212/19641 tok/s;    134 sec
+[2019-01-22 05:19:58,969 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:19:59,536 INFO] Validation perplexity: 1.20494
+[2019-01-22 05:19:59,536 INFO] Validation accuracy: 96.1139
+[2019-01-22 05:20:03,101 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:03,240 INFO] Step 3300/12500; acc:  98.44; ppl:  1.06; xent: 0.06; lr: 0.00100; 23236/19011 tok/s;    138 sec
+[2019-01-22 05:20:03,245 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:03,812 INFO] Validation perplexity: 1.1966
+[2019-01-22 05:20:03,813 INFO] Validation accuracy: 96.3337
+[2019-01-22 05:20:07,334 INFO] Step 3400/12500; acc:  99.72; ppl:  1.02; xent: 0.02; lr: 0.00100; 21636/19833 tok/s;    142 sec
+[2019-01-22 05:20:07,339 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:07,907 INFO] Validation perplexity: 1.20146
+[2019-01-22 05:20:07,907 INFO] Validation accuracy: 96.3536
+[2019-01-22 05:20:09,936 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:11,545 INFO] Step 3500/12500; acc:  99.61; ppl:  1.03; xent: 0.03; lr: 0.00100; 27140/18093 tok/s;    147 sec
+[2019-01-22 05:20:11,551 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:12,117 INFO] Validation perplexity: 1.1808
+[2019-01-22 05:20:12,118 INFO] Validation accuracy: 96.5435
+[2019-01-22 05:20:15,731 INFO] Step 3600/12500; acc:  99.86; ppl:  1.01; xent: 0.01; lr: 0.00100; 23220/19648 tok/s;    151 sec
+[2019-01-22 05:20:15,736 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:16,299 INFO] Validation perplexity: 1.2061
+[2019-01-22 05:20:16,299 INFO] Validation accuracy: 96.3137
+[2019-01-22 05:20:16,759 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:19,894 INFO] Step 3700/12500; acc:  99.48; ppl:  1.01; xent: 0.01; lr: 0.00100; 24718/18538 tok/s;    155 sec
+[2019-01-22 05:20:19,900 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:20,467 INFO] Validation perplexity: 1.20193
+[2019-01-22 05:20:20,468 INFO] Validation accuracy: 96.2438
+[2019-01-22 05:20:23,015 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:24,138 INFO] Step 3800/12500; acc:  99.29; ppl:  1.02; xent: 0.02; lr: 0.00100; 21631/19829 tok/s;    159 sec
+[2019-01-22 05:20:24,144 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:24,717 INFO] Validation perplexity: 1.2245
+[2019-01-22 05:20:24,717 INFO] Validation accuracy: 96.3237
+[2019-01-22 05:20:28,299 INFO] Step 3900/12500; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00100; 24856/18642 tok/s;    163 sec
+[2019-01-22 05:20:28,304 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:28,867 INFO] Validation perplexity: 1.21876
+[2019-01-22 05:20:28,868 INFO] Validation accuracy: 96.2537
+[2019-01-22 05:20:29,847 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:32,488 INFO] Step 4000/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 23220/19350 tok/s;    168 sec
+[2019-01-22 05:20:32,494 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:33,070 INFO] Validation perplexity: 1.23136
+[2019-01-22 05:20:33,070 INFO] Validation accuracy: 96.2038
+[2019-01-22 05:20:36,109 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:36,776 INFO] Step 4100/12500; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 23111/19555 tok/s;    172 sec
+[2019-01-22 05:20:36,781 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:37,349 INFO] Validation perplexity: 1.20977
+[2019-01-22 05:20:37,350 INFO] Validation accuracy: 96.2537
+[2019-01-22 05:20:40,872 INFO] Step 4200/12500; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00100; 21175/17933 tok/s;    176 sec
+[2019-01-22 05:20:40,878 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:41,443 INFO] Validation perplexity: 1.20797
+[2019-01-22 05:20:41,444 INFO] Validation accuracy: 96.5235
+[2019-01-22 05:20:42,937 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:45,086 INFO] Step 4300/12500; acc:  99.31; ppl:  1.02; xent: 0.02; lr: 0.00100; 26625/18433 tok/s;    180 sec
+[2019-01-22 05:20:45,091 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:45,659 INFO] Validation perplexity: 1.20078
+[2019-01-22 05:20:45,660 INFO] Validation accuracy: 96.2837
+[2019-01-22 05:20:49,189 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:49,359 INFO] Step 4400/12500; acc:  99.09; ppl:  1.03; xent: 0.03; lr: 0.00100; 19169/18237 tok/s;    185 sec
+[2019-01-22 05:20:49,364 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:49,932 INFO] Validation perplexity: 1.19433
+[2019-01-22 05:20:49,932 INFO] Validation accuracy: 96.6434
+[2019-01-22 05:20:53,450 INFO] Step 4500/12500; acc:  99.83; ppl:  1.02; xent: 0.02; lr: 0.00100; 23175/18895 tok/s;    189 sec
+[2019-01-22 05:20:53,455 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:54,019 INFO] Validation perplexity: 1.19422
+[2019-01-22 05:20:54,020 INFO] Validation accuracy: 96.4735
+[2019-01-22 05:20:56,016 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:20:57,664 INFO] Step 4600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21753/20080 tok/s;    193 sec
+[2019-01-22 05:20:57,670 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:20:58,238 INFO] Validation perplexity: 1.19115
+[2019-01-22 05:20:58,238 INFO] Validation accuracy: 96.6134
+[2019-01-22 05:21:01,866 INFO] Step 4700/12500; acc:  97.72; ppl:  1.06; xent: 0.05; lr: 0.00100; 20201/15595 tok/s;    197 sec
+[2019-01-22 05:21:01,871 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:02,435 INFO] Validation perplexity: 1.20859
+[2019-01-22 05:21:02,436 INFO] Validation accuracy: 96.5435
+[2019-01-22 05:21:02,843 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:06,030 INFO] Step 4800/12500; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00100; 19210/14403 tok/s;    201 sec
+[2019-01-22 05:21:06,036 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:06,604 INFO] Validation perplexity: 1.19922
+[2019-01-22 05:21:06,604 INFO] Validation accuracy: 96.5335
+[2019-01-22 05:21:09,101 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:10,262 INFO] Step 4900/12500; acc:  99.57; ppl:  1.02; xent: 0.02; lr: 0.00100; 24789/19477 tok/s;    205 sec
+[2019-01-22 05:21:10,268 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:10,838 INFO] Validation perplexity: 1.20503
+[2019-01-22 05:21:10,839 INFO] Validation accuracy: 96.6434
+[2019-01-22 05:21:14,435 INFO] Step 5000/12500; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00100; 11703/12352 tok/s;    210 sec
+[2019-01-22 05:21:14,440 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:15,005 INFO] Validation perplexity: 1.1917
+[2019-01-22 05:21:15,006 INFO] Validation accuracy: 96.5335
+[2019-01-22 05:21:15,933 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:18,609 INFO] Step 5100/12500; acc:  99.47; ppl:  1.04; xent: 0.03; lr: 0.00100; 13029/16461 tok/s;    214 sec
+[2019-01-22 05:21:18,615 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:19,184 INFO] Validation perplexity: 1.21688
+[2019-01-22 05:21:19,185 INFO] Validation accuracy: 96.3536
+[2019-01-22 05:21:22,190 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:22,894 INFO] Step 5200/12500; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00100; 21518/19725 tok/s;    218 sec
+[2019-01-22 05:21:22,900 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:23,467 INFO] Validation perplexity: 1.20127
+[2019-01-22 05:21:23,468 INFO] Validation accuracy: 96.7632
+[2019-01-22 05:21:26,988 INFO] Step 5300/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 21495/18380 tok/s;    222 sec
+[2019-01-22 05:21:26,993 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:27,559 INFO] Validation perplexity: 1.19807
+[2019-01-22 05:21:27,559 INFO] Validation accuracy: 96.7732
+[2019-01-22 05:21:29,020 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:31,205 INFO] Step 5400/12500; acc:  99.11; ppl:  1.02; xent: 0.02; lr: 0.00100; 18241/19210 tok/s;    226 sec
+[2019-01-22 05:21:31,211 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:31,779 INFO] Validation perplexity: 1.18422
+[2019-01-22 05:21:31,779 INFO] Validation accuracy: 96.9231
+[2019-01-22 05:21:35,281 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:35,486 INFO] Step 5500/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 21430/18325 tok/s;    231 sec
+[2019-01-22 05:21:35,492 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:36,058 INFO] Validation perplexity: 1.17658
+[2019-01-22 05:21:36,059 INFO] Validation accuracy: 96.8531
+[2019-01-22 05:21:39,577 INFO] Step 5600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23110/17999 tok/s;    235 sec
+[2019-01-22 05:21:39,582 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:40,147 INFO] Validation perplexity: 1.21899
+[2019-01-22 05:21:40,147 INFO] Validation accuracy: 96.6833
+[2019-01-22 05:21:42,124 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:43,807 INFO] Step 5700/12500; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00100; 24801/19077 tok/s;    239 sec
+[2019-01-22 05:21:43,813 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:44,379 INFO] Validation perplexity: 1.19268
+[2019-01-22 05:21:44,380 INFO] Validation accuracy: 96.7233
+[2019-01-22 05:21:48,028 INFO] Step 5800/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 16993/15324 tok/s;    243 sec
+[2019-01-22 05:21:48,033 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:48,597 INFO] Validation perplexity: 1.19273
+[2019-01-22 05:21:48,598 INFO] Validation accuracy: 96.8631
+[2019-01-22 05:21:48,955 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:52,174 INFO] Step 5900/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 25071/18803 tok/s;    247 sec
+[2019-01-22 05:21:52,180 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:52,747 INFO] Validation perplexity: 1.1806
+[2019-01-22 05:21:52,748 INFO] Validation accuracy: 97.1928
+[2019-01-22 05:21:55,204 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:21:56,399 INFO] Step 6000/12500; acc:  99.53; ppl:  1.02; xent: 0.02; lr: 0.00100; 23218/19348 tok/s;    252 sec
+[2019-01-22 05:21:56,405 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:21:56,972 INFO] Validation perplexity: 1.16925
+[2019-01-22 05:21:56,973 INFO] Validation accuracy: 97.2228
+[2019-01-22 05:22:00,571 INFO] Step 6100/12500; acc:  98.85; ppl:  1.06; xent: 0.05; lr: 0.00100; 19802/19549 tok/s;    256 sec
+[2019-01-22 05:22:00,576 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:01,139 INFO] Validation perplexity: 1.18103
+[2019-01-22 05:22:01,139 INFO] Validation accuracy: 97.0529
+[2019-01-22 05:22:02,032 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:04,735 INFO] Step 6200/12500; acc:  98.72; ppl:  1.03; xent: 0.03; lr: 0.00100; 22835/16769 tok/s;    260 sec
+[2019-01-22 05:22:04,741 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:05,308 INFO] Validation perplexity: 1.18312
+[2019-01-22 05:22:05,308 INFO] Validation accuracy: 97.013
+[2019-01-22 05:22:08,282 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:09,021 INFO] Step 6300/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 20022/19538 tok/s;    264 sec
+[2019-01-22 05:22:09,027 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:09,593 INFO] Validation perplexity: 1.18923
+[2019-01-22 05:22:09,594 INFO] Validation accuracy: 97.023
+[2019-01-22 05:22:13,113 INFO] Step 6400/12500; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00100; 23376/21523 tok/s;    268 sec
+[2019-01-22 05:22:13,118 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:13,681 INFO] Validation perplexity: 1.1908
+[2019-01-22 05:22:13,682 INFO] Validation accuracy: 97.013
+[2019-01-22 05:22:15,103 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:17,331 INFO] Step 6500/12500; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00100; 17134/10540 tok/s;    272 sec
+[2019-01-22 05:22:17,337 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:17,905 INFO] Validation perplexity: 1.19789
+[2019-01-22 05:22:17,906 INFO] Validation accuracy: 97.003
+[2019-01-22 05:22:21,357 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:21,616 INFO] Step 6600/12500; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00100; 20073/17200 tok/s;    277 sec
+[2019-01-22 05:22:21,622 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:22,188 INFO] Validation perplexity: 1.18578
+[2019-01-22 05:22:22,189 INFO] Validation accuracy: 96.973
+[2019-01-22 05:22:25,680 INFO] Step 6700/12500; acc:  98.82; ppl:  1.04; xent: 0.04; lr: 0.00100; 24934/18063 tok/s;    281 sec
+[2019-01-22 05:22:25,686 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:26,248 INFO] Validation perplexity: 1.23284
+[2019-01-22 05:22:26,249 INFO] Validation accuracy: 96.5534
+[2019-01-22 05:22:28,184 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:29,897 INFO] Step 6800/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 24914/18686 tok/s;    285 sec
+[2019-01-22 05:22:29,903 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:30,469 INFO] Validation perplexity: 1.19768
+[2019-01-22 05:22:30,470 INFO] Validation accuracy: 96.963
+[2019-01-22 05:22:34,116 INFO] Step 6900/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 23153/19294 tok/s;    289 sec
+[2019-01-22 05:22:34,121 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:34,684 INFO] Validation perplexity: 1.20117
+[2019-01-22 05:22:34,685 INFO] Validation accuracy: 96.7433
+[2019-01-22 05:22:35,009 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:38,261 INFO] Step 7000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 26809/18560 tok/s;    293 sec
+[2019-01-22 05:22:38,267 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:38,833 INFO] Validation perplexity: 1.21635
+[2019-01-22 05:22:38,834 INFO] Validation accuracy: 96.8132
+[2019-01-22 05:22:41,265 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:42,510 INFO] Step 7100/12500; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00100; 21229/18263 tok/s;    298 sec
+[2019-01-22 05:22:42,515 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:43,082 INFO] Validation perplexity: 1.20238
+[2019-01-22 05:22:43,082 INFO] Validation accuracy: 97.023
+[2019-01-22 05:22:46,669 INFO] Step 7200/12500; acc:  99.36; ppl:  1.01; xent: 0.01; lr: 0.00100; 9402/13163 tok/s;    302 sec
+[2019-01-22 05:22:46,674 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:47,236 INFO] Validation perplexity: 1.19254
+[2019-01-22 05:22:47,237 INFO] Validation accuracy: 96.8931
+[2019-01-22 05:22:48,093 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:50,844 INFO] Step 7300/12500; acc:  99.37; ppl:  1.04; xent: 0.04; lr: 0.00100; 19939/21140 tok/s;    306 sec
+[2019-01-22 05:22:50,850 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:51,415 INFO] Validation perplexity: 1.19808
+[2019-01-22 05:22:51,416 INFO] Validation accuracy: 97.003
+[2019-01-22 05:22:54,349 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:22:55,117 INFO] Step 7400/12500; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00100; 23088/17939 tok/s;    310 sec
+[2019-01-22 05:22:55,123 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:55,689 INFO] Validation perplexity: 1.19636
+[2019-01-22 05:22:55,689 INFO] Validation accuracy: 97.0729
+[2019-01-22 05:22:59,218 INFO] Step 7500/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 18295/19238 tok/s;    314 sec
+[2019-01-22 05:22:59,224 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:22:59,786 INFO] Validation perplexity: 1.19415
+[2019-01-22 05:22:59,787 INFO] Validation accuracy: 97.1828
+[2019-01-22 05:23:01,176 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:03,449 INFO] Step 7600/12500; acc:  99.53; ppl:  1.01; xent: 0.01; lr: 0.00100; 20671/21242 tok/s;    319 sec
+[2019-01-22 05:23:03,455 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:04,022 INFO] Validation perplexity: 1.20421
+[2019-01-22 05:23:04,023 INFO] Validation accuracy: 97.0629
+[2019-01-22 05:23:07,433 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:07,730 INFO] Step 7700/12500; acc:  99.44; ppl:  1.03; xent: 0.03; lr: 0.00100; 21719/18587 tok/s;    323 sec
+[2019-01-22 05:23:07,736 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:08,302 INFO] Validation perplexity: 1.20144
+[2019-01-22 05:23:08,302 INFO] Validation accuracy: 97.2128
+[2019-01-22 05:23:11,804 INFO] Step 7800/12500; acc:  99.22; ppl:  1.06; xent: 0.06; lr: 0.00100; 19241/18018 tok/s;    327 sec
+[2019-01-22 05:23:11,809 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:12,371 INFO] Validation perplexity: 1.21883
+[2019-01-22 05:23:12,372 INFO] Validation accuracy: 97.0629
+[2019-01-22 05:23:14,255 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:16,005 INFO] Step 7900/12500; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00100; 18693/19516 tok/s;    331 sec
+[2019-01-22 05:23:16,011 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:16,579 INFO] Validation perplexity: 1.21589
+[2019-01-22 05:23:16,580 INFO] Validation accuracy: 96.9031
+[2019-01-22 05:23:20,221 INFO] Step 8000/12500; acc:  99.43; ppl:  1.01; xent: 0.01; lr: 0.00100; 25071/17171 tok/s;    335 sec
+[2019-01-22 05:23:20,226 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:20,789 INFO] Validation perplexity: 1.21662
+[2019-01-22 05:23:20,790 INFO] Validation accuracy: 96.7732
+[2019-01-22 05:23:21,083 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:24,367 INFO] Step 8100/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 26861/18596 tok/s;    340 sec
+[2019-01-22 05:23:24,373 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:24,939 INFO] Validation perplexity: 1.2141
+[2019-01-22 05:23:24,940 INFO] Validation accuracy: 96.953
+[2019-01-22 05:23:27,341 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:28,615 INFO] Step 8200/12500; acc:  99.80; ppl:  1.00; xent: 0.00; lr: 0.00100; 25105/18258 tok/s;    344 sec
+[2019-01-22 05:23:28,621 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:29,191 INFO] Validation perplexity: 1.20068
+[2019-01-22 05:23:29,192 INFO] Validation accuracy: 97.2128
+[2019-01-22 05:23:32,793 INFO] Step 8300/12500; acc:  99.48; ppl:  1.02; xent: 0.01; lr: 0.00100; 15813/16945 tok/s;    348 sec
+[2019-01-22 05:23:32,798 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:33,361 INFO] Validation perplexity: 1.19837
+[2019-01-22 05:23:33,361 INFO] Validation accuracy: 97.1329
+[2019-01-22 05:23:34,171 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:36,957 INFO] Step 8400/12500; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00100; 21576/19778 tok/s;    352 sec
+[2019-01-22 05:23:36,962 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:37,528 INFO] Validation perplexity: 1.20443
+[2019-01-22 05:23:37,529 INFO] Validation accuracy: 97.1229
+[2019-01-22 05:23:40,425 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:41,234 INFO] Step 8500/12500; acc:  99.16; ppl:  1.02; xent: 0.02; lr: 0.00100; 24872/20208 tok/s;    356 sec
+[2019-01-22 05:23:41,239 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:41,806 INFO] Validation perplexity: 1.19542
+[2019-01-22 05:23:41,806 INFO] Validation accuracy: 97.2028
+[2019-01-22 05:23:45,326 INFO] Step 8600/12500; acc:  99.85; ppl:  1.01; xent: 0.01; lr: 0.00100; 21601/19126 tok/s;    360 sec
+[2019-01-22 05:23:45,332 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:45,894 INFO] Validation perplexity: 1.19638
+[2019-01-22 05:23:45,894 INFO] Validation accuracy: 97.1628
+[2019-01-22 05:23:47,247 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:49,566 INFO] Step 8700/12500; acc:  99.67; ppl:  1.02; xent: 0.02; lr: 0.00100; 21144/20175 tok/s;    365 sec
+[2019-01-22 05:23:49,572 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:50,139 INFO] Validation perplexity: 1.20627
+[2019-01-22 05:23:50,140 INFO] Validation accuracy: 97.0729
+[2019-01-22 05:23:53,506 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:23:53,843 INFO] Step 8800/12500; acc:  99.39; ppl:  1.05; xent: 0.05; lr: 0.00100; 23379/21422 tok/s;    369 sec
+[2019-01-22 05:23:53,848 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:54,414 INFO] Validation perplexity: 1.2081
+[2019-01-22 05:23:54,415 INFO] Validation accuracy: 97.0629
+[2019-01-22 05:23:57,919 INFO] Step 8900/12500; acc:  99.52; ppl:  1.02; xent: 0.02; lr: 0.00100; 18185/19701 tok/s;    373 sec
+[2019-01-22 05:23:57,924 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:23:58,487 INFO] Validation perplexity: 1.19676
+[2019-01-22 05:23:58,487 INFO] Validation accuracy: 97.2527
+[2019-01-22 05:24:00,330 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:02,118 INFO] Step 9000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 14023/19529 tok/s;    377 sec
+[2019-01-22 05:24:02,124 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:02,690 INFO] Validation perplexity: 1.20801
+[2019-01-22 05:24:02,691 INFO] Validation accuracy: 97.3127
+[2019-01-22 05:24:06,330 INFO] Step 9100/12500; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00100; 23128/19570 tok/s;    381 sec
+[2019-01-22 05:24:06,335 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:06,898 INFO] Validation perplexity: 1.18488
+[2019-01-22 05:24:06,899 INFO] Validation accuracy: 97.4625
+[2019-01-22 05:24:07,158 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:10,477 INFO] Step 9200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 10271/18061 tok/s;    386 sec
+[2019-01-22 05:24:10,483 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:11,050 INFO] Validation perplexity: 1.19724
+[2019-01-22 05:24:11,051 INFO] Validation accuracy: 97.2927
+[2019-01-22 05:24:13,413 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:14,712 INFO] Step 9300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 25067/18230 tok/s;    390 sec
+[2019-01-22 05:24:14,718 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:15,287 INFO] Validation perplexity: 1.2004
+[2019-01-22 05:24:15,288 INFO] Validation accuracy: 97.2428
+[2019-01-22 05:24:18,892 INFO] Step 9400/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 23122/19269 tok/s;    394 sec
+[2019-01-22 05:24:18,897 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:19,459 INFO] Validation perplexity: 1.2044
+[2019-01-22 05:24:19,459 INFO] Validation accuracy: 97.2428
+[2019-01-22 05:24:20,236 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:23,059 INFO] Step 9500/12500; acc:  99.46; ppl:  1.02; xent: 0.02; lr: 0.00100; 17115/19762 tok/s;    398 sec
+[2019-01-22 05:24:23,065 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:23,631 INFO] Validation perplexity: 1.20433
+[2019-01-22 05:24:23,631 INFO] Validation accuracy: 97.1928
+[2019-01-22 05:24:26,493 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:27,332 INFO] Step 9600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27123/17976 tok/s;    402 sec
+[2019-01-22 05:24:27,337 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:27,906 INFO] Validation perplexity: 1.19982
+[2019-01-22 05:24:27,906 INFO] Validation accuracy: 97.2627
+[2019-01-22 05:24:31,436 INFO] Step 9700/12500; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 24656/18363 tok/s;    407 sec
+[2019-01-22 05:24:31,442 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:32,004 INFO] Validation perplexity: 1.23883
+[2019-01-22 05:24:32,005 INFO] Validation accuracy: 97.1329
+[2019-01-22 05:24:33,318 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:35,676 INFO] Step 9800/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 12683/15172 tok/s;    411 sec
+[2019-01-22 05:24:35,682 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:36,248 INFO] Validation perplexity: 1.21773
+[2019-01-22 05:24:36,248 INFO] Validation accuracy: 97.0729
+[2019-01-22 05:24:39,574 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:39,946 INFO] Step 9900/12500; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00100; 21511/18122 tok/s;    415 sec
+[2019-01-22 05:24:39,952 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:40,518 INFO] Validation perplexity: 1.21039
+[2019-01-22 05:24:40,518 INFO] Validation accuracy: 97.2228
+[2019-01-22 05:24:44,034 INFO] Step 10000/12500; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 20117/17275 tok/s;    419 sec
+[2019-01-22 05:24:44,040 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:44,603 INFO] Validation perplexity: 1.21471
+[2019-01-22 05:24:44,603 INFO] Validation accuracy: 97.3227
+[2019-01-22 05:24:46,400 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:48,215 INFO] Step 10100/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 25000/18182 tok/s;    423 sec
+[2019-01-22 05:24:48,220 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:48,787 INFO] Validation perplexity: 1.2199
+[2019-01-22 05:24:48,788 INFO] Validation accuracy: 97.3027
+[2019-01-22 05:24:52,436 INFO] Step 10200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 13742/16228 tok/s;    428 sec
+[2019-01-22 05:24:52,441 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:53,003 INFO] Validation perplexity: 1.22082
+[2019-01-22 05:24:53,004 INFO] Validation accuracy: 97.3427
+[2019-01-22 05:24:53,224 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:24:56,574 INFO] Step 10300/12500; acc:  99.27; ppl:  1.01; xent: 0.01; lr: 0.00100; 21180/18136 tok/s;    432 sec
+[2019-01-22 05:24:56,580 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:24:57,147 INFO] Validation perplexity: 1.22734
+[2019-01-22 05:24:57,147 INFO] Validation accuracy: 97.1229
+[2019-01-22 05:24:59,482 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:00,821 INFO] Step 10400/12500; acc:  99.60; ppl:  1.03; xent: 0.03; lr: 0.00100; 20287/19970 tok/s;    436 sec
+[2019-01-22 05:25:00,827 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:01,394 INFO] Validation perplexity: 1.21706
+[2019-01-22 05:25:01,395 INFO] Validation accuracy: 97.1528
+[2019-01-22 05:25:04,990 INFO] Step 10500/12500; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00100; 26857/18593 tok/s;    440 sec
+[2019-01-22 05:25:04,995 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:05,558 INFO] Validation perplexity: 1.22571
+[2019-01-22 05:25:05,558 INFO] Validation accuracy: 97.2328
+[2019-01-22 05:25:06,304 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:09,164 INFO] Step 10600/12500; acc:  99.30; ppl:  1.03; xent: 0.03; lr: 0.00100; 24604/18402 tok/s;    444 sec
+[2019-01-22 05:25:09,170 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:09,736 INFO] Validation perplexity: 1.23002
+[2019-01-22 05:25:09,737 INFO] Validation accuracy: 97.1928
+[2019-01-22 05:25:12,558 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:13,428 INFO] Step 10700/12500; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00100; 23201/18277 tok/s;    449 sec
+[2019-01-22 05:25:13,434 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:13,998 INFO] Validation perplexity: 1.20134
+[2019-01-22 05:25:13,999 INFO] Validation accuracy: 97.2128
+[2019-01-22 05:25:17,521 INFO] Step 10800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19279/17036 tok/s;    453 sec
+[2019-01-22 05:25:17,529 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:18,090 INFO] Validation perplexity: 1.2223
+[2019-01-22 05:25:18,090 INFO] Validation accuracy: 97.2028
+[2019-01-22 05:25:19,374 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:21,757 INFO] Step 10900/12500; acc:  99.18; ppl:  1.05; xent: 0.05; lr: 0.00100; 26308/17852 tok/s;    457 sec
+[2019-01-22 05:25:21,763 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:22,326 INFO] Validation perplexity: 1.21125
+[2019-01-22 05:25:22,327 INFO] Validation accuracy: 97.2827
+[2019-01-22 05:25:25,611 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:26,022 INFO] Step 11000/12500; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00100; 14530/12214 tok/s;    461 sec
+[2019-01-22 05:25:26,028 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:26,592 INFO] Validation perplexity: 1.2172
+[2019-01-22 05:25:26,592 INFO] Validation accuracy: 97.2228
+[2019-01-22 05:25:30,098 INFO] Step 11100/12500; acc:  99.46; ppl:  1.01; xent: 0.01; lr: 0.00100; 20147/19596 tok/s;    465 sec
+[2019-01-22 05:25:30,103 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:30,663 INFO] Validation perplexity: 1.23252
+[2019-01-22 05:25:30,663 INFO] Validation accuracy: 97.0529
+[2019-01-22 05:25:32,419 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:34,281 INFO] Step 11200/12500; acc:  97.87; ppl:  1.06; xent: 0.06; lr: 0.00100; 12622/8381 tok/s;    469 sec
+[2019-01-22 05:25:34,287 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:34,851 INFO] Validation perplexity: 1.23081
+[2019-01-22 05:25:34,851 INFO] Validation accuracy: 97.2128
+[2019-01-22 05:25:38,469 INFO] Step 11300/12500; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00100; 24921/18691 tok/s;    474 sec
+[2019-01-22 05:25:38,475 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:39,040 INFO] Validation perplexity: 1.23583
+[2019-01-22 05:25:39,040 INFO] Validation accuracy: 96.9231
+[2019-01-22 05:25:39,231 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:42,644 INFO] Step 11400/12500; acc:  99.66; ppl:  1.03; xent: 0.03; lr: 0.00100; 16484/18759 tok/s;    478 sec
+[2019-01-22 05:25:42,650 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:43,220 INFO] Validation perplexity: 1.24469
+[2019-01-22 05:25:43,220 INFO] Validation accuracy: 97.0829
+[2019-01-22 05:25:45,514 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:46,877 INFO] Step 11500/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 27379/17423 tok/s;    482 sec
+[2019-01-22 05:25:46,883 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:47,450 INFO] Validation perplexity: 1.24919
+[2019-01-22 05:25:47,451 INFO] Validation accuracy: 96.983
+[2019-01-22 05:25:51,064 INFO] Step 11600/12500; acc:  99.75; ppl:  1.00; xent: 0.00; lr: 0.00100; 15411/19096 tok/s;    486 sec
+[2019-01-22 05:25:51,069 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:51,635 INFO] Validation perplexity: 1.2298
+[2019-01-22 05:25:51,635 INFO] Validation accuracy: 97.1129
+[2019-01-22 05:25:52,340 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:55,252 INFO] Step 11700/12500; acc:  99.51; ppl:  1.01; xent: 0.01; lr: 0.00100; 17049/16248 tok/s;    490 sec
+[2019-01-22 05:25:55,258 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:25:55,825 INFO] Validation perplexity: 1.24273
+[2019-01-22 05:25:55,826 INFO] Validation accuracy: 97.033
+[2019-01-22 05:25:58,599 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:25:59,500 INFO] Step 11800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 27027/18018 tok/s;    495 sec
+[2019-01-22 05:25:59,505 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:00,073 INFO] Validation perplexity: 1.22642
+[2019-01-22 05:26:00,073 INFO] Validation accuracy: 97.033
+[2019-01-22 05:26:03,620 INFO] Step 11900/12500; acc:  98.96; ppl:  1.02; xent: 0.02; lr: 0.00100; 17522/12183 tok/s;    499 sec
+[2019-01-22 05:26:03,625 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:04,197 INFO] Validation perplexity: 1.22678
+[2019-01-22 05:26:04,198 INFO] Validation accuracy: 97.2827
+[2019-01-22 05:26:05,435 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:26:07,856 INFO] Step 12000/12500; acc:  99.38; ppl:  1.01; xent: 0.01; lr: 0.00100; 24754/19041 tok/s;    503 sec
+[2019-01-22 05:26:07,862 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:08,428 INFO] Validation perplexity: 1.2093
+[2019-01-22 05:26:08,429 INFO] Validation accuracy: 97.1928
+[2019-01-22 05:26:11,694 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:26:12,132 INFO] Step 12100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18673/16375 tok/s;    507 sec
+[2019-01-22 05:26:12,137 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:12,704 INFO] Validation perplexity: 1.21613
+[2019-01-22 05:26:12,705 INFO] Validation accuracy: 97.2328
+[2019-01-22 05:26:16,230 INFO] Step 12200/12500; acc:  99.74; ppl:  1.03; xent: 0.03; lr: 0.00100; 23230/19885 tok/s;    511 sec
+[2019-01-22 05:26:16,235 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:16,799 INFO] Validation perplexity: 1.20648
+[2019-01-22 05:26:16,800 INFO] Validation accuracy: 97.3926
+[2019-01-22 05:26:18,521 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:26:20,418 INFO] Step 12300/12500; acc:  99.69; ppl:  1.00; xent: 0.00; lr: 0.00100; 23278/19398 tok/s;    516 sec
+[2019-01-22 05:26:20,424 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:20,991 INFO] Validation perplexity: 1.20987
+[2019-01-22 05:26:20,991 INFO] Validation accuracy: 97.3427
+[2019-01-22 05:26:24,626 INFO] Step 12400/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 21750/19136 tok/s;    520 sec
+[2019-01-22 05:26:24,631 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:25,194 INFO] Validation perplexity: 1.18403
+[2019-01-22 05:26:25,195 INFO] Validation accuracy: 97.5724
+[2019-01-22 05:26:25,346 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000
+[2019-01-22 05:26:28,792 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16708/10415 tok/s;    524 sec
+[2019-01-22 05:26:28,797 INFO] Loading valid dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.valid.0.pt, number of examples: 1000
+[2019-01-22 05:26:29,364 INFO] Validation perplexity: 1.18999
+[2019-01-22 05:26:29,365 INFO] Validation accuracy: 97.4625
+[2019-01-22 05:26:29,365 INFO] Saving checkpoint ../models/navajo_models/model-navajo-high-res59_step_12500.pt
+[2019-01-22 05:26:29,464 INFO] Loading train dataset from ../navajo-train-high-10000to10000/data_navajo_resample10000_s59.train.0.pt, number of examples: 10000

@@ -1,0 +1,626 @@
+[2019-01-22 01:09:19,884 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:09:19,903 INFO]  * vocabulary size. source = 64; target = 38
+[2019-01-22 01:09:19,903 INFO] Building model...
+[2019-01-22 01:09:23,380 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(64, 100, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(100, 150, dropout=0.3, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(38, 100, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.3)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.3)
+      (layers): ModuleList(
+        (0): LSTMCell(400, 300)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=300, out_features=300, bias=False)
+      (linear_out): Linear(in_features=600, out_features=300, bias=False)
+    )
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=300, out_features=38, bias=True)
+    (1): LogSoftmax()
+  )
+)
+[2019-01-22 01:09:23,383 INFO] encoder: 308800
+[2019-01-22 01:09:23,383 INFO] decoder: 1127638
+[2019-01-22 01:09:23,384 INFO] * number of parameters: 1436438
+[2019-01-22 01:09:23,385 INFO] Starting training on GPU: [0, 1]
+[2019-01-22 01:09:23,385 INFO] Start training...
+[2019-01-22 01:09:23,476 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:09:27,275 INFO] Step 100/12500; acc:  40.43; ppl:  9.52; xent: 2.25; lr: 0.00100; 20818/18505 tok/s;      4 sec
+[2019-01-22 01:09:27,358 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:27,904 INFO] Validation perplexity: 10.2608
+[2019-01-22 01:09:27,905 INFO] Validation accuracy: 38.6025
+[2019-01-22 01:09:29,952 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:09:31,417 INFO] Step 200/12500; acc:  72.66; ppl:  2.66; xent: 0.98; lr: 0.00100; 20615/18325 tok/s;      8 sec
+[2019-01-22 01:09:31,426 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:31,987 INFO] Validation perplexity: 5.81337
+[2019-01-22 01:09:31,988 INFO] Validation accuracy: 58.6287
+[2019-01-22 01:09:35,374 INFO] Step 300/12500; acc:  57.03; ppl:  8.08; xent: 2.09; lr: 0.00100; 5676/5245 tok/s;     12 sec
+[2019-01-22 01:09:35,382 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:35,926 INFO] Validation perplexity: 1.34392
+[2019-01-22 01:09:35,927 INFO] Validation accuracy: 93.9992
+[2019-01-22 01:09:36,468 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:09:39,380 INFO] Step 400/12500; acc:  90.92; ppl:  1.43; xent: 0.36; lr: 0.00100; 19790/21160 tok/s;     16 sec
+[2019-01-22 01:09:39,389 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:39,949 INFO] Validation perplexity: 1.24459
+[2019-01-22 01:09:39,949 INFO] Validation accuracy: 95.1168
+[2019-01-22 01:09:42,418 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:09:43,419 INFO] Step 500/12500; acc:  99.61; ppl:  1.02; xent: 0.02; lr: 0.00100; 20859/18541 tok/s;     20 sec
+[2019-01-22 01:09:43,428 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:43,981 INFO] Validation perplexity: 1.13449
+[2019-01-22 01:09:43,982 INFO] Validation accuracy: 96.8888
+[2019-01-22 01:09:47,300 INFO] Step 600/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 17653/19615 tok/s;     24 sec
+[2019-01-22 01:09:47,307 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:47,851 INFO] Validation perplexity: 1.13826
+[2019-01-22 01:09:47,851 INFO] Validation accuracy: 97.0499
+[2019-01-22 01:09:48,914 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:09:51,380 INFO] Step 700/12500; acc:  86.92; ppl:  2.02; xent: 0.70; lr: 0.00100; 20462/19149 tok/s;     28 sec
+[2019-01-22 01:09:51,389 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:51,949 INFO] Validation perplexity: 1.10114
+[2019-01-22 01:09:51,950 INFO] Validation accuracy: 97.4225
+[2019-01-22 01:09:54,857 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:09:55,393 INFO] Step 800/12500; acc:  99.21; ppl:  1.02; xent: 0.02; lr: 0.00100; 16419/18618 tok/s;     32 sec
+[2019-01-22 01:09:55,402 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:55,950 INFO] Validation perplexity: 1.09386
+[2019-01-22 01:09:55,951 INFO] Validation accuracy: 97.7145
+[2019-01-22 01:09:59,276 INFO] Step 900/12500; acc:  96.70; ppl:  1.09; xent: 0.09; lr: 0.00100; 23272/19523 tok/s;     36 sec
+[2019-01-22 01:09:59,283 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:09:59,827 INFO] Validation perplexity: 1.10254
+[2019-01-22 01:09:59,827 INFO] Validation accuracy: 97.6843
+[2019-01-22 01:10:01,349 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:03,276 INFO] Step 1000/12500; acc:  99.22; ppl:  1.05; xent: 0.05; lr: 0.00100; 23097/19248 tok/s;     40 sec
+[2019-01-22 01:10:03,285 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:03,833 INFO] Validation perplexity: 1.08689
+[2019-01-22 01:10:03,834 INFO] Validation accuracy: 98.238
+[2019-01-22 01:10:07,284 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:07,349 INFO] Step 1100/12500; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00100; 4299/4729 tok/s;     44 sec
+[2019-01-22 01:10:07,358 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:07,907 INFO] Validation perplexity: 1.07426
+[2019-01-22 01:10:07,907 INFO] Validation accuracy: 98.4092
+[2019-01-22 01:10:11,228 INFO] Step 1200/12500; acc:  99.31; ppl:  1.02; xent: 0.02; lr: 0.00100; 18396/15051 tok/s;     48 sec
+[2019-01-22 01:10:11,235 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:11,780 INFO] Validation perplexity: 1.04465
+[2019-01-22 01:10:11,780 INFO] Validation accuracy: 98.8421
+[2019-01-22 01:10:13,767 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:15,252 INFO] Step 1300/12500; acc:  99.33; ppl:  1.03; xent: 0.03; lr: 0.00100; 22757/17700 tok/s;     52 sec
+[2019-01-22 01:10:15,260 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:15,807 INFO] Validation perplexity: 1.05502
+[2019-01-22 01:10:15,808 INFO] Validation accuracy: 98.7414
+[2019-01-22 01:10:19,202 INFO] Step 1400/12500; acc:  96.01; ppl:  1.13; xent: 0.13; lr: 0.00100; 18875/19033 tok/s;     56 sec
+[2019-01-22 01:10:19,209 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:19,753 INFO] Validation perplexity: 1.04565
+[2019-01-22 01:10:19,754 INFO] Validation accuracy: 98.8421
+[2019-01-22 01:10:20,249 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:23,184 INFO] Step 1500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21067/17677 tok/s;     60 sec
+[2019-01-22 01:10:23,192 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:23,740 INFO] Validation perplexity: 1.0385
+[2019-01-22 01:10:23,741 INFO] Validation accuracy: 99.0838
+[2019-01-22 01:10:26,173 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:27,195 INFO] Step 1600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22614/16960 tok/s;     64 sec
+[2019-01-22 01:10:27,203 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:27,751 INFO] Validation perplexity: 1.04742
+[2019-01-22 01:10:27,751 INFO] Validation accuracy: 99.0133
+[2019-01-22 01:10:31,080 INFO] Step 1700/12500; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00100; 23185/19618 tok/s;     68 sec
+[2019-01-22 01:10:31,087 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:31,631 INFO] Validation perplexity: 1.04439
+[2019-01-22 01:10:31,632 INFO] Validation accuracy: 98.9831
+[2019-01-22 01:10:32,656 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:35,153 INFO] Step 1800/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 23148/18939 tok/s;     72 sec
+[2019-01-22 01:10:35,160 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:35,708 INFO] Validation perplexity: 1.03191
+[2019-01-22 01:10:35,709 INFO] Validation accuracy: 99.1039
+[2019-01-22 01:10:38,586 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:39,156 INFO] Step 1900/12500; acc:  98.58; ppl:  1.05; xent: 0.05; lr: 0.00100; 21531/19736 tok/s;     76 sec
+[2019-01-22 01:10:39,164 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:39,712 INFO] Validation perplexity: 1.03852
+[2019-01-22 01:10:39,713 INFO] Validation accuracy: 99.0636
+[2019-01-22 01:10:43,030 INFO] Step 2000/12500; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00100; 15106/17263 tok/s;     80 sec
+[2019-01-22 01:10:43,037 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:43,581 INFO] Validation perplexity: 1.0374
+[2019-01-22 01:10:43,582 INFO] Validation accuracy: 99.1341
+[2019-01-22 01:10:45,066 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:47,052 INFO] Step 2100/12500; acc:  94.38; ppl:  1.38; xent: 0.32; lr: 0.00100; 17491/16221 tok/s;     84 sec
+[2019-01-22 01:10:47,060 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:47,609 INFO] Validation perplexity: 1.05368
+[2019-01-22 01:10:47,609 INFO] Validation accuracy: 98.9529
+[2019-01-22 01:10:50,991 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:51,087 INFO] Step 2200/12500; acc: 100.00; ppl:  1.01; xent: 0.01; lr: 0.00100; 23214/19345 tok/s;     88 sec
+[2019-01-22 01:10:51,095 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:51,645 INFO] Validation perplexity: 1.03247
+[2019-01-22 01:10:51,646 INFO] Validation accuracy: 99.2348
+[2019-01-22 01:10:54,960 INFO] Step 2300/12500; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 20874/18554 tok/s;     91 sec
+[2019-01-22 01:10:54,967 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:55,512 INFO] Validation perplexity: 1.06878
+[2019-01-22 01:10:55,513 INFO] Validation accuracy: 98.8723
+[2019-01-22 01:10:57,470 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:10:58,996 INFO] Step 2400/12500; acc:  99.40; ppl:  1.05; xent: 0.05; lr: 0.00100; 23244/21583 tok/s;     96 sec
+[2019-01-22 01:10:59,004 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:10:59,552 INFO] Validation perplexity: 1.02464
+[2019-01-22 01:10:59,553 INFO] Validation accuracy: 99.3657
+[2019-01-22 01:11:02,933 INFO] Step 2500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20406/17217 tok/s;     99 sec
+[2019-01-22 01:11:02,940 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:03,485 INFO] Validation perplexity: 1.04178
+[2019-01-22 01:11:03,486 INFO] Validation accuracy: 99.2952
+[2019-01-22 01:11:03,956 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:06,935 INFO] Step 2600/12500; acc:  98.92; ppl:  1.06; xent: 0.06; lr: 0.00100; 21725/21725 tok/s;    103 sec
+[2019-01-22 01:11:06,942 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:07,491 INFO] Validation perplexity: 1.05688
+[2019-01-22 01:11:07,492 INFO] Validation accuracy: 98.9831
+[2019-01-22 01:11:09,885 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:10,938 INFO] Step 2700/12500; acc:  99.48; ppl:  1.03; xent: 0.03; lr: 0.00100; 23131/18925 tok/s;    107 sec
+[2019-01-22 01:11:10,945 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:11,493 INFO] Validation perplexity: 1.03238
+[2019-01-22 01:11:11,494 INFO] Validation accuracy: 99.3858
+[2019-01-22 01:11:14,820 INFO] Step 2800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20667/18371 tok/s;    111 sec
+[2019-01-22 01:11:14,827 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:15,372 INFO] Validation perplexity: 1.02161
+[2019-01-22 01:11:15,373 INFO] Validation accuracy: 99.4966
+[2019-01-22 01:11:16,367 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:18,889 INFO] Step 2900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20475/17915 tok/s;    115 sec
+[2019-01-22 01:11:18,897 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:19,444 INFO] Validation perplexity: 1.0546
+[2019-01-22 01:11:19,445 INFO] Validation accuracy: 98.8321
+[2019-01-22 01:11:22,296 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:22,899 INFO] Step 3000/12500; acc:  99.53; ppl:  1.01; xent: 0.01; lr: 0.00100; 19609/19609 tok/s;    119 sec
+[2019-01-22 01:11:22,906 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:23,455 INFO] Validation perplexity: 1.02678
+[2019-01-22 01:11:23,455 INFO] Validation accuracy: 99.406
+[2019-01-22 01:11:26,777 INFO] Step 3100/12500; acc:  99.76; ppl:  1.00; xent: 0.00; lr: 0.00100; 20406/21735 tok/s;    123 sec
+[2019-01-22 01:11:26,784 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:27,329 INFO] Validation perplexity: 1.02569
+[2019-01-22 01:11:27,329 INFO] Validation accuracy: 99.4362
+[2019-01-22 01:11:28,777 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:30,798 INFO] Step 3200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21608/19329 tok/s;    127 sec
+[2019-01-22 01:11:30,806 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:31,355 INFO] Validation perplexity: 1.03128
+[2019-01-22 01:11:31,355 INFO] Validation accuracy: 99.4563
+[2019-01-22 01:11:34,707 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:34,839 INFO] Step 3300/12500; acc:  99.15; ppl:  1.03; xent: 0.03; lr: 0.00100; 21465/19676 tok/s;    131 sec
+[2019-01-22 01:11:34,846 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:35,397 INFO] Validation perplexity: 1.05847
+[2019-01-22 01:11:35,398 INFO] Validation accuracy: 99.1039
+[2019-01-22 01:11:38,710 INFO] Step 3400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17231/19385 tok/s;    135 sec
+[2019-01-22 01:11:38,718 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:39,263 INFO] Validation perplexity: 1.0678
+[2019-01-22 01:11:39,263 INFO] Validation accuracy: 98.8723
+[2019-01-22 01:11:41,191 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:42,750 INFO] Step 3500/12500; acc:  99.52; ppl:  1.03; xent: 0.03; lr: 0.00100; 16605/17392 tok/s;    139 sec
+[2019-01-22 01:11:42,758 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:43,306 INFO] Validation perplexity: 1.0348
+[2019-01-22 01:11:43,306 INFO] Validation accuracy: 99.416
+[2019-01-22 01:11:46,683 INFO] Step 3600/12500; acc:  99.54; ppl:  1.01; xent: 0.01; lr: 0.00100; 17368/17185 tok/s;    143 sec
+[2019-01-22 01:11:46,690 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:47,234 INFO] Validation perplexity: 1.02318
+[2019-01-22 01:11:47,235 INFO] Validation accuracy: 99.5369
+[2019-01-22 01:11:47,667 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:50,674 INFO] Step 3700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21383/18285 tok/s;    147 sec
+[2019-01-22 01:11:50,682 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:51,230 INFO] Validation perplexity: 1.04174
+[2019-01-22 01:11:51,230 INFO] Validation accuracy: 99.3455
+[2019-01-22 01:11:53,593 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:11:54,678 INFO] Step 3800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23211/19342 tok/s;    151 sec
+[2019-01-22 01:11:54,685 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:55,234 INFO] Validation perplexity: 1.02101
+[2019-01-22 01:11:55,234 INFO] Validation accuracy: 99.5771
+[2019-01-22 01:11:58,570 INFO] Step 3900/12500; acc:  99.89; ppl:  1.01; xent: 0.01; lr: 0.00100; 20152/19410 tok/s;    155 sec
+[2019-01-22 01:11:58,577 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:11:59,121 INFO] Validation perplexity: 1.0335
+[2019-01-22 01:11:59,122 INFO] Validation accuracy: 99.416
+[2019-01-22 01:12:00,071 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:02,631 INFO] Step 4000/12500; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00100; 21686/20018 tok/s;    159 sec
+[2019-01-22 01:12:02,638 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:03,186 INFO] Validation perplexity: 1.02881
+[2019-01-22 01:12:03,187 INFO] Validation accuracy: 99.406
+[2019-01-22 01:12:06,001 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:06,634 INFO] Step 4100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21196/19077 tok/s;    163 sec
+[2019-01-22 01:12:06,642 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:07,190 INFO] Validation perplexity: 1.03292
+[2019-01-22 01:12:07,191 INFO] Validation accuracy: 99.3858
+[2019-01-22 01:12:10,508 INFO] Step 4200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23067/18453 tok/s;    167 sec
+[2019-01-22 01:12:10,516 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:11,061 INFO] Validation perplexity: 1.03498
+[2019-01-22 01:12:11,061 INFO] Validation accuracy: 99.4563
+[2019-01-22 01:12:12,482 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:14,546 INFO] Step 4300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21076/20790 tok/s;    171 sec
+[2019-01-22 01:12:14,554 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:15,102 INFO] Validation perplexity: 1.01541
+[2019-01-22 01:12:15,102 INFO] Validation accuracy: 99.6778
+[2019-01-22 01:12:18,405 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:18,574 INFO] Step 4400/12500; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 18807/20864 tok/s;    175 sec
+[2019-01-22 01:12:18,581 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:19,132 INFO] Validation perplexity: 1.03184
+[2019-01-22 01:12:19,133 INFO] Validation accuracy: 99.4764
+[2019-01-22 01:12:22,434 INFO] Step 4500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22878/17794 tok/s;    179 sec
+[2019-01-22 01:12:22,442 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:22,986 INFO] Validation perplexity: 1.03317
+[2019-01-22 01:12:22,987 INFO] Validation accuracy: 99.4362
+[2019-01-22 01:12:24,890 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:26,475 INFO] Step 4600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20351/17807 tok/s;    183 sec
+[2019-01-22 01:12:26,482 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:27,030 INFO] Validation perplexity: 1.0464
+[2019-01-22 01:12:27,031 INFO] Validation accuracy: 99.2952
+[2019-01-22 01:12:30,412 INFO] Step 4700/12500; acc:  99.52; ppl:  1.01; xent: 0.01; lr: 0.00100; 18018/16731 tok/s;    187 sec
+[2019-01-22 01:12:30,419 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:30,964 INFO] Validation perplexity: 1.0306
+[2019-01-22 01:12:30,965 INFO] Validation accuracy: 99.3758
+[2019-01-22 01:12:31,373 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:34,409 INFO] Step 4800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18630/17320 tok/s;    191 sec
+[2019-01-22 01:12:34,417 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:34,965 INFO] Validation perplexity: 1.02396
+[2019-01-22 01:12:34,966 INFO] Validation accuracy: 99.5671
+[2019-01-22 01:12:37,300 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:38,422 INFO] Step 4900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23104/19549 tok/s;    195 sec
+[2019-01-22 01:12:38,430 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:38,980 INFO] Validation perplexity: 1.02064
+[2019-01-22 01:12:38,980 INFO] Validation accuracy: 99.5973
+[2019-01-22 01:12:42,344 INFO] Step 5000/12500; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00100; 17825/14924 tok/s;    199 sec
+[2019-01-22 01:12:42,351 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:42,896 INFO] Validation perplexity: 1.01952
+[2019-01-22 01:12:42,897 INFO] Validation accuracy: 99.5973
+[2019-01-22 01:12:43,811 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:46,407 INFO] Step 5100/12500; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00100; 16762/18509 tok/s;    203 sec
+[2019-01-22 01:12:46,415 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:46,962 INFO] Validation perplexity: 1.02823
+[2019-01-22 01:12:46,963 INFO] Validation accuracy: 99.5369
+[2019-01-22 01:12:49,740 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:50,413 INFO] Step 5200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21976/21510 tok/s;    207 sec
+[2019-01-22 01:12:50,421 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:50,969 INFO] Validation perplexity: 1.03687
+[2019-01-22 01:12:50,970 INFO] Validation accuracy: 99.3959
+[2019-01-22 01:12:54,282 INFO] Step 5300/12500; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00100; 21487/19534 tok/s;    211 sec
+[2019-01-22 01:12:54,290 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:54,834 INFO] Validation perplexity: 1.02161
+[2019-01-22 01:12:54,835 INFO] Validation accuracy: 99.557
+[2019-01-22 01:12:56,223 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:12:58,322 INFO] Step 5400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23071/18876 tok/s;    215 sec
+[2019-01-22 01:12:58,329 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:12:58,877 INFO] Validation perplexity: 1.02762
+[2019-01-22 01:12:58,878 INFO] Validation accuracy: 99.5469
+[2019-01-22 01:13:02,152 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:02,354 INFO] Step 5500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21368/19425 tok/s;    219 sec
+[2019-01-22 01:13:02,361 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:02,911 INFO] Validation perplexity: 1.01823
+[2019-01-22 01:13:02,912 INFO] Validation accuracy: 99.6375
+[2019-01-22 01:13:06,216 INFO] Step 5600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21731/18449 tok/s;    223 sec
+[2019-01-22 01:13:06,223 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:06,767 INFO] Validation perplexity: 1.02096
+[2019-01-22 01:13:06,768 INFO] Validation accuracy: 99.5469
+[2019-01-22 01:13:08,634 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:10,248 INFO] Step 5700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19039/19039 tok/s;    227 sec
+[2019-01-22 01:13:10,256 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:10,805 INFO] Validation perplexity: 1.05093
+[2019-01-22 01:13:10,805 INFO] Validation accuracy: 99.3153
+[2019-01-22 01:13:14,190 INFO] Step 5800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19879/19879 tok/s;    231 sec
+[2019-01-22 01:13:14,197 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:14,742 INFO] Validation perplexity: 1.02105
+[2019-01-22 01:13:14,743 INFO] Validation accuracy: 99.5671
+[2019-01-22 01:13:15,114 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:18,180 INFO] Step 5900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23054/18443 tok/s;    235 sec
+[2019-01-22 01:13:18,188 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:18,736 INFO] Validation perplexity: 1.0179
+[2019-01-22 01:13:18,737 INFO] Validation accuracy: 99.6375
+[2019-01-22 01:13:21,041 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:22,200 INFO] Step 6000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20393/20526 tok/s;    239 sec
+[2019-01-22 01:13:22,208 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:22,756 INFO] Validation perplexity: 1.03792
+[2019-01-22 01:13:22,757 INFO] Validation accuracy: 99.5066
+[2019-01-22 01:13:26,102 INFO] Step 6100/12500; acc:  99.46; ppl:  1.06; xent: 0.06; lr: 0.00100; 20606/19162 tok/s;    243 sec
+[2019-01-22 01:13:26,109 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:26,655 INFO] Validation perplexity: 1.02482
+[2019-01-22 01:13:26,655 INFO] Validation accuracy: 99.5872
+[2019-01-22 01:13:27,522 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:30,150 INFO] Step 6200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15968/16693 tok/s;    247 sec
+[2019-01-22 01:13:30,157 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:30,704 INFO] Validation perplexity: 1.03331
+[2019-01-22 01:13:30,705 INFO] Validation accuracy: 99.5066
+[2019-01-22 01:13:33,447 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:34,154 INFO] Step 6300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21486/19532 tok/s;    251 sec
+[2019-01-22 01:13:34,162 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:34,710 INFO] Validation perplexity: 1.02193
+[2019-01-22 01:13:34,710 INFO] Validation accuracy: 99.5771
+[2019-01-22 01:13:38,026 INFO] Step 6400/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 20202/20202 tok/s;    255 sec
+[2019-01-22 01:13:38,033 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:38,578 INFO] Validation perplexity: 1.03056
+[2019-01-22 01:13:38,578 INFO] Validation accuracy: 99.557
+[2019-01-22 01:13:39,927 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:42,068 INFO] Step 6500/12500; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00100; 20956/17416 tok/s;    259 sec
+[2019-01-22 01:13:42,076 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:42,624 INFO] Validation perplexity: 1.01752
+[2019-01-22 01:13:42,625 INFO] Validation accuracy: 99.6275
+[2019-01-22 01:13:45,852 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:46,081 INFO] Step 6600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15206/12143 tok/s;    263 sec
+[2019-01-22 01:13:46,089 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:46,641 INFO] Validation perplexity: 1.02948
+[2019-01-22 01:13:46,642 INFO] Validation accuracy: 99.6073
+[2019-01-22 01:13:49,947 INFO] Step 6700/12500; acc:  99.53; ppl:  1.01; xent: 0.01; lr: 0.00100; 16653/14116 tok/s;    266 sec
+[2019-01-22 01:13:49,954 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:50,498 INFO] Validation perplexity: 1.02038
+[2019-01-22 01:13:50,499 INFO] Validation accuracy: 99.5167
+[2019-01-22 01:13:52,337 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:13:53,981 INFO] Step 6800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18632/18632 tok/s;    271 sec
+[2019-01-22 01:13:53,989 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:54,537 INFO] Validation perplexity: 1.04104
+[2019-01-22 01:13:54,538 INFO] Validation accuracy: 99.3959
+[2019-01-22 01:13:57,931 INFO] Step 6900/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 21641/19838 tok/s;    274 sec
+[2019-01-22 01:13:57,939 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:13:58,483 INFO] Validation perplexity: 1.02338
+[2019-01-22 01:13:58,484 INFO] Validation accuracy: 99.6375
+[2019-01-22 01:13:58,820 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:01,912 INFO] Step 7000/12500; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00100; 22968/18374 tok/s;    278 sec
+[2019-01-22 01:14:01,919 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:02,469 INFO] Validation perplexity: 1.01934
+[2019-01-22 01:14:02,470 INFO] Validation accuracy: 99.6174
+[2019-01-22 01:14:04,747 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:05,942 INFO] Step 7100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23173/19469 tok/s;    282 sec
+[2019-01-22 01:14:05,950 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:06,499 INFO] Validation perplexity: 1.04214
+[2019-01-22 01:14:06,499 INFO] Validation accuracy: 99.3455
+[2019-01-22 01:14:09,847 INFO] Step 7200/12500; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00100; 19856/18305 tok/s;    286 sec
+[2019-01-22 01:14:09,854 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:10,402 INFO] Validation perplexity: 1.0575
+[2019-01-22 01:14:10,402 INFO] Validation accuracy: 99.3556
+[2019-01-22 01:14:11,234 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:13,897 INFO] Step 7300/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 17638/19139 tok/s;    290 sec
+[2019-01-22 01:14:13,905 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:14,454 INFO] Validation perplexity: 1.03853
+[2019-01-22 01:14:14,455 INFO] Validation accuracy: 99.3455
+[2019-01-22 01:14:17,165 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:17,901 INFO] Step 7400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19002/18210 tok/s;    294 sec
+[2019-01-22 01:14:17,909 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:18,459 INFO] Validation perplexity: 1.02479
+[2019-01-22 01:14:18,459 INFO] Validation accuracy: 99.5973
+[2019-01-22 01:14:21,781 INFO] Step 7500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18186/19778 tok/s;    298 sec
+[2019-01-22 01:14:21,789 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:22,333 INFO] Validation perplexity: 1.01385
+[2019-01-22 01:14:22,334 INFO] Validation accuracy: 99.6879
+[2019-01-22 01:14:23,648 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:25,829 INFO] Step 7600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21743/18920 tok/s;    302 sec
+[2019-01-22 01:14:25,837 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:26,384 INFO] Validation perplexity: 1.02269
+[2019-01-22 01:14:26,385 INFO] Validation accuracy: 99.5973
+[2019-01-22 01:14:29,576 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:29,838 INFO] Step 7700/12500; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00100; 21434/19486 tok/s;    306 sec
+[2019-01-22 01:14:29,846 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:30,396 INFO] Validation perplexity: 1.04266
+[2019-01-22 01:14:30,397 INFO] Validation accuracy: 99.3355
+[2019-01-22 01:14:33,707 INFO] Step 7800/12500; acc:  97.79; ppl:  1.19; xent: 0.18; lr: 0.00100; 20566/21209 tok/s;    310 sec
+[2019-01-22 01:14:33,714 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:34,257 INFO] Validation perplexity: 1.06274
+[2019-01-22 01:14:34,258 INFO] Validation accuracy: 99.0234
+[2019-01-22 01:14:36,054 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:37,730 INFO] Step 7900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21575/19777 tok/s;    314 sec
+[2019-01-22 01:14:37,738 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:38,286 INFO] Validation perplexity: 1.02092
+[2019-01-22 01:14:38,286 INFO] Validation accuracy: 99.4966
+[2019-01-22 01:14:41,678 INFO] Step 8000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17222/17760 tok/s;    318 sec
+[2019-01-22 01:14:41,685 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:42,231 INFO] Validation perplexity: 1.03725
+[2019-01-22 01:14:42,231 INFO] Validation accuracy: 99.4764
+[2019-01-22 01:14:42,538 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:45,664 INFO] Step 8100/12500; acc:  99.15; ppl:  1.03; xent: 0.03; lr: 0.00100; 18209/20030 tok/s;    322 sec
+[2019-01-22 01:14:45,672 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:46,220 INFO] Validation perplexity: 1.02576
+[2019-01-22 01:14:46,221 INFO] Validation accuracy: 99.557
+[2019-01-22 01:14:48,465 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:49,701 INFO] Step 8200/12500; acc:  98.24; ppl:  1.14; xent: 0.13; lr: 0.00100; 23283/20615 tok/s;    326 sec
+[2019-01-22 01:14:49,708 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:50,256 INFO] Validation perplexity: 1.01683
+[2019-01-22 01:14:50,257 INFO] Validation accuracy: 99.5469
+[2019-01-22 01:14:53,595 INFO] Step 8300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 16954/15003 tok/s;    330 sec
+[2019-01-22 01:14:53,602 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:54,145 INFO] Validation perplexity: 1.01208
+[2019-01-22 01:14:54,146 INFO] Validation accuracy: 99.7483
+[2019-01-22 01:14:54,944 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:14:57,634 INFO] Step 8400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22966/18373 tok/s;    334 sec
+[2019-01-22 01:14:57,642 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:14:58,189 INFO] Validation perplexity: 1.01304
+[2019-01-22 01:14:58,190 INFO] Validation accuracy: 99.7282
+[2019-01-22 01:15:00,869 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:01,642 INFO] Step 8500/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 20426/22128 tok/s;    338 sec
+[2019-01-22 01:15:01,650 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:02,198 INFO] Validation perplexity: 1.01951
+[2019-01-22 01:15:02,199 INFO] Validation accuracy: 99.6677
+[2019-01-22 01:15:05,513 INFO] Step 8600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19659/18645 tok/s;    342 sec
+[2019-01-22 01:15:05,521 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:06,065 INFO] Validation perplexity: 1.01082
+[2019-01-22 01:15:06,066 INFO] Validation accuracy: 99.7181
+[2019-01-22 01:15:07,348 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:09,564 INFO] Step 8700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21376/19433 tok/s;    346 sec
+[2019-01-22 01:15:09,572 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:10,119 INFO] Validation perplexity: 1.01059
+[2019-01-22 01:15:10,120 INFO] Validation accuracy: 99.7282
+[2019-01-22 01:15:13,275 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:13,573 INFO] Step 8800/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 23230/19656 tok/s;    350 sec
+[2019-01-22 01:15:13,580 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:14,130 INFO] Validation perplexity: 1.01079
+[2019-01-22 01:15:14,131 INFO] Validation accuracy: 99.7181
+[2019-01-22 01:15:17,434 INFO] Step 8900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18755/17216 tok/s;    354 sec
+[2019-01-22 01:15:17,441 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:17,986 INFO] Validation perplexity: 1.02543
+[2019-01-22 01:15:17,986 INFO] Validation accuracy: 99.5872
+[2019-01-22 01:15:19,758 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:21,466 INFO] Step 9000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17219/19372 tok/s;    358 sec
+[2019-01-22 01:15:21,473 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:22,023 INFO] Validation perplexity: 1.01253
+[2019-01-22 01:15:22,023 INFO] Validation accuracy: 99.7181
+[2019-01-22 01:15:25,407 INFO] Step 9100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23108/18487 tok/s;    362 sec
+[2019-01-22 01:15:25,414 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:25,957 INFO] Validation perplexity: 1.02442
+[2019-01-22 01:15:25,958 INFO] Validation accuracy: 99.6275
+[2019-01-22 01:15:26,236 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:29,391 INFO] Step 9200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21087/18978 tok/s;    366 sec
+[2019-01-22 01:15:29,399 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:29,946 INFO] Validation perplexity: 1.01993
+[2019-01-22 01:15:29,947 INFO] Validation accuracy: 99.6275
+[2019-01-22 01:15:32,159 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:33,433 INFO] Step 9300/12500; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00100; 21850/20537 tok/s;    370 sec
+[2019-01-22 01:15:33,440 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:33,988 INFO] Validation perplexity: 1.02429
+[2019-01-22 01:15:33,989 INFO] Validation accuracy: 99.5973
+[2019-01-22 01:15:37,322 INFO] Step 9400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23259/19383 tok/s;    374 sec
+[2019-01-22 01:15:37,329 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:37,873 INFO] Validation perplexity: 1.01972
+[2019-01-22 01:15:37,874 INFO] Validation accuracy: 99.6476
+[2019-01-22 01:15:38,638 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:41,358 INFO] Step 9500/12500; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00100; 22935/17625 tok/s;    378 sec
+[2019-01-22 01:15:41,366 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:41,915 INFO] Validation perplexity: 1.06469
+[2019-01-22 01:15:41,916 INFO] Validation accuracy: 99.2449
+[2019-01-22 01:15:44,567 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:45,377 INFO] Step 9600/12500; acc:  98.86; ppl:  1.11; xent: 0.11; lr: 0.00100; 19690/19690 tok/s;    382 sec
+[2019-01-22 01:15:45,385 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:45,933 INFO] Validation perplexity: 1.02332
+[2019-01-22 01:15:45,934 INFO] Validation accuracy: 99.5872
+[2019-01-22 01:15:49,249 INFO] Step 9700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21393/19114 tok/s;    386 sec
+[2019-01-22 01:15:49,257 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:49,801 INFO] Validation perplexity: 1.02516
+[2019-01-22 01:15:49,802 INFO] Validation accuracy: 99.5268
+[2019-01-22 01:15:51,051 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:53,302 INFO] Step 9800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20190/19454 tok/s;    390 sec
+[2019-01-22 01:15:53,309 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:53,856 INFO] Validation perplexity: 1.0173
+[2019-01-22 01:15:53,857 INFO] Validation accuracy: 99.6174
+[2019-01-22 01:15:56,973 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:15:57,309 INFO] Step 9900/12500; acc:  99.87; ppl:  1.01; xent: 0.01; lr: 0.00100; 18580/20084 tok/s;    394 sec
+[2019-01-22 01:15:57,316 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:15:57,867 INFO] Validation perplexity: 1.04082
+[2019-01-22 01:15:57,867 INFO] Validation accuracy: 99.3959
+[2019-01-22 01:16:01,162 INFO] Step 10000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19631/19631 tok/s;    398 sec
+[2019-01-22 01:16:01,169 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:01,713 INFO] Validation perplexity: 1.02063
+[2019-01-22 01:16:01,713 INFO] Validation accuracy: 99.6476
+[2019-01-22 01:16:03,450 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:05,190 INFO] Step 10100/12500; acc:  99.22; ppl:  1.09; xent: 0.08; lr: 0.00100; 23134/19278 tok/s;    402 sec
+[2019-01-22 01:16:05,198 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:05,746 INFO] Validation perplexity: 1.04352
+[2019-01-22 01:16:05,747 INFO] Validation accuracy: 99.4563
+[2019-01-22 01:16:09,128 INFO] Step 10200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19082/18254 tok/s;    406 sec
+[2019-01-22 01:16:09,135 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:09,679 INFO] Validation perplexity: 1.01842
+[2019-01-22 01:16:09,679 INFO] Validation accuracy: 99.6577
+[2019-01-22 01:16:09,928 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:13,112 INFO] Step 10300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22911/17820 tok/s;    410 sec
+[2019-01-22 01:16:13,120 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:13,669 INFO] Validation perplexity: 1.02703
+[2019-01-22 01:16:13,669 INFO] Validation accuracy: 99.557
+[2019-01-22 01:16:15,857 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:17,164 INFO] Step 10400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19501/19501 tok/s;    414 sec
+[2019-01-22 01:16:17,173 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:17,721 INFO] Validation perplexity: 1.0109
+[2019-01-22 01:16:17,721 INFO] Validation accuracy: 99.7483
+[2019-01-22 01:16:21,061 INFO] Step 10500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21682/19702 tok/s;    418 sec
+[2019-01-22 01:16:21,068 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:21,613 INFO] Validation perplexity: 1.014
+[2019-01-22 01:16:21,613 INFO] Validation accuracy: 99.6979
+[2019-01-22 01:16:22,339 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:25,085 INFO] Step 10600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20860/18543 tok/s;    422 sec
+[2019-01-22 01:16:25,093 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:25,641 INFO] Validation perplexity: 1.01313
+[2019-01-22 01:16:25,642 INFO] Validation accuracy: 99.7483
+[2019-01-22 01:16:28,270 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:29,117 INFO] Step 10700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19491/15814 tok/s;    426 sec
+[2019-01-22 01:16:29,125 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:29,674 INFO] Validation perplexity: 1.01561
+[2019-01-22 01:16:29,675 INFO] Validation accuracy: 99.6778
+[2019-01-22 01:16:32,986 INFO] Step 10800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 17763/18689 tok/s;    430 sec
+[2019-01-22 01:16:32,994 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:33,538 INFO] Validation perplexity: 1.01921
+[2019-01-22 01:16:33,538 INFO] Validation accuracy: 99.6879
+[2019-01-22 01:16:34,754 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:37,037 INFO] Step 10900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21208/19087 tok/s;    434 sec
+[2019-01-22 01:16:37,044 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:37,593 INFO] Validation perplexity: 1.02648
+[2019-01-22 01:16:37,593 INFO] Validation accuracy: 99.5872
+[2019-01-22 01:16:40,681 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:41,045 INFO] Step 11000/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23074/18459 tok/s;    438 sec
+[2019-01-22 01:16:41,052 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:41,602 INFO] Validation perplexity: 1.0215
+[2019-01-22 01:16:41,603 INFO] Validation accuracy: 99.6375
+[2019-01-22 01:16:44,915 INFO] Step 11100/12500; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00100; 19928/18846 tok/s;    441 sec
+[2019-01-22 01:16:44,922 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:45,467 INFO] Validation perplexity: 1.01485
+[2019-01-22 01:16:45,468 INFO] Validation accuracy: 99.7382
+[2019-01-22 01:16:47,162 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:48,925 INFO] Step 11200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 19986/17131 tok/s;    445 sec
+[2019-01-22 01:16:48,933 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:49,481 INFO] Validation perplexity: 1.01607
+[2019-01-22 01:16:49,482 INFO] Validation accuracy: 99.708
+[2019-01-22 01:16:52,880 INFO] Step 11300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 23279/20395 tok/s;    449 sec
+[2019-01-22 01:16:52,887 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:53,430 INFO] Validation perplexity: 1.02876
+[2019-01-22 01:16:53,431 INFO] Validation accuracy: 99.5066
+[2019-01-22 01:16:53,641 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:16:56,858 INFO] Step 11400/12500; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00100; 19828/19800 tok/s;    453 sec
+[2019-01-22 01:16:56,865 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:16:57,413 INFO] Validation perplexity: 1.01382
+[2019-01-22 01:16:57,414 INFO] Validation accuracy: 99.6879
+[2019-01-22 01:16:59,565 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:17:00,898 INFO] Step 11500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20447/16214 tok/s;    457 sec
+[2019-01-22 01:17:00,906 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:01,453 INFO] Validation perplexity: 1.01646
+[2019-01-22 01:17:01,454 INFO] Validation accuracy: 99.6174
+[2019-01-22 01:17:04,795 INFO] Step 11600/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20758/16830 tok/s;    461 sec
+[2019-01-22 01:17:04,803 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:05,346 INFO] Validation perplexity: 1.02676
+[2019-01-22 01:17:05,347 INFO] Validation accuracy: 99.557
+[2019-01-22 01:17:06,045 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:17:08,816 INFO] Step 11700/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20021/16178 tok/s;    465 sec
+[2019-01-22 01:17:08,823 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:09,370 INFO] Validation perplexity: 1.01909
+[2019-01-22 01:17:09,371 INFO] Validation accuracy: 99.6778
+[2019-01-22 01:17:11,972 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:17:12,848 INFO] Step 11800/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 22615/18092 tok/s;    469 sec
+[2019-01-22 01:17:12,856 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:13,406 INFO] Validation perplexity: 1.01919
+[2019-01-22 01:17:13,407 INFO] Validation accuracy: 99.6577
+[2019-01-22 01:17:16,712 INFO] Step 11900/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15571/12413 tok/s;    473 sec
+[2019-01-22 01:17:16,720 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:17,267 INFO] Validation perplexity: 1.02449
+[2019-01-22 01:17:17,268 INFO] Validation accuracy: 99.6174
+[2019-01-22 01:17:18,456 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:17:20,765 INFO] Step 12000/12500; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00100; 22634/17604 tok/s;    477 sec
+[2019-01-22 01:17:20,772 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:21,321 INFO] Validation perplexity: 1.03478
+[2019-01-22 01:17:21,321 INFO] Validation accuracy: 99.5066
+[2019-01-22 01:17:24,383 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:17:24,778 INFO] Step 12100/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 15458/15919 tok/s;    481 sec
+[2019-01-22 01:17:24,785 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:25,341 INFO] Validation perplexity: 1.0242
+[2019-01-22 01:17:25,342 INFO] Validation accuracy: 99.6375
+[2019-01-22 01:17:28,658 INFO] Step 12200/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 21268/19141 tok/s;    485 sec
+[2019-01-22 01:17:28,665 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:29,209 INFO] Validation perplexity: 1.01434
+[2019-01-22 01:17:29,210 INFO] Validation accuracy: 99.7584
+[2019-01-22 01:17:30,874 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:17:32,672 INFO] Step 12300/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 20426/22128 tok/s;    489 sec
+[2019-01-22 01:17:32,680 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:33,228 INFO] Validation perplexity: 1.02173
+[2019-01-22 01:17:33,228 INFO] Validation accuracy: 99.6476
+[2019-01-22 01:17:36,626 INFO] Step 12400/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18628/20242 tok/s;    493 sec
+[2019-01-22 01:17:36,634 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:37,178 INFO] Validation perplexity: 1.01213
+[2019-01-22 01:17:37,179 INFO] Validation accuracy: 99.7382
+[2019-01-22 01:17:37,350 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
+[2019-01-22 01:17:40,606 INFO] Step 12500/12500; acc: 100.00; ppl:  1.00; xent: 0.00; lr: 0.00100; 18654/20350 tok/s;    497 sec
+[2019-01-22 01:17:40,614 INFO] Loading valid dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.valid.0.pt, number of examples: 1000
+[2019-01-22 01:17:41,163 INFO] Validation perplexity: 1.01301
+[2019-01-22 01:17:41,163 INFO] Validation accuracy: 99.7483
+[2019-01-22 01:17:41,164 INFO] Saving checkpoint ../models/georgian_models/model-georgian-high-res56_step_12500.pt
+[2019-01-22 01:17:41,289 INFO] Loading train dataset from ../georgian-train-high-10000to10000/data_georgian_resample10000_s56.train.0.pt, number of examples: 10000
