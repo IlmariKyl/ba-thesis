@@ -26,7 +26,7 @@ def main(argv):
         print("Directory '" + output_dir + "' was created.\n")      
 
     with open(output_dir+'/all_accuracies.txt', 'w') as all_accuracies:
-        print("All accuracies:\n\n{:<40}{:<10}\n".format("File", "Accuracy"), file=all_accuracies)
+        print("All accuracies:\n\n{:<50}{:<10}\n".format("File", "Accuracy"), file=all_accuracies)
         for file in os.listdir(directory):
             linecount = 0
             filename = os.fsdecode(file)
@@ -56,14 +56,14 @@ def main(argv):
                             n_model_outputs += 1
 
                         outfile.write("\n--------------------------------\n\nAccuracy: "+percentage)
-                        print("File: {:<40}Accuracy: {:<5.2f}".format(filename, accuracy))
-                        print("{:<40}{:<10.2f}".format(filename, accuracy), file=all_accuracies)
+                        print("File: {:<50}Accuracy: {:<5.2f}".format(filename, accuracy))
+                        print("{:<50}{:<10.2f}".format(filename, accuracy), file=all_accuracies)
 
                 except Exception as e: print(e)
 
 
         avg_accuracy = model_acc_sum / n_model_outputs
-        print("\n{:<40}{:<40.2f}".format("Average accuracy of s1-s"+str(n_model_outputs)+" models:", avg_accuracy), file=all_accuracies)
+        print("\n{:<50}{:<50.2f}".format("Average accuracy of s1-s"+str(n_model_outputs)+" models:", avg_accuracy), file=all_accuracies)
         print("\n{:<56}{:<16.2f}".format("Average accuracy of s1-s"+str(n_model_outputs)+" models:", avg_accuracy))
         print("\n--------------------------------------------------------------\n")
 
